@@ -155,10 +155,10 @@ There are different types of base *software* depending on the function they perf
 
 - The ***firmware***, such as BIOS or UEFI, runs before the rest of the computer system's *software*. One of its most important functions is to initialize the hardware during the boot process and to manage power and temperature control.
 
-
-- El **controlador de dispositivo** o ***driver***, es el *software* que permite la comunicación entre los dispositivos de entrada/salida del sistema informático y el resto de *software*.
-
 ### Classification of computer systems
+
+!!! note "Vocabulary"
+    _Computer system_ = Sistema informático
 
 Because of the great variety of computer systems we can classify them according to various criteria, such as their architecture or their function. One of the most popular classifications is the one that organizes computer systems according to their size and the resources they offer.
 
@@ -276,9 +276,216 @@ A similar case occurs with Internet connection providers, who express transfer s
 
 ## The operating system
 
-The **operating system** is the most important ***software* of a computer system**. This *software* gives the user the possibility to **interact with the computer system in an easy way**, giving the user the possibility to **manage the information and resources** available to the computer system.
+The **operating system** is the most important ***software* of a computer system**. This *software* gives the user the possibility to **interact with the computer system in an easy way**, giving the user the possibility to **manage the information and resources** available on the computer system.
 
-Operating systems can be defined in terms of their **two basic functions**.
+Operating systems has **two basic functions**.
 
 - **Abstraction**. Hide details of hardware configuration and provide a simple interface for users.
 - **Arbitration**. To manage access to shared resources.
+
+### Elements of the operating system
+
+- **Kernel**. The core of the operating system. It is responsible for managing the computer system's resources, such as the processor, memory, and input/output devices. It also provides the interface between the *hardware* and the rest of the *software*.
+- **Services**. These are the functions that the operating system provides to the user and other *software*. Examples include file management, printing, and network access.
+- **File system**. It is responsible for managing the computer system's files and directories. It allows the user to store, organize, and access information.
+- **User interface**. It is the part of the operating system that allows the user to interact with the computer system. It can be graphical, text-based, or voice-based.
+
+![GUI Interfaz gráfica de usuario](unit01/Budgie_Desktop_Environment.png)
+
+---
+
+![CLI Interfaz de línea de comandos](unit01/Bash_demo.png)
+
+---
+
+### Types of operating systems
+
+- By the number of simultaneous users
+
+    - **Single-user**. These operating systems are designed to be used by a single user at a time. Examples include Windows, macOS, and Linux.
+    - **Multi-user**. These operating systems are designed to be used by multiple users at the same time. Examples include Unix and Linux.
+
+- By the number of tasks
+
+    - **Single-task**. These operating systems can only run one task at a time. Examples include MS-DOS.
+    - **Multi-task**. These operating systems can run multiple tasks at the same time. Examples include Windows, macOS, and Linux.
+
+- By the purpose
+
+    - **General-purpose**. These operating systems are designed to be used for a wide range of tasks. Examples include Windows, macOS, and Linux.
+    - **Special-purpose**. These operating systems are designed for a specific task. Examples include real-time operating systems and embedded operating systems.
+
+- By licensing
+
+    - **Proprietary**. These operating systems are owned by a company and cannot be modified by the user. Examples include Windows and macOS.
+    - **Open-source**. These operating systems are developed by a community of users and can be modified by the user. Examples include Linux.
+
+## Functions of the operating system
+
+The **operating system** manages the computer system's resources to ensure that the user and other *software* can use them efficiently. The main functions of the operating system are:
+
+- **Process management**. The operating system manages the computer system's processes, which are the programs that are running. It allocates resources to processes, schedules them to run on the processor, and provides mechanisms for processes to communicate with each other.
+- **Memory management**. The operating system manages the computer system's memory, which is used to store data and programs. It allocates memory to processes, swaps data between memory and storage, and provides mechanisms for processes to share memory.
+- **File system management**. The operating system manages the computer system's files and directories, which are used to store data. It provides mechanisms for creating, reading, writing, and deleting files, and for organizing files into directories.
+- **Input/output management**. The operating system manages the computer system's input/output devices, which are used to communicate with the user and other devices. It provides mechanisms for reading data from and writing data to devices, and for controlling the flow of data between devices.
+- **Security management**. The operating system manages the computer system's security, which is used to protect the system from unauthorized access and to ensure the privacy and integrity of data. It provides mechanisms for controlling access to the system, for encrypting data, and for detecting and preventing security threats.
+- **Network management**. The operating system manages the computer system's network connections, which are used to communicate with other systems. It provides mechanisms for connecting to networks, for sending and receiving data over networks, and for controlling the flow of data between systems.
+
+## Processes and their states
+
+A **process** is a program that is running on the computer system. The operating system manages processes to ensure that they can run efficiently and that they do not interfere with each other.
+
+Formally a **process** is ‘A unit of activity characterized by the execution of a **sequence of instructions**, with a **current state**, and a set of associated **system resources**’.
+
+---
+
+In order to better understand what a process is and the difference between a program and a process, *A. S. Tanenbaum* proposes the following analogy.
+
+> A cook bakes a birthday cake for his daughter; he has the recipe for a birthday cake and a well-equipped kitchen with all the necessary ingredients, flour, eggs, sugar, milk, etc.’.
+
+Situating each part of the analogy it can be said that the *recipe* represents the **program** (instructions), the *cook* is the **processor** and the *ingredients* are the **data** of the program. The **process** is the *activity* of the cook reading the recipe, obtaining the ingredients and baking the cake.
+
+---
+
+To represent a process, the operating system uses the following information:
+
+- **Process ID (identifier)**. This is an integer number used to identify each process.
+- **Process status**. This is used to indicate the status in terms of its life cycle.
+- **Resource usage**. It allows to check the use of resources used by the process, the execution time, maximum time assigned, priority, etc. This information is useful for planning the next process to be executed by the processor.
+- **Process context**. For each process, the operating system stores the processor status, memory information and input/output requests.
+
+### Process states
+
+A process can be in one of the following states:
+
+- **Created**. The process has been created but has not yet started running.
+
+- **Waiting**. The process is ready to run but is waiting for the processor to become available. Reach this state when created or when it has been interrupted or the blocking condition is fulfilled.
+
+- **Running**. The process is currently running on the processor.
+
+- **Blocked**. The process is waiting for a resource to become available, such as a file or a network connection.
+
+- **Terminated**. The process has finished running and has been removed from the system.
+
+```mermaid
+flowchart LR
+    C((Created)) --> W((Waining))
+    W --> R((Running))
+    R --> W
+    R --> T((Terminated))
+    R --> B((Blocked))
+    B --> W
+```
+
+### Process scheduling
+
+The **process scheduler** is responsible for deciding which process to run on the processor at any given time. The process scheduler uses algorithms to determine the order in which processes are run, based on factors such as the priority of the process, the amount of time the process has been waiting, and the amount of time the process has been running.
+
+Main goals of the process scheduler:
+
+- **Maximize performance**. Ensure that the processor is always running a process.
+
+- **Minimize response time**. Ensure that processes are run as soon as possible after they are created.
+
+- **Minimize latency or response time**. Ensure that processes are run as soon as possible after they are created.
+
+- **Maximize fairness**. Ensure that all processes are given an equal opportunity to run.
+
+---
+
+Process management could be similar to office work. You can have a list of tasks to be done and set priorities for them: high, medium, low, for example. You should start by doing the high priority tasks first, and when they are finished, move on to the medium priority tasks and then to the low priority tasks. Once the task is done, it is crossed out.
+
+This can lead to the problem that low priority tasks may never get done and remain on the list forever. To solve this, older tasks can be assigned high priority.
+
+> Although process scheduling is rather more complex, to get an idea, we could compare process scheduling with the service in a restaurant. Service is considered optimal when waiting times for customers are as short as possible and no one starves to death.
+
+The scheduling algorithm can be classified into two types:
+
+- **Preemptive**. The process scheduler can interrupt a process that is running to run another process. This is useful for ensuring that high-priority processes are run as soon as possible.
+
+- **Non-preemptive**. The process scheduler cannot interrupt a process that is running to run another process. This is useful for ensuring that low-priority processes are run to completion.
+
+Let's study the following scheduling algorithms:
+
+- Non-preemptive:
+    - **First-come, first-served (FCFS)**. The process that arrives first is the first to be run.
+    - **Shortest job first (SJF)**. The process with the shortest execution time is run first.
+- Preemptive:
+    - **Shortest remaining time first (SRTF)**. The process with the shortest remaining execution time is run first.
+    - **Round-robin (RR)**. Each process is run for a fixed amount of time, called a time slice or quantum, and then the next process is run.
+
+---
+
+#### First-come, first-served (FCFS)
+
+This is the simplest scheduling algorithm. The process that arrives first is the first to be run. This algorithm is non-preemptive, meaning that once a process starts running, it cannot be interrupted until it finishes.
+
+- Non-preemptive.
+- Simple and easy to implement.
+- Bad performance in terms of response time and waiting time.
+- Starvation. Long processes can block the execution of short processes.
+
+#### Shortest job first (SJF)
+
+This algorithm runs the process with the shortest execution time first. This algorithm is non-preemptive, meaning that once a process starts running, it cannot be interrupted until it finishes.
+
+- Non-preemptive.
+- Needs to know the execution time of each process in advance.
+- Starvation. Long processes can block the execution of short processes.
+
+#### Shortest remaining time first (SRTF)
+
+This algorithm runs the process with the shortest remaining execution time first. This algorithm is preemptive, meaning that a process can be interrupted while it is running to run another process.
+
+- Preemptive.
+- Good performance in terms of response time and waiting time.
+
+#### Round-robin (RR)
+
+This algorithm runs each process for a fixed amount of time, called a time slice or quantum, and then runs the next process. This algorithm is preemptive, meaning that a process can be interrupted while it is running to run another process.
+
+- Preemptive.
+- Fair performance in terms of response time and waiting time.
+
+---
+
+## Vocabulary
+
+- _Computer Science_ = Informática
+- _Computer system_ = Sistema informático
+- _Computer equipment_ = Equipo informático
+- _Operating system_ = Sistema operativo
+- _Input_ = Entrada
+- _Output_ = Salida
+- _Storage_ = Almacenamiento
+- _Peripheral_ = Periférico
+- _Main memory_ = Memoria principal
+- _Motherboard_ = Placa base
+- _Power supply_ = Fuente de alimentación
+- _Expansion card_ = Tarjeta de expansión
+- _Cooling system_ = Sistema de refrigeración
+- _Screen_ = Pantalla
+- _Device_ = Dispositivo
+- _Embedded system_ = Sistema embebido
+- _Shared resources_ = Recursos compartidos
+- _Kernel_ = Núcleo
+- _Interface_ = Interfaz
+- _File system_ = Sistema de archivos
+- _User interface_ = Interfaz de usuario
+- _Single-user_ = Monousuario
+- _Multi-user_ = Multiusuario
+- _Single-task_ = Monotarea
+- _Multi-task_ = Multitarea
+- _General-purpose_ = Propósito general
+- _Special-purpose_ = Propósito específico
+- _Proprietary_ = Propietario
+- _Open-source_ = Código abierto
+- _Process management_ = Gestión de procesos
+- _Process scheduling_ = Planificación de procesos
+- _Scheduling algorithm_ = Algoritmo de planificación
+- _Performance_ = Rendimiento
+- _Fairness_ = Equidad
+- _Preemptive_ = Apropiativo
+
+
