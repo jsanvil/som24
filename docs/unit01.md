@@ -157,9 +157,6 @@ There are different types of base *software* depending on the function they perf
 
 ### Classification of computer systems
 
-!!! note "Vocabulary"
-    _Computer system_ = Sistema informático
-
 Because of the great variety of computer systems we can classify them according to various criteria, such as their architecture or their function. One of the most popular classifications is the one that organizes computer systems according to their size and the resources they offer.
 
 - Supercomputer
@@ -423,30 +420,34 @@ This is the simplest scheduling algorithm. The process that arrives first is the
 
 - Non-preemptive.
 - Simple and easy to implement.
-- Bad performance in terms of response time and waiting time.
-- Starvation. Long processes can block the execution of short processes.
+- Large waiting times.
+- Slow performance.
 
 #### Shortest job first (SJF)
 
 This algorithm runs the process with the shortest execution time first. This algorithm is non-preemptive, meaning that once a process starts running, it cannot be interrupted until it finishes.
 
 - Non-preemptive.
-- Needs to know the execution time of each process in advance.
+- Waiting times are smaller than FCFS.
 - Starvation. Long processes can block the execution of short processes.
+- Minimum performance.
 
 #### Shortest remaining time first (SRTF)
 
 This algorithm runs the process with the shortest remaining execution time first. This algorithm is preemptive, meaning that a process can be interrupted while it is running to run another process.
 
 - Preemptive.
-- Good performance in terms of response time and waiting time.
+- Waiting times depend on arrival and duration.
+- Starvation. Short processes can block the execution of long ones.
+- Preference for short processes.
 
 #### Round-robin (RR)
 
 This algorithm runs each process for a fixed amount of time, called a time slice or quantum, and then runs the next process. This algorithm is preemptive, meaning that a process can be interrupted while it is running to run another process.
 
 - Preemptive.
-- Fair performance in terms of response time and waiting time.
+- Larger waiting times than SJF.
+- Fair performance.
 
 ---
 
