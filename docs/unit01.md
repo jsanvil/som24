@@ -1,10 +1,4 @@
----
-title: U1 Characterization of Operating Systems
-nocite: |
-  @iocsom, @somesom, @wikipedia
----
-
-# Characterization of Operating Systems
+# Unit 1: Characterization of Operating Systems
 
 ## Objectives
 
@@ -72,6 +66,18 @@ All computer systems consist of three fundamental parts:
 
     The purpose of a computer system is to optimally manage information. The computer system allows for storing and processing information and can also perform functions ranging from facilitating work for businesses to providing entertainment for users.
 
+### Von Neumann Architecture
+
+The **_Von Neumann_ architecture** is a model for computer systems that was proposed by the mathematician and physicist **_John von Neumann_** in 1945. This model is based on the idea that the computer system should have a **central processing unit (CPU)** that can execute instructions, a **memory** that can store data and programs, and **input/output devices** that can communicate with the user and other devices.
+
+![Von Neumann architecture. @wikipedia](unit01/von_neumann.png)
+
+The _Von Neumann_ architecture consists of the following components:
+
+- **Central Processing Unit (CPU)**. This is the part of the computer system that executes instructions. It consists of an **arithmetic logic unit (ALU)** that performs arithmetic and logical operations, a **control unit** that manages the execution of instructions, and a **register** that stores data temporarily.
+- **Memory**. This is the part of the computer system that stores data and programs. It consists of **main memory**, which is used to store data and programs that are currently being executed, and **secondary storage**, which is used to store data and programs that are not currently being executed.
+- **Input/Output Devices**. These are the parts of the computer system that allow the user to interact with the computer system. Examples include storage drives, keyboards, mice, screens, printers, and speakers.
+
 ### Physical Components. *Hardware*
 
 ***Hardware*** refers to the set of components that make up the **physical part** of a computer system and enable its operation.
@@ -116,7 +122,7 @@ We can categorize *hardware* components based on their location in the computer 
 - **Printer** and **scanner**. Items used for printing and scanning text or graphic data.
 - External **storage** devices**. These store data permanently and can be easily moved from one system to another.
 Typical examples are USB external hard drives, *pendrives* or SD cards.
-- **Other** devices: game controllers, digitising tablets, virtual reality glasses, barcode scanners, projectors, etc.
+- **Other** devices: game controllers, digitizing tablets, virtual reality glasses, barcode scanners, projectors, etc.
 
 ---
 
