@@ -269,7 +269,7 @@ Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes
 | [zebibyte](https://es.wikipedia.org/wiki/Zebibyte "Zebibyte") | ZiB | $2^{70}$ = 1 180 591 620 717 411 303 424 |
 | [yobibyte](https://es.wikipedia.org/wiki/Yobibyte "Yobibyte") | YiB | $2^{80}$ = 1 208 925 819 614 629 174 706 176 |
 
-Table: Múltiplos utilizando los prefijos ISO/IEC 80000-13
+Table: Multiples using ISO/IEC 80000-13
 
 ---
 
