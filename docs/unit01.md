@@ -373,7 +373,7 @@ A process can be in one of the following states:
 
 ```mermaid
 flowchart LR
-    C((Created)) --> W((Waining))
+    C((Created)) --> W((Waiting))
     W --> R((Running))
     R --> W
     R --> T((Terminated))
@@ -381,9 +381,21 @@ flowchart LR
     B --> W
 ```
 
+<!-- ```mermaid
+flowchart LR
+    C((Created)) --|Ready| W((Waiting))
+    W --|Selected by scheduler| R((Running))
+    R --|Paused| W
+    W --|By other process| T((Terminated))
+    R --|End| T
+    R --|I/O or event| B((Blocked))
+    B --|I/O or event finished| W
+    B --|By other process| T
+``` -->
+
 ### Process scheduling
 
-The **process scheduler** is responsible for deciding which process to run on the processor at any given time. The process scheduler uses algorithms to determine the order in which processes are run, based on factors such as the priority of the process, the amount of time the process has been waiting, and the amount of time the process has been running.
+The **process scheduler** is responsible for **deciding which process to run on the processor** at any given time. The process scheduler uses **algorithms** to determine the order in which processes are run, based on factors such as the **priority** of the process, the amount of **time** the process has been **waiting**, and the amount of time the process has been **running**.
 
 Main goals of the process scheduler:
 
