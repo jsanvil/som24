@@ -334,7 +334,7 @@ The **operating system** manages the computer system's resources to ensure that 
 - **Security management**. The operating system manages the computer system's security, which is used to protect the system from unauthorized access and to ensure the privacy and integrity of data. It provides mechanisms for controlling access to the system, for encrypting data, and for detecting and preventing security threats.
 - **Network management**. The operating system manages the computer system's network connections, which are used to communicate with other systems. It provides mechanisms for connecting to networks, for sending and receiving data over networks, and for controlling the flow of data between systems.
 
-## Processes and their states
+## Processe management
 
 A **process** is a program that is running on the computer system. The operating system manages processes to ensure that they can run efficiently and that they do not interfere with each other.
 
@@ -389,34 +389,47 @@ Main goals of the process scheduler:
 
 - **Maximize performance**. Ensure that the processor is always running a process.
 
-- **Minimize response time**. Ensure that processes are run as soon as possible after they are created.
-
-- **Minimize latency or response time**. Ensure that processes are run as soon as possible after they are created.
+- **Minimize latency or response time**. Ensure that processes are run **as soon as possible** after they are created and the waiting time is **as short as possible**. This is important for interactive applications, such as web browsers and video games.
 
 - **Maximize fairness**. Ensure that all processes are given an equal opportunity to run.
 
 ---
 
-Process management could be similar to office work. You can have a list of tasks to be done and set priorities for them: high, medium, low, for example. You should start by doing the high priority tasks first, and when they are finished, move on to the medium priority tasks and then to the low priority tasks. Once the task is done, it is crossed out.
+!!! note "Analogy"
+    Process management could be similar to **office work**. 
+    
+    You can have:
+    
+    - a list of **tasks** to be done
+    - a set **priorities** for them: high, medium, low
+    
+    For example:
+    
+    You should start by doing the high priority tasks first, and when they are finished, move on to the medium priority tasks and then to the low priority tasks. Once the task is done, it is crossed out.
 
-This can lead to the problem that low priority tasks may never get done and remain on the list forever. To solve this, older tasks can be assigned high priority.
+    This can lead to the **problem** that low priority tasks may never get done and remain on the list forever. To solve this, older tasks can be assigned high priority.
 
-> Although process scheduling is rather more complex, to get an idea, we could compare process scheduling with the service in a restaurant. Service is considered optimal when waiting times for customers are as short as possible and no one starves to death.
+    Although process scheduling is rather more complex, to get an idea, we could compare process scheduling with the **service in a restaurant**. Service is considered **optimal when waiting times** for customers are as short as possible and no one **starves** to death.
 
-The scheduling algorithm can be classified into two types:
+!!! note "Algorithm"
+    An **algorithm** is a **set of instructions** that are used to **solve a problem**.
+    
+    It can be compared to a cooking recipe, which is a set of instructions that are used to prepare a meal.
 
-- **Preemptive**. The process scheduler can interrupt a process that is running to run another process. This is useful for ensuring that high-priority processes are run as soon as possible.
+The scheduling algorithms can be classified into two **types**:
 
-- **Non-preemptive**. The process scheduler cannot interrupt a process that is running to run another process. This is useful for ensuring that low-priority processes are run to completion.
+- **Non-preemptive**. The process scheduler **cannot interrupt a process that is running** to run another process. This is useful for ensuring that low-priority processes are run to completion.
+
+- **Preemptive**. The process scheduler **can interrupt a process** that is running to run another process. This is useful for ensuring that high-priority processes are run as soon as possible.
 
 Let's study the following scheduling algorithms:
 
-- Non-preemptive:
-    - **First-come, first-served (FCFS)**. The process that arrives first is the first to be run.
-    - **Shortest job first (SJF)**. The process with the shortest execution time is run first.
-- Preemptive:
-    - **Shortest remaining time first (SRTF)**. The process with the shortest remaining execution time is run first.
-    - **Round-robin (RR)**. Each process is run for a fixed amount of time, called a time slice or quantum, and then the next process is run.
+- **Non-preemptive**:
+    - **First-Come, First-Served (FCFS)**. The process that arrives first is the first to be run.
+    - **Shortest Job First (SJF)**. The process with the shortest execution time is run first.
+- **Preemptive**:
+    - **Shortest Remaining Time First (SRTF)**. The process with the shortest remaining execution time is run first.
+    - **Round-Robin (RR)**. Each process is run for a fixed amount of time, called a time slice or quantum, and then the next process is run.
 
 ---
 
@@ -435,7 +448,7 @@ This algorithm runs the process with the shortest execution time first. This alg
 
 - Non-preemptive.
 - Waiting times are smaller than FCFS.
-- Starvation. Long processes can block the execution of short processes.
+- **Starvation**. Long processes can block the execution of short processes.
 - Minimum performance.
 
 #### Shortest remaining time first (SRTF)
@@ -444,12 +457,12 @@ This algorithm runs the process with the shortest remaining execution time first
 
 - Preemptive.
 - Waiting times depend on arrival and duration.
-- Starvation. Short processes can block the execution of long ones.
+- **Starvation**. Short processes can block the execution of long ones.
 - Preference for short processes.
 
 #### Round-robin (RR)
 
-This algorithm runs each process for a fixed amount of time, called a time slice or quantum, and then runs the next process. This algorithm is preemptive, meaning that a process can be interrupted while it is running to run another process.
+This algorithm runs each process for a **fixed amount of time**, called a time slice or **quantum**, and then runs the next process. This algorithm is **preemptive**, meaning that a process can be interrupted while it is running to run another process.
 
 - Preemptive.
 - Larger waiting times than SJF.
@@ -457,42 +470,65 @@ This algorithm runs each process for a fixed amount of time, called a time slice
 
 ---
 
+!!! note "Other scheduling algorithms"
+    There are other scheduling algorithms that can be used to manage processes, such as:
+
+    - **Priority scheduling**. The process with the highest priority is run first.
+    - **FSS** (*Fair Share Scheduling*). The process is run based on the amount of resources it has used and users are given a fair share of resources.
+    - **MQS** (*Multi-Queue Scheduling*). The process is run in different queues based on its priority.
+
+    In general, operating systems use a combination of scheduling algorithms to ensure that processes are run efficiently and fairly.
+
+### Process communication
+
+Processes can communicate with each other in various ways. The operating system provides mechanisms for processes to communicate with each other, such as:
+
+- **IPC** (*Inter-process communication*). Processes can communicate with each other using system calls provided by the operating system.
+- **RPC** (*Remote Procedure Call*). Processes can communicate with each other over a network using remote procedure calls.
+
+### Services
+
+A service is a program that runs in the background and provides a specific function to the user or other programs. The operating system provides services to the user and other programs.
+
+By example, printing service manages the printing of documents from each application.
+
+In UNIX systems, services are called **daemons**.
+
 ## Vocabulary
 
+- _Computer equipment_ = Equipo informático
 - _Computer Science_ = Informática
 - _Computer system_ = Sistema informático
-- _Computer equipment_ = Equipo informático
-- _Operating system_ = Sistema operativo
-- _Input_ = Entrada
-- _Output_ = Salida
-- _Storage_ = Almacenamiento
-- _Peripheral_ = Periférico
-- _Main memory_ = Memoria principal
-- _Motherboard_ = Placa base
-- _Power supply_ = Fuente de alimentación
-- _Expansion card_ = Tarjeta de expansión
 - _Cooling system_ = Sistema de refrigeración
-- _Screen_ = Pantalla
 - _Device_ = Dispositivo
 - _Embedded system_ = Sistema embebido
-- _Shared resources_ = Recursos compartidos
-- _Kernel_ = Núcleo
-- _Interface_ = Interfaz
+- _Expansion card_ = Tarjeta de expansión
+- _Fairness_ = Equidad
+- _Fairness_ = Equidad
 - _File system_ = Sistema de archivos
-- _User interface_ = Interfaz de usuario
-- _Single-user_ = Monousuario
-- _Multi-user_ = Multiusuario
-- _Single-task_ = Monotarea
-- _Multi-task_ = Multitarea
 - _General-purpose_ = Propósito general
-- _Special-purpose_ = Propósito específico
-- _Proprietary_ = Propietario
+- _Input_ = Entrada
+- _Interface_ = Interfaz
+- _Kernel_, _Core_ = Núcleo
+- _Main memory_ = Memoria principal
+- _Motherboard_ = Placa base
+- _Multi-task_ = Multitarea
+- _Multi-user_ = Multiusuario
 - _Open-source_ = Código abierto
+- _Operating system_ = Sistema operativo
+- _Output_ = Salida
+- _Performance_ = Rendimiento
+- _Peripheral_ = Periférico
+- _Power supply_ = Fuente de alimentación
+- _Preemptive_ = Apropiativo
 - _Process management_ = Gestión de procesos
 - _Process scheduling_ = Planificación de procesos
+- _Proprietary_ = Propietario
 - _Scheduling algorithm_ = Algoritmo de planificación
-- _Performance_ = Rendimiento
-- _Fairness_ = Equidad
-- _Preemptive_ = Apropiativo
-
-
+- _Screen_ = Pantalla
+- _Shared resources_ = Recursos compartidos
+- _Single-task_ = Monotarea
+- _Single-user_ = Monousuario
+- _Special-purpose_ = Propósito específico
+- _Storage_ = Almacenamiento
+- _User interface_ = Interfaz de usuario
