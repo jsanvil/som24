@@ -626,3 +626,4 @@ Its main **disadvantage** is that it is a **slow** process (compared to using on
 - _Special-purpose_ = Propósito específico
 - _Storage_ = Almacenamiento
 - _User interface_ = Interfaz de usuario
+- _Swap_ = Intercambio
