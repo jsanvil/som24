@@ -251,7 +251,7 @@ For large volumes of information we use **multiples of the byte**.
 | [zettabyte](https://es.wikipedia.org/wiki/Zettabyte "Zettabyte") | ZB | $10^{21}$ = 1 000 000 000 000 000 000 000 |
 | [yottabyte](https://es.wikipedia.org/wiki/Yottabyte "Yottabyte") | YB  | $10^{24}$ = 1 000 000 000 000 000 000 000 000 |
 
-Table: Multiples using the International System prefixes
+_Table: Multiples using the International System prefixes_
 
 ---
 
@@ -260,7 +260,7 @@ Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes
 | Nombre | Símbolo | Factor y valor en el [ISO/IEC 80000](https://es.wikipedia.org/wiki/ISO/IEC_80000 "ISO/IEC 80000")\-13 |
 |:--|:--:|--:|
 | byte | B | $2^{0}$ = 1 |
-[kibibyte](https://es.wikipedia.org/wiki/Kibibyte "Kibibyte") | KiB | $2^{10}$ = 1024 |
+| [kibibyte](https://es.wikipedia.org/wiki/Kibibyte "Kibibyte") | KiB | $2^{10}$ = 1024 |
 | [mebibyte](https://es.wikipedia.org/wiki/Mebibyte "Mebibyte") | MiB | $2^{20}$ = 1 048 576 |
 | [gibibyte](https://es.wikipedia.org/wiki/Gibibyte "Gibibyte") | GiB | $2^{30}$ = 1 073 741 824 |
 | [tebibyte](https://es.wikipedia.org/wiki/Tebibyte "Tebibyte") | TiB | $2^{40}$ = 1 099 511 627 776 |
@@ -269,13 +269,15 @@ Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes
 | [zebibyte](https://es.wikipedia.org/wiki/Zebibyte "Zebibyte") | ZiB | $2^{70}$ = 1 180 591 620 717 411 303 424 |
 | [yobibyte](https://es.wikipedia.org/wiki/Yobibyte "Yobibyte") | YiB | $2^{80}$ = 1 208 925 819 614 629 174 706 176 |
 
-Table: Multiples using ISO/IEC 80000-13
+_Table: Multiples using ISO/IEC 80000-13_
 
 ---
 
-As a curiosity, most manufacturers of storage devices express the capacity in the International System. For example, a USB *pendrive* of ***64 GB***, when connected to our computer will show ***59.6 GiB***.
+!!! note "Curiosity"
 
-A similar case occurs with Internet connection providers, who express transfer speeds in Mbps (Megabits per second). For example, a connection of ***100 Mbps*** in a speed test will show ***11.9 MiBps*** (Mebibytes per second).
+    As a curiosity, most manufacturers of storage devices express the capacity in the International System. For example, a USB *pendrive* of ***64 GB***, when connected to our computer will show ***59.6 GiB***.
+
+    A similar case occurs with Internet connection providers, who express transfer speeds in Mbps (Megabits per second). For example, a connection of ***100 Mbps*** in a speed test will show ***11.9 MiBps*** (Mebibytes per second).
 
 ## The operating system
 
@@ -505,6 +507,86 @@ A service is a program that runs in the background and provides a specific funct
 By example, printing service manages the printing of documents from each application.
 
 In UNIX systems, services are called **daemons**.
+
+## Memory
+
+**Memory** is one of the most important resources in a computer. Memory must be **fast**, **high capacity** and **expensive**. Currently, no technology meets all three objectives simultaneously. A solution has been adopted where **the memory system is built hierarchically in layers**, where the higher layers have higher speed and cost per bit, but lower capacity than the lower layers.
+
+![Memory hierarchy](unit01/ComputerMemoryHierarchy.png)
+
+There are four major storage levels:
+
+- **Internal** – Processor registers and cache.
+- **Main** – the system main memory (RAM).
+- **Secondary**. Internal storage (or On-line storage). Hard drives, SSDs, etc.
+- **Tertiary**. External storage (or Off-line storage). Pen drives, DVDs, cloud storage, magnetic tapes, etc.
+
+In order for a program to run, its **instructions** and **data** must be present in the system's **main memory** (*RAM*). The **processor** can only access data that is in the main memory. The main memory is a **volatile memory**, meaning that it loses its contents when the computer is turned off.
+
+**Memory management** refers to **operations that are responsible for optimizing memory usage** by organizing the processes running in such a way as to make the best possible use of the available space.
+
+Main functions:
+
+- **Allocate space to processes** that request it.
+- **Virtual address space**. Separates the memory addresses used by a process from the actual physical addresses, allowing the separation of processes and increasing **security** and the effective amount of main memory.
+- **Virtual memory**. When a process is too large to be loaded into memory, a part of the secondary memory (*hard disk*) is used as back-up memory. This often makes the system run much **slower**.
+- **Garbage collector**. It is responsible for the automatic **release of memory** resources for a process that has terminated its execution or enters an inconsistent state.
+
+![Virtual address space](unit01/Virtual_address_space_and_physical_address_space_relationship.png)
+
+Multitasking OS requirements:
+
+- **Protection**. A process may not access the memory location of another process without permission.
+- **Relocation**. On systems with virtual memory, programs during execution may leave memory for a time and then return, so they cannot be placed in the location they previously occupied. It must therefore be possible for them to reside in different parts of memory at different times.
+- **Sharing**. It is possible for multiple processes to share information across a shared memory area.
+
+If the system were to reserve physical memory by contiguously hosting processes, there would come a point where **external fragmentation** would occur, i.e. gaps where new processes could not be contiguously hosted.
+
+![Memory fragmentation](unit01/tetris.png)
+
+We can compare this situation with the game of *Tetris*, where the objective is to fit the pieces together to form complete lines. In the case of memory, the pieces are the processes and the complete lines are the contiguous memory blocks. If the pieces are not placed correctly, gaps will appear that will prevent new pieces from being placed.
+
+To solve this problem, the operating system uses **paging** and **segmentation** techniques.
+
+![Memory fragmentation](unit01/External_fragmentation.png)
+
+### Memory paging
+
+Physical memory is divided into parts of the same size called **frames**, in turn, processes are also divided into parts called **pages** of the same size as the *frames*.
+
+A **page table** is needed to translate the logical addresses to physical addresses.
+
+This way, processes do not need to be loaded contiguously in memory, as frames can be in different memory locations.
+
+- Eliminates external fragmentation.
+- Creates **internal fragmentation**.
+
+**Internal fragmentation** occurs when a process page does not fill a frame of memory completely, so some memory is wasted.
+
+!!! note "Hotel Analogy"
+    Imagine a hotel where all the rooms have 4 beds. If a group of 3 people arrives, they will have to pay for the 4 beds, so one bed will be wasted.
+
+    This is the same as internal fragmentation, where a process page does not fill a frame of memory completely, so some memory is wasted.
+
+![Memory paging](unit01/Memory_paging.png)
+
+### Memory segmentation
+
+Memory is divided into segments of different sizes, each segment corresponds to a part of the process or a type of data.
+
+- Eliminates internal fragmentation.
+- Creates **external fragmentation**.
+
+!!! note "Zoo Analogy"
+    Imagine a zoo where are areas for different animals, such as lions, elephants, monkeys, etc. Each area is a segment of memory, and each animal is a process, so the animals are not in the same area. This is the same as memory segmentation.
+
+### Virtual memory
+
+Also known as **swap memory**, **swap space**, **paging file** or ***swap***, is a file or partition on disk (secondary storage or *hard disk*) that is used to temporarily store copies of processes that are removed from the main memory (RAM).
+
+This technique allows the creation of a larger capacity virtual memory, `RAM + swap`.
+
+Its main **disadvantage** is that it is a **slow** process (compared to using only main memory).
 
 ## Vocabulary
 
