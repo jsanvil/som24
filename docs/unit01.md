@@ -588,6 +588,204 @@ This technique allows the creation of a larger capacity virtual memory, `RAM + s
 
 Its main **disadvantage** is that it is a **slow** process (compared to using only main memory).
 
+## File System Management
+
+**File system management** is a crucial function of an operating system that handles the storage and retrieval of data on a computer's storage devices. It organizes data into logical units called files and directories, providing a structured way for users and applications to access and manipulate information.
+
+### Objectives
+
+* **Data Integrity:** Ensuring the **accuracy** and **consistency** of data stored in the file system.
+* **Performance:** Optimizing file system operations for **efficient** data access and retrieval.
+* **Security:** **Protecting** data from unauthorized access, modification, or deletion.
+* **Reliability:** Ensuring the **availability** of data and **preventing data loss** due to system failures.
+
+By effectively managing files and directories, the operating system provides a reliable and efficient way for users and applications to interact with data on a computer.
+
+### Key Components and Functions
+
+1. **File:** The **basic unit of data storage**. It contains a **collection of related information**, such as documents, images, or programs.
+2. **Directory:** A **container for files and other directories**, creating a **hierarchical structure**. Directories are also known as **folders**.
+    - **Subdirectories:** Directories contained within other directories. 
+3. **Metadata:** Information **about files and directories**, including their **names**, **locations**, **size**, creation **date**, and access **permissions**.
+4. **Storage Allocation:** **Assigning physical storage space** to files and directories on the underlying storage device (e.g., hard drive, SSD).
+5. **File Access:** Handling requests from applications to **read, write or modify** files.
+6. **File Deletion:** **Removing files** from the file system, often marking the storage space as available for reuse.
+7. **File Recovery:** Attempting to **restore deleted** or corrupted files, **if possible**.
+8. **File Sharing:** Allowing **multiple users or processes to access the same file** simultaneously, potentially with different permissions.
+
+### File
+
+A **file** is a **collection of data** stored on a computer system. Files can contain a wide variety of information, such as text, images, audio, video, or program code. Each file has a **unique name** that identifies it within the file system.
+
+### Directory
+
+A **directory** is a **container for files and other directories**. It provides a way to **organize and manage files** in a hierarchical structure. Directories can be nested within each other, creating a tree-like organization of files and directories.
+
+### Metadata
+
+**Metadata** is **data about data**, providing information about files and directories in the file system. Common metadata includes:
+
+- **File Name:** The **unique identifier** for a file or directory.
+- **File Size:** The **amount of storage space** occupied by the file.
+- **Owner:** The **user** who created the file or directory.
+- **Group:** The **group** to which the file or directory belongs.
+- **Permissions:** The **access rights** granted to users or groups (e.g., read, write, execute).
+- **Attributes:** Such whether the file is **read-only**, **executable**, **hidden**, etc.
+- **Timestamps:** Indicating the **creation**, **modification**, and **access times** of the file.
+- **Device type:** For special files like **devices** or **pipes**.
+  
+### File System Types
+
+Some of most popular file systems are:
+
+* **FAT (File Allocation Table):** A simple and widely used file system, often found in older devices. It uses a table to track the location of file on the disk.
+* **NTFS (New Technology File System):** A more advanced file system developed by _Microsoft_, offering features like journaling, compression, and security.
+* **ext2/3/4:** Common file systems used in _Linux_ and other _Unix_-like operating systems, known for their performance and reliability.
+* **HFS+ (Hierarchical File System Plus):** The default file system for _macOS_, designed for efficient storage and retrieval of files.
+* **ZFS (Zettabyte File System):** A modern file system with features like data integrity, RAID, and snapshots.
+
+### File System Compatibility
+
+Different operating systems support different file systems, and not all file systems are compatible with each other. For example, a USB drive formatted with _NTFS_ may not be readable on a _macOS_ system, which typically uses _HFS+_. To ensure compatibility, it is essential to choose a file system that is supported by the operating systems you plan to use.
+
+Each operating system supports one or more file systems, depending on its design and requirements. For example:
+
+| Operating System | File System                          |
+|---------|-----------------------------------------------|
+| MS-DOS  | **FAT12**, FAT16, FAT32...                    |
+| Windows | **NTFS**, FAT, exFAT, ReFS...                 |
+| macOS   | **HFS+**, HFS, AFP...                         |
+| Linux   | **ext4**, ext2, ext3, btrfs, ReiserFS, NFS... |
+| Android | **ext4**, F2FS, YAFFS, ReiserFS...            |
+| Servers | **ZFS**, XFS, Btrfs, JFS, UFS...              |
+
+### Comparison of File Systems
+
+Each file system has its own characteristics and limitations, making it suitable for different use cases. Common factors to consider include **file size limits**, **partition size**, **permissions**, **journaling**, and **encryption**.
+
+Here's a comparison of some popular file systems:
+
+|File system|Filenames|File size|Partition|Permissions| Journaling | Encrypt |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| FAT32 | 8.3 | 4 GiB   | 2 TiB |  ❌ | ❌ | ❌ |
+| exFAT | 255 | 127 PiB | 512 TiB |  ❌ | ❌ | ❌ |
+| NTFS  | 255 | 16 TiB  | 256 TiB |  ✅ | Partial | ✅ |
+| ReFS  | 255 | 16 EiB  | 256 ZiB |  ✅ | Partial | ✅ |
+| ext3  | 255 | 2 TiB   | 32 TiB |  ✅ | ✅ | ✅ |
+| ext4  | 255 | 16 TiB  | 1 EiB |  ✅ | ✅ | ✅ |
+| ReiserFS | 226 | 8 TiB | 16 TiB |  ✅ | ✅ | ❌ |
+| HFS+  | 255 | 8 EiB   | 8 EiB |  ✅ | Partial | ✅ |
+
+### File System Operations
+
+File systems support a variety of operations to manage files and directories. Some common operations include:
+
+* **Create:** Creates a new file or directory.
+* **Delete:** Removes a file or directory.
+* **Read:** Retrieves data from a file.
+* **Write:** Stores data in a file.
+* **Rename:** Changes the name of a file or directory.
+* **Move:** Relocates a file or directory to a different location.
+* **Copy:** Duplicates a file or directory.
+* **Modify:** Changes the content or attributes of a file, such as its name or permissions.
+* **Check Integrity:** Verifies the correctness and consistency of data.
+* **Compress / Decompress:** Reduces or expands the size of a file.
+* **Encrypt / Decrypt:** Secures data by encoding or decoding it.
+
+### File System Permissions
+
+File systems use **permissions** to control access to files and directories. Permissions specify which users or groups can **read**, **write**, or **execute** files, and can be set for the **users** and/or **groups**.
+
+Common basic permission levels include:
+
+- **Read:** Allows users to view the contents of a file.
+- **Write:** Allows users to modify the contents of a file.
+- **Execute:** Allows users to run a file as a program.
+
+Example of file permissions in _Microsoft Windows_:
+
+![File permissions](unit01/windows_permissions.png)
+
+In most systems, the graphical representation for **users** and **groups** is as follows:
+
+- **User**: 👤 a person silhouette.
+- **Group**: 👥 two (or more) people silhouettes.
+
+### Data integrity
+
+File systems use various techniques to ensure data integrity, such as:
+
+- **Journaling:** Recording changes to files and directories in a **journal** to recover from system crashes or power failures.
+- **Checksums:** Calculating a **checksum** for files to verify their integrity and detect data corruption.
+- **Redundancy:** Storing multiple copies of data to protect against data loss.
+
+### Hierarchical Structure
+
+We need to consider a storage device must contain millions of files, so it is necessary to organize them in a hierarchical structure. This structure is similar to a tree, where the **root** is the main directory and the **branches** are the subdirectories.
+
+- **Root directory:** The main directory of the file system.
+- **Subdirectory:** A directory contained within another directory.
+
+In a graphical representation, the hierarchical structure looks like this:
+
+![Hierarchical structure](unit01/FilesAndFolders.png)
+
+An example of a hierarchical structure is shown below:
+    
+```
+RootDirectory/
+├── Directory1/
+│   ├── File1
+│   ├── File2
+│   └── Directory2/
+│       ├── File3
+│       └── File4
+└── Directory3/
+    ├── File5
+    └── File6
+```
+
+### Path
+
+A **path** is a string that specifies the location of a file or directory in the file system. Paths can be **absolute** or **relative**.
+
+- **Absolute path:** Specifies the location of a file or directory from the **root directory**.
+- **Relative path:** Specifies the location of a file or directory **relative to the current directory**.
+
+For example, in the hierarchical structure above, the absolute path to `File3` would be `/RootDirectory/Directory1/Directory2/File3`, while the relative path would be `Directory2/File3`.
+
+In Microsoft Windows, the **backslash** **`\`** is used as the directory separator, while in Unix-like systems, the **forward slash** **`/`** is used.
+
+An example of absolute path in _Microsoft Windows_ is `C:\Users\John\Documents\file.txt`. Where `C:` is the drive letter and root directory, `Users` is the user directory, `John` is the user name, `Documents` is a directory, and `file.txt` is a file name.
+
+#### Absolute path
+
+An **absolute path** is a complete path that specifies the location of a file or directory from the **root directory**. It includes all the directories and subdirectories leading to the file or directory.
+
+Examples:
+
+- In Microsoft Windows: `C:\Users\John\Documents\file.txt`
+- In Unix-like systems: `/home/john/documents/file.txt`
+
+Note that the root directory is represented by a **forward slash** `/` in Unix-like systems and a **backslash** `\` in _Microsoft Windows_.
+
+#### Relative path
+
+A **relative path** specifies the location of a file or directory **relative to the current directory**. It does not include the root directory and starts from the current working directory.
+
+- **`.`** represents the current directory.
+- **`..`** represents the parent directory.
+
+Examples:
+
+- `.\Documents\file.txt`
+- `..\images\picture.jpg`
+- `..\..\data\data.csv`
+
+Relative paths are often used when referring to files or directories within the same directory or in a nearby directory.
+
+
+
 ## Vocabulary
 
 - _Computer equipment_ = Equipo informático
