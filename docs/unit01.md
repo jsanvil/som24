@@ -784,6 +784,173 @@ Examples:
 
 Relative paths are often used when referring to files or directories within the same directory or in a nearby directory.
 
+## User interfaces
+
+The user can communicate with the operating system mainly through three non-exclusive interfaces:
+
+- **Command line interface** (**CLI** - *Command Line Interface*). Users use commands, which are nothing more than orders written in a language that the operating system understands. They consist of an order and, optionally, some parameters.
+- **Graphical user interface** (**GUI** - *Graphical User Interface*). Most current operating systems provide a graphical user interface that presents a visual environment with elements such as desktops, windows, menus, icons or buttons with which the user interacts, thus sending orders to the operating system.
+- **Natural language interface** (**NUI** - *Natural User Interface*). Interaction with computer equipment is carried out by recognizing the user's natural movements or actions, which it interprets as orders. *For example, Siri (macOS), Cortana (Microsoft Windows) or Google Now (Android)*.
+
+There is no better interface than another, and their advantages and disadvantages depend on the purpose for which they are going to be used:
+
+| Interface | Advantages | Disadvantages |
+|-|-|-|
+|**CLI**| Access to all the system's functionalities. | Knowledge of the commands |
+| | Ease of automation | Complexity |
+| | Reduced resource consumption | |
+|**GUI**| Ease of use | Actions limited to the interface |
+| | Standardized | Consumes more resources |
+| | Used in most programs | |
+|**NUI**| Ease of use | Inaccurate |
+| | Intuitive | Simple actions |
+
+**The most common way of interacting with operating systems is through their graphical interface**, also called **GUI** (*Graphical User Interface*). In reality, it is nothing more than a program that **facilitates communication between the computer and the user** by manipulating graphic elements **using a series of predefined actions** carried out with the mouse and and the keyboard.
+
+> Nowadays, the use of touch screens is growing, which can complement, or even replace, the use of the mouse and the keyboard.
+
+Before the arrival of graphical interfaces, computer systems were used through a **text interface** that basically consisted of a screen that offered only one color (on a black background) and where **only characters were displayed**. At that time, the only way for users to interact with the computer system was to know the syntax of a considerably large **set of written commands**.
+
+As you can imagine, the visual environment offered by GUIs is a much simpler, and more intuitive, way of learning how to use a computer.
+
+For security reasons, server systems do not usually use a graphical interface.
+
+### Origin of graphical user interfaces
+
+_IBM PC AT_ with _MS-DOS_ Operating System (1981):
+
+![IBM PC AT with MS-DOS Operating System (1981)](unit01/ibm_pc_at.jpg)
+
+First home computers used a text interface, where the user had to type commands to interact with the computer.
+
+The first graphical user interface was developed by researchers at _Xerox PARC_ and included in the _Xerox Star 8010_ computer in 1981. However, the design was based on the studies of scientist _Douglas Engelbart_ and on the first mouse, also designed by him.
+
+Prototype of the first computer mouse (1967):
+
+![Prototype of the first computer mouse (1967)](unit01/first-computer-mouse.jpg)
+
+_Xerox Star 8010_ (1981):
+
+![Xerox Star 8010 (1981)](unit01/xerox-star-8010.jpg)
+
+On this computer, text characters were replaced by bitmaps, icons, windows, etc.
+
+The next step was taken by Apple, which, after a visit by some of its executives to Xerox in 1979, began the development of its Apple Lisa, the first desktop computer that included a graphical interface and which began to be sold in 1983. However, it was the Apple Macintosh of 1984 that marked a before and after.
+
+Apple Lisa (1983):
+
+![Apple Lisa (1983)](unit01/apple-lisa.jpg)
+
+The following year, in 1985, Microsoft began marketing _MS Windows 1.0_, a graphical interface that ran on _MS-DOS_, the operating system that, until then, only worked with a text-based interface.
+
+_Microsoft Windows 1.0_ (1985):
+
+![Microsoft Windows 1.0 (1985)](unit01/windows1.png)
+
+### Current graphical interfaces
+
+Today, all desktop operating systems have a graphical interface:
+
+In **MS Windows 10**, after the paradigm shift that MS Windows 8 and 8.1 represented, with a clear orientation towards touch environments, there has been a reconciliation with environments oriented towards the use of the mouse.
+
+The *Fluent Design* interface has been developed, which makes a transition between both types of interface (touch / mouse) in a dynamic way and adapts to different types of devices (computers, tablets, video game consoles, smartphones, embedded systems, augmented reality, etc.).
+
+In addition, the _Start menu_ has been updated, which now combines functionality equivalent to MS Windows XP and the MS Windows 8.1 Start screen in addition to other complementary functions.
+
+MS Windows 10 desktop (2014):
+
+![MS Windows 10 (2014)](unit01/windows-10.jpg){width=60%}
+
+**MS Windows 11** features a user interface based on *Fluent Design* including translucency, shadows, a new color palette, new icons, and rounded edges throughout the system interface. Other system changes include new system icons, animations, and sounds. MS Windows 11 updates several system dialog boxes, such as the "battery is running out" alert, among others.
+
+The _Start menu_ undergoes a significant redesign, eliminating the use of the *live tiles* used by MS Windows 8.x and 10 with a grid of "pinned" applications and a list of recent applications and documents.
+
+Microsoft has also introduced a new feature called **Snap Layouts**, which allows users to quickly arrange multiple windows on the screen in predefined layouts.
+
+The **Taskbar** has been centered by default, with the Start button and the search box in the center, and the system tray on the right.
+
+MS Windows 11 desktop (2021):
+
+![MS Windows 11 (2021)](unit01/windows-11.jpg)
+
+> Unlike GNU/Linux, in Windows the graphical interface is integrated into the operating system.
+
+In **GNU/Linux** there are a multitude of graphical environments that offer a wide range of possibilities for users. The reason is that in Unix family operating systems, the graphical interface runs as a layer above the text interface.
+
+This layer is called the Graphical Server (X Windows System or Wayland) and is responsible for drawing windows, buttons, text boxes, etc., as well as managing the events that affect them (mouse clicks, key combinations, etc.).
+
+Window managers run on the graphical server, which are responsible for specifying how each element should be drawn. The appearance, the ability to customize, etc. depend on the window manager.
+Some examples are: Kwin, Fluxbox, Openbox, Metacity or Icewm among others. To facilitate the use of window managers, libraries called toolkits have been created. The most used are:
+
+- GTK (Gimp toolkit)
+- QT (Cute)
+
+The last layer of this structure is the desktop environments, which rely on the toolkits to offer the final appearance that the user gets. The integration between applications and the general behavior of the interface depend on them.
+
+As desktop environments we have: KDE, Gnome, Xfce, Lxde, E17 or Cinnamon.
+
+Gnome desktop:
+
+![Ubuntu 22.04 LTS Jammy Jellyfish with Gnome 42 environment](unit01/Ubuntu_2204_LTS_Jammy_Jellyfish.png)
+
+KDE Plasma desktop:
+
+![KDE Plasma 5.24](unit01/KDE_Plasma_524.png)
+
+### Command-line interface CLI
+
+The text interface was the method used by early computers to communicate with the user. It allowed users to type commands that the computer executed when the `Enter` key was pressed.
+
+The text interface is often referred to as **Console**, **Terminal**, ***Shell***, **Command interpreter** or **Command-line interface** (even **CLI**).
+
+Nowadays, operating systems facilitate the use of the text interface through a window, although in some cases, such as the server versions of Ubuntu and MS Windows, can operate without a graphical interface. However, it is often used in professional environments and for advanced users.
+
+One of the **advantages** of the text interface is that it allows you to **automate the execution of several commands** by grouping them in a text file called a **script** (sometimes they are also called batch files or batch processes).
+
+In addition, it is common for the **user to have more options** when using the text interface than when using the graphical interface.
+
+The main drawback of the text interface is the **difficulty of learning** it for novice users.
+
+On the other hand, **graphical interfaces** also have some **drawbacks**, especially when they are installed on computers that act as servers:
+
+- When the computer is not serving a local user, the graphical interface **consumes resources** even if it is not used.
+- **Updates** will **take longer**, because more programs need to be updated.
+- The system is **more complex**, so there is a greater chance that it will offer **vulnerabilities** against possible security attacks.
+
+The character, or set of characters, that is displayed in the text interface to indicate that it is waiting for a new command is called ***prompt*** and its content will depend on the operating system and the configuration made by the user.
+
+By default, the MS Windows command line displays the current disk path.
+
+```PowerShell
+C:\Users\username> _
+```
+
+In Linux, although it is easily modifiable and depends on the distribution, the user name, computer name and current path are normally displayed. In addition, if it ends in a dollar sign (**`$`**), it indicates that we are acting as a normal user and if it ends in a hash sign (**`#`**), we are working as a privileged user (an administrator).
+
+```shell
+user@pc01:~$ _
+```
+
+Finally, note that the tilde character **`~`** is an abbreviation used by Linux to represent the **user's default folder**.
+
+### Windows command line interface
+
+In Microsoft systems, the command line interface has been changing and evolving.
+
+- **`COMMAND.COM`** was the first text interface used in MS-DOS.
+- **`CMD.EXE`** was incorporated in MS Windows NT-based systems
+- **`PowerShell`**, advanced text interface for MS Windows.
+- **`Windows Subsystem for Linux`** or **`WSL`**, is a compatibility layer developed by Microsoft to run Linux executables natively starting with MS Windows 10.
+
+### The GNU/Linux text interface
+
+Although there are many command interpreters for GNU/Linux systems, the most widely used is ***Bash*** (*Bourne again shell*). It was written by *Brian Fox* for the GNU project in 1987. It was based on *Bourne*, the most common text interface for *Unix* systems. Hence its name, which comes from a play on words, since born-again means rebirth.
+
+As we already mentioned, this was the shell chosen by Linus Torvalds to include with his kernel, which has led to it being found in practically all distributions. In addition, it is included in many other systems, such as Apple macOS, Solaris, IBM AIX, HP UX, FreeBSD, etc.
+
+> Other command interpreters for GNU/Linux are: Korn shell (ksh), zsh and C shell (csh).
+
+To access the command interpreter in Ubuntu 24.04 LTS, simply click on the *Show applications* icon on the desktop and start typing the word ``Terminal``. It is usually accessible with the key combination `Ctrl` + `Alt` + `T`. Each desktop environment uses a different terminal emulator, although we can install others such as *GNOME Terminal, Konsole, xterm, aterm, eterm, Terminator, Guake, st, etc*.
 
 
 ## Vocabulary
