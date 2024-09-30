@@ -336,7 +336,7 @@ The **operating system** manages the computer system's resources to ensure that 
 - **Security management**. The operating system manages the computer system's security, which is used to protect the system from unauthorized access and to ensure the privacy and integrity of data. It provides mechanisms for controlling access to the system, for encrypting data, and for detecting and preventing security threats.
 - **Network management**. The operating system manages the computer system's network connections, which are used to communicate with other systems. It provides mechanisms for connecting to networks, for sending and receiving data over networks, and for controlling the flow of data between systems.
 
-## Processe management
+## Process management
 
 A **process** is a program that is running on the computer system. The operating system manages processes to ensure that they can run efficiently and that they do not interfere with each other.
 
@@ -669,7 +669,7 @@ Here's a comparison of some popular file systems:
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | FAT32 | 8.3 | 4 GiB   | 2 TiB |  ❌ | ❌ | ❌ |
 | exFAT | 255 | 127 PiB | 512 TiB |  ❌ | ❌ | ❌ |
-| NTFS  | 255 | 16 TiB  | 256 TiB |  ✅ | Partial | ✅ |
+| NTFS  | 255 | 18 EiB  | 75 ZiB |  ✅ | Partial | ✅ |
 | ReFS  | 255 | 16 EiB  | 256 ZiB |  ✅ | Partial | ✅ |
 | ext3  | 255 | 2 TiB   | 32 TiB |  ✅ | ✅ | ✅ |
 | ext4  | 255 | 16 TiB  | 1 EiB |  ✅ | ✅ | ✅ |
