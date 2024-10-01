@@ -59,7 +59,11 @@ All computer systems consist of three fundamental parts:
 
 ---
 
-![Operating system structure. @wikipedia](unit01/Operating_system_placement.png){ width=40% }
+<figure markdown="span">
+  ![Operating system structure. @wikipedia](unit01/Operating_system_placement.png){ width=40% }
+    <figcaption>Operating system structure. @wikipedia</figcaption>
+</figure>
+
 
 !!! note
     Therefore, an example of a computer system could be a personal computer with its peripherals, the person using it, and the programs it contains.
@@ -70,7 +74,10 @@ All computer systems consist of three fundamental parts:
 
 The **_Von Neumann_ architecture** is a model for computer systems that was proposed by the mathematician and physicist **_John von Neumann_** in 1945. This model is based on the idea that the computer system should have a **central processing unit (CPU)** that can execute instructions, a **memory** that can store data and programs, and **input/output devices** that can communicate with the user and other devices.
 
-![Von Neumann architecture. @wikipedia](unit01/von_neumann.png)
+<figure markdown="span">
+    ![Von Neumann architecture. @wikipedia](unit01/von_neumann.png){ width=60% }
+    <figcaption>Von Neumann architecture. @wikipedia</figcaption>
+</figure>
 
 The _Von Neumann_ architecture consists of the following components:
 
@@ -817,35 +824,40 @@ For security reasons, server systems do not usually use a graphical interface.
 
 ### Origin of graphical user interfaces
 
-_IBM PC AT_ with _MS-DOS_ Operating System (1981):
-
-![IBM PC AT with MS-DOS Operating System (1981)](unit01/ibm_pc_at.jpg)
+<figure markdown="span">
+    ![IBM PC AT with MS-DOS Operating System (1981)](unit01/ibm_pc_at.jpg){ width="50%" }
+    <figcaption>_IBM PC AT_ with _MS-DOS_ Operating System (1981)</figcaption>
+</figure>
 
 First home computers used a text interface, where the user had to type commands to interact with the computer.
 
 The first graphical user interface was developed by researchers at _Xerox PARC_ and included in the _Xerox Star 8010_ computer in 1981. However, the design was based on the studies of scientist _Douglas Engelbart_ and on the first mouse, also designed by him.
 
-Prototype of the first computer mouse (1967):
+<figure markdown="span">
+    ![Prototype of the first computer mouse (1967)](unit01/first-computer-mouse.jpg){ width="50%" }
+    <figcaption>Prototype of the first computer mouse (1967)</figcaption>
+</figure>
 
-![Prototype of the first computer mouse (1967)](unit01/first-computer-mouse.jpg)
-
-_Xerox Star 8010_ (1981):
-
-![Xerox Star 8010 (1981)](unit01/xerox-star-8010.jpg)
+<figure markdown="span">
+    ![Xerox Star 8010 (1981)](unit01/xerox-star-8010.jpg){ width="50%" }
+    <figcaption>_Xerox Star 8010_ (1981)</figcaption>
+</figure>
 
 On this computer, text characters were replaced by bitmaps, icons, windows, etc.
 
 The next step was taken by Apple, which, after a visit by some of its executives to Xerox in 1979, began the development of its Apple Lisa, the first desktop computer that included a graphical interface and which began to be sold in 1983. However, it was the Apple Macintosh of 1984 that marked a before and after.
 
-Apple Lisa (1983):
-
-![Apple Lisa (1983)](unit01/apple-lisa.jpg)
+<figure markdown="span">
+    ![Apple Macintosh (1984)](unit01/apple-lisa.jpg){ width="50%" }
+    <figcaption>_Apple Lisa_ (1983)</figcaption>
+</figure>
 
 The following year, in 1985, Microsoft began marketing _MS Windows 1.0_, a graphical interface that ran on _MS-DOS_, the operating system that, until then, only worked with a text-based interface.
 
-_Microsoft Windows 1.0_ (1985):
-
-![Microsoft Windows 1.0 (1985)](unit01/windows1.png)
+<figure markdown="span">
+    ![Microsoft Windows 1.0 (1985)](unit01/windows1.png){ width="50%" }
+    <figcaption>_Microsoft Windows 1.0_ (1985)</figcaption>
+</figure>
 
 ### Current graphical interfaces
 
@@ -857,9 +869,10 @@ The *Fluent Design* interface has been developed, which makes a transition betwe
 
 In addition, the _Start menu_ has been updated, which now combines functionality equivalent to MS Windows XP and the MS Windows 8.1 Start screen in addition to other complementary functions.
 
-MS Windows 10 desktop (2014):
-
-![MS Windows 10 (2014)](unit01/windows-10.jpg){width=60%}
+<figure markdown="span">
+    ![MS Windows 10 (2014)](unit01/windows-10.jpg){ width="60%" }
+    <figcaption>_MS Windows 10_ (2014)</figcaption>
+</figure>
 
 **MS Windows 11** features a user interface based on *Fluent Design* including translucency, shadows, a new color palette, new icons, and rounded edges throughout the system interface. Other system changes include new system icons, animations, and sounds. MS Windows 11 updates several system dialog boxes, such as the "battery is running out" alert, among others.
 
@@ -869,9 +882,10 @@ Microsoft has also introduced a new feature called **Snap Layouts**, which allow
 
 The **Taskbar** has been centered by default, with the Start button and the search box in the center, and the system tray on the right.
 
-MS Windows 11 desktop (2021):
-
-![MS Windows 11 (2021)](unit01/windows-11.jpg)
+<figure markdown="span">
+    ![MS Windows 11 (2021)](unit01/windows-11.jpg){ width="60%" }
+    <figcaption>_MS Windows 11_ (2021)</figcaption>
+</figure>
 
 > Unlike GNU/Linux, in Windows the graphical interface is integrated into the operating system.
 
@@ -889,13 +903,15 @@ The last layer of this structure is the desktop environments, which rely on the 
 
 As desktop environments we have: KDE, Gnome, Xfce, Lxde, E17 or Cinnamon.
 
-Gnome desktop:
+<figure markdown="span">
+    ![Ubuntu 22.04 LTS Jammy Jellyfish with Gnome 42 environment](unit01/Ubuntu_2204_LTS_Jammy_Jellyfish.png){ width="60%" }
+    <figcaption>_Ubuntu 22.04 LTS Jammy Jellyfish with Gnome 42 environment_</figcaption>
+</figure>
 
-![Ubuntu 22.04 LTS Jammy Jellyfish with Gnome 42 environment](unit01/Ubuntu_2204_LTS_Jammy_Jellyfish.png)
-
-KDE Plasma desktop:
-
-![KDE Plasma 5.24](unit01/KDE_Plasma_524.png)
+<figure markdown="span">
+    ![KDE Plasma 5.24](unit01/KDE_Plasma_524.png){ width="60%" }
+    <figcaption>_KDE Plasma 5.24_</figcaption>
+</figure>
 
 ### Command-line interface CLI
 
