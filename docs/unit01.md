@@ -24,10 +24,10 @@ flowchart LR
 
 Data Processing Scheme:
 
-- Data input.
-- Process.
-- Storage (save and/or load).
-- Information output.
+- Data input. User interaction.
+- Process. Data processing.
+- Storage (save and/or load). Data could be stored or loaded.
+- Information output. User feedback.
 
 The **input** data is **processed** and **information** is obtained as **output**. Also, the data could be loaded and saved in the storage.
 
@@ -60,10 +60,9 @@ All computer systems consist of three fundamental parts:
 ---
 
 <figure markdown="span">
-  ![Operating system structure. @wikipedia](unit01/Operating_system_placement.png){ width=40% }
+  ![Operating system structure. @wikipedia](unit01/Operating_system_placement.png){ width=60% }
     <figcaption>Operating system structure. @wikipedia</figcaption>
 </figure>
-
 
 !!! note
     Therefore, an example of a computer system could be a personal computer with its peripherals, the person using it, and the programs it contains.
@@ -135,7 +134,7 @@ Typical examples are USB external hard drives, *pendrives* or SD cards.
 
 <figure markdown="span">
   ![Main hardware of a computer](unit01/Personal_computer_exploded.png){width=60%, height=60%}
-  <figcaption>Main hardware of a computer: 1. Screen.   2. motherboard   3. CPU.   4. Main memory.   5. Expansion cards.   6. Power supply.   7. Optical disk drive.   8. Internal disk drive.   9. Keyboard. 10. Mouse.</figcaption>
+  <figcaption>Main hardware of a computer: 1. Screen. 2. motherboard 3. CPU. 4. Main memory. 5. Expansion cards. 6. Power supply. 7. Optical disk drive. 8. Internal disk drive. 9. Keyboard. 10. Mouse.</figcaption>
 </figure>
 
 ### Logic components. *Software*
@@ -197,7 +196,6 @@ Computer systems are machines that automatically process information, but all th
 
 Each of these symbols is referred to as a **binary number** or **bit**. A *bit* is the smallest unit of information representation in a computer system.
 
-
 !!!abstract "Bit"
     The **bit** is the base unit of measurement of information, indicating the minimum amount that makes up the information. It can be represented by two symbols, `0` or `1`.
 
@@ -228,7 +226,7 @@ The encoding also depends on the use to which the data will be put. For this rea
 
 | $2^8$ | $2^7$ | $2^6$ | $2^5$ | $2^4$ | $2^3$ | $2^2$ | $2^1$ |         |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|--------:|
-|**128**| **64**| **32**| **16**| **8** | **4** | **2** | **1** |   Valor |
+|**128**| **64**| **32**| **16**| **8** | **4** | **2** | **1** |   Value |
 |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |   **0** |
 |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `1`  |   **1** |
 |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `0`  |  `1`  |  `0`  |   **2** |
@@ -262,9 +260,9 @@ _Table: Multiples using the International System prefixes_
 
 ---
 
-Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes, but according to the international system of units, 1 kB (kylobyte) corresponded to 1000 bytes, as with all other units of measurement. This generated some controversy and it was easy to make mistakes. To solve this confusion, in 1998 the International Electrotechnical Commission published an appendix in the **ISO/IEC 80000** standard defining the binary prefixes, thus giving birth to the unit kibibyte (KiB) to designate the correspondence between 1 KiB and 1024 bytes; from this moment on, the kilobyte unit is considered valid only for the correspondence between 1 kB and 1000 bytes.
+Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes, but according to the international system of units, 1 kB (kylobyte) corresponded to 1000 bytes, as with all other units of measurement. This generated some controversy and it was easy to make mistakes. To solve this confusion, in 1998 the _International Electrotechnical Commission_ published an appendix in the **ISO/IEC 80000** standard defining the binary prefixes, thus giving birth to the unit **kibibyte** (KiB) to designate the correspondence between 1 KiB and 1024 bytes; from this moment on, the kilobyte unit is considered valid only for the correspondence between 1 kB and 1000 bytes.
 
-| Nombre | Símbolo | Factor y valor en el [ISO/IEC 80000](https://es.wikipedia.org/wiki/ISO/IEC_80000 "ISO/IEC 80000")\-13 |
+| Name | Symbol | Factor [ISO/IEC 80000](https://es.wikipedia.org/wiki/ISO/IEC_80000 "ISO/IEC 80000")\-13 |
 |:--|:--:|--:|
 | byte | B | $2^{0}$ = 1 |
 | [kibibyte](https://es.wikipedia.org/wiki/Kibibyte "Kibibyte") | KiB | $2^{10}$ = 1024 |
@@ -302,11 +300,17 @@ Operating systems has **two basic functions**.
 - **File system**. It is responsible for managing the computer system's files and directories. It allows the user to store, organize, and access information.
 - **User interface**. It is the part of the operating system that allows the user to interact with the computer system. It can be graphical, text-based, or voice-based.
 
-![GUI Interfaz gráfica de usuario](unit01/Budgie_Desktop_Environment.png)
+<figure markdown="span">
+  ![GUI (Graphical User Interface)](unit01/Budgie_Desktop_Environment.png){ width=70% }
+  <figcaption>GUI (Graphical User Interface)</figcaption>
+</figure>
 
 ---
 
-![CLI Interfaz de línea de comandos](unit01/Bash_demo.png)
+<figure markdown="span">
+  ![CLI (Command Line Interface)](unit01/Bash_demo.png){ width=70% }
+  <figcaption>CLI (Command Line Interface)</figcaption>
+</figure>
 
 ---
 
@@ -519,7 +523,10 @@ In UNIX systems, services are called **daemons**.
 
 **Memory** is one of the most important resources in a computer. Memory must be **fast**, **high capacity** and **expensive**. Currently, no technology meets all three objectives simultaneously. A solution has been adopted where **the memory system is built hierarchically in layers**, where the higher layers have higher speed and cost per bit, but lower capacity than the lower layers.
 
-![Memory hierarchy](unit01/ComputerMemoryHierarchy.png)
+<figure markdown="span">
+  ![Memory hierarchy](unit01/ComputerMemoryHierarchy.png){ width=70% }
+  <figcaption>Memory hierarchy</figcaption>
+</figure>
 
 There are four major storage levels:
 
@@ -539,7 +546,10 @@ Main functions:
 - **Virtual memory**. When a process is too large to be loaded into memory, a part of the secondary memory (*hard disk*) is used as back-up memory. This often makes the system run much **slower**.
 - **Garbage collector**. It is responsible for the automatic **release of memory** resources for a process that has terminated its execution or enters an inconsistent state.
 
-![Virtual address space](unit01/Virtual_address_space_and_physical_address_space_relationship.png)
+<figure markdown="span">
+  ![Virtual address space](unit01/Virtual_address_space_and_physical_address_space_relationship.png){ width=70% }
+  <figcaption>Virtual address space</figcaption>
+</figure>
 
 Multitasking OS requirements:
 
@@ -549,13 +559,21 @@ Multitasking OS requirements:
 
 If the system were to reserve physical memory by contiguously hosting processes, there would come a point where **external fragmentation** would occur, i.e. gaps where new processes could not be contiguously hosted.
 
-![Memory fragmentation](unit01/tetris.png)
 
-We can compare this situation with the game of *Tetris*, where the objective is to fit the pieces together to form complete lines. In the case of memory, the pieces are the processes and the complete lines are the contiguous memory blocks. If the pieces are not placed correctly, gaps will appear that will prevent new pieces from being placed.
+!!! note "Tetris"
+    We can compare this situation with the game of *Tetris*, where the objective is to fit the pieces together to form complete lines. In the case of memory, the pieces are the processes and the complete lines are the contiguous memory blocks. If the pieces are not placed correctly, gaps will appear that will prevent new pieces from being placed.
+
+    <figure markdown="span">
+    ![Memory fragmentation](unit01/tetris.png){ width=70% }
+    <figcaption>Tetris</figcaption>
+    </figure>
 
 To solve this problem, the operating system uses **paging** and **segmentation** techniques.
 
-![Memory fragmentation](unit01/External_fragmentation.png)
+<figure markdown="span">
+  ![Memory fragmentation](unit01/External_fragmentation.png){ width=70% }
+  <figcaption>Memory fragmentation</figcaption>
+</figure>
 
 ### Memory paging
 
@@ -575,7 +593,10 @@ This way, processes do not need to be loaded contiguously in memory, as frames c
 
     This is the same as internal fragmentation, where a process page does not fill a frame of memory completely, so some memory is wasted.
 
-![Memory paging](unit01/Memory_paging.png)
+<figure markdown="span">
+    ![Memory paging](unit01/Memory_paging.png){ width=70% }
+    <figcaption>Memory paging</figcaption>
+</figure>
 
 ### Memory segmentation
 
@@ -709,9 +730,10 @@ Common basic permission levels include:
 - **Write:** Allows users to modify the contents of a file.
 - **Execute:** Allows users to run a file as a program.
 
-Example of file permissions in _Microsoft Windows_:
-
-![File permissions](unit01/windows_permissions.png)
+<figure markdown="span">
+    ![File permissions](unit01/windows_permissions.png)
+    <figcaption>Example of file permissions in _Microsoft Windows_</figcaption>
+</figure>
 
 In most systems, the graphical representation for **users** and **groups** is as follows:
 
@@ -735,7 +757,10 @@ We need to consider a storage device must contain millions of files, so it is ne
 
 In a graphical representation, the hierarchical structure looks like this:
 
-![Hierarchical structure](unit01/FilesAndFolders.png)
+<figure markdown="span">
+    ![Hierarchical structure](unit01/FilesAndFolders.png)
+    <figcaption>Hierarchical structure</figcaption>
+</figure>
 
 An example of a hierarchical structure is shown below:
     
@@ -839,7 +864,7 @@ The first graphical user interface was developed by researchers at _Xerox PARC_ 
 </figure>
 
 <figure markdown="span">
-    ![Xerox Star 8010 (1981)](unit01/xerox-star-8010.jpg){ width="50%" }
+    ![Xerox Star 8010 (1981)](unit01/xerox-star-8010.jpg){ width="40%" }
     <figcaption>_Xerox Star 8010_ (1981)</figcaption>
 </figure>
 
@@ -855,7 +880,7 @@ The next step was taken by Apple, which, after a visit by some of its executives
 The following year, in 1985, Microsoft began marketing _MS Windows 1.0_, a graphical interface that ran on _MS-DOS_, the operating system that, until then, only worked with a text-based interface.
 
 <figure markdown="span">
-    ![Microsoft Windows 1.0 (1985)](unit01/windows1.png){ width="50%" }
+    ![Microsoft Windows 1.0 (1985)](unit01/windows1.png){ width="70%" }
     <figcaption>_Microsoft Windows 1.0_ (1985)</figcaption>
 </figure>
 
