@@ -1,13 +1,62 @@
 # Unit 1: Characterization of Operating Systems
 
-## Objectives
-
-- Understand the characteristics, types, and applications of operating systems.
-- Identify processes and their states.
-- Describe the structure and organization of the file system.
-- Distinguish the attributes of a file and a directory.
-- Recognize file and directory permissions.
-- Verify the usefulness of transactional systems.
+- [Introduction to Computer Systems](#introduction-to-computer-systems)
+    - [Computer Science](#computer-science)
+- [Computer Equipment](#computer-equipment)
+    - [Computer System](#computer-system)
+    - [Von Neumann Architecture](#von-neumann-architecture)
+    - [Physical Components. *Hardware*](#physical-components-hardware)
+    - [Logic components. *Software*](#logic-components-software)
+    - [The *base* software](#the-base-software)
+    - [Classification of computer systems](#classification-of-computer-systems)
+- [Information representation systems](#information-representation-systems)
+    - [Measurement of information](#measurement-of-information)
+- [The operating system](#the-operating-system)
+    - [Elements of the operating system](#elements-of-the-operating-system)
+    - [Types of operating systems](#types-of-operating-systems)
+- [Functions of the operating system](#functions-of-the-operating-system)
+- [Process management](#process-management)
+    - [Process states](#process-states)
+    - [Process scheduling](#process-scheduling)
+        - [First-come, first-served (FCFS)](#first-come-first-served-fcfs)
+        - [Shortest job first (SJF)](#shortest-job-first-sjf)
+        - [Shortest remaining time first (SRTF)](#shortest-remaining-time-first-srtf)
+        - [Round-robin (RR)](#round-robin-rr)
+    - [Process communication](#process-communication)
+    - [Services](#services)
+- [Memory](#memory)
+    - [Memory paging](#memory-paging)
+    - [Memory segmentation](#memory-segmentation)
+    - [Virtual memory](#virtual-memory)
+- [File System Management](#file-system-management)
+    - [Objectives](#objectives)
+    - [Key Components and Functions](#key-components-and-functions)
+    - [File](#file)
+    - [Directory](#directory)
+    - [Metadata](#metadata)
+    - [File System Types](#file-system-types)
+    - [File System Compatibility](#file-system-compatibility)
+    - [Comparison of File Systems](#comparison-of-file-systems)
+    - [File System Operations](#file-system-operations)
+    - [File System Permissions](#file-system-permissions)
+    - [Data integrity](#data-integrity)
+    - [Hierarchical Structure](#hierarchical-structure)
+    - [Path](#path)
+        - [Absolute path](#absolute-path)
+        - [Relative path](#relative-path)
+- [User interfaces](#user-interfaces)
+    - [Origin of graphical user interfaces](#origin-of-graphical-user-interfaces)
+    - [Current graphical interfaces](#current-graphical-interfaces)
+    - [:material-console: Command-line interface CLI](#material-console-command-line-interface-cli)
+    - [Windows command line interface](#windows-command-line-interface)
+    - [The GNU/Linux text interface](#the-gnulinux-text-interface)
+- [Operating System Licenses](#operating-system-licenses)
+    - [Proprietary Software Licenses](#proprietary-software-licenses)
+- [Current Operating Systems](#current-operating-systems)
+    - [Microsoft Windows :material-microsoft-windows:](#microsoft-windows-material-microsoft-windows)
+    - [GNU/Linux Distributions :simple-linux:](#gnulinux-distributions-simple-linux)
+    - [Ubuntu :material-ubuntu:](#ubuntu-material-ubuntu)
+- [Vocabulary](#vocabulary)
 
 ## Introduction to Computer Systems
 
@@ -1081,11 +1130,11 @@ Despite its success as a graphical interface, Microsoft Windows continued to rel
 
 This situation persisted until **MS Windows XP**, which was the first version to include the kernel from Microsoft's professional line, specifically from Windows 2000, which featured the **NT kernel** (*New Technology*). This convergence has continued to the present day.
 
-The next significant change came with **MS Windows 8**, which saw a major overhaul of its graphical interface. It removed the Start button and added a Start screen intended to facilitate use on touch devices. The new interface was called *Metro UI*.
+The next significant change came with **MS Windows 8**, which saw a major overhaul of its graphical interface. It removed the _Start button_ and added a _Start screen_ intended to facilitate use on touch devices. The new interface was called *Metro UI*.
 
 This drastic change led to some user dissatisfaction, prompting Microsoft to reconsider and restore the *Start button*, initially partially with Windows 8.1 and then fully with **MS Windows 10**.
 
-Another change introduced by Windows 8 was support for a processor architecture other than x86 from Intel and AMD. From this version onwards, MS Windows has been available on phones and tablets equipped with **ARM processors**.
+Another change introduced by MS Windows 8 was support for a processor architecture other than x86 from Intel and AMD. From this version onwards, MS Windows has been available on phones and tablets equipped with **ARM processors**.
 
 Microsoft offers different editions for each Windows version. For Windows 11, they are:
 
@@ -1159,7 +1208,7 @@ In this course, we will work with _Ubuntu_ for three main reasons:
 - It is one of the **most widely adopted** distributions, with a **large supportive community**.
 - It serves as a **base for many distributions**, such as _Linux Mint_, _Zorin OS_, _Pop!_OS_, _Elementary OS_, _Linux Lite_, _Lubuntu_, _Feren OS_, _KDE Neon_, and others.
 
-_Ubuntu_ is offered **freely and at no cost**, but it is also available in a **commercial version** called **_Ubuntu Advantage_** that includes **technical support** and **additional services**.
+_Ubuntu_ is offered **freely and at no cost**, but have the option to obtain **technical support** via subscription payment.
 
 It is offered in a **open source** and relies on the collaboration of a large community of developers. In this regard, _Ubuntu_ makes some exceptions:​
 
@@ -1168,7 +1217,7 @@ It is offered in a **open source** and relies on the collaboration of a large co
 
 In both cases, the objective is to **facilitate the user experience** for the end user.​
 
-- The distribution is sponsored by a British company called **Canonical** which is owned by the South African billionaire *Mark Shuttleworth*.​
+- The distribution is sponsored by a british company called **Canonical** which is owned by the South African *Mark Shuttleworth*.​
 - Canonical's **business model** is based on **technical support and user services**.
 - To adapt to different contexts, it offers different versions for domestic and professional environments.
 
