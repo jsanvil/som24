@@ -828,13 +828,13 @@ There is no better interface than another, and their advantages and disadvantage
 
 | Interface | Advantages | Disadvantages |
 |-|-|-|
-|**CLI**| Access to all the system's functionalities. | Knowledge of the commands |
+|:material-console: **CLI**| Access to all the system's functionalities. | Knowledge of the commands |
 | | Ease of automation | Complexity |
 | | Reduced resource consumption | |
-|**GUI**| Ease of use | Actions limited to the interface |
+|:material-button-cursor: **GUI**| Ease of use | Actions limited to the interface |
 | | Standardized | Consumes more resources |
 | | Used in most programs | |
-|**NUI**| Ease of use | Inaccurate |
+|:material-account-voice: **NUI**| Ease of use | Inaccurate |
 | | Intuitive | Simple actions |
 
 **The most common way of interacting with operating systems is through their graphical interface**, also called **GUI** (*Graphical User Interface*). In reality, it is nothing more than a program that **facilitates communication between the computer and the user** by manipulating graphic elements **using a series of predefined actions** carried out with the mouse and and the keyboard.
@@ -938,7 +938,7 @@ As desktop environments we have: KDE, Gnome, Xfce, Lxde, E17 or Cinnamon.
     <figcaption>_KDE Plasma 5.24_</figcaption>
 </figure>
 
-### Command-line interface CLI
+### :material-console: Command-line interface CLI
 
 The text interface was the method used by early computers to communicate with the user. It allowed users to type commands that the computer executed when the `Enter` key was pressed.
 
@@ -993,6 +993,209 @@ As we already mentioned, this was the shell chosen by Linus Torvalds to include 
 
 To access the command interpreter in Ubuntu 24.04 LTS, simply click on the *Show applications* icon on the desktop and start typing the word ``Terminal``. It is usually accessible with the key combination `Ctrl` + `Alt` + `T`. Each desktop environment uses a different terminal emulator, although we can install others such as *GNOME Terminal, Konsole, xterm, aterm, eterm, Terminator, Guake, st, etc*.
 
+---
+
+## Operating System Licenses
+
+When a computer user installs a specific program, they are directly or indirectly accepting **terms of use** stated in a software license.
+
+A **license** is a **contract** between the **provider** of a software program and the **user** (or company) who uses it, establishing the conditions to which both parties commit during the period the software is in use.
+
+Some aspects regulated by a software license include:
+
+- The **binding** of the software to specific ***hardware***.
+- The **number of copies** of the software that the user can use.
+- The **rights** that the user has **over the software**.
+- The **period** during which these rights are granted.
+- The **responsibility** of the provider for the product's defects.
+- The **possibility of transferring** the usage rights to others.
+- Etc.
+
+Based on the rights retained by the provider over their product, we have the following types of software licenses:
+
+- **Open Source Software Licenses**: These licenses refer to software that makes its **source code** available to users. This type of license is usually associated with the concept of **_Free Software_**. Within this category, there are **two subtypes**:
+
+  - ***Permissive***: Programs with this type of license **can be modified** or used to create new programs **without** the resulting software needing to maintain the **conditions of the original license**.
+    Examples of this type of license include:
+    - Apache Software License
+    - PHP License
+    - Perl License
+    - Python License
+    - W3C Software Notice and License
+    - BSD License
+    - MIT License
+    - Open LDAP License
+    - Etc.
+  
+  - **_Non-permissive_**: Programs with this type of license **can be modified** or used to create new programs, but the resulting software must generally be published **under the same terms as the original license**.
+    Examples of this type of license include:
+    - GNU General Public License (GPL)
+    - Common Public License
+    - OpenSSL License
+    - Eclipse Public License
+    - Affero General Public License
+    - Etc.
+
+- **Closed Source Software Licenses**: In contrast to open source, this refers to software that **does not distribute its source code**. It is also commonly known as **proprietary** or **private** software.
+  These licenses **limit the users' ability** to use, copy, modify, redistribute, or transfer the software.
+  An example is the **EULA** (*End User License Agreement*), also known as **CLUF** (*Contrato de Licencia para Usuario Final* in Spanish).
+
+In addition to the previous types of licenses, there are some other common variations:
+
+- **Freeware**: This type of license applies to software that is distributed **free of charge** and for an **indefinite time**. **Redistribution** is typically allowed, but modification and sometimes commercial use are not. Freeware usually does not include the source code.
+- **Shareware**: This type of license allows the software to be **evaluated**, although usage may be **limited in time** or in **functionality**. To fully use the product without limitations, a payment is required.
+- **Public Domain**: Software in this category is released **without any license**. This type of software can be used, modified, redistributed, or relicensed **without restrictions**.
+
+### Proprietary Software Licenses
+
+Proprietary software licenses can be acquired through different methods:
+
+- ***Retail***
+- ***OEM***
+- **Volume licenses**
+
+Let's describe each in more detail:
+
+- **Retail** (Individual Sales)
+  This is the typical way a user purchases software in a store. It is generally **targeted at users who do not need more than five licenses**, and it comes in two variants:
+  - *Full Product*: Does not require a previous version of the product for installation.
+  - *Upgrade*: Builds upon a previously licensed version. Typically, upgrade licenses are lower in cost.
+
+- **OEM** (Original Equipment Manufacturer)
+  Software that comes **pre-installed** when purchasing a new computer includes an *OEM* license. This distribution method ensures proper installation and configuration.
+  Usually, **the license is bound to the hardware** with which it is acquired, meaning it **cannot be uninstalled and used on another computer**. However, transferring the entire system (hardware and software) to a different user is often allowed.
+
+- **Volume Licenses**
+  Software manufacturers often have contracts tailored **for organizations** or **companies needing more licenses** than an average user. The contract may include specific rights, such as transfer rights to certain users meeting specific conditions.
+  In this type of licensing, there are also options for full products or upgrades. It is common to have downgrade rights to support older systems as well.
+
+## Current Operating Systems
+
+### Microsoft Windows :material-microsoft-windows:
+
+*Microsoft* offers a full range of operating systems covering mobile devices, embedded systems, desktops, and servers.
+
+When the **first version** of _MS Windows_ was released in 1985, it **wasn't an operating system**. **It was just a graphical interface** running on top of a text-based operating system called **MS-DOS** (*Microsoft Disk Operating System*).
+
+Despite its success as a graphical interface, Microsoft Windows continued to rely on MS-DOS until the release of **MS Windows 95** in 1995. Though _MS Windows 95_ brought significant advancements, it still internally included the *MS-DOS kernel*.
+
+This situation persisted until **MS Windows XP**, which was the first version to include the kernel from Microsoft's professional line, specifically from Windows 2000, which featured the **NT kernel** (*New Technology*). This convergence has continued to the present day.
+
+The next significant change came with **MS Windows 8**, which saw a major overhaul of its graphical interface. It removed the Start button and added a Start screen intended to facilitate use on touch devices. The new interface was called *Metro UI*.
+
+This drastic change led to some user dissatisfaction, prompting Microsoft to reconsider and restore the *Start button*, initially partially with Windows 8.1 and then fully with **MS Windows 10**.
+
+Another change introduced by Windows 8 was support for a processor architecture other than x86 from Intel and AMD. From this version onwards, MS Windows has been available on phones and tablets equipped with **ARM processors**.
+
+Microsoft offers different editions for each Windows version. For Windows 11, they are:
+
+- MS Windows 11 **Home** - For **home** PCs.
+- MS Windows 11 **Pro** - Advanced features for **businesses**.
+- MS Windows 11 **Education** - For **educational** environments, may include fewer features.
+- MS Windows 11 **Enterprise** - Extra features for **large organizations**.
+- MS Windows 11 **Pro Education** - Pro version with **additional features for education** and some restrictions.
+- MS Windows 11 **Pro for Workstations** - For **high-computational workloads**.
+- MS Windows 11 **Mixed Reality** - Designed for devices like Microsoft **HoloLens**.
+
+### GNU/Linux Distributions :simple-linux:
+
+Characteristics of Linux OS:
+
+- **GPL License** (GNU General Public License)
+- **Free of charge**
+- **Open source** - Usage, modification, and distribution are allowed.
+- **Stable**
+- **Secure**
+- **Multitasking**
+- **Multiuser**
+
+A **Linux distribution**, commonly known as a **_distro_**, is a software distribution that includes the **Linux kernel** and a set of **software packages**, aimed at meeting the needs of a group of users.
+
+For a list of major distributions: [https://distrowatch.com/](https://distrowatch.com/)
+
+Components:
+
+- **Kernel**
+- **Tools and libraries**
+- **Documentation**
+- **Package manager**
+- **Desktop environment** (optional)
+
+History:
+
+- **1970**: Ken Thompson and Dennis Ritchie create ***Unix***, a commercial operating system by _Bell Labs_.
+- **1978**: University of Berkeley creates ***BSD***, a _Unix_ derivative for teaching.
+- **1983**: _Richard Stallman_ starts the **GNU project** with the intention of creating a free operating system.
+- **1987**: _Andrew S. Tanenbaum_ creates ***Minix***, based on _Unix_ version 6, for teaching purposes.
+- **1991**: _Linus Torvalds_ creates the ***Linux*** kernel, based on _Minix_.
+- **1992**: _Linux_ adopts the **GPL license** from the **GNU** project.
+- **1993**: _Ian Murdock_ founds the **Debian project**.
+
+Advantages:
+
+- **Economic**: Spain spends over 1 billion euros annually on _Microsoft_ licenses. With _Linux_, this cost could be reduced to maintenance costs creating more jobs.
+- **Local support**: Reduces dependency on a foreign company and boosts the local economy.
+- **Open formats**: Non-proprietary, they allow interoperability between systems, independent of hardware, applications, or OS.
+- **Open source**: The source code is available to everyone, allowing for improvements and customization.
+- **No planned obsolescence** or commercial interests.
+- **Security**: Does not include malicious software.
+- **Repositories**: Access to thousands applications for free.
+
+Disadvantages:
+
+- **Aesthetic quality** often lower than proprietary software.
+- **Proprietary formats**: Some applications are not available for _Linux_ or are not compatible, like MS Office, AutoCAD, Photoshop, etc..
+- **Proprietary applications and games**: Today, with Proton, it is possible to run many _MS Windows_ games on Linux, with minimal performance loss.
+- **Lack of familiarity**: Users are accustomed to _MS Windows_ and need to learn new ways of doing things.
+- **Compatible hardware**: Some devices do not have drivers for _Linux_ or are not supported.
+
+### Ubuntu :material-ubuntu:
+
+**Ubuntu** is a distribution **based on Debian**, one of the oldest distributions that has remained true to _Linux_'s original pillars.
+
+In this course, we will work with _Ubuntu_ for three main reasons:
+
+- It is **user-oriented**, making it easier to use.
+- It is one of the **most widely adopted** distributions, with a **large supportive community**.
+- It serves as a **base for many distributions**, such as _Linux Mint_, _Zorin OS_, _Pop!_OS_, _Elementary OS_, _Linux Lite_, _Lubuntu_, _Feren OS_, _KDE Neon_, and others.
+
+_Ubuntu_ is offered **freely and at no cost**, but it is also available in a **commercial version** called **_Ubuntu Advantage_** that includes **technical support** and **additional services**.
+
+It is offered in a **open source** and relies on the collaboration of a large community of developers. In this regard, _Ubuntu_ makes some exceptions:​
+
+- It includes certain **proprietary hardware drivers**, as well as **some parts** of the kernel that **are not free**.​
+- It also includes in its repositories some **applications that are not free**, although they are free.​
+
+In both cases, the objective is to **facilitate the user experience** for the end user.​
+
+- The distribution is sponsored by a British company called **Canonical** which is owned by the South African billionaire *Mark Shuttleworth*.​
+- Canonical's **business model** is based on **technical support and user services**.
+- To adapt to different contexts, it offers different versions for domestic and professional environments.
+
+    !!! note "Ubuntu flavors"
+        **Ubuntu** is the main distribution, but there are other versions called **flavors** that use different desktop environments. Can be found at [https://ubuntu.com/download/flavours](https://ubuntu.com/download/flavours)
+
+- **Stable versions** are released every **six months**, in the months of **April** and **October**.​
+- In their **version number**, the first two digits refer to the **year** and the next two to the **month** of release.​
+
+    > - **Ubuntu 24.04 LTS** was released in **April 2024**.
+    > - **Ubuntu 23.10** was released in **October 2023**.
+    > - **Ubuntu 23.04** was released in **April 2023**.
+
+- The **version name** has two words: the first is an adjective and the second is the name of an animal.​
+
+    >  - Ubuntu 24.04 LTS (**Noble Numbat**).
+    >  - Ubuntu 22.04 LTS (**Jammy Jellyfish**).
+    >  - Ubuntu 20.04 LTS (**Focal Fossa**).
+
+- **Technical support** and **security updates** of **18 months** for most versions.​
+- **LTS** (*Long Term Support*) versions are released every **two years** and currently offer **5 years of technical support** and later an extended **security maintenance** of **5 more years**.​
+
+    > **Ubuntu 24.04 LTS** is the **current LTS version** and will be **supported** until **2029** and will have **security updates** until **2034**.
+
+    It's recommended to use the **LTS** versions for **production environments**, like servers, educational centers, companies, etc., due to their **longer support** period.
+
+---
 
 ## Vocabulary
 
