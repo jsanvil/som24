@@ -965,17 +965,42 @@ The **Taskbar** has been centered by default, with the Start button and the sear
 
 In **GNU/Linux** there are a multitude of graphical environments that offer a wide range of possibilities for users. The reason is that in Unix family operating systems, the graphical interface runs as a layer above the text interface.
 
-This layer is called the Graphical Server (X Windows System or Wayland) and is responsible for drawing windows, buttons, text boxes, etc., as well as managing the events that affect them (mouse clicks, key combinations, etc.).
+In Linux, the structure of the graphical interface is as follows:
 
-Window managers run on the graphical server, which are responsible for specifying how each element should be drawn. The appearance, the ability to customize, etc. depend on the window manager.
+```mermaid
+flowchart LR
+    O(Operating System) <-.-> X
+    subgraph GUI
+        direction TB
+            X[Graphical Server] <--> W[Window Manager]
+            W <--> D[Desktop Environment]
+    end
+    D <-.-> U[User]
+```
+
+- **Graphical Server** is the program that manages the graphical interface and is responsible for drawing windows, buttons, text boxes, etc., as well as managing the events that affect them (mouse clicks, key combinations, etc.).
+
+    The most used are:
+
+    - **X Windows System**. The most used graphical server in Unix-like systems.
+    - **Wayland**. A new graphical server that is gradually replacing X Windows System.
+
+- **Window managers** run on the graphical server, which are responsible for specifying how each element should be drawn. The appearance, the ability to customize, etc. depend on the window manager.
 Some examples are: Kwin, Fluxbox, Openbox, Metacity or Icewm among others. To facilitate the use of window managers, libraries called toolkits have been created. The most used are:
 
-- GTK (Gimp toolkit)
-- QT (Cute)
+    - GTK (Gimp toolkit)
+    - QT (Cute)
 
-The last layer of this structure is the desktop environments, which rely on the toolkits to offer the final appearance that the user gets. The integration between applications and the general behavior of the interface depend on them.
+- **Desktop environments**, which rely on the toolkits to offer the final appearance that the user gets. The integration between applications and the general behavior of the interface depend on them. In addition, they include a series of applications that are usually integrated into the environment, such as file managers, text editors, image viewers, etc.
 
-As desktop environments we have: KDE, Gnome, Xfce, Lxde, E17 or Cinnamon.
+    Most common desktop environments are:
+
+    - **Gnome**. Used by default in many distributions.
+    - **KDE Plasma**. The most complete and configurable. It's more similar to MS Windows.
+    - **Xfce**. A lightweight desktop environment.
+    - **LXDE**. Another lightweight desktop environment.
+    - **E17**. A desktop environment with a futuristic appearance.
+    - **Cinnamon**. Tries to emulate the appearance of MS Windows.
 
 <figure markdown="span">
     ![Ubuntu 22.04 LTS Jammy Jellyfish with Gnome 42 environment](unit01/Ubuntu_2204_LTS_Jammy_Jellyfish.png){ width="60%" }
@@ -1062,32 +1087,44 @@ Some aspects regulated by a software license include:
 
 Based on the rights retained by the provider over their product, we have the following types of software licenses:
 
+- **Open Source Software Licenses**
+    - **Permissive**
+    - **Non-permissive**
+- **Proprietary Software Licenses**
+- **Freeware**
+- **Shareware**
+- **Public Domain**
+
+Descriptions of each type of license are provided below:
+
 - **Open Source Software Licenses**: These licenses refer to software that makes its **source code** available to users. This type of license is usually associated with the concept of **_Free Software_**. Within this category, there are **two subtypes**:
 
-  - ***Permissive***: Programs with this type of license **can be modified** or used to create new programs **without** the resulting software needing to maintain the **conditions of the original license**.
-    Examples of this type of license include:
-    - Apache Software License
-    - PHP License
-    - Perl License
-    - Python License
-    - W3C Software Notice and License
-    - BSD License
-    - MIT License
-    - Open LDAP License
-    - Etc.
-  
-  - **_Non-permissive_**: Programs with this type of license **can be modified** or used to create new programs, but the resulting software must generally be published **under the same terms as the original license**.
-    Examples of this type of license include:
-    - GNU General Public License (GPL)
-    - Common Public License
-    - OpenSSL License
-    - Eclipse Public License
-    - Affero General Public License
-    - Etc.
+    - ***Permissive***: Programs with this type of license **can be modified** or used to create new programs **without** the resulting software needing to maintain the **conditions of the original license**.
+        Examples of this type of license include:
+        - Apache Software License
+        - PHP License
+        - Perl License
+        - Python License
+        - W3C Software Notice and License
+        - BSD License
+        - MIT License
+        - Open LDAP License
+        - Etc.
+    
+    - **_Non-permissive_**: Programs with this type of license **can be modified** or used to create new programs, but the resulting software must generally be published **under the same terms as the original license**.
+        Examples of this type of license include:
+        - GNU General Public License (GPL)
+        - Common Public License
+        - OpenSSL License
+        - Eclipse Public License
+        - Affero General Public License
+        - Etc.
 
-- **Closed Source Software Licenses**: In contrast to open source, this refers to software that **does not distribute its source code**. It is also commonly known as **proprietary** or **private** software.
-  These licenses **limit the users' ability** to use, copy, modify, redistribute, or transfer the software.
-  An example is the **EULA** (*End User License Agreement*), also known as **CLUF** (*Contrato de Licencia para Usuario Final* in Spanish).
+- **Proprietary Software Licenses**: This refers to software that **does not distribute its source code**. It is also commonly known as **closed source** or **private** software.
+  
+    These licenses **limit the users' ability** to use, copy, modify, redistribute, or transfer the software.
+
+    An example is the **EULA** (*End User License Agreement*), (**CLUF** *Contrato de Licencia para Usuario Final* in Spanish).
 
 In addition to the previous types of licenses, there are some other common variations:
 
@@ -1106,17 +1143,23 @@ Proprietary software licenses can be acquired through different methods:
 Let's describe each in more detail:
 
 - **Retail** (Individual Sales)
-  This is the typical way a user purchases software in a store. It is generally **targeted at users who do not need more than five licenses**, and it comes in two variants:
-  - *Full Product*: Does not require a previous version of the product for installation.
-  - *Upgrade*: Builds upon a previously licensed version. Typically, upgrade licenses are lower in cost.
+
+    This is the typical way a user purchases software in a store. It is generally **targeted at users who do not need more than five licenses**, and it comes in two variants:
+
+    - *Full Product*: Does not require a previous version of the product for installation.
+    - *Upgrade*: Builds upon a previously licensed version. Typically, upgrade licenses are lower in cost.
 
 - **OEM** (Original Equipment Manufacturer)
-  Software that comes **pre-installed** when purchasing a new computer includes an *OEM* license. This distribution method ensures proper installation and configuration.
-  Usually, **the license is bound to the hardware** with which it is acquired, meaning it **cannot be uninstalled and used on another computer**. However, transferring the entire system (hardware and software) to a different user is often allowed.
+  
+    Software that comes **pre-installed** when purchasing a new computer includes an *OEM* license. This distribution method ensures proper installation and configuration.
+
+    Usually, **the license is bound to the hardware** with which it is acquired, meaning it **cannot be uninstalled and used on another computer**. However, transferring the entire system (hardware and software) to a different user is often allowed.
 
 - **Volume Licenses**
-  Software manufacturers often have contracts tailored **for organizations** or **companies needing more licenses** than an average user. The contract may include specific rights, such as transfer rights to certain users meeting specific conditions.
-  In this type of licensing, there are also options for full products or upgrades. It is common to have downgrade rights to support older systems as well.
+  
+    Software manufacturers often have contracts tailored **for organizations** or **companies needing more licenses** than an average user. The contract may include specific rights, such as transfer rights to certain users meeting specific conditions.
+
+    In this type of licensing, there are also options for full products or upgrades. It is common to have downgrade rights to support older systems as well.
 
 ## Current Operating Systems
 
