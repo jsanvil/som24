@@ -3,6 +3,7 @@ site_name: Sistemas Operativos Monopuesto
 nav:
   - Home: index.md
   - Unit1: unit01.md
+  - Unit2: unit02.md
 
 theme:
   name: material
