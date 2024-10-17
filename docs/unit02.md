@@ -34,7 +34,7 @@ The main **advantages** of virtualization are:
     - [PlayStation Plus Premium](https://www.playstation.com/en-us/ps-plus/)
     - [Amazon Luna](https://luna.amazon.com/)
 
-## 2.1. Virtualization concepts
+## Virtualization concepts
 
 The most important concepts to understand what virtualization is are:
 
@@ -43,6 +43,8 @@ The most important concepts to understand what virtualization is are:
 - **Hypervisor** or _**Virtual Machine Monitor**_ (_VMM_).
 - **Virtual Machine** (_VM_).
 - **Container**.
+
+---
 
 - **Host** system, is the operating system of the computer in which we install our *virtualization software* and which will assign or lend certain hardware resources to the *virtual machine* that we create.
 
@@ -55,11 +57,11 @@ The most important concepts to understand what virtualization is are:
 - **Container**, is a **lightweight** and **portable** software package that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings. Containers are isolated from each other and from the host system, but they share the kernel of the host system.
 
 <figure markdown="span">
-    ![Logical diagram of full virtualization](./unit02/Logical_diagram_Full_virtualization.png){ width=90% }
+    ![Logical diagram of full virtualization](./unit02/Logical_diagram_Full_virtualization.png){ width=100% }
     <figcaption>Logical diagram of full virtualization. @wikipedia</figcaption>
 </figure>
 
-### 2.1.1. Types of virtualization
+### Types of virtualization
 
 We will study **three types** of virtualization:
 
@@ -98,9 +100,9 @@ The **hardware requirements** for a computer running virtual machines will vary 
 - The applications you plan to run on the guest operating systems.
 - The applications you plan to run, simultaneously with the guest systems, on the host computer.
 
-## 2.2 Advantages and disadvantages of virtualization
+## Advantages and disadvantages of virtualization
 
-### 2.2.1. Advantages
+### Advantages
 
 - **Utilization of existing resources**, allowing for their shared use. Before virtualization, it is common for the resource usage rate to not exceed 50%, in fact, it is very common for it not to exceed 15%.
 
@@ -120,7 +122,7 @@ The **hardware requirements** for a computer running virtual machines will vary 
 
 - Administer and manage secure desktop systems that are accessible to users locally or remotely from almost any client-side computer.
 
-### 2.2.2. Disadvantages
+### Disadvantages
 
 **Disadvantages** include:
 
@@ -128,7 +130,7 @@ The **hardware requirements** for a computer running virtual machines will vary 
 - The **performance** of systems is limited by sharing physical resources.
 - **Compatibility** problems may arise with virtualized hardware.
 
-## 2.3. Virtualization software
+## Virtualization software
 
 When we talk about virtualization software, we have a wide range of possibilities among which we can find very different options, both in terms of the type of virtualization and the manufacturer.
 
@@ -144,17 +146,17 @@ For this reason, below we will review the most common tools:
     - **Parallels Desktop**. For *Apple Mac OS X* operating systems.
     - **Oracle VM VirtualBox**. Easy-to-use and free software under a *PUEL* license for personal use and evaluation. It runs on *Intel* processors running Windows, Linux, macOS or Solaris operating systems.
 
-## 2.4. VirtualBox
+## VirtualBox
 
 **Oracle VM VirtualBox** is a free and open-source hosted hypervisor for x86 virtualization, developed by *Oracle Corporation*. It is installed on an existing host operating system as an application; this host application allows additional guest operating systems, each known as a Guest OS, to be loaded and run, each with its own virtual environment.
 
 VirtualBox can be installed on a variety of host operating systems, including *Linux*, *macOS*, *Windows*, *Solaris*, and *OpenSolaris*. It supports the creation and management of guest virtual machines running versions and derivations of *Windows*, *Linux*, *BSD*, *OS/2*, *Solaris*, *Haiku*, and *OSx86*, as well as limited virtualization of macOS guests on Apple hardware.
 
-### 2.4.1. Installation
+### Installation
 
 On the official *Oracle VM VirtualBox* page [**www.virtualbox.org**](https://www.virtualbox.org/) we can consult the manual, technical requirements, installation guide and download the version appropriate to our operating system.
 
-### 2.4.2. Enable virtualization in the BIOS
+### Enable virtualization in the BIOS
 
 Intel and AMD processors provide technologies that optimize the virtualization process. To use them, you need to activate them in the system's BIOS or UEFI.
 
@@ -163,3 +165,325 @@ The first thing to do is to check that the processor supports virtualization. Yo
 To activate it, you need to enter the computer's BIOS or UEFI configuration. To do this, you need to check the motherboard manufacturer's manual. When you start the computer, you need to press the key, usually the `DEL`, `F2`, `F12` or `ESC` key.
 
 Go to the section indicated in the manual, which could be "*System configuration*", "*Advanced*" or similar, and look for an option that says "_Intel VT_", "_VT-x_", "_Virtualization Technology_", "_AMD-v_", etc. (the name may vary depending on the manufacturer) and activate it.
+
+### Disabling *Hyper-V* on *Microsoft Windows* systems
+
+If our host system is *Windows 8* or higher, we must check that the *Hyper-V* features are disabled.
+
+Open the "**Enable or disable Windows features**" panel, look for the ***Hyper-V*** option and uncheck it. Restart the computer.
+
+<figure markdown="span">
+    ![Deshabilitar Hyper-V en Windows](./unit02/disable_hyper-v.png)
+    <figcaption>Deshabilitar Hyper-V en Windows</figcaption>
+</figure>
+
+### Installation
+
+If we have a ***GNU/Linux*** operating system, it is very likely that *VirtualBox* is in the distribution's repositories. We must proceed to install it using the relevant package manager.
+
+Alternatively, we can download the package directly from the official website.
+
+[Oracle VirtualBox Official Website](https://www.virtualbox.org/)
+
+On ***Microsoft Windows*** systems, we will have to access the official website and download the installer, then run it and proceed with the typical step-by-step installer.
+
+## Creating virtual machines
+
+Once installed, we can access the hypervisor where we can manage the virtual machines.
+
+<figure markdown="span">
+    ![VirtualBox main window](./unit02/vb_wellcome.png){ width=75% }
+    <figcaption>VirtualBox main window</figcaption>
+</figure>
+
+To create a new virtual machine we must click on "`New`" or in the top menu "`Machine` > `New...`"
+
+<figure markdown="span">
+    ![VirtualBox toolbar](./unit02/vb_tools_bar_empty.png){ width=90% }
+    <figcaption>VirtualBox toolbar</figcaption>
+</figure>
+
+A new window will open with a wizard to create the machine.
+
+- ***Step 1***. The first step will be to **give it an appropriate name**, the location where the files will be stored, the type and the version.
+
+<figure markdown="span">
+    ![Step 1: Name and operating system](./unit02/vb_new_1_name.png){ width=65% }
+    <figcaption>Step 1: Name and operating system</figcaption>
+</figure>
+
+- ***Step 2***. Next, we need to choose the amount of RAM that the virtual machine we are creating will use. The default value is usually sufficient, but we must adjust it to the requirements of the system we want to install. Keeping in mind that the memory we assign to the virtual machine will not be available to the host system.
+
+<figure markdown="span">
+    ![Step 2: Memory size](./unit02/vb_new_2_memory.png){ width=65% }
+    <figcaption>Step 2: Memory size</figcaption>
+</figure>
+
+- ***Step 3***. The next step will be to configure the virtual storage (HDD). Usually we will create a **new** virtual disk.
+
+    <figure markdown="span">
+        ![Step 3: Virtual Storage](./unit02/vb_new_3_1_disc_type.png){ width=65% }
+        <figcaption>Step 3: Virtual Storage</figcaption>
+    </figure>
+
+    - ***Step 3.1***. When creating a new virtual disk we must choose the type to use.
+
+        - **VDI** is the native format of *VirtualBox*
+        - **VDH** format used by *Microsoft*
+        - **VMDK** is used by *VMWare*
+
+        We will select the **VDI** format, by default.
+
+        <figure markdown="span">
+            ![Step 3.1: Hard disk file type](./unit02/vb_new_3_1_disc_type.png){ width=65% }
+            <figcaption>Step 3.1: Hard disk file type</figcaption>
+        </figure>
+
+        ***Step 3.2***. In this section we must select how the file that stores the virtual hard disk will behave in physical storage.
+
+        - **Dynamically reserved**. The file will grow as data is entered into the virtual hard disk. It is created faster but has lower performance.
+        - **Fixed size**. A file of the same size as the virtual hard disk will be created. It takes longer to create but offers better performance.
+
+    Para ahorrar recursos seleccionaremos ***Reservado dinámicamente***, por defecto.
+
+    <figure markdown="span">
+        ![Step 3.2: Storage on physical hard disk drive](./unit02/vb_new_3_2_disc_dynamic.png){ width=65% }
+        <figcaption>Step 3.2: Storage on physical hard disk drive</figcaption>
+    </figure>
+
+    - ***Step 3.3***. Finally, we will name the virtual hard disk and choose the size. By default it suggests a recommended disk size but we must adjust it to the requirements of the system we want to install.
+
+    <figure markdown="span">
+        ![Step 3.3: File location and size](./unit02/vb_new_3_3_disc_size.png){ width=65% }
+        <figcaption>Step 3.3: File location and size</figcaption>
+    </figure>
+
+    After completing the steps, we will return to the main VirtualBox window with the newly installed virtual machine selected, where a summary of its configuration options will appear.
+
+    <figure markdown="span">
+        ![New virtual machine created](./unit02/vb_new_4_finish.png){ width=65% }
+        <figcaption>New virtual machine created</figcaption>
+    </figure>
+
+## Configuration and use of virtual machines.
+
+Once we have created the virtual machine, we must **check and configure its options**.
+
+To do this, we must select the virtual machine and click on "**Configuration**"
+
+<figure markdown="span">
+    ![Access to the configuration of a virtual machine](./unit02/vb_vm_bar_setup.png){ width=60% }
+    <figcaption>Access to the configuration of a virtual machine</figcaption>
+</figure>
+
+The configuration window for the selected virtual machine will open.
+
+<figure markdown="span">
+    ![Virtual machine configuration window](./unit02/vb_setup_general.png){ width=65% }
+    <figcaption>Virtual machine configuration window</figcaption>
+</figure>
+
+Let's review some of these options:
+
+- **General**. We can mainly change the name, type and version of the guest operating system.
+
+- **System**. We can adjust the size of the RAM and the number of processors (cores) that the virtual machine will use.
+
+- **Storage**. In this section we can manage the virtual storage devices associated with the machine.
+
+A very commonly used feature is to **insert ISO images** into the **virtual CD/DVD drive** to boot the system for the first time.
+
+<figure markdown="span">
+    ![Virtual Storage Setup](./unit02/vb_setup_storage.png){ width=60% }
+    <figcaption>Virtual Storage Setup</figcaption>
+</figure>
+
+- **Network**. We can enable up to four network adapters of the following types:
+    - **Not connected**. Represents the absence of a network adapter.
+    - **NAT** (*Network Address Translation*). Allows basic functionality from the guest system that shares the internet connection. It is basic but has quite a few limitations.
+    - **Bridge adapter**. Simulates a physical connection to the real network, assigning an IP address from the network to the virtual device.
+    - **Internal network**. Creates an internal network between the different virtual machines, without internet connection.
+    - **Host-only adapter**. Simulates a logical network adapter, only allowing internal communication.
+    - **Generic driver**. Allows you to configure a network adapter with its own drivers.
+    - **NAT network**. Makes use of a network configured from the VirtualBox preferences. Simulates a router that can serve network configuration via DHCP to virtual machines.
+
+    <figure markdown="span">
+        ![Network Device Configuration](./unit02/vb_setup_network.png){ width=60% }
+        <figcaption>Network Device Configuration</figcaption>
+    </figure>
+
+    !!! note "Internal Network"
+        In the course we will mainly use "***Internal Network***" to avoid downloading automatic updates that saturate the network. When we need to connect the virtual machine to the Internet we will add a second *NAT* type adapter.
+
+## Starting and stopping a virtual machine
+
+To start a virtual machine we must select it and click on **Start**
+
+<figure markdown="span">
+    ![Start virtual machine](./unit02/vb_start.png){ width=70% }
+    <figcaption>Start virtual machine</figcaption>
+</figure>
+
+If it is the first time we start it, we must insert a bootable media, typically an ISO image in the virtual CD/DVD drive.
+
+<figure markdown="span">
+    ![Virtual machine starting Windows installation ISO image](./unit02/vb_start_win_install.png){ width=90% }
+    <figcaption>Virtual machine starting Windows installation ISO image</figcaption>
+</figure>
+
+The virtual machine runs within a window that, by default, shows an options menu at the top and a status bar at the bottom.
+
+From this window we can configure different options.
+
+To stop the virtual machine we can **use the option to shut down the guest operating system** or directly close the window, where a dialog with several options will be displayed.
+
+<figure markdown="span">
+    ![Virtual machine stop](./unit02/vb_stop.png){ width=100% }
+    <figcaption>Virtual machine stop</figcaption>
+</figure>
+
+- **Save the state of the machine**. It would be similar to hibernating an operating system, it closes the virtual machine, saving the current state, and then continues working where we left off. If we close this way we will not be able to modify the virtual machine configuration.
+- **Send shutdown signal**. It sends a shutdown signal (*ACPI shutdown*) so that the guest operating system starts the shutdown sequence. This is the recommended way to shut down the virtual machine.
+
+- **Shut down the machine**. It is the equivalent of disconnecting the power of a computer, popularly known as "*push button*". We should avoid this option unless the virtual machine has crashed and there is no other option, because, as with a real computer, we run the risk of data loss or corruption.
+
+## The Host Key
+
+VirtualBox defines a **Host key**, which is associated with the **`Right Ctrl`** key by default.
+
+The Host key has several functions. Its main function is to release the mouse and keyboard input from the guest and return it to the host. Therefore, if we see that we cannot exit the guest system window, pressing this key will give us control again.
+
+Another function is to simulate the `Ctrl` + `Alt` combination, which will allow us to send the sequence `Ctrl` + `Alt` + `Del` to the guest system by pressing `Host` + `Del`.
+
+We can change the Host key in the preferences of VirtualBox.
+
+## State management. Snapshots
+
+*VirtualBox* offers a method to save the state of a virtual machine called **snapshots**. It can be used as a backup system for disaster recovery. This can be useful when we are doing tests and at the end we want to recover the initial state.
+
+To access snapshot management, always with the virtual machine turned off, we will click on the "*hamburger*" type menu of the virtual machine we want to manage and select "**Snapshots**"
+
+!!! warning
+    We must be careful and limit the number of snapshots since they take up a lot of disk space. When we no longer need a snapshot, it is advisable to delete it.
+
+<figure markdown="span">
+    ![Access to snapshot configuration](./unit02/vb_snapshot.png){ width=100% }
+    <figcaption>Access to snapshot configuration</figcaption>
+</figure>
+
+The view will change to the snapshot manager.
+
+<figure markdown="span">
+    ![Snapshot Manager](./unit02/vb_snapshot_window.png){ width=65% }
+    <figcaption>Snapshot Manager</figcaption>
+</figure>
+
+Snapshots will always be created from the current state of the virtual machine, by pressing the "Take" button.
+
+We will put a name and an appropriate description.
+
+<figure markdown="span">
+    ![Take new snapshot](./unit02/vb_snapshot_create.png){ width=75% }
+    <figcaption>Take new snapshot</figcaption>
+</figure>
+
+Once we have created snapshots we can delete or restore them.
+
+The snapshot restoration, by default, offers the possibility of making another snapshot of the current state, if we do not take this into account, we may end up with quite a few snapshots that we do not know which state they belong to.
+
+<figure markdown="span">
+    ![Restore a snapshot](./unit02/vb_snapshot_restore.png){ width=100% }
+    <figcaption>Restore a snapshot</figcaption>
+</figure>
+
+## Exporting a virtual machine
+
+VirtualBox can export and import virtual machines using the **OVA** (*Open Virtual Appliance*) format. The OVA format is supported by different virtual machine software.
+
+To export a virtual machine, we must select it and, in the top menu, go to "**`File` > `Export virtualized service...`**"
+
+<figure markdown="span">
+    ![Exporting a virtual machine](./unit02/vb_export.png){ width=95% }
+    <figcaption>Exporting a virtual machine</figcaption>
+</figure>
+
+## Importing a virtual machine
+
+To export a virtual machine, we must select it and, in the top menu, go to "**`File` > `Import virtualized service...`**"
+
+<figure markdown="span">
+    ![Importing a virtual machine](./unit02/vb_import.png){ width=95% }
+    <figcaption>Importing a virtual machine</figcaption>
+</figure>
+
+## Cloning virtual machines
+
+We can create a complete copy or a link to an existing virtual machine.
+
+To make a clone, right-click on the virtual machine and choose the option **Clone...**.
+
+An options dialog will appear where you must indicate the name of the copy, the location and the type of clone, among others.
+
+- **Full clone**. Makes a copy of the virtual machine files to a new directory.
+- **Linked clone**. Creates a copy of the virtual machine but uses the same virtual storage files.
+
+<figure markdown="span">
+    ![Clone a virtual machine](./unit02/vb_clone.png){ width=75% }
+    <figcaption>Clone a virtual machine</figcaption>
+</figure>
+
+## Grouping virtual machines
+
+When we have been using VirtualBox for a while, it is normal to find ourselves with different virtual machines created.
+
+For better organization we can create groups, like folders in the file system, where we can organize the machines.
+
+- **Create new group**. By right-clicking on a machine we can group it.
+- **Rename group**. By right-clicking on a group we can rename it.
+- **Change group**. We can drag and drop the machines to change their group.
+- We can collapse and expand the groups.
+
+!!! note ""
+    In this course and in general in all the courses, quite a few virtual machines are usually used. For better organization, it is advisable to group them by module (_SOM, MME, AOF, RLO, etc._).
+
+<figure markdown="span">
+    ![Example of grouped virtual machines](./unit02/vb_groups.png){ width=100% }
+    <figcaption>Example of grouped virtual machines</figcaption>
+</figure>
+
+## Delete virtual machine
+
+To delete a virtual machine, right-click on it and choose "**Delete...**". A dialog box will appear with the following options:
+
+<figure markdown="span">
+    ![Delete virtual machine](./unit02/vb_delete.png){ width=90% }
+    <figcaption>Delete virtual machine</figcaption>
+</figure>
+
+- **Delete all files**. Deletes the virtual machine and all associated files, including virtual disks.
+- **Delete only**. Does not delete the files, only the entry in the hypervisor.
+
+## Virtual storage media management.
+
+If we do not manage virtual machines correctly, they may start to take up a lot of disk space.
+
+!!! warning ""
+    Sometimes, orphaned virtual hard disks remain without an associated virtual machine.
+
+To manage virtual storage media, go to "**`File` > `Virtual Media Manager`**"
+
+<figure markdown="span">
+    ![Virtual Media Manager](./unit02/vb_manage_virtual_storage.png){ width=75% }
+    <figcaption>Virtual Media Manager</figcaption>
+</figure>
+
+## Virtual machine portability
+
+Another way to work with virtual machines is to store the files on an external storage medium.
+
+!!! note
+    This will be very useful in the course, to be able to work in the classroom and at home with the same virtual machine. In addition, we will avoid consuming local storage space or have a backup copy in case of data loss on the classroom PC.
+
+To do this, we must have the virtual machine files on an external storage medium (*preferably a USB3 SSD external storage*). We achieve this by directly creating the virtual machine on the external medium or by making a copy of the original files.
+
+To add a virtual machine to VirtualBox, in the top menu, we must go to "*`Machine` > `Add...`*", it will link the files to the hypervisor and we will be able to work with the machine.
