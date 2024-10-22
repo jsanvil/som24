@@ -287,14 +287,20 @@ A very commonly used feature is to **insert ISO images** into the **virtual CD/D
     <figcaption>Virtual Storage Setup</figcaption>
 </figure>
 
-- **Network**. We can enable up to four network adapters of the following types:
-    - **Not connected**. Represents the absence of a network adapter.
+- **Network**. We can enable up to four network adapters. Each adapter can be configured with different types of network connections. The most common are:
+    - **Not attached**. Represents the absence of a network adapter.
     - **NAT** (*Network Address Translation*). Allows basic functionality from the guest system that shares the internet connection. It is basic but has quite a few limitations.
-    - **Bridge adapter**. Simulates a physical connection to the real network, assigning an IP address from the network to the virtual device.
-    - **Internal network**. Creates an internal network between the different virtual machines, without internet connection.
-    - **Host-only adapter**. Simulates a logical network adapter, only allowing internal communication.
-    - **Generic driver**. Allows you to configure a network adapter with its own drivers.
-    - **NAT network**. Makes use of a network configured from the VirtualBox preferences. Simulates a router that can serve network configuration via DHCP to virtual machines.
+    - **Bridge Adapter**. Simulates a physical connection to the real network, assigning an IP address from the network to the virtual device.
+    - **Internal Network**. Creates an internal network between the different virtual machines, without internet connection.
+    - **Host-only Adapter**. Simulates a logical network adapter, only allowing internal communication.
+
+        | Network type | Guest -> other Guests | Host -> Guest | Guest -> external Network |
+        |:---:|:---:|:---:|:---:|
+        | **Not attached** | - | - | - |
+        | **NAT** | - | - | ✅ |
+        | **Bridged Adapter** | ✅ | ✅ | ✅ |
+        | **Internal Network** | ✅ | - | - |
+        | **Host-only Adapter** | ✅ | ✅ | - |
 
     <figure markdown="span">
         ![Network Device Configuration](./unit02/vb_setup_network.png){ width=60% }

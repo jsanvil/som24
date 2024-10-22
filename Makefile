@@ -1,4 +1,4 @@
-all: ud1
+all: ud1 ud2
 # ud1_2 ud1_2_1 ud1_2_2 ud1_2_3 ud2_1 ud2_2 ud3_1 ud3_pr1
 
 LOCAL_URL=http://127.0.0.1:8000/
@@ -15,6 +15,12 @@ UD1_MD=unit01
 ud1: docs/$(UD1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD1_MD) $(OUTPUT_DIR)$(UD1_MD).pdf "$(title)"
+
+UD2_MD=unit02
+
+ud2: docs/$(UD2_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD2_MD) $(OUTPUT_DIR)$(UD2_MD).pdf "$(title)"
 
 # UD1_2_MD=ud1-2-sintaxis
 
