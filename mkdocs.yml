@@ -4,6 +4,7 @@ nav:
   - Home: index.md
   - Unit1: unit01.md
   - Unit2: unit02.md
+  - Unit3: unit03.md
 
 theme:
   name: material
