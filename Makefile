@@ -10,17 +10,19 @@ UD2_DIR=ud2/
 
 gettitle=$(shell grep -m 1 '# ' $1 | sed -r 's/^# //')
 
+PREFIX=SMR_SOM_
+
 UD1_MD=unit01
 
 ud1: docs/$(UD1_MD).md
 	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD1_MD) $(OUTPUT_DIR)$(UD1_MD).pdf "$(title)"
+	node exportpdf.js $(LOCAL_URL)$(UD1_MD) $(OUTPUT_DIR)$(PREFIX)$(UD1_MD).pdf "$(title)"
 
 UD2_MD=unit02
 
 ud2: docs/$(UD2_MD).md
 	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD2_MD) $(OUTPUT_DIR)$(UD2_MD).pdf "$(title)"
+	node exportpdf.js $(LOCAL_URL)$(UD2_MD) $(OUTPUT_DIR)$(PREFIX)$(UD2_MD).pdf "$(title)"
 
 # UD1_2_MD=ud1-2-sintaxis
 
