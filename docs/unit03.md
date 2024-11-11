@@ -69,6 +69,7 @@ There are a series of factors that need to be taken into account and analyzed ca
     - Custom
 - **Installation Type**
     - Typical, with step-by-step wizard
+    - Unattended, without user intervention
     - Advanced, for multiple systems on the same computer
     - Image from a previous clone
     - Via network, from a server to multiple computers
@@ -232,8 +233,9 @@ In _GNU/Linux_ operating systems, the boot loader is usually **GRUB** (GRand Uni
 The installation type will depend on the needs of the user and the computer where the operating system will be installed. The most common types of installation are:
 
 - **Typical installation**. This is the most common type of installation. It is a step-by-step installation wizard that guides the user through the installation process.
+- **Unattended installation**. This type of installation is used when you want to install an operating system without user intervention. It is useful when you need to install the same operating system on multiple computers.
 - **Advanced installation**. This type of installation is used when you want to install multiple operating systems on the same computer. It allows you to configure the partitions and file systems manually.
-- **Image installation**. This type of installation is used when you want to install an operating system from a previously cloned image. This is useful when you need to install the same operating system on multiple computers.
+- **Image installation**. This type of installation is used when you want to install an operating system from a previously cloned image. This is useful when you need to install the same operating system on multiple computers or when you need to restore the operating system to a previous state.
 - **Network installation**. This type of installation is used when you want to install an operating system from a server to multiple computers. It is useful when you need to install the same operating system on multiple computers at the same time.
 
 ### Cloning
@@ -275,8 +277,8 @@ The installation process is divided into steps, some of which are optional and o
 4. **License agreement**. The user must accept the license agreement of the operating system.
 5. **Partitioning**. The user must create the partitions on the hard drive where the operating system will be installed.
 6. **File system selection**. The user must select the file system to be used on the partitions.
-7. **Installation**. The user must select the installation type (typical, advanced, image, network) and start the installation process.
-8. **Post-installation configuration**. Some operating systems require the user to configure some parameters after the installation process is completed.
+7. **Installation**. The operating system is installed on the hard drive.
+8. **Post-installation configuration**. Configure parameters after the installation process is completed, such as the location, time zone, keyboard layout, users, etc.
 9. **Admin user creation**. The user must create an administrator user who will have full control over the computer.
 10. **Installation completion**. The installation process is completed and the computer is ready after the installation medium is removed and the computer is restarted.
 
@@ -285,6 +287,8 @@ The installation process is divided into steps, some of which are optional and o
 In this section we are going to present a typical installation guide for _MS Windows 11_, valid for computers without a TPM module or virtual machines.
 
 ---
+
+#### Language, regional and keyboard settings
 
 Once we have started the system with the corresponding installation media, the first step is the language configuration. Three parameters are established: Language, reginal formats, and keyboard layout.
 
@@ -295,6 +299,8 @@ Once we have started the system with the corresponding installation media, the f
 
 ---
 
+#### Installation or repair
+
 On the next screen, an "**Install now**" button appears, and at the bottom left the "***Repair your computer***" option appears, which we can use when the operating system presents an error.
 
 <figure markdown="span">
@@ -303,6 +309,8 @@ On the next screen, an "**Install now**" button appears, and at the bottom left 
 </figure>
 
 ---
+
+#### Product key
 
 The wizard asks for the **product key**. If we do not have it at the moment, the "**I do not have a product key**" option allows us to continue with the installation. Later, it can be purchased and added to the operating system.
 
@@ -313,6 +321,8 @@ The wizard asks for the **product key**. If we do not have it at the moment, the
 
 ---
 
+#### Windows version
+
 Next, we must choose the version of Windows 11 that we want to install. The options may be different depending on the ISO image used. The chosen version must match the product key.
 
 <figure markdown="span">
@@ -321,6 +331,8 @@ Next, we must choose the version of Windows 11 that we want to install. The opti
 </figure>
 
 ---
+
+#### Hardware compatibility
 
 If your hardware does not meet the technical requirements, the following message will appear:
 
@@ -331,7 +343,17 @@ If your hardware does not meet the technical requirements, the following message
 
 ---
 
-To fix this, we must open the **command line** using the key combination **`Shift`**+**`F10`**, and execute the command *`regedit`*:
+#### Bypass TPM, Secure Boot and RAM checks
+
+In a virtual machine, the installation wizard may not allow us to continue because it detects that the computer does not have a TPM module.
+
+> The **TPM module** is a hardware component that is used to store cryptographic keys and protect sensitive information. It is used to encrypt the hard drive and protect the operating system from unauthorized access.
+
+> **Secure Boot** is a security feature that ensures that the operating system is not manipulated with during the boot process. It is a feature that is enabled by default on most computers that have a TPM module.
+
+> **Ram Check** is a feature that checks the amount of RAM installed on the computer and ensures that it meets the minimum requirements of the operating system.
+
+To bypass these checks, we must open the **command line** using the key combination **`Shift`**+**`F10`**, and execute the command *`regedit`*:
 
 <figure markdown="span">
     ![Command line `Shift`+`F10`](unit03/win11inst6.png){width=100%}
@@ -360,7 +382,7 @@ Next, we will **create a new `key`**, inside `Setup`, called **`LabConfig`**. To
 
 ---
 
-A new item will appear with the title **`New key #1`**. Since the name is selected, just type **`LabConfig`** to change it.
+A new item will appear with the title **`New key #1`**. Since the name is selected, just type **`LabConfig`** to change it. Be careful with the name, it is **case sensitive**.
 
 <figure markdown="span">
     ![Name the key, *LabConfig*](unit03/win11inst9.png){width=100%}
@@ -431,6 +453,8 @@ This will take us one step back in the installation process. Once again, we make
 
 ---
 
+#### License Terms and Applicable Notices
+
 If all goes well, this time we will pass the compatibility check of the installation wizard.
 
 This will take us to the ***License Terms and Applicable Notices*** window. It is advisable to read the conditions carefully. If we agree with the license terms, we choose **`I accept`** the Microsoft software license terms.
@@ -442,6 +466,8 @@ This will take us to the ***License Terms and Applicable Notices*** window. It i
 
 ---
 
+#### Installation type
+
 In the next step, we must indicate the type of installation we will perform, although, if we have started the installation from the installation DVD or USB stick (as is the case), we can only choose the option ***Custom: install Windows only (advanced)***, since, if what we intend is to update an existing installation, we should start the installation by inserting the installation media with the old system running. In this way, all the files, programs and settings that we already had will be preserved, saving us a good amount of work.
 
 If we are going to update, we should make a backup of all important data before starting the process, since, if there is a problem during the update, we could lose all previous data.
@@ -452,6 +478,8 @@ If we are going to update, we should make a backup of all important data before 
 </figure>
 
 ---
+
+#### Disk selection and partition configuration
 
 Next, we can choose to allocate all the hard drive space for the installation of Windows 11. To do this, we would only have to click on the `Next` button. However, we also have different options to configure, to our liking, the disk (or disks) that we have installed.
 
@@ -470,6 +498,8 @@ In the next step, the process of copying a series of files from the installation
 </figure>
 
 ---
+
+#### Installation progress
 
 When the steps in the previous window are completed, the first reboot will occur.
 
@@ -498,6 +528,8 @@ And finally, the system is prepared for its first boot.
 
 ---
 
+#### System configuration
+
 Shortly after, the installation wizard shows us, for the first time, its new appearance. It starts by checking our location. If it is not correct we choose the appropriate value.
 
 <figure markdown="span">
@@ -523,7 +555,10 @@ Next, the wizard asks us if we want to add a new keyboard layout. This allows us
     <figcaption>Add second keyboard layout</figcaption>
 </figure>
 
----  
+---
+
+#### Internet connection
+
 At this point, the installation wizard checks if it can get an Internet connection for possible system updates.
 
 <figure markdown="span">
@@ -531,9 +566,17 @@ At this point, the installation wizard checks if it can get an Internet connecti
     <figcaption>Internet connection</figcaption>
 </figure>
 
-After this, the wizard asks us for a **name for the computer**. We must choose something descriptive, because this will be the name by which the device will be known on the network.
+> **Optional: Bypass the Internet connection requirement**
+> 
+> Typical installation of _MS Windows 11_ requires an Internet connection to continue. If we do not have it (or we don't want to send your personal information to _Microsoft_), to bypass this step we need to open the command line with the key combination **`Shift`**+**`F10`** and execute the command **`oobe\bypassnro`**. A new option will appear `I don't have Internet` that will allow us to continue the installation by selecting **`Continue with limited setup`**.
 
-You can use up to 15 characters, but they cannot be only numbers, or contain spaces, or any of the characters that are indicated on the screen.
+---
+
+#### Computer name
+
+After this, the wizard asks us for a **name for the computer**. We must choose something descriptive, because this will be the **name by which the computer will be known on the network**.
+
+We can write up to 15 characters, cannot be only numbers, or contain spaces, or any of the characters that are indicated on the screen.
 
 <figure markdown="span">
     ![Computer name](unit03/win11config5pro.png){width=80%}
@@ -544,9 +587,11 @@ A new reboot will then occur, to set the values ​​entered so far.
 
 ---
 
+#### Account type
+
 Once we are back in the installation wizard, we will have the opportunity to choose the type of account with which we will start the computer:
 
-- **Configure for personal use**: A Microsoft account is used to authenticate us in their cloud. This account must already exist and may need our phone number or other data. We can use it on different devices and synchronize both its settings and its files.
+- **Configure for personal use**: A _Microsoft_ account is used to authenticate us in their cloud. This account must already exist and may need our phone number or other data. We can use it on different devices and synchronize both its settings and its files.
 
 - **Configure for professional or educational use**: we can create a local account or join the computer to a company domain or other network resources.
 
@@ -614,7 +659,9 @@ Next, we'll fill in three security questions. These are used when you've forgott
 
 ---
 
-The next step will ask us for permission for Microsoft and other installed applications to use our location. If we give our permission, we'll be able to get services based on our location (like weather forecasts).
+#### Privacy settings
+
+The next step will ask us for permission for _Microsoft_ and other installed applications to use our location. If we give our permission, we'll be able to get services based on our location (like weather forecasts).
 
 <figure markdown="span">
     ![Location access permission](unit03/win11config_final1.png){width=100%}
