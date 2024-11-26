@@ -747,6 +747,9 @@ Currently, one of the most popular distributions is *Ubuntu*, a *GNU/Linux* dist
 
     - **Debian**. It is a *GNU/Linux* distribution created by a community of developers and users in 1993. This association of people united by the cause of creating a 100% free operating system, and called it the *Debian Project*. It is also considered a mother distribution, since countless distributions such as *Ubuntu*, *Linux Mint*, *SteamOS*, *Kali Linux*, *PureOs*, *Deepin*, among many others, were born from *Debian*.
 
+        !!!info "Debian codenames"
+            Debian distribution codenames are based on the names of characters from the _Toy Story_ films. Debian's unstable trunk is named after _Sid_, a character who regularly destroyed his toys. [Wikipedia - Debian version history](https://en.wikipedia.org/wiki/Debian_version_history)
+
     - **Ubuntu**. Distribution based on *Debian*, developed and maintained by the company *Canonical*, being one of the most used. It is oriented to general uses and is characterized by its software compatibility and ease of use comparable to *Mac OS X* or *Windows*. It has several versions, among which the following stand out: *Ubuntu Desktop*, *Kubuntu*, *Xubuntu*, *Lubuntu* and *Ubuntu Server*.
     
         A new version of _Ubuntu_ is published every six months. It receives support from *Canonical* for nine months through security updates, patches for critical bugs and minor program updates. The **LTS** (Long Term Support) versions, which are released every two years, receive support for five years on desktop and server systems.
@@ -821,7 +824,7 @@ The standard partition scheme for most home *Linux* installations is as follows:
 
 On a computer intended to be a server for many users, system performance can be optimized by using more than one hard drive and by creating a partition layout specific to the server's activity. In addition to the partition for the operating system, the swap partition, and the `/home` partition, other partitions can be created, such as for the temporary directory (`/tmp`), for web server content (`/var/www`), for programs (`/usr`), or for log files (`/var/log`).
 
-<!-- ### Typical installation of _*Debian 11.6 "bullseye"_
+### Typical installation of _*Debian 11.6 "bullseye"_
 
 The first step of the installation will be to download the Debian 11.6 ISO image and save it to a boot device. In the case of a virtual machine, it will be enough to select the ISO file in the virtual optical drive.
 
@@ -892,6 +895,8 @@ The wizard will ask us to enter the domain name, which is optional if we do not 
 ---
 
 Next, we must enter the password for the _**root user**_. In _GNU/Linux_ systems, the _**root**_ user is the system administrator.
+
+If we leave the password blank, the _**root**_ user will be disabled and the user created in the next step will have administrative privileges, with the ability to use the `sudo` command to execute commands as the _**root**_ user.
 
 <figure markdown="span">
     ![Password for Root User (administrator)](unit03/deb_08.png){width=80%}
@@ -1015,23 +1020,104 @@ The wizard will ask us to select the repository for the package manager.
     <figcaption>Selecting the repository</figcaption>
 </figure>
 
-![HTTP proxy settings](ud7/deb_22.png){width=80%}
+---
 
-![System installation base](ud7/deb_23.png){width=80%}
+The wizard will ask us to configure the HTTP proxy settings. If we do not use a proxy, we can leave this field blank.
 
-![Sending package usage statistics](ud7/deb_24.png){width=80%}
+<figure markdown="span">
+    ![HTTP proxy settings](unit03/deb_22.png){width=80%}
+    <figcaption>HTTP proxy settings</figcaption>
+</figure>
 
-![Desktop environment and other predefined programs selection](ud7/deb_25.png){width=80%}
+---
 
-![Program installation](ud7/deb_26.png){width=80%}
+Wait for the update of the package manager from the selected repository.
 
-![GRUB bootloader installation](ud7/deb_27.png){width=80%}
+<figure markdown="span">
+    ![Software selection](unit03/deb_23.png){width=80%}
+    <figcaption>Software selection</figcaption>
+</figure>
 
-![Disk selection for bootloader](ud7/deb_28.png){width=80%}
+---
 
-![Installation completion](ud7/deb_29.png){width=80%}
+The wizard will ask us if we want to send package usage statistics to the Debian project. This is optional.
 
-![Bootloader GRUB](ud7/deb_30.png){width=80%} ![LightDM Session Manager](ud7/deb_31.png){width=80%} ![Xfce4 Desktop Environment](ud7/deb_32.png){width=80%} -->
+<figure markdown="span">
+    ![Sending package usage statistics](unit03/deb_24.png){width=80%}
+    <figcaption>Sending package usage statistics</figcaption>
+</figure>
+
+---
+
+Select the desktop environment and other predefined programs to install.
+
+<figure markdown="span">
+    ![Desktop environment and other predefined programs selection](unit03/deb_25.png){width=80%}
+    <figcaption>Desktop environment and other predefined programs selection</figcaption>
+</figure>
+
+---
+
+Installation of the selected software will begin, downloading the necessary packages from the repository.
+
+<figure markdown="span">
+    ![Software installation](unit03/deb_26.png){width=80%}
+    <figcaption>Software installation</figcaption>
+</figure>
+
+---
+
+If we have a BIOS firmware, wizard will ask us to install the GRUB bootloader.
+
+<figure markdown="span">
+    ![GRUB bootloader installation](unit03/deb_27.png){width=80%}
+    <figcaption>GRUB bootloader installation</figcaption>
+</figure>
+
+---
+
+Select the disk where the bootloader will be installed. This is usually the same disk where the operating system is installed, but it can be different.
+
+<figure markdown="span">
+    ![Disk selection for bootloader](unit03/deb_28.png){width=80%}
+    <figcaption>Disk selection for bootloader</figcaption>
+</figure>
+
+---
+
+When the installation is complete, will ask us to remove the installation medium and restart the system.
+
+<figure markdown="span">
+    ![Installation finished](unit03/deb_29.png){width=80%}
+    <figcaption>Installation finished</figcaption>
+</figure>
+
+---
+
+After the system restarts, the GRUB bootloader will appear, allowing us to choose the operating system to boot.
+
+<figure markdown="span">
+    ![GRUB2 bootloader](unit03/deb_30.png){width=80%}
+    <figcaption>GRUB2 bootloader</figcaption>
+</figure>
+
+---
+
+After selecting the operating system, the system will boot into the login screen.
+
+<figure markdown="span">
+    ![Login screen](unit03/deb_31.png){width=80%}
+    <figcaption>Login screen</figcaption>
+</figure>
+
+---
+
+After logging in, the desktop environment will appear.
+
+<figure markdown="span">
+    ![Desktop environment](unit03/deb_32.png){width=80%}
+    <figcaption>Desktop environment</figcaption>
+</figure>
 
 ## Verification and documentation of the installation process and incidents
 
