@@ -83,7 +83,7 @@ The **input** data is **processed** and **information** is obtained as **output*
 !!! note
     **Computer science** is the set of knowledge and techniques that make **automatic information processing** possible through computers.
 
-    The Spanish word ***informática*** is an acronym of the words **INFOR**mation auto**MATIC**.
+    The Spanish word ***informática*** is an acronym of the words INFORmation autoMATIC.
 
 ## Computer Equipment
 
@@ -309,7 +309,7 @@ _Table: Multiples using the International System prefixes_
 
 ---
 
-Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes, but according to the international system of units, 1 kB (kylobyte) corresponded to 1000 bytes, as with all other units of measurement. This generated some controversy and it was easy to make mistakes. To solve this confusion, in 1998 the _International Electrotechnical Commission_ published an appendix in the **ISO/IEC 80000** standard defining the binary prefixes, thus giving birth to the unit **kibibyte** (KiB) to designate the correspondence between 1 KiB and 1024 bytes; from this moment on, the kilobyte unit is considered valid only for the correspondence between 1 kB and 1000 bytes.
+Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes, but according to the international system of units, 1 kB (kilobyte) corresponded to 1000 bytes, as with all other units of measurement. This generated some controversy and it was easy to make mistakes. To solve this confusion, in 1998 the _International Electrotechnical Commission_ published an appendix in the **ISO/IEC 80000** standard defining the binary prefixes, thus giving birth to the unit **kibibyte** (KiB) to designate the correspondence between 1 KiB and 1024 bytes; from this moment on, the kilobyte unit is considered valid only for the correspondence between 1 kB and 1000 bytes.
 
 | Name | Symbol | Factor [ISO/IEC 80000](https://es.wikipedia.org/wiki/ISO/IEC_80000 "ISO/IEC 80000")\-13 |
 |:--|:--:|--:|

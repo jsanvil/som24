@@ -756,7 +756,7 @@ Currently, one of the most popular distributions is *Ubuntu*, a *GNU/Linux* dist
 
     - **Fedora**. General purpose distribution, which makes use of the *RPM* package. It is characterized by being stable and secure, which is developed and maintained by the company *Red Hat* and an international community of engineers, graphic designers and users who report errors and test new technologies. Its uses are more oriented towards software and server development. The project does not only seek to include free and open source software, but to be the leader in this technological field.
 
-    - **Slacware**. It is a *GNU/Linux* distribution created in 1993 and aimed at advanced users. This distribution derived from *SLS Linux* and is the oldest *GNU/Linux* distribution still in maintenance.
+    - **Slackware**. It is a *GNU/Linux* distribution created in 1993 and aimed at advanced users. This distribution derived from *SLS Linux* and is the oldest distribution still in maintenance.
 
     - **Open SUSE**. *SUSE* is an operating system with paid versions for both servers and desktops called *SUSE Linux Enterprise Server* and *SUSE Linux Enterprise Desktop*. It was originally based on *Slackware*. *SUSE* also offers a completely free version called *Open SUSE*.
 
