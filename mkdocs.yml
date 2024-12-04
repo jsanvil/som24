@@ -39,8 +39,11 @@ theme:
   # favicon: images/favicon.ico
 
 extra_css:
-  - stylesheets/bs5_layout.css
-  - stylesheets/custom.css
+  - extra/fontawesome/css/all.min.css
+  # - extra/fontawesome/css/fontawesome.min.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+#   - stylesheets/bs5_layout.css
+#   - stylesheets/custom.css
 
 markdown_extensions:
   - toc:
@@ -59,22 +62,29 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
   - pymdownx.arithmatex:
       generic: true
 extra_javascript:
-  - javascripts/mathjax.js
+  - extra/js/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-
-# copyright: |
-#   &copy; 2024 <a href="https://github.com/jsanvil"  target="_blank" rel="noopener">Jacinto Sánchez</a>
 
 plugins:
   - tags
+  - mermaid2:
+      javascript: extra/js/mermaid.min.js
+      arguments:
+        # test if its __palette_1 (dark) or __palette_2 (light)
+        # for mkdocs-material >=8.0.0
+        theme: |
+          ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
 
+extra_javascript:
+    - extra/js/refresh_on_toggle_dark_light.js
+    # - extra/fontawesome/js/fontawesome.min.js
