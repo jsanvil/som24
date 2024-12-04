@@ -806,9 +806,8 @@ In *GNU/Linux* systems, partitions have different names than those used by other
 
 In *GNU/Linux* the first hard drive is called `/dev/sda` and its partitions are numbered in an order where the primary and extended partitions are numbered first, and then the logical ones. For example, `/dev/sda1`, `/dev/sda2`, `/dev/sda3`, and `/dev/sda4` could be primary or extended partitions, and `/dev/sda5`, `/dev/sda6`, etc. could be logical partitions. If we had a second hard drive, it would be named the same but with the letter `b`, i.e. `/dev/sdb`. This last letter will always be assigned by the operating system based on the disk controller channel or USB port where the device is connected.
 
-::: note
-Traditionally, *IDE* hard drives were named `/dev/hda`, `/dev/hdb`, etc., and *SCSI* hard drives were named `/dev/sda`, `/dev/sdb`. Since 2007, the nomenclature has been standardized and, regardless of the technology used, the old nomenclature for *SCSI* disks is currently used.
-:::
+!!!note "Nomenclature of hard drives in GNU/Linux"
+    Traditionally, *IDE* hard drives were named `/dev/hda`, `/dev/hdb`, etc., and *SCSI* hard drives were named `/dev/sda`, `/dev/sdb`. Since 2007, the nomenclature has been standardized and, regardless of the technology used, the old nomenclature for *SCSI* disks is currently used.
 
 In addition to this nomenclature, the different partitions that can be used by the operating system have an identifier called **UUID** (*Universally Unique Identifier*) that allows the partition to be referenced independently of the disk controller channel or USB port where the device has been connected.
 
