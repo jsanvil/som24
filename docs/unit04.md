@@ -42,5 +42,3 @@ style D stroke-dasharray: 5 2
 1. **1st stage**: When the power button is pressed, the system starts the firmware and performs a Power-On Self-Test (POST) sequence. If the POST sequence fails, the system halts. If the POST sequence succeeds, the system loads the partition table and then the bootloader.
 2. **2nd stage**: The bootloader loads the kernel, mounts the file systems, starts the init process, system services, and the user interface.
 
-
-
