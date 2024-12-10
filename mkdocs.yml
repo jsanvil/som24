@@ -5,6 +5,7 @@ nav:
   - Unit1: unit01.md
   - Unit2: unit02.md
   - Unit3: unit03.md
+  - Unit4: unit04.md
 
 theme:
   name: material
