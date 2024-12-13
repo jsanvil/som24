@@ -236,16 +236,19 @@ To perform operations on a file or directory we need to refer to them. To refer 
 
 ### File properties
 
-- **Name and extension**. Each file is identified with a name and an extension. The name is mandatory and serves to identify the content of the file, but the extension is optional and usually identifies the type of file. Files can be divided into two large groups, executables and data files. The difference between the two types is that the former can work independently, while the latter store information that has to be viewed with the help of the appropriate program. The most common file types by extension:
-- **Plain text**: txt
-- **Rich text**: doc, docx, odt, ...
-- **Image**: png, jpg, gif, ...
-- **Video**: avi, mp4, mpeg, mwv, mkv, ...
-- **Runtime or system**: exe, msc, msi, ps1, bat, dll, sys, ...
-- **Audio**: mp3, wav, wma, ...
-- **Compressed file**: zip, rar, 7z, tar, gz, bz2, ...
-- **Read or print**: pdf, epub, mobi, azw, ibook, ...
-- **Disk image**: iso, img, ...
+- **Name and extension**. Each file is identified with a name and an extension. The name is mandatory and serves to identify the content of the file, but the extension is optional and usually identifies the type of file. Files can be divided into two large groups, executables and data files. The difference between the two types is that the former can work independently, while the latter store information that has to be viewed with the help of the appropriate program.
+
+    The most common file types by extension:
+
+    - **Plain text**: txt
+    - **Rich text**: doc, docx, odt, ...
+    - **Image**: png, jpg, gif, ...
+    - **Video**: avi, mp4, mpeg, mwv, mkv, ...
+    - **Runtime or system**: exe, msc, msi, ps1, bat, dll, sys, ...
+    - **Audio**: mp3, wav, wma, ...
+    - **Compressed file**: zip, rar, 7z, tar, gz, bz2, ...
+    - **Read or print**: pdf, epub, mobi, azw, ibook, ...
+    - **Disk image**: iso, img, ...
 
 - **File information**. Files save the date of creation, modification, and last access. In addition to this information, we also find metadata, which is used to store data about the data contained in the files. The type of information we can obtain through metadata depends on the type of file. For example, in a video we can check its resolution, audio quality, duration, geolocation, etc. In the case of photographs, we can see the model and brand of the camera, the geolocation, the resolution of the image, etc. For text files, we can check data such as the application with which it was created, the number of revisions, the number of paragraphs, etc. To see the metadata of a file, you have to view its properties. In Windows 11, you have to click on the *Properties* option and then the *Details* tab to view this information. We also have the option to delete the metadata by clicking on the *`Remove properties and personal information`* option.
 - **Size**. Files have a measurement that is represented in bytes or its multiples. The maximum size of a file on a storage device depends on the file system of the partition where it is located.
@@ -373,3 +376,33 @@ Windows offers the possibility of repairing programs if they are not running cor
 There are software versions that do not need to be installed on the operating system in order to be able to use them. They usually come in an executable or a folder where the configuration files and libraries are included. This allows us to use the applications from an external storage medium so that we can use them on any compatible system in a simple way.
 
 Its disadvantages are that not all applications offer portable versions and they may not have all the features of the installed version
+
+
+<!--
+## System updates
+
+-->
+
+<!--
+## Security
+
+-->
+
+<!--
+## Backups
+What
+- Personal data
+- Hard disk image
+- System restore points
+- System recovery
+
+## Types
+- Full backup
+- Incremental backup
+- Differential backup
+-->
+
+<!--
+## System registry
+
+-->
