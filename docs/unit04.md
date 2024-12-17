@@ -258,7 +258,7 @@ To perform operations on a file or directory we need to refer to them. To refer 
 
 Files and directories have attributes that determine the permissions that apply to them. The main attributes of files and directories are the following:
 
-- **Read only**. A directory or file that has this attribute cannot be deleted or modified. Only its contents can be viewed.
+- **Read only**. A directory or file that has this attribute cannot be modified. Only its contents can be viewed.
 - **Hidden**. Causes the file or directory to be hidden and cannot be seen in a regular listing.
 - **System**. Indicates that it is part of the operating system and is used exclusively by it.
 - **Directory**. This attribute indicates that it is a directory.
