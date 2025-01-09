@@ -377,6 +377,302 @@ There are software versions that do not need to be installed on the operating sy
 
 Its disadvantages are that not all applications offer portable versions and they may not have all the features of the installed version
 
+## Graphical user interface in GNU/Linux
+
+In Linux distributions the graphical user interface does not run at the operating system kernel level (with a few exceptions), which allows the desktop environment to be separated and configured freely.
+
+<figure markdown="span">
+    ![Graphical user interface layer diagram](ud4/Esquema_de_las_capas_de_la_interfaz_grafica_de_usuario.svg){width=75%}
+    <figcaption>Graphical user interface layer diagram</figcaption>
+</figure>
+
+There are many graphical environments that offer a wide range of possibilities for users. The reason is that in operating systems of the *Unix* family, the graphical interface runs as a layer above the text interface.
+
+- The **graphical server** or *display server* is the application in charge of drawing on the screen. Any application that wants to display something on the screen will ask the graphical server to do it. It also manages the interaction with the keyboard and mouse. The main graphical servers are ***Xorg*** and ***Wayland***
+
+- A **display manager**, or **login** manager, is typically a graphical user interface that is displayed at the end of the boot process instead of the default *shell*. There are several implementations of display managers, just as there are several types of window managers and desktop environments. There is usually a certain amount of customization available for each.
+
+- **Window Manager**. Controls the **appearance** and **behavior** of the windows. It is responsible for the **placement** of windows on the screen, the **decoration** of the windows, the behavior of the windows when they are **moved**, **resized**, **minimized**, **maximized**, etc. The window manager is also responsible for the appearance of the windows, such as the **title bar**, the **borders**, the **buttons**, etc.
+
+    There are several **types** of window managers:
+
+    - **Stacking**, or floating. This is the **traditional desktop** used in systems such as _MS Windows_ or _macOS_. Windows act like sheets of paper on a desktop and can be stacked on top of each other. Some examples are *Kwin*, *Xfwm*, or *Mutter*.
+
+    - **Tiling**. Windows do not overlap in tile-like mosaics. They typically make very extensive use of key combinations and rely less (or not at all) on the mouse. Tiling window managers can be manual, offer predefined layouts, or both. Some examples are *bspwm*, *i3*, or *sway*
+
+    - **Dynamic**. They can dynamically switch between a tiling or floating window layout.
+
+- A **desktop environment** is an implementation of the desktop metaphor made up of a **set of programs**, which share a **common graphical user interface**, such as icons, toolbars, wallpapers, and desktop widgets. In addition, most desktop environments include a set of built-in applications and utilities.
+
+Some examples of popular desktop environments are: *KDE Plasma*, *Gnome*, *Xfce*, *Lxde*, *Cinnamon*, etc.
+
+### Installing the desktop environment in *Debian*
+
+A fundamental task for a user, especially if it is an administrator, is the installation and uninstallation of software. In the *Debian* command line, when the source of the software is the **repositories**, this task is mainly done with the **`apt`** tool.
+
+However, there is a lesser-known tool, called _**Tasksel**_ that adds some advantages:
+
+- It is programmed for the distributions of the _**Ubuntu/Debian**_ family.
+- Works in text mode, it offers a simple-to-use interface.
+- It allows the installation or uninstallation of a group of packages in a single step. These groups are made up of packages that are usually installed in a coordinated manner.
+- Several groups of packages can be installed simultaneously.
+- It even allows you to create your own groups of packages, to perform custom installations.
+
+Since _Tasksel_ is part of the official repositories, installing it is as simple as running the following command:
+
+```sh
+$ sudo apt install tasksel
+```
+
+Once the tool is installed, to use it we just have to write the command:
+
+```sh
+$ sudo tasksel
+```
+<figure markdown="span">
+    ![Tasksel tool menu](ud4/tasksel.png){width=75%}
+    <figcaption>Tasksel tool menu</figcaption>
+</figure>
+
+Its operation is very simple:
+
+- If an entry appears marked **`[*]`**, it means that the corresponding group **is installed**.
+- And if it is unchecked **`[ ]`**, the group **is uninstalled**.
+
+Using the **arrow keys** we move to the option we want to activate or deactivate and with the **space bar** we change its status. Following this technique, we can choose as many collections as necessary.
+
+Next, we will see how the download and installation of packages occurs.
+
+At the end of the installation, it will close automatically and return to the terminal.
+
+In the future, when using _Tasksel_ again, we will see that the collections that are already installed are preselected.
+
+## Popular Linux desktop environments
+
+### Xfce
+
+<figure markdown="span">
+    ![Xfce4 desktop environment](ud4/Xfce4_logo.png){width=50%}
+    <figcaption>Xfce4 desktop environment</figcaption>
+</figure>
+
+**Xfce** is a **lightweight** desktop environment for *UNIX*-like systems. It aims to be **fast** and **low system resources**, while remaining visually **appealing** and **easy** to use.
+
+*Xfce* embodies the **traditional *UNIX* philosophy of modularity and reusability**. It is made up of a number of components that provide all the functionality you would expect from a modern desktop environment. They are packaged separately and you can choose from the available packages to create the optimal personal work environment.
+
+Another priority of *Xfce* is compliance with **standards**, specifically those defined in ***[freedesktop.org](https:\\freedesktop.org)***.
+
+*Xfce* contains a number of **core components** for the minimal tasks expected of a desktop environment:
+
+- **Window manager**. Manages the placement of windows on the screen, provides window decorations, and handles workspaces or virtual desktops.
+
+- **Desktop manager**. Sets the background image and provides a main menu, desktop icons or minimized application icons, and a window list.
+
+- **Panel**. Switches between open windows, launches applications, switches between workspaces, and menu plugins for navigating applications or folders.
+
+- **Session manager**. Controls login and desktop power management, and allows saving multiple different sessions.
+
+- **Application finder**. Displays applications installed on the system by category, so you can find and launch them quickly.
+
+- **File manager**. Provides basic file management functions and unique utilities such as bulk file rename.
+
+- **Configuration Manager**. Tools to control various desktop settings; such as keyboard shortcuts, appearance, display settings, etc.
+
+In addition to the basic set of modules, *Xfce* also provides numerous **additional applications and plugins**, for example, a terminal emulator, a text editor, a sound mixer, an application finder, an image viewer, an *iCal*-based calendar, and a CD and DVD burning application. You can read more about *Xfce* modules on the ***[projects](https://www.xfce.org/projects)*** page.
+
+### KDE Plasma
+
+<figure markdown="span">
+    ![KDE Plasma desktop environment](ud4/KDE_logo.png){width=50%}
+    <figcaption>KDE Plasma desktop environment</figcaption>
+</figure>
+
+*KDE* is an international community that develops free software. It produces a desktop environment, a multitude of applications, and development infrastructure for various operating systems. The main software projects maintained by *KDE* are grouped into *KDE Plasma*, *KDE Applications*, and *KDE Frameworks*.
+
+- **KDE Plasma** is the desktop environment that offers a modern and highly configurable look. There are *Desktop*, *Mobile*, *Bigscreen*, and *Nano* variants.
+
+- **KDE Applications** is a set of applications and libraries designed by the *KDE* community. They were initially developed for the *Linux* world, but today a large number of them are characterized by being multiplatform.
+
+- **KDE Frameworks** is a collection of libraries and various software *Frameworks* by *KDE*, which serve as the technological basis for *KDE Plasma 5* and the *KDE Applications* distributed under the LGPL license.
+
+!!!note
+    Some people criticize the similarity of *KDE* to the *MS Windows* desktop environment. This observation, however, falls on the selection of predefined parameters of the environment; often oriented to ease its use for new users, mostly accustomed to working with *Microsoft* operating systems.
+
+Links of interest:
+
+- [What is KDE](https://userbase.kde.org/What_is_KDE/)
+- [KDE Applications](https://userbase.kde.org/Applications/)
+- [Table of equivalent applications](https://userbase.kde.org/Table_of_equivalent_applications/)
+
+### GNOME
+
+<figure markdown="span">
+    ![GNOME desktop environment](ud4/gnome_logo.png){width=50%}
+    <figcaption>GNOME desktop environment</figcaption>
+</figure>
+
+*GNOME* provides an "intuitive and attractive" window manager. The project emphasizes **simplicity**, **ease of use**, and **efficiency**. It aims to provide the freedom to create a desktop environment that will always have the source code available for reuse under a free software license.
+
+It aims to keep the desktop environment **accessible** to people with disabilities. It does so by using the Accessibility Toolkit (ATK) application programming interface, which allows for improved user experience through the use of special input methods and speech synthesis and speech recognition software.
+
+Since *GNOME 2*, the focus has been on productivity. All *GNOME* programs share a consistent graphical user interface style, the design guided by concepts based on cognitive ergonomics.
+
+*GNOME Shell* is the basic user interface of the desktop environment, controlling window management and breaking with the desktop model used in previous versions. It uses *Mutter*, a window composition manager based on the older *Metacity*, and the *Clutter* library to provide visual effects and graphics acceleration.
+
+!!!note
+    In August 2011, *Linus Torvalds* declared that he considered *GNOME Shell* to be a "devilish mess",​ due to its design flaws and poor user experience.​ Although in early 2013 he acknowledged that he is using *GNOME 3* again thanks to some of the available extensions that bring back some of the old features.​
+
+Interesting links:
+
+- [GNOME help](https://help.gnome.org/)
+
+## Linux file system structure
+
+Operating systems provide mechanisms to organize and manage files and directories on storage devices.
+
+The Filesystem Hierarchy Standard (FHS) is a standard that defines the main directories and their contents in the *GNU/Linux* operating system and other *Unix* systems.
+
+If we open a file manager and go to the root directory `/` we can see that it has little to do with *Microsoft* systems
+
+<figure markdown="span">
+    ![File manager](ud4/filesystemroot.png){width=75%}
+    <figcaption>File manager</figcaption>
+</figure>
+
+Description of main directories:
+
+- **`/`** Root directory of the system from which the rest of the directories start. (*We could make a comparison with `C:\` in Windows but it would not be entirely correct, since in Linux there is only one root directory*)
+- **`/bin`** Essential commands available to all users. Includes, for example, `cat`, `ls`, `cp`, `rm`, `mkdir`, etc.
+- **`/boot`** Boot loader files (includes important boot and system kernel files, for example, the `vmlinuz` kernel, the temporary boot image `initrd.img`). Often on a separate partition or disk.
+- **`/dev`** Block and character special files associated with hardware devices. All physical devices in the system, all our hardware, are found here.
+- **`/etc`** System-specific system configuration files.
+- **`/home`** Working directories for all users, except the superuser (administrator, *root*). Contains saved files, personal settings, etc. Often installed on a separate disk or partition. Each user has their own directory within this folder.
+- **`/lib`** Shared essential libraries for programs, i.e. for binaries in `/bin` and `/sbin`. Also contains libraries for the kernel.
+- **`/media`** Contains mount points for removable storage media, such as optical drives, pendrives, and can even be used to mount other partitions on the same hard drive, such as a partition used by another operating system.
+- **`/mnt`** Temporarily mounted file system. This is a directory similar to `/media`, but is mostly used by users. It is used to mount hard drives and partitions temporarily on the system; it does not require a password, unlike the `/media` directory.
+- **`/opt`** Contains optional software packages for static applications, which can be shared between users. These applications do not save their configurations in this directory; In this way, each user can have a different configuration of the same application, so that the application is shared, but not the user configurations, which are stored in their respective directory in `/home`.
+- **`/proc`** Contains mainly text files, virtual file system that documents the kernel and the state of the processes in text files (for example, *uptime*, *network*).
+- **`/root`** Root directory of the *root* user. It works like the folders in `/home`, but in this case, it is only for the superuser (system administrator).
+- **`/sbin`** Essential binary system, commands and programs exclusive to the superuser (*root*), for example, *init*, *route*, *ifup*). A user can run any of these command applications, if they have sufficient permissions, or if they have the superuser password.
+- **`/srv`** Specific data location that is served by the system.
+- **`/sys`** Evolution of `proc`. Virtual file system that documents the kernel, but located in a hierarchical manner. In `proc` they are arranged in an anarchic manner.
+- **`/tmp`** Temporary files. This is where temporary files are usually stored, such as the internet browser.
+- **`/usr`** Contains most multi-user utilities and applications, that is, accessible to all users. In other words, it contains shared files, but which are nonetheless read-only.
+- **`/usr/bin`** Non-administrative binary commands for all users. They are read-only, but can have their own configuration for each user in `/home`.
+- **`/var`** Variable files, such as logs, spool files, databases, temporary email files, and some temporary files in general. Generally acts as a system log. Helps to find the origins of a problem.
+- **`/var/log`** Log files, *log*.
+- **`/var/tmp`** Temporary files that, unlike `/tmp`, are not deleted between sessions or system reboots, but are still dispensable.
+
+More information: *[Filesystem Hierarchy Standard](https://www.pathname.com/fhs/)*
+
+### File and directory names
+
+File and directory names follow the following rules:
+
+- Be between 1 and **255** characters long.
+- Are **case sensitive**. *For example `som.txt`, `Som.txt` and `SOM.TXT` would be three different files.*
+- Any character can be used except the slash `/`.
+- Also, it is **not recommended** to use characters with special meanings in *Linux*: `\` `^` `~` `!` `#` `?` `&` `(` `)` `'` `"` `;` `·` `$` `=` `¿` `¡` `<` `>` `@` `{` `}` `*` `+`
+
+## Software management
+
+When managing applications for a *Linux* operating system, we must take into account several concepts.
+
+A **software package** is a series of programs that are distributed together.
+
+*Linux* distributions have **package management systems** that help install, remove, and keep software updated. In addition, if the package being installed has other related packages that are not included, such as libraries shared by several programs, the package management system is responsible for installing these **dependencies**.
+
+Package management systems need to connect to **software repositories** that offer a centralized catalog of applications managed by the community of developers and users. Repositories (or *repos*) are usually configured during installation, but we can add new repositories, taking into account that they are compatible with our distribution.
+
+Package management systems of the different _Linux_ distributions:
+
+- **dpkg**, used by *Debian*-based systems, with `.deb` format and managed by the `apt` tool
+- **RPM**, used in *Red Hat*-based systems, with `.rpm` format and managed by various tools: `yum`, `yast` or `urpmi`
+- **Pacman**, used in *Arch Linux*-based systems, with compressed `.pkg.tar` format and managed by the `pacman` tool.
+
+### Independent package systems
+
+Apart from the package managers specific to each distribution, there are other ways to install applications using **independent systems that are valid for any distribution**.
+
+Many application developers are implementing this type of software distribution, since they save the trouble of adapting their latest versions to each distribution, which will be done in the future by the developers and users of each independent distribution.
+
+The advantages of these systems are:
+
+- Not depending solely on the repository dedicated to the distribution.
+- Using more up-to-date applications without fragmenting the system libraries.
+- Allowing users to install applications in their workspace.
+
+The disadvantages are:
+
+- They do not use shared system libraries, so they consume more memory and take up more storage space.
+- They are less stable than the official versions of the distribution.
+- They can pose a security risk.
+
+Among the main systems we find the following:
+
+- **AppImage**. It allows you to distribute applications on Linux without the need for installation or administrator permissions, which is known as *portable* applications. There is no official repository, although we can find places like [AppImageHub](https://www.appimagehub.com/) where the community shares applications in this format.
+
+To use a program packaged in *AppImage*, it is as simple as downloading the file with the extension `.AppImage` and giving it execution permissions.
+
+- **FlatPack**. It is a utility that allows you to install applications independent of the distribution or version of *Gnu/Linux*. It is designed to run within a desktop session. Users can run applications isolated from the rest of the system.​ They need user permission to control hardware devices or access user files. There is no official repository, but one of the best known is [Flathub](https://flathub.org/)
+
+- **Snap**. It is a universal package management system originally created by *Canonical* for the *Ubuntu* operating system. Unlike Flatpack, the system is designed to work for both desktop and command-line applications. It has one official repository, although alternative repositories can be set up.
+
+_Snap_ and _Flatpak_ are similar packaging systems for Linux, but they have some key differences:
+
+- **Virtualization technology**: _Snap_ uses _LXD container_ technology to virtualize applications, while _Flatpak_ uses _OCI container_ technology.
+
+- **Application stores**: _Snap_ has its own application store called "**Snap Store**", while _Flatpak_ does not have a centralized application store, although there are some third-party stores that offer _Flatpak_ applications.
+
+- **Update policy**: _Snap_ provides **automatic updates**, which are downloaded and installed in the background, while _Flatpak_ provides on-demand updates, meaning the user must run a command to update *Flatpak* applications.
+
+- **Package size**: In general, *Flatpak* packages tend to be **larger** than _Snap_ packages because *Flatpak* includes all the libraries required by the application, while *Snap* uses common libraries shared by multiple applications.
+
+## Linux file system permissions
+
+The file and directory permission system in *Linux* is an access control mechanism used to determine who can access, modify, or execute files and directories on the system.
+
+Each file and directory has an **owner** and an associated **group**, and permissions are set for the owner, the group, and other users. Permissions are divided into three categories:
+
+- **Read** (r): Allows reading the contents of a file or directory.
+- **Write** (w): Allows modifying the contents of a file or directory.
+- **Execute** (x): Allows executing a file or accessing a directory.
+
+These permissions are set for the owner, the group, and other users:
+
+- **Owner** (u): Owner of the file or directory.
+- **Group** (g): Group to which the file or directory belongs.
+- **Other** (o): Other users who do not belong to any of the above.
+
+<figure markdown="span">
+    ![Linux file permissions](ud4/permissions.png){width=75%}
+    <figcaption>Linux file permissions</figcaption>
+</figure>
+
+In the example you can see that the owner is "user" and has all permissions, the group is "games" and has read and execute permissions, and finally other users will not have any permissions.
+
+In addition to the basic permissions, there are some additional permissions in Linux:
+
+- **setuid**: allows a program to run with the owner's permissions instead of the user who runs it.
+- **setgid**: allows a program to run with the group's permissions instead of the user who runs it.
+- **sticky bit**: prevents users from deleting files that are not owned by them in a shared directory.
+
+## Linux file and directory compression
+
+Several compression formats are used in _Linux_, each with its own characteristics and advantages. Some of the most common formats are:
+
+- **gzip** (`.gz`): This is one of the oldest and most widely used compression formats in *Linux*. It is fast and efficient at compressing single files, but is not very effective at compressing large files or multiple files at once.
+
+- **bzip2** (`.bz2`): This is a more modern compression format than *gzip* and offers a better compression ratio, meaning that compressed files are smaller than similarly sized *gzip* files. However, the compression process is slower.
+
+- **xz** (`.xz`): This is a very efficient compression format that uses a complex compression algorithm and offers the best compression ratio among the formats mentioned. However, compression and decompression are slower than the other formats.
+
+- **zip** (`.zip`): is a compression format used in *MS Windows* operating systems and is also supported by *Linux*. It allows the compression of multiple files into a single file and offers the option of password protecting the compressed file.
+
+- **tar** (`.tar`): is an archiving utility used in combination with other compression tools such as *gzip* or *bzip2*. It allows the joining of multiple files into one file without compressing them and preserving the original permissions, and then compression can be applied using external compression tools. It is common to find files with the extension `.tar.gz` which indicates that the files have been joined into a *tar* and compressed in *gzip*.
+
+There are other compression formats available for *Linux*, but these are some of the most widely used and well-known.
+
 
 <!--
 ## System updates
