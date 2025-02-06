@@ -1,4 +1,4 @@
-all: ud1 ud2
+all: ud1 ud2 ud3 ud4 ud5_1
 # ud1_2 ud1_2_1 ud1_2_2 ud1_2_3 ud2_1 ud2_2 ud3_1 ud3_pr1
 
 LOCAL_URL=http://127.0.0.1:8000/
@@ -13,6 +13,11 @@ gettitle=$(shell grep -m 1 '# ' $1 | sed -r 's/^# //')
 PREFIX=SMR_SOM_
 
 UD1_MD=unit01
+UD2_MD=unit02
+UD3_MD=unit03
+UD4_MD=unit04
+UD5_DIR=unit05/
+UD5_1_MD=unit05_01
 
 ud1: docs/$(UD1_MD).md
 	$(eval title := $(call gettitle, $<) )
@@ -23,6 +28,18 @@ UD2_MD=unit02
 ud2: docs/$(UD2_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD2_MD) $(OUTPUT_DIR)$(PREFIX)$(UD2_MD).pdf "$(title)"
+
+ud3: docs/$(UD3_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD3_MD) $(OUTPUT_DIR)$(PREFIX)$(UD3_MD).pdf "$(title)"
+
+ud4: docs/$(UD4_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD4_MD) $(OUTPUT_DIR)$(PREFIX)$(UD4_MD).pdf "$(title)"
+
+ud5_1: docs/$(UD5_DIR)$(UD5_1_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD5_DIR)$(UD5_1_MD) $(OUTPUT_DIR)$(PREFIX)$(UD5_1_MD).pdf "$(title)"
 
 # UD1_2_MD=ud1-2-sintaxis
 
