@@ -100,5 +100,10 @@
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "peacock.color": "#5582b5",
-  "markdown.extension.toc.levels": "2..2"
+  "markdown.extension.toc.levels": "2..2",
+  "cSpell.language": "en",
+  "cSpell.enabledFileTypes": {
+    "*": false,
+    "markdown": true
+  }
 }

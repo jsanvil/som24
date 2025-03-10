@@ -82,6 +82,7 @@ extra_javascript:
 
 plugins:
   # - tags
+  - caption
   # - mermaid2:
   #     javascript: extra/js/mermaid.min.js
   #     arguments:
