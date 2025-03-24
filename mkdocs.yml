@@ -23,6 +23,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - content.tabs.link
   language: en
   palette:
     - scheme: default
@@ -68,6 +69,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
