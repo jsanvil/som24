@@ -1,0 +1,1921 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+    
+    
+      
+        <title>UD9 Explotación SO Linux CLI - Sistemas Operativos Monopuesto</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra/fontawesome/css/all.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#explotacion-so-linux-cli-falinux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sistemas Operativos Monopuesto" class="md-header__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas Operativos Monopuesto
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD9 Explotación SO Linux CLI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit01/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit02/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit03/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit04/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Unit5
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sistemas Operativos Monopuesto" class="md-nav__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistemas Operativos Monopuesto
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unit5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit05_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 MS Windows Administration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit05_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Linux command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="explotacion-so-linux-cli-falinux">Explotación SO Linux CLI \faLinux<a class="headerlink" href="#explotacion-so-linux-cli-falinux" title="Permanent link">¶</a></h1>
+<p>La interfaz de línea de comandos (CLI) de <em>Linux</em> es una interfaz de texto. Conocido a menudo como <strong><em>shell</em></strong>, <strong>terminal</strong>, <strong>consola</strong>, <strong><em>prompt</em></strong>, <strong>línea de comandos</strong>, entre otros nombres, puede parecer complejo y confuso de usar. Sin embargo, el poder y la flexibilidad que ofrece, significa que su uso puede ser esencial cuando se trata de administrar el sistema.</p>
+<p>Esta unidad expone la motivación de uso de línea de comandos, se enseñan los conceptos básicos y comandos acompañados de algunos ejemplos. Se asume que el estudiante no tiene conocimientos previos.</p>
+<h2 id="un-poco-de-historia">Un poco de historia<a class="headerlink" href="#un-poco-de-historia" title="Permanent link">¶</a></h2>
+<p>Durante los primeros años de la informática, <em>UNIX</em> uno de los primeros sistemas operativos, fue diseñado para ejecutarse como un sistema multiusuario en computadoras centrales o <em>mainframes</em>, con usuarios que se conectan a él de forma remota a través de <strong>terminales</strong> individuales. Estos terminales eran bastante básicos para los estándares modernos: solo un teclado y una pantalla, sin capacidad para ejecutar programas. En su lugar, simplemente enviarían pulsaciones de teclas al servidor y mostrarían los datos que recibieran en la pantalla. No había ratón, ni gráficos sofisticados, ni siquiera color. Todo se enviaba y recibía como texto. Por lo tanto, cualquier programa que se ejecutara en el <em>mainframe</em> tenía que producir texto como salida y aceptar texto como entrada.</p>
+<p><figure id="_figure-1"><img alt="Terminales conectados a un antiguo computador central" src="ud9/mainframe_terminals.png" width="50%"><figcaption>Figure 1: Terminales conectados a un antiguo computador central</figcaption></figure></p>
+<p>En comparación con los gráficos, el texto <strong>consume muy pocos recursos</strong>. Incluso en máquinas de la década de 1970, que ejecutaban cientos de terminales a través de conexiones de red extremadamente lentas, los usuarios podían interactuar con los programas de manera rápida y eficiente. Se crearon comandos muy concisos para reducir la cantidad de pulsaciones de teclas necesarias. Esta <strong>velocidad y eficiencia</strong> es una de las razones por las que esta interfaz de texto todavía se usa ampliamente en la actualidad.</p>
+<p>Cuando iniciaban sesión en un <em>mainframe</em> de <em>UNIX</em> a través de un terminal, los usuarios tenían que realizar tareas administración y gestión de archivos que ahora se realizan con un ratón y un par de ventanas. Las operaciones de crear, renombrar, copiar o mover archivos en el disco las realizaban con una interfaz de texto.</p>
+<p>Cada una de estas tareas requería su propio programa o <strong>comando</strong>: uno para cambiar directorios (<code>cd</code>), otro para listar su contenido (<code>ls</code>), un tercero para renombrar o mover archivos (<code>mv</code>), etc. Para coordinar la ejecución de cada uno de estos programas, el usuario se conectaría a un <strong>programa maestro</strong> que luego podría usarse para iniciar cualquiera de los otros. Al envolver los comandos del usuario, este programa "<strong><em>shell</em></strong>", podría proporcionar capacidades comunes a cualquiera de ellos, como la capacidad de pasar datos de un comando a otro, o usar caracteres comodín especiales para trabajar con muchos archivos con nombres similares a la vez. Los usuarios podrían incluso escribir código simple, llamado "<em>script</em>, que podría usarse para automatizar largas series de comandos de <em>shell</em> para facilitar tareas complejas. El programa <em>shell</em> original de <em>UNIX</em> se es <code>sh</code>, pero se ha ampliado y reemplazado a lo largo de los años, por lo que en un sistema <em>Linux</em> moderno lo más extendido es el uso de un <em>shell</em> llamado <code>bash</code>.</p>
+<p><em>Linux</em> es una especie de descendiente de <em>UNIX</em>. La parte central de <em>Linux</em> está diseñada para comportarse de manera similar a un sistema <em>UNIX</em>, de modo que la mayoría de los <em>shells</em> antiguos y otros programas basados ​​en texto se ejecutan sin problemas. En teoría, incluso podría conectar uno de esos viejos terminales de la década de 1970 en un sistema <em>Linux</em> moderno. Pero en la actualidad es mucho más común usar una <strong>terminal de software</strong>: la misma vieja interfaz de texto estilo <em>UNIX</em>, pero ejecutándose en una ventana junto con sus programas gráficos.</p>
+<h2 id="abrir-un-emulador-de-terminal">Abrir un emulador de terminal<a class="headerlink" href="#abrir-un-emulador-de-terminal" title="Permanent link">¶</a></h2>
+<p>Un <strong>emulador de terminal</strong> es un programa informático que simula el funcionamiento de los antiguos terminales físicos, en las interfaces gráficas también se conocen como <em>ventana de terminal</em>. A partir de ahora nos referiremos a los emuladores de terminal como terminales.</p>
+<p>Las distribuciones <em>Linux</em>, generalmente tendrán un lanzador de terminal ubicado en el mismo lugar que sus otros lanzadores de aplicaciones. Puede estar oculto en un submenú, pero es probable que esté allí en alguna parte. Se puede encontrar la terminal buscando en el lanzador de aplicaciones o buscador escribiendo las primeras letras de "<em>terminal</em>", "<em>consola</em>", "<em>prompt</em>" o "<em>shell</em>". Los desarrolladores suelen configurar el lanzador con todos los sinónimos más comunes.</p>
+<p>Si no se un lanzador, o desea una forma más rápida de abrir el terminal, la mayoría de sistemas usan el mismo método abreviado de teclado predeterminado para iniciarlo: <code>Ctrl</code>+<code>Alt</code>+<code>T</code>.</p>
+<p>Independientemente de cómo se inicie la terminal, debemos terminar con una ventana bastante aburrida con un poco de texto extraño en la parte superior, como la imagen a continuación. Dependiendo del sistema <em>Linux</em>, es posible que los colores no sean los mismos y que el texto diga algo diferente, pero el diseño general de una ventana con un área de texto grande, en su mayoría vacía.</p>
+<p><figure id="_figure-2"><img alt="Ventana de terminal" src="ud9/terminal_emulator.png" width="65%"><figcaption>Figure 2: Ventana de terminal</figcaption></figure></p>
+<p>El terminal queda a la espera de la entrada de comandos, por ejemplo, podemos escribir el comando <code>pwd</code>, en minúsculas, y después pulsar la tecla <code>Intro</code> para ejecutarlo.</p>
+<p>Aparecerá la ruta de un directorio (<code>/home/TU_USUARIO</code>), y después otra copia del <em>prompt</em>.</p>
+<p><figure id="_figure-3"><img alt="Ejecución de un comando en la ventana de terminal" src="ud9/terminal_first_command.png" width="50%"><figcaption>Figure 3: Ejecución de un comando en la ventana de terminal</figcaption></figure></p>
+<p>Debemos entender unos cuantos conceptos básicos antes de comprender qué hace exactamente el comando.</p>
+<h2 id="el-shell-de-linux">El <em>shell</em> de <em>Linux</em><a class="headerlink" href="#el-shell-de-linux" title="Permanent link">¶</a></h2>
+<p>Los programas <em>shell</em> (de traducción caparazón o cáscara) son intérpretes de comandos que facilitan el control del sistema operativo. No son el sistema operativo en sí, sino que forman una capa que comunica el núcleo con el usuario interactivo. Al entrar al sistema, cada usuario corre un <em>shell</em> particular e independiente de cualquier otro usuario que simultáneamente esté utilizando el sistema. Esto se aprecia por la aparición de un carácter tal como <code>$</code> o <code>#</code> o <code>&gt;</code> (existen otros, de hecho ésto suele ser configurable) que dependerán del tipo de <em>shell</em> que hemos lanzado. Los <em>shells</em> son útiles para ejecutar uno o varios programas y en ellos se aprecia la  multitarea real del sistema operativo. Entre los <em>shells</em> más populares encontramos:</p>
+<ul>
+<li><strong><em>Bourne Shell</em></strong>: fue escrito por <em>Stephen Bourne</em> y es el más básico y antiguo. Se invoca a través del comando <strong><code>sh</code></strong> , tras lo que debe de aparecer el <em>prompt</em> del sistema <code>$</code>.</li>
+<li><strong><em>C Shell</em></strong>: Posterior al <em>Bourne Shell</em> y orientado a los programadores de <em>C</em>. Se ejecuta escribiendo el comando <strong><code>csh</code></strong>, con lo que aparece el carácter <code>%</code> o <code>&gt;</code>. Una versión mejorada de este es el <code>tcsh</code> que permite completar nombres de ficheros y directorios usando el tabulador y la edición de la línea de comandos. Este último suele estar disponible en todas las distribuciones de <em>Linux</em>.</li>
+<li><strong><em>Korn Shell</em></strong>: Es una ampliación del <em>Bourne Shell</em>. Se lanza ejecutando el comando <strong><code>ksh</code></strong>, con lo que aparece el prompt <code>$</code>.</li>
+<li><strong><em>GNU Bourne-Again SHell</em></strong> (<strong><em>bash</em></strong>): Como su nombre da a entender se trata de una extensión del <em>Bourne Shell</em> y añade características tales como completar partes de nombres de ficheros (al igual que <code>tcsh</code>) y darnos listas de ficheros que empiezan por una determinada secuencia de caracteres sin mas que presionar la tecla de tabulación. Se invoca mediante el comando <strong><code>bash</code></strong>.</li>
+</ul>
+<p>Para comprobar la lista de intérpretes disponibles en el sistema podemos ejecutar <code>cat /etc/shells</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>cat<span class="w"> </span>/etc/shells<span class="w"> </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># /etc/shells: valid login shells</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>/bin/sh
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>/bin/bash
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>/usr/bin/bash
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>/bin/rbash
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>/usr/bin/rbash
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>/bin/dash
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>/usr/bin/dash
+</code></pre></div>
+<p>Para conocer el shell configurado por defecto en el sistema podemos ejecutar <code>echo $SHELL</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/bin/bash
+</code></pre></div>
+<p>Aunque la variable <code>$SHELL</code> no nos dice qué intérprete estamos utilizando actualmente, para saber qué <em>shell</em> estamos utilizando podemos utilizar <code>ps -p $$</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>user@DEB11:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/bin/bash
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>user@DEB11:~$<span class="w"> </span>ps<span class="w"> </span>-p<span class="w"> </span><span class="nv">$$</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>PID<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">   </span><span class="m">9502</span><span class="w"> </span>pts/0<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>bash
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Comprobamos que estamos utilizando bash</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>user@DEB11:~$<span class="w"> </span>sh
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Cambiamos a sh</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>/bin/bash
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># La variable $SHELL no ha cambiado</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>$<span class="w"> </span>ps<span class="w"> </span>-p<span class="w"> </span><span class="nv">$$</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span>PID<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">   </span><span class="m">9535</span><span class="w"> </span>pts/0<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>sh
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="c1"># Comprobamos que estamos utilizando sh</span>
+</code></pre></div>
+<h3 id="prompt">Prompt<a class="headerlink" href="#prompt" title="Permanent link">¶</a></h3>
+<p>Al abrir el emulador de terminal, una línea de texto aparece delante del cursor (<code>user@host:~$ _</code>) se conoce con el nombre de <strong>prompt</strong> e indica que el terminal está lito para aceptar comandos. El prompt es configurable, pero muchos sistemas utilizan por defecto el formato visto en el ejemplo:</p>
+<ul>
+<li>Nombre de usuario (<code>user</code>). Usuario con el que estamos trabajando actualmente.</li>
+<li>Nombre del equipo (<code>host</code>). El nombre del equipo al que se ha conectado el terminal, parece algo obvio, pero si nos conectamos a otro ordenador de forma remota, puede que nos olvidemos dónde estamos trabajando, de esta forma podemos verlo de manera rápida.</li>
+<li>Arroba (<code>@</code>) En inglés se lee como "<em>at</em>", que significa "en", puede que te suene de las cuentas de correo electrónico. Un ejemplo, si tenemos "<code>admin@PC01</code>" en inglés se leería "<em>admin at PC01</em>" lo que significa que el usuario "admin" esta conectado al equipo "PC01".</li>
+<li>Dos puntos (<code>:</code>). Separador el nombre de <em>host</em> del directorio de trabajo.</li>
+<li>Directorio de trabajo actual. <em>En el ejemplo, <code>~</code> es una abreviatura del directorio <code>home</code> de usuario</em></li>
+<li>Símbolo de dólar (<code>$</code>)</li>
+<li>Cursor. Indica donde podemos introducir nuevo texto, puede que sea una barra parpadeante, un bloque cuadrado, un guion bajo.</li>
+</ul>
+<h3 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h3>
+<p>Un comando es un <strong>programa con una funcionalidad determinada</strong>. Al escribir una entrada de texto en el prompt, estamos solicitando la ejecución de una orden al terminal. Tanto si tiene éxito como si no, cuando termine la ejecución del comando, el terminal volverá a mostrar el prompt y quedará a la espera de un nuevo comando. </p>
+<p>Los comandos pueden ir acompañados de <strong>opciones</strong> y <strong>argumentos</strong> que modifican su comportamiento. Por ejemplo en la orden <code>ls -a /usr</code>, <code>ls</code> es el <strong>comando</strong> encargado de mostrar el contenido de un directorio, <code>-l</code> es una <strong>opción</strong> que indica el formato de salida y <code>/usr</code> es un <strong>argumento</strong> que indica el directorio qué queremos mostrar.</p>
+<h2 id="navegacion-basica">Navegación básica<a class="headerlink" href="#navegacion-basica" title="Permanent link">¶</a></h2>
+<h3 id="organizacion-del-sistema-de-archivos">Organización del sistema de archivos<a class="headerlink" href="#organizacion-del-sistema-de-archivos" title="Permanent link">¶</a></h3>
+<p>Al igual que <em>Windows</em>, los archivos en un sistema <em>Linux</em> se organizan en lo que se denomina una estructura de directorios jerárquica. Esto significa que están organizados en un patrón de directorios en forma de árbol, que pueden contener archivos y subdirectorios. El primer directorio del sistema de archivos se denomina <strong>directorio raíz</strong>. El directorio raíz contiene archivos y subdirectorios, que contienen más archivos y subdirectorios y así sucesivamente.</p>
+<p>La mayoría de los entornos gráficos incluyen un programa gestor de archivos que se usa para ver y manipular el contenido del sistema de archivos.</p>
+<p>Una diferencia importante entre <em>Windows</em> y los sistemas operativos <em>Linux</em>, es que <em>Linux</em> no emplea el concepto de letras de unidad. Mientras que las letras de unidad de <em>Windows</em> dividen el sistema de archivos en una serie de árboles diferentes (uno para cada volumen), <em>Linux</em> siempre tiene un solo árbol. Diferentes dispositivos de almacenamiento pueden ser diferentes ramas del árbol, pero siempre hay un solo árbol.</p>
+<h3 id="comando-pwd">Comando '<strong>pwd</strong>'<a class="headerlink" href="#comando-pwd" title="Permanent link">¶</a></h3>
+<p>Dado que la interfaz de línea de comandos no puede proporcionar imágenes de la estructura del sistema de archivos, debemos tener una forma diferente de representarlo. Para hacer esto, piense en el árbol del sistema de archivos como un laberinto y que estamos dentro de él. En un momento dado, estamos ubicados en un único directorio. Dentro de ese directorio, podemos ver sus archivos, la ruta a su directorio padre y las rutas a los subdirectorios del directorio en el que nos encontramos.</p>
+<p>El directorio en el que nos encontramos se llama <strong>directorio de trabajo</strong>. Para <strong>mostrar el nombre del directorio de trabajo actual</strong>, usamos el comando <strong><code>pwd</code></strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>user@DEB11:~$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/home/user
+</code></pre></div>
+<p>Cuando iniciamos sesión por primera vez en el sistema, el directorio de trabajo se establece en nuestro directorio de inicio. Aquí es donde ponemos nuestros archivos. En la mayoría de los sistemas, el directorio de inicio se llamará <code>/home/nombre_de_usuario</code>, (aunque podría se cambiado por el administrador).</p>
+<p>Para listar los archivos en el directorio de trabajo, usamos el comando <strong><code>ls</code></strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>user@DEB11:~$<span class="w"> </span>ls
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Descargas<span class="w">   </span>Escritorio<span class="w">  </span>Plantillas<span class="w">  </span>Vídeos
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Documentos<span class="w">  </span>Imágenes<span class="w">    </span>Música<span class="w">  </span>Público
+</code></pre></div>
+<h3 id="comando-cd">Comando '<strong>cd</strong>'<a class="headerlink" href="#comando-cd" title="Permanent link">¶</a></h3>
+<p>Para <strong>cambiar el directorio de trabajo actual</strong> usamos el comando <strong><code>cd</code></strong>. Para ello escribimos <code>cd</code> seguido de la <strong>ruta del directorio de trabajo deseado</strong>. Un nombre de ruta es la ruta que tomamos a lo largo de las ramas del árbol para llegar al directorio que queremos. Los nombres de ruta se pueden especificar de dos maneras diferentes; rutas de acceso <strong>absolutas</strong> o rutas de acceso <strong>relativas</strong>. Veamos primero con nombres de ruta absolutos.</p>
+<p>Un <strong>nombre de ruta absoluto</strong> comienza con el directorio raíz y sigue el árbol rama por rama hasta que se completa la ruta al directorio o archivo deseado. Por ejemplo, hay un directorio en su sistema en el que se instalan la mayoría de los programas. El nombre de ruta del directorio es <code>/usr/bin</code>. Esto significa que desde el directorio raíz (representado por la barra diagonal <code>/</code> inicial en el nombre de la ruta) hay un directorio llamado "<code>usr</code>" que contiene un directorio llamado "<code>bin</code>".</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>user@DEB11:~$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/home/user
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>user@DEB11:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/bin
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>user@DEB11:/usr/bin$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>/usr/bin
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>user@DEB11:/usr/bin$<span class="w"> </span>ls
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="s1">'['</span><span class="w">                                     </span>mkisofs
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w"> </span>411toppm<span class="w">                               </span>mk_modmap
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w"> </span>7z<span class="w">                                     </span>mknod
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w"> </span>7za<span class="w">                                    </span>mktemp
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w"> </span>7zr<span class="w">                                    </span>mkzftree
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w"> </span>aa-enabled<span class="w">                             </span>mm2gv
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w"> </span>aa-exec<span class="w">                                </span>mmcli
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w"> </span>accountwizard<span class="w">                          </span>moc
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w"> </span>aconnect<span class="w">                               </span>moggsplit
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w"> </span>acyclic<span class="w">                                </span>mogrify
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w"> </span>add-apt-repository<span class="w">                     </span>mogrify-im6
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w"> </span>addpart<span class="w">                                </span>mogrify-im6.q16
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w"> </span>addr2line<span class="w">                              </span>monitor-sensor
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w"> </span>akonadi_agent_launcher<span class="w">                 </span>montage
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w"> </span>akonadi_agent_server<span class="w">                   </span>montage-im6
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>...
+</code></pre></div>
+<p>Podemos ver que hemos cambiado el directorio de trabajo actual a <code>/usr/bin</code> y que está lleno de archivos. Observar cómo ha cambiado el <em>prompt</em> <code>user@DEB11:/usr/bin$</code></p>
+<p>Donde un nombre de ruta absoluto comienza desde el directorio raíz y conduce a su destino, un nombre de ruta relativo comienza desde el directorio de trabajo actual. Para ello, utiliza un par de notaciones especiales para representar posiciones relativas en el árbol del sistema de archivos. Estas notaciones especiales son "<strong><code>.</code></strong>" (punto) y "<strong><code>..</code></strong>" (punto punto).</p>
+<p>El "<strong><code>.</code></strong>" (punto) se refiere al directorio de trabajo actual y la notación "<strong><code>..</code></strong>" (punto punto) se refiere al directorio previo o padre. Así es como funciona. Cambiemos el directorio de trabajo a <code>/usr/bin</code> nuevamente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>user@DEB11:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/bin
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>user@DEB11:/usr/bin$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>/usr/bin
+</code></pre></div>
+<p>Bien, ahora digamos que queremos cambiar el directorio de trabajo al padre de <code>/usr/bin</code>, que es <code>/usr</code>. Podríamos hacerlo de dos maneras diferentes. Primero, con una <strong>ruta absoluta</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>user@DEB11:/usr/bin$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>user@DEB11:/usr$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>/usr
+</code></pre></div>
+<p>O con una <strong>ruta relativa</strong> al directorio de trabajo actual:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>user@DEB11:/usr/bin$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>user@DEB11:/usr$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>/usr
+</code></pre></div>
+<p>Dos métodos diferentes con idénticos resultados. ¿Cuál deberíamos usar? El que consideremos que requiere menos pulsaciones.</p>
+<p>Asimismo, podemos cambiar el directorio de trabajo de <code>/usr</code> a <code>/usr/bin</code> de dos formas diferentes. Primero usando una <strong>ruta absoluta</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>user@DEB11:/usr$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/bin
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>user@DEB11:/usr/bin$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>/usr/bin
+</code></pre></div>
+<p>O con la <strong>ruta relativa</strong> al directorio de trabajo actual:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>user@DEB11:/usr$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./bin
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>user@DEB11:/usr/bin$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>/usr/bin
+</code></pre></div>
+<p>En la mayoría de los casos, <strong>podemos omitir el "<code>./</code>"</strong>, está implícito:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>user@DEB11:/usr$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>bin
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>user@DEB11:/usr/bin$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>/usr/bin
+</code></pre></div>
+<p>En general, si no especificamos un nombre de ruta, se asumirá el directorio de trabajo en que nos encontramos. Aunque hay excepciones que veremos más adelante.</p>
+<h3 id="algunos-atajos">Algunos atajos<a class="headerlink" href="#algunos-atajos" title="Permanent link">¶</a></h3>
+<p>Si escribimos <strong><code>cd</code></strong> sin argumentos, <code>cd</code> cambiará a nuestro directorio de usuario <code>/home/user_name</code>.</p>
+<p>Un atajo relacionado es escribir <code>cd ~user_name</code>, en este caso, <code>cd</code> cambiará el directorio de trabajo al directorio de inicio del usuario especificado.</p>
+<p>Escribir <strong><code>cd -</code></strong> cambia el directorio de trabajo al anterior.</p>
+<h3 id="la-importancia-de-las-mayusculas-y-minusculas">La importancia de las MAYÚSCULAS y minúsculas<a class="headerlink" href="#la-importancia-de-las-mayusculas-y-minusculas" title="Permanent link">¶</a></h3>
+<p>Se debe tener cuidado con el uso de mayúsculas y minúsculas al escribir un comando. Escribir <code>PWD</code> producirá un error, que si no prestamos atención podemos pensar que se ha ejecutado correctamente, por eso es importante leer la salida del comando.</p>
+<p><figure id="_figure-4"><img alt='Ejemplo de error típico de "orden no encontrada" al confundir mayúsculas y minúsculas' src="ud9/terminal_command_not_found.png" width="50%"><figcaption>Figure 4: Ejemplo de error típico de "orden no encontrada" al confundir mayúsculas y minúsculas</figcaption></figure></p>
+<p>Esto también se aplica a los nombre de ficheros y directorios. Por ejemplo, "<code>Archivo1</code>" y "<code>archivo1</code>" serían dos archivos diferentes.</p>
+<h2 id="mirando-alrededor">Mirando alrededor<a class="headerlink" href="#mirando-alrededor" title="Permanent link">¶</a></h2>
+<p>Ahora que sabemos cómo pasar de un directorio de trabajo a otro, podemos hacer un recorrido por el sistema <em>Linux</em>. A continuación debemos conocer algunas herramientas que nos serán útiles para conocer los contenidos de los directorios.</p>
+<ul>
+<li><code>ls</code> (lista de archivos y directorios)</li>
+<li><code>cat</code> (muestra el contenido de un archivo de texto)</li>
+<li><code>less</code> (navegar por el contenido de archivos de texto)</li>
+<li><code>file</code> (determinar el contenido de un archivo)</li>
+</ul>
+<h3 id="comando-ls">Comando '<strong>ls</strong>'<a class="headerlink" href="#comando-ls" title="Permanent link">¶</a></h3>
+<p>El comando <strong><code>ls</code></strong> se usa para <strong>listar el contenido de un directorio</strong>. Es probablemente el comando de <em>Linux</em> más utilizado. Se puede utilizar de varias maneras diferentes. Aquí hay unos ejemplos:</p>
+<p>Ejemplos del comando <code>ls</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls</code></td>
+<td>Lista los archivos en el directorio de trabajo</td>
+</tr>
+<tr>
+<td><code>ls /bin</code></td>
+<td>Lista los archivos en el directorio /bin (o cualquier otro directorio que deseemos especificar)</td>
+</tr>
+<tr>
+<td><code>ls -l</code></td>
+<td>Lista los archivos en el directorio de trabajo en formato largo</td>
+</tr>
+<tr>
+<td><code>ls -l /etc /bin</code></td>
+<td>Lista los archivos en el directorio <code>/bin</code> y el directorio <code>/etc</code> en formato largo</td>
+</tr>
+<tr>
+<td><code>ls -la ..</code></td>
+<td>Lista todos los archivos, incluyendo archivos ocultos, del directorio padre en formato largo</td>
+</tr>
+</tbody>
+</table>
+<p>Estos ejemplos también señalan un concepto importante acerca de los comandos. La mayoría de los comandos funcionan así:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>comando -opciones argumentos
+</code></pre></div>
+<p>Donde <em>comando</em> es el nombre del comando, <em>-opciones</em> es uno o más ajustes al comportamiento del comando y <em>argumentos</em> es una o más "cosas" sobre las que opera el comando.</p>
+<p>En el caso de <code>ls</code>, vemos que <code>ls</code> es el nombre del comando, y que puede tener una o más opciones, como <code>-a</code> y <code>-l</code>, y puede operar sobre uno o más archivos o directorios.</p>
+<!-- NEWPAGE -->
+
+<p>Si usamos la opción <code>-l</code> con <code>ls</code>, obtendrá una lista de archivos que contiene una gran cantidad de información sobre los archivos que se muestran. Aquí hay un ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w">  </span>root<span class="w">     </span>root<span class="w">       </span><span class="m">4096</span><span class="w">   </span>feb<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">21</span>:58<span class="w"> </span>selinux
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w">  </span>root<span class="w">     </span>root<span class="w">      </span><span class="m">10593</span><span class="w">   </span>ene<span class="w"> </span><span class="m">30</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span>sensors3.conf
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w">  </span>root<span class="w">     </span>root<span class="w">       </span><span class="m">4096</span><span class="w">   </span>feb<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">22</span>:07<span class="w"> </span>sensors.d
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w">  </span>root<span class="w">     </span>root<span class="w">      </span><span class="m">12813</span><span class="w">   </span>mar<span class="w"> </span><span class="m">27</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span>services
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>drwxr-xr-x<span class="w">  </span><span class="m">3</span><span class="w">  </span>root<span class="w">     </span>root<span class="w">       </span><span class="m">4096</span><span class="w">   </span>feb<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">08</span>:00<span class="w"> </span>sgml
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>-rw-r-----<span class="w">  </span><span class="m">1</span><span class="w">  </span>root<span class="w">     </span>shadow<span class="w">     </span><span class="m">1268</span><span class="w">   </span>feb<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">08</span>:00<span class="w"> </span>shadow
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w">  </span>root<span class="w">     </span>root<span class="w">        </span><span class="m">116</span><span class="w">   </span>feb<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">21</span>:58<span class="w"> </span>shells
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>----------<span class="w">     </span>-------<span class="w">  </span>-------<span class="w">  </span>--------<span class="w"> </span>------------<span class="w"> </span>-------------
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span><span class="p">|</span><span class="w">         </span><span class="p">|</span><span class="w">         </span><span class="p">|</span><span class="w">             </span><span class="p">|</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span><span class="p">|</span><span class="w">         </span><span class="p">|</span><span class="w">         </span><span class="p">|</span><span class="w">           </span>Nombre
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span><span class="p">|</span><span class="w">         </span><span class="p">|</span><span class="w">         </span><span class="p">|</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span><span class="p">|</span><span class="w">         </span><span class="p">|</span><span class="w">         </span>+---<span class="w">  </span>Modificación
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span><span class="p">|</span><span class="w">         </span><span class="p">|</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span><span class="p">|</span><span class="w">         </span>+-------------<span class="w"> </span>Tamaño<span class="w"> </span><span class="o">(</span>en<span class="w"> </span>bytes<span class="o">)</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span><span class="p">|</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span><span class="w">        </span>+-----------------------<span class="w"> </span>Grupo
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span><span class="p">|</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="p">|</span><span class="w">             </span>+--------------------------------<span class="w"> </span>Propietario
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="p">|</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">    </span>+----------------------------------------------<span class="w"> </span>Permisos
+</code></pre></div>
+<ul>
+<li><strong>Nombre</strong>. El nombre del archivo o directorio.</li>
+<li><strong>Modificación</strong>. La última vez que se modificó el archivo. Si la última modificación ocurrió hace más de seis meses, se muestran la fecha y el año. De lo contrario, se muestra la hora del día.</li>
+<li><strong>Tamaño</strong>. El tamaño del archivo en bytes.</li>
+<li><strong>Grupo</strong>. El nombre del grupo que tiene permisos de archivo además del propietario del archivo.</li>
+<li><strong>Propietario</strong>. El nombre del usuario propietario del archivo.</li>
+<li><strong>Permisos</strong>. Una representación de los permisos de acceso del archivo. El primer carácter es el tipo de archivo. Un "<code>-</code>" indica un archivo regular (ordinario). Una "<code>d</code>" indica un directorio. El segundo conjunto de tres caracteres representa los derechos de lectura, escritura y ejecución del propietario del archivo. Los tres siguientes representan los derechos del grupo del archivo y los tres finales representan los derechos otorgados a todos los demás. Lo estudiaremos más adelante.</li>
+</ul>
+<h3 id="comando-cat">Comando '<strong>cat</strong>'<a class="headerlink" href="#comando-cat" title="Permanent link">¶</a></h3>
+<p><strong><code>cat</code></strong> es un programa que nos permite <strong>visualizar archivos de texto</strong>. Esto es muy útil ya que muchos de los archivos utilizados para controlar y configurar <em>Linux</em> son legibles por humanos.</p>
+<p>:::note
+<strong>¿Qué es "texto"?</strong></p>
+<p>Hay muchas maneras de representar la información en una computadora. Todos los métodos implican definir una relación entre la información y algunos números que se utilizarán para representarla. Las computadoras, después de todo, solo entienden números y todos los datos se convierten en representación numérica.</p>
+<p>Algunos de estos sistemas de representación son muy complejos (como los archivos multimedia comprimidos), mientras que otros son bastante simples. Uno de los primeros y más simples se llama texto ASCII. ASCII (pronunciado [áski]) es la abreviatura de <em>American Standard Code for Information Interchange</em>. Este es un esquema de codificación simple que se utilizó por primera vez en máquinas de teletipo para asignar caracteres del teclado a números.</p>
+<p>El texto es un simple mapeo uno a uno de caracteres a números. Es muy compacto. Cincuenta caracteres de texto se traducen en cincuenta bytes de datos. A lo largo de un sistema <em>Linux</em>, muchos archivos se almacenan en formato de texto y hay muchas herramientas de <em>Linux</em> que funcionan con archivos de texto. Incluso los sistemas <em>Windows</em> reconocen la importancia de este formato. El conocido programa <code>NOTEPAD.EXE</code> es un editor de archivos de texto ASCII sin formato.
+:::</p>
+<!-- NEWPAGE -->
+
+<p>Fragmento de la tabla ASCII representada de forma compacta en formato hexadecimal y decimal. Más información con el comando <code>man ASCII</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>          2 3 4 5 6 7       30 40 50 60 70 80 90 100 110 120
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>        -------------      ---------------------------------
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>       0:   0 @ P ` p     0:    (  2  &lt;  F  P  Z  d   n   x
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>       1: ! 1 A Q a q     1:    )  3  =  G  Q  [  e   o   y
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>       2: " 2 B R b r     2:    *  4  &gt;  H  R  \  f   p   z
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>       3: # 3 C S c s     3: !  +  5  ?  I  S  ]  g   q   {
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>       4: $ 4 D T d t     4: "  ,  6  @  J  T  ^  h   r   |
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>       5: % 5 E U e u     5: #  -  7  A  K  U  _  i   s   }
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>       6: &amp; 6 F V f v     6: $  .  8  B  L  V  `  j   t   ~
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>       7: ' 7 G W g w     7: %  /  9  C  M  W  a  k   u  DEL
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>       8: ( 8 H X h x     8: &amp;  0  :  D  N  X  b  l   v
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>       9: ) 9 I Y i y     9: '  1  ;  E  O  Y  c  m   w
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>       A: * : J Z j z
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>       B: + ; K [ k {
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>       C: , &lt; L \ l |
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>       D: - = M ] m }
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>       E: . &gt; N ^ n ~
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>       F: / ? O _ o DEL
+</code></pre></div>
+<p>El programa <code>cat</code> se invoca simplemente escribiendo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>cat<span class="w"> </span>archivo_de_texto
+</code></pre></div>
+<p>Esto mostrará el archivo.</p>
+<h3 id="comando-less">Comando '<strong>less</strong>'<a class="headerlink" href="#comando-less" title="Permanent link">¶</a></h3>
+<p><strong><code>less</code></strong> su propósito es <strong>mostrar el contenido de archivos de texto</strong>, como <code>cat</code>, con la diferencia que nos <strong>permite interactuar</strong>.</p>
+<p>Una vez iniciado, <code>less</code> mostrará el archivo de texto de forma paginada. Podemos usar las teclas <code>Av Pág</code> y <code>Re Pág</code> para movernos por el archivo de texto. Para salir tecleamos "<code>q</code>". Aquí hay algunos comandos que menos aceptarán:</p>
+<p>Comandos de teclado para el programa <code>less</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Re Pág</code> o <code>b</code></td>
+<td>Desplazarse hacia atrás una página</td>
+</tr>
+<tr>
+<td><code>Av Pág</code> o <code>espacio</code></td>
+<td>Desplazarse una página hacia adelante</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>Ir al final del archivo de texto</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>Ir al principio del archivo de texto</td>
+</tr>
+<tr>
+<td><code>/texto_a_buscar</code></td>
+<td>Buscar en el archivo de una aparición de los caracteres especificados</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>Repetir la última búsqueda hacia adelante</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>Repetir la última búsqueda hacia atrás</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>Mostrar una lista completa menos comandos y opciones</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>Salir de less</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comando-file">Comando '<strong>file</strong>'<a class="headerlink" href="#comando-file" title="Permanent link">¶</a></h3>
+<p>Mientras deambulamos por nuestro sistema <em>Linux</em>, es útil <strong>determinar qué tipo de datos contiene un archivo</strong> antes de intentar verlo. Aquí es donde entra en juego el comando de <code>file</code>, examinará un archivo y nos dirá qué tipo de archivo es.</p>
+<p>Para usar el programa de archivos, simplemente escribimos:</p>
+<p>El programa de archivos puede reconocer la mayoría de los tipos de archivos, como:</p>
+<p>Varios tipos de archivos:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de archivo</th>
+<th>Descripción</th>
+<th>¿Visible como texto?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASCII Text</td>
+<td>Texto ASCII</td>
+<td>sí</td>
+</tr>
+<tr>
+<td>Bourne-Again shell script</td>
+<td>Un <em>script</em> <code>bash</code></td>
+<td>sí</td>
+</tr>
+<tr>
+<td>ELF 64-bit LSB executable</td>
+<td>Un programa binario ejecutable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>ELF 64-bit LSB shared object</td>
+<td>Una biblioteca compartida</td>
+<td>no</td>
+</tr>
+<tr>
+<td>GNU tar archive</td>
+<td>Un archivo de almacenamiento en cinta. Una forma común de almacenar grupos de archivos.</td>
+<td>no</td>
+</tr>
+<tr>
+<td>gzip compressed data</td>
+<td>Un archivo comprimido con <code>gzip</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td>HTML document text</td>
+<td>Una página web</td>
+<td>sí</td>
+</tr>
+<tr>
+<td>JPEG image data</td>
+<td>Una imagen <em>JPEG</em> comprimida</td>
+<td>no</td>
+</tr>
+<tr>
+<td>PostScript document text</td>
+<td>Un archivo PostScript</td>
+<td>sí</td>
+</tr>
+<tr>
+<td>Zip archive data</td>
+<td>Un archivo comprimido con <code>zip</code></td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>Si bien puede parecer que la mayoría de los archivos no se pueden ver como texto, un número sorprendente puede serlo. Esto es así en el caso de los archivos de configuración importantes. Veremos que muchas funciones del sistema operativo están controladas por archivos de configuración de texto y <em>scripts</em> de <em>shell</em>.</p>
+<!-- NEWPAGE -->
+
+<h2 id="manipular-archivos-y-directorios">Manipular archivos y directorios<a class="headerlink" href="#manipular-archivos-y-directorios" title="Permanent link">¶</a></h2>
+<p>Para introducir la manipulación básica de archivos y directorios veremos los siguientes comandos:</p>
+<ul>
+<li><strong><code>cp</code></strong> - copiar archivos y directorios</li>
+<li><strong><code>mv</code></strong> - mover o renombrar archivos y directorios</li>
+<li><strong><code>rm</code></strong> - eliminar archivos y directorios</li>
+<li><strong><code>mkdir</code></strong> - crear directorios</li>
+</ul>
+<p>Estos cuatro comandos se encuentran entre los más utilizados de <em>Linux</em>. Son los comandos básicos para manipular tanto archivos como directorios.</p>
+<p>Algunas de las tareas realizadas por estos comandos son más fáciles de hacer con un gestor gráfico de archivos. Con un gestor de archivos, puedes arrastrar y soltar un archivo de un directorio a otro, cortar y pegar archivos, borrar archivos, etc. Entonces, ¿por qué utilizar estos viejos programas de línea de comandos?</p>
+<p>La respuesta es potencia y flexibilidad. Aunque es fácil realizar manipulaciones sencillas de archivos con un gestor de archivos gráfico, las tareas complicadas pueden ser más fáciles con los programas de línea de comandos. Por ejemplo, <em>¿cómo copiar todos los archivos HTML de un directorio a otro, pero sólo copiar los archivos que no existieran en el directorio de destino o que fueran más recientes que las versiones del directorio de destino?</em> Bastante difícil con un gestor de archivos. Bastante fácil con la línea de comandos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>cp<span class="w"> </span>-u<span class="w"> </span>*.html<span class="w"> </span>destino
+</code></pre></div>
+<h3 id="comodines">Comodines<a class="headerlink" href="#comodines" title="Permanent link">¶</a></h3>
+<p>Antes de empezar con nuestros comandos, veremos primero una característica del <em>shell</em> que hace que estos comandos sean tan potentes. Dado que el <em>shell</em> utiliza mucho los nombres de archivo, proporciona caracteres especiales para ayudarle a especificar rápidamente grupos de nombres de archivo. Estos caracteres especiales se denominan comodines. Los caracteres comodín permiten seleccionar nombres de archivo basándose en patrones de caracteres. En la tabla siguiente se enumeran los caracteres comodín y lo que seleccionan:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Comodín</strong></th>
+<th><strong>Significado</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>*</code></strong></td>
+<td>Coincide con cualquier conjunto de caracteres</td>
+</tr>
+<tr>
+<td><strong><code>?</code></strong></td>
+<td>Coincide con cualquier carácter</td>
+</tr>
+<tr>
+<td><strong><code>[caracteres]</code></strong></td>
+<td>Coincide con cualquier carácter que sea miembro del conjunto caracteres. El conjunto de caracteres también puede expresarse como una clase de caracteres <em>POSIX</em>, como una de las siguientes:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><code>[!caracteres]</code></strong></td>
+<td>Coincide con cualquier carácter que no pertenezca al conjunto caracteres</td>
+</tr>
+</tbody>
+</table>
+<p>Utilizando comodines, es posible construir criterios de selección muy sofisticados para los nombres de archivo. He aquí algunos ejemplos de patrones y lo que coinciden:</p>
+<ul>
+<li><strong><code>*</code></strong> Todos los nombres de archivo</li>
+<li><strong><code>g*</code></strong> Todos los nombres de archivo que empiecen por el carácter "<code>g</code>"</li>
+<li><strong><code>b*.txt</code></strong> Todos los nombres de archivo que comienzan con el carácter "b" y terminan con los caracteres "<code>.txt</code>"</li>
+<li><strong><code>Datos???</code></strong> Cualquier nombre de archivo que empiece por los caracteres "<code>Datos</code>" seguidos de exactamente 3 caracteres más</li>
+<li><strong><code>[abc]*</code></strong> Cualquier nombre de archivo que empiece por "<code>a</code>" o "<code>b</code>" o "<code>c</code>" seguido de cualquier otro carácter</li>
+<li><strong><code>[[:upper:]]*</code></strong> Cualquier nombre de archivo que empiece por una letra mayúscula. Este es un ejemplo de una clase de caracteres.</li>
+<li><strong><code>BACKUP[[:digit:]][[:digit:]]</code></strong> Otro ejemplo de clases de caracteres. Este patrón coincide con cualquier nombre de archivo que empiece por los caracteres "<code>BACKUP</code>" seguido de exactamente dos números.</li>
+<li><strong><code>*[![:lower:]]</code></strong> Cualquier nombre de archivo que no termine con una letra minúscula.</li>
+</ul>
+<p>Podemos utilizar comodines con cualquier comando que acepte argumentos de nombre de archivo.</p>
+<h3 id="comando-cp">Comando '<strong>cp</strong>'<a class="headerlink" href="#comando-cp" title="Permanent link">¶</a></h3>
+<p>El programa <code>cp</code> copia archivos y directorios.</p>
+<p>La forma más básica de uso es copiar un archivo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>cp<span class="w"> </span>archio_original<span class="w"> </span>archivo_copia
+</code></pre></div>
+<p>También puede usarse para copiar múltiples ficheros (y/o directorios) a otro directorio:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>cp<span class="w"> </span>archivo...<span class="w"> </span>directorio_destino
+</code></pre></div>
+<p><strong>Acerca de la notación:</strong> En la documentación de un comando, <code>...</code> significa que un elemento puede estar repetido una o más veces.</p>
+<p><strong><em>Ejemplos de uso del comando <code>cp</code>:</em></strong></p>
+<ul>
+<li><code>cp archivo1 archivo2</code> Copia los contenidos del <code>archivo1</code> en <code>archivo2</code>. Si <code>archivo2</code> no existe, lo crea, de lo contrario, <code>archivo2</code> es sobrescrito sin avisar.</li>
+<li><code>cp -i archivo1 archivo2</code> Como el ejemplo anterior, aunque la opción <code>-i</code> (interactivo) indica que si <code>archivo2</code> existe, se solicita al usuario confirmación antes de sobrescribir.</li>
+<li><code>cp archivo1 dir1</code> Copia los contenidos de <code>archivo1</code> en un nuevo archivo llamado <code>archivo1</code> dentro del directorio <code>dir1</code></li>
+<li><code>cp -R dir1 dir2</code> Copia los contenidos del directorio <code>dir1</code> en el directorio <code>dir2</code>. Si <code>dir2</code> no existe, se crea. Si <code>dir2</code> existe, crea un directorio llamado <code>dir1</code> dentro de <code>dir2</code>.</li>
+</ul>
+<h3 id="comando-mv">Comando '<strong>mv</strong>'<a class="headerlink" href="#comando-mv" title="Permanent link">¶</a></h3>
+<p>El comando <code>mv</code> mueve o renombra archivos y directorios dependiendo de cómo se use. También puede mover ono o más archivos a un directorio diferente, o cambiar el nombre a un archivo o directorio.</p>
+<p>Para renombrar un archivo utilizamos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>mv<span class="w"> </span>nombre_original<span class="w"> </span>nuevo_nombre
+</code></pre></div>
+<p>Para mover archivos (y/o directorios) a un directorios diferente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>mv<span class="w"> </span>archivo...<span class="w"> </span>directorio_destino
+</code></pre></div>
+<p><strong><em>Ejemplos de uso del comando <code>mv</code>:</em></strong></p>
+<ul>
+<li><code>mv archivo1 archivo2</code> Si <code>archivo2</code> no existe, entonces <code>archivo1</code> es renombrado a <code>archivo2</code>. Si <code>archivo2</code> existe, sus contenidos con reemplazados sin avisar.</li>
+<li>mv -i archivo1 archivo2 Como el ejemplo anterior, aunque la opción <code>-i</code> (interactivo), si <code>archivo2</code> existe pide confirmación al usuario antes de sobrescribir sus contenidos.</li>
+<li><code>mv archivo1 archivo2 dir1</code> Los archivos <code>archivo1</code> y <code>archivo2</code> se mueven al directorio <code>dir1</code></li>
+<li><code>mv dir1 dir2</code> Si <code>dir2</code> no existe, <code>dir1</code> se renombra a <code>dir2</code>. Si <code>dir2</code> existe, el directorio <code>dir1</code> se mueve dentro de <code>dir2</code>.</li>
+</ul>
+<h3 id="comando-rm">Comando '<strong>rm</strong>'<a class="headerlink" href="#comando-rm" title="Permanent link">¶</a></h3>
+<p>El comando <code>rm</code> (<em>remove</em>) borra archivos y directorios.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>rm<span class="w"> </span>archivo...
+</code></pre></div>
+<p>Usando la opción <code>-r</code> elimina directorios y sus contenidos de forma recursiva.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>directorio...
+</code></pre></div>
+<p><strong><em>Ejemplos de uso del comando <code>rm</code>:</em></strong></p>
+<ul>
+<li><code>rm archivo1 archivo2</code> Elimina archivo1 y archivo2</li>
+<li><code>rm -i archivo1 archivo2</code> Como el ejemplo anterior, aunque la opción <code>-i</code> (interactivo) pide confirmación al usuario para cada archivo a borrar.</li>
+<li><code>rm -r dir1 dir2</code> Los directorios <code>dir1</code> y <code>dir2</code> son borrados junto con todos sus contenidos.</li>
+</ul>
+<p>:::warning
+<strong>Cuidado con <code>rm</code></strong></p>
+<p>Lo que borremos mediante el comando <code>rm</code> no se puede recuperar, no pasa por la papelera. Si no tenemos cuidado podemos causar daños en el sistema, en especial cuando utilizamos comodines.</p>
+<p><strong>Antes de utilizar <code>rm</code> con comodines es aconsejable</strong>: construir el comando utilizando <code>ls</code> para ver qué archivos se seleccionan con los comodines. Después de probar que los archivos con correctos podemos sustituir <code>ls</code> por <code>rm</code>.
+:::</p>
+<h3 id="comando-mkdir">Comando '<strong>mkdir</strong>'<a class="headerlink" href="#comando-mkdir" title="Permanent link">¶</a></h3>
+<p>El comando <code>mkdir</code> se utiliza para crear directorios:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>directorio...
+</code></pre></div>
+<h3 id="utilizando-los-comandos-con-comodines">Utilizando los comandos con comodines<a class="headerlink" href="#utilizando-los-comandos-con-comodines" title="Permanent link">¶</a></h3>
+<p>Los comandos que hemos visto pueden utilizar múltiples archivos y directorios como argumentos, podemos usar comodines para especificarlos.</p>
+<p><strong><em>Ejemplos de uso de comandos con comodines:</em></strong></p>
+<ul>
+<li><code>cp *.txt Documentos</code> Copia todos los archivos con extensión <code>.txt</code> del directorio actual a un directorio existente llamado <code>Documentos</code></li>
+<li><code>mv dir1 ../*.bak dir2</code> Mueve el subdirectorio <code>dir1</code> y todos los archivos con extensión <code>.bak</code> del directorio padre a un directorio llamado <code>dir2</code></li>
+<li><code>rm *~</code> Borra todos los archivos del directorio actual que terminen con el carácter "<code>~</code>". Algunas aplicaciones crean archivos de backup utilizando este esquema, con este comando podemos limpiar las copias.</li>
+</ul>
+<h2 id="identificando-comandos">Identificando comandos<a class="headerlink" href="#identificando-comandos" title="Permanent link">¶</a></h2>
+<p>Existen cuatro tipos de comandos:</p>
+<ol>
+<li><strong>Programa ejecutable</strong> como los archivos de /usr/bin. En esta categoría, los programas pueden ser <em>binarios compilados</em> o programas escritos en <em>lenguajes interpretados de script</em>.</li>
+<li><strong>Comando integrado dentro del mismo <em>shell</em></strong>. Bash incluye una serie de comandos internos llamados <em>shell builtins</em>, como por ejemplo el comando <code>cd</code>.</li>
+<li><strong>Función <em>shell</em></strong>. Estos son pequeños scripts incorporados en un entorno. Se estudian en la programación de shell scripts.</li>
+<li><strong>Alias</strong>. Comandos que podemos definir, compuestos de otros comandos.</li>
+</ol>
+<h3 id="comando-type">Comando '<strong>type</strong>'<a class="headerlink" href="#comando-type" title="Permanent link">¶</a></h3>
+<p>El comando <code>type</code> está integrado en <em>shell</em> y muestra el tipo de un comandos determinado.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>comando
+</code></pre></div>
+<p>Donde '<em>comando</em>' es el nombre del comandos que queremos examinar.</p>
+<p><strong><em>Algunos ejemplos de uso del comando <code>type</code>:</em></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ls
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>ls<span class="w"> </span>es<span class="w"> </span>un<span class="w"> </span><span class="nb">alias</span><span class="w"> </span>de<span class="w"> </span><span class="s1">'ls --color=auto'</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="nb">cd</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nb">cd</span><span class="w"> </span>es<span class="w"> </span>una<span class="w"> </span>orden<span class="w"> </span>interna<span class="w"> </span>del<span class="w"> </span>intérprete<span class="w"> </span>de<span class="w"> </span>ordenes
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>mv
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>mv<span class="w"> </span>is<span class="w"> </span>/usr/bin/mv
+</code></pre></div>
+<p>Aquí vemos los resultados para tres comandos diferentes. Se observa que el comando <code>ls</code> es en realidad un <strong><em>alias</em></strong> del comando <code>ls</code> con la opción "<code>-- color=auto</code>" añadida, lo que permite colorear la salida del comando sin tener que escribir la opción cada vez.</p>
+<h3 id="comando-which">Comando '<strong>which</strong>'<a class="headerlink" href="#comando-which" title="Permanent link">¶</a></h3>
+<p>A veces hay más de una versión de un programa ejecutable instalado en un sistema. Aunque esto no es muy común en sistemas de escritorio, no es inusual en grandes servidores. Para determinar la ubicación exacta de un determinado ejecutable, se utiliza el comando <code>which</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>which<span class="w"> </span>ls
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>/usr/bin/ls
+</code></pre></div>
+<p><code>which</code> sólo funciona para programas ejecutables, no para <em>builtins</em> ni alias que sean sustitutos de programas ejecutables reales.</p>
+<h3 id="comando-help">Comando '<strong>help</strong>'<a class="headerlink" href="#comando-help" title="Permanent link">¶</a></h3>
+<p><code>bash</code> dispone de una ayuda integrada para cada uno de los <code>shell builtins</code>. Para utilizarla, escriba "<code>help</code>" seguido del nombre del comando. Opcionalmente, podemos añadir la opción <code>-m</code> para cambiar el formato de la salida. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span><span class="nb">help</span><span class="w"> </span>-m<span class="w"> </span><span class="nb">cd</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>NAME
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nb">cd</span><span class="w"> </span>-<span class="w"> </span>Modifica<span class="w"> </span>el<span class="w"> </span>directorio<span class="w"> </span>de<span class="w"> </span>trabajo<span class="w"> </span>del<span class="w"> </span>shell.
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>SYNOPSIS
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="o">[</span>-L<span class="p">|</span><span class="o">[</span>-P<span class="w"> </span><span class="o">[</span>-e<span class="o">]]]</span><span class="w"> </span><span class="o">[</span>dir<span class="o">]</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>DESCRIPTION
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">    </span>Modifica<span class="w"> </span>el<span class="w"> </span>directorio<span class="w"> </span>de<span class="w"> </span>trabajo<span class="w"> </span>del<span class="w"> </span>shell.
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">    </span>Modifica<span class="w"> </span>el<span class="w"> </span>directorio<span class="w"> </span>actual<span class="w"> </span>a<span class="w"> </span>DIR.<span class="w">  </span>DIR<span class="w"> </span>por<span class="w"> </span>defecto<span class="w"> </span>es<span class="w"> </span>el<span class="w"> </span>valor<span class="w"> </span>de<span class="w"> </span>la
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">    </span>variable<span class="w"> </span>de<span class="w"> </span>shell<span class="w"> </span>HOME.
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">    </span>La<span class="w"> </span>variable<span class="w"> </span>CDPATH<span class="w"> </span>define<span class="w"> </span>la<span class="w"> </span>ruta<span class="w"> </span>de<span class="w"> </span>búsqueda<span class="w"> </span>para<span class="w"> </span>el<span class="w"> </span>directorio<span class="w"> </span>que
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">    </span>contiene<span class="w"> </span>DIR.<span class="w">  </span>Los<span class="w"> </span>nombres<span class="w"> </span>alternativos<span class="w"> </span>de<span class="w"> </span>directorio<span class="w"> </span>en<span class="w"> </span>CDPATH<span class="w"> </span>se
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">    </span>separan<span class="w"> </span>con<span class="w"> </span>dos<span class="w"> </span>puntos<span class="w"> </span><span class="o">(</span>:<span class="o">)</span>.<span class="w">  </span>Un<span class="w"> </span>nombre<span class="w"> </span>de<span class="w"> </span>directorio<span class="w"> </span>nulo<span class="w"> </span>es<span class="w"> </span>igual<span class="w"> </span>que
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">    </span>el<span class="w"> </span>directorio<span class="w"> </span>actual.<span class="w">  </span>Si<span class="w"> </span>DIR<span class="w"> </span>comienza<span class="w"> </span>con<span class="w"> </span>una<span class="w"> </span>barra<span class="w"> </span>inclinada<span class="w"> </span><span class="o">(</span>/<span class="o">)</span>,
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">    </span>entonces<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>usa<span class="w"> </span>CDPATH.
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">    </span>Si<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>encuentra<span class="w"> </span>el<span class="w"> </span>directorio,<span class="w"> </span>y<span class="w"> </span>la<span class="w"> </span>opción<span class="w"> </span>del<span class="w"> </span>shell<span class="w"> </span><span class="s1">'cdable_vars'</span>
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">    </span>está<span class="w"> </span>activa,<span class="w"> </span>entonces<span class="w"> </span>se<span class="w"> </span>trata<span class="w"> </span>la<span class="w"> </span>palabra<span class="w"> </span>como<span class="w"> </span>un<span class="w"> </span>nombre<span class="w"> </span>de<span class="w"> </span>variable.
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">    </span>Si<span class="w"> </span>esa<span class="w"> </span>variable<span class="w"> </span>tiene<span class="w"> </span>un<span class="w"> </span>valor,<span class="w"> </span>se<span class="w"> </span>utiliza<span class="w"> </span>su<span class="w"> </span>valor<span class="w"> </span>para<span class="w"> </span>DIR.
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a><span class="w">    </span>Opciones:
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="w">      </span>-L<span class="w">        </span>fuerza<span class="w"> </span>a<span class="w"> </span>seguir<span class="w"> </span>los<span class="w"> </span>enlaces<span class="w"> </span>simbólicos:<span class="w"> </span>resuelve<span class="w"> </span>los<span class="w"> </span>enlaces
+<a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="w">                </span>simbólicos<span class="w"> </span>en<span class="w"> </span>DIR<span class="w"> </span>después<span class="w"> </span>de<span class="w"> </span>procesar<span class="w"> </span>las<span class="w"> </span>instancias<span class="w"> </span>de<span class="w"> </span><span class="s1">'..'</span>
+<a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a><span class="w">      </span>-P<span class="w">        </span>usa<span class="w"> </span>la<span class="w"> </span>estructura<span class="w"> </span>física<span class="w"> </span>de<span class="w"> </span>directorios<span class="w"> </span>sin<span class="w"> </span>seguir<span class="w"> </span>los<span class="w"> </span>enlaces
+<a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="w">                </span>simbólicos:<span class="w"> </span>resuelve<span class="w"> </span>los<span class="w"> </span>enlaces<span class="w"> </span>simbólicos<span class="w"> </span>en<span class="w"> </span>DIR<span class="w"> </span>antes<span class="w"> </span>de<span class="w"> </span>procesar
+<a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a><span class="w">                </span>las<span class="w"> </span>instancias<span class="w"> </span>de<span class="w"> </span><span class="s1">'..'</span>
+<a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="w">      </span>-e<span class="w">        </span>si<span class="w"> </span>se<span class="w"> </span>da<span class="w"> </span>la<span class="w"> </span>opción<span class="w"> </span>-P<span class="w"> </span>y<span class="w"> </span>el<span class="w"> </span>directorio<span class="w"> </span>actual<span class="w"> </span>de<span class="w"> </span>trabajo<span class="w"> </span>no<span class="w"> </span>se
+<a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a><span class="w">                </span>puede<span class="w"> </span>determinar<span class="w"> </span>con<span class="w"> </span>éxito,<span class="w"> </span>termina<span class="w"> </span>con<span class="w"> </span>un<span class="w"> </span>estado<span class="w"> </span>diferente<span class="w"> </span>de<span class="w"> </span>cero.
+<a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a>
+<a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a><span class="w">    </span>La<span class="w"> </span>acción<span class="w"> </span>por<span class="w"> </span>defecto<span class="w"> </span>es<span class="w"> </span>seguir<span class="w"> </span>los<span class="w"> </span>enlaces<span class="w"> </span>simbólicos,<span class="w"> </span>como<span class="w"> </span>si<span class="w"> </span>se
+<a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a><span class="w">    </span>especificara<span class="w"> </span><span class="s1">'-L'</span>.
+<a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a><span class="w">    </span><span class="s1">'..'</span><span class="w"> </span>se<span class="w"> </span>procesa<span class="w"> </span>quitando<span class="w"> </span>la<span class="w"> </span>componente<span class="w"> </span>del<span class="w"> </span>nombre<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>ruta<span class="w"> </span>inmediatamente
+<a id="__codelineno-27-36" name="__codelineno-27-36" href="#__codelineno-27-36"></a><span class="w">    </span>anterior<span class="w"> </span>hasta<span class="w"> </span>una<span class="w"> </span>barra<span class="w"> </span>inclinada<span class="w"> </span>o<span class="w"> </span>el<span class="w"> </span>comienzo<span class="w"> </span>de<span class="w"> </span>DIR.
+<a id="__codelineno-27-37" name="__codelineno-27-37" href="#__codelineno-27-37"></a>
+<a id="__codelineno-27-38" name="__codelineno-27-38" href="#__codelineno-27-38"></a><span class="w">    </span>Estado<span class="w"> </span>de<span class="w"> </span>Salida:
+<a id="__codelineno-27-39" name="__codelineno-27-39" href="#__codelineno-27-39"></a><span class="w">    </span>Devuelve<span class="w"> </span><span class="m">0</span><span class="w"> </span>si<span class="w"> </span>se<span class="w"> </span>cambia<span class="w"> </span>el<span class="w"> </span>directorio,<span class="w"> </span>y<span class="w"> </span>si<span class="w"> </span><span class="nv">$PWD</span><span class="w"> </span>está<span class="w"> </span>definido<span class="w"> </span>como
+<a id="__codelineno-27-40" name="__codelineno-27-40" href="#__codelineno-27-40"></a><span class="w">    </span>correcto<span class="w"> </span>cuando<span class="w"> </span>se<span class="w"> </span>emplee<span class="w"> </span>-P<span class="p">;</span><span class="w"> </span>de<span class="w"> </span>otra<span class="w"> </span>forma<span class="w"> </span>es<span class="w"> </span>diferente<span class="w"> </span>a<span class="w"> </span>cero.
+<a id="__codelineno-27-41" name="__codelineno-27-41" href="#__codelineno-27-41"></a>
+<a id="__codelineno-27-42" name="__codelineno-27-42" href="#__codelineno-27-42"></a>SEE<span class="w"> </span>ALSO
+<a id="__codelineno-27-43" name="__codelineno-27-43" href="#__codelineno-27-43"></a><span class="w">    </span>bash<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<a id="__codelineno-27-44" name="__codelineno-27-44" href="#__codelineno-27-44"></a>
+<a id="__codelineno-27-45" name="__codelineno-27-45" href="#__codelineno-27-45"></a>IMPLEMENTATION
+<a id="__codelineno-27-46" name="__codelineno-27-46" href="#__codelineno-27-46"></a><span class="w">    </span>GNU<span class="w"> </span>bash,<span class="w"> </span>versión<span class="w"> </span><span class="m">5</span>.1.16<span class="o">(</span><span class="m">1</span><span class="o">)</span>-release<span class="w"> </span><span class="o">(</span>x86_64-pc-linux-gnu<span class="o">)</span>
+<a id="__codelineno-27-47" name="__codelineno-27-47" href="#__codelineno-27-47"></a><span class="w">    </span>Copyright<span class="w"> </span><span class="o">(</span>C<span class="o">)</span><span class="w"> </span><span class="m">2020</span><span class="w"> </span>Free<span class="w"> </span>Software<span class="w"> </span>Foundation,<span class="w"> </span>Inc.
+<a id="__codelineno-27-48" name="__codelineno-27-48" href="#__codelineno-27-48"></a><span class="w">    </span>Licencia<span class="w"> </span>GPLv3+:<span class="w"> </span>GPL<span class="w"> </span>de<span class="w"> </span>GNU<span class="w"> </span>versión<span class="w"> </span><span class="m">3</span><span class="w"> </span>o<span class="w"> </span>posterior<span class="w"> </span>&lt;http://gnu.org/licenses/gpl.html&gt;
+</code></pre></div>
+<p><em>Sobre la notación</em>: Cuando aparecen corchetes en la descripción de la sintaxis de un comando, indican elementos opcionales. Un carácter de barra vertical indica elementos mutuamente excluyentes. En el caso del comando <code>cd</code> anterior:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>cd [-L|[-P [-e]]] [dir]
+</code></pre></div>
+<p>Esta notación indica que la orden <code>cd</code> puede ir seguida opcionalmente por <code>-L</code> o <code>-P</code> o <code>-Pe</code> y, además, opcionalmente por el argumento <code>dir</code>.</p>
+<h3 id="opcion-help">Opción '<strong>- -help</strong>'<a class="headerlink" href="#opcion-help" title="Permanent link">¶</a></h3>
+<p>Muchos programas ejecutables admiten una opción "<code>--help</code>" que muestra una descripción de la sintaxis y las opciones del comando. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>--help
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>Modo<span class="w"> </span>de<span class="w"> </span>empleo:<span class="w"> </span>mkdir<span class="w"> </span><span class="o">[</span>OPCIÓN<span class="o">]</span>...<span class="w"> </span>DIRECTORIO...
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>Crea<span class="w"> </span>los<span class="w"> </span>DIRECTORIO<span class="o">(</span>s<span class="o">)</span>,<span class="w"> </span>si<span class="w"> </span>no<span class="w"> </span>existen<span class="w"> </span>ya.
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>Los<span class="w"> </span>argumentos<span class="w"> </span>obligatorios<span class="w"> </span>para<span class="w"> </span>las<span class="w"> </span>opciones<span class="w"> </span>largas<span class="w"> </span>son<span class="w"> </span>también<span class="w"> </span>obligatorios
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>para<span class="w"> </span>las<span class="w"> </span>opciones<span class="w"> </span>cortas.
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">  </span>-m,<span class="w"> </span>--mode<span class="o">=</span>MODE<span class="w">   </span>establece<span class="w"> </span>los<span class="w"> </span>permisos<span class="w"> </span><span class="o">(</span>como<span class="w"> </span>en<span class="w"> </span>chmod<span class="o">)</span>,<span class="w"> </span>en<span class="w"> </span>lugar
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">                    </span>de<span class="w">  </span><span class="nv">a</span><span class="o">=</span>rwx<span class="w"> </span>-<span class="w"> </span><span class="nb">umask</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">  </span>-p,<span class="w"> </span>--parents<span class="w">     </span>no<span class="w"> </span>hay<span class="w"> </span>error<span class="w"> </span>si<span class="w"> </span>existen,<span class="w"> </span>crea<span class="w"> </span>los<span class="w"> </span>directorios<span class="w"> </span>padres<span class="w"> </span>en
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">                    </span>caso<span class="w"> </span>necesario
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">  </span>-v,<span class="w"> </span>--verbose<span class="w">     </span>muestra<span class="w"> </span>un<span class="w"> </span>mensaje<span class="w"> </span>por<span class="w"> </span>cada<span class="w"> </span>directorio<span class="w"> </span>creado
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">  </span>-Z<span class="w">                   </span>establece<span class="w"> </span>el<span class="w"> </span>contexto<span class="w"> </span>de<span class="w"> </span>seguridad<span class="w"> </span>SELinux<span class="w"> </span>de<span class="w"> </span>cada
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">                         </span>directorio<span class="w"> </span>creado<span class="w"> </span>al<span class="w"> </span>tipo<span class="w"> </span>predeterminado
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">      </span>--context<span class="o">[=</span>CTX<span class="o">]</span><span class="w">  </span>como<span class="w"> </span>-Z,<span class="w"> </span>o<span class="w"> </span>si<span class="w"> </span>se<span class="w"> </span>especifica<span class="w"> </span>CTX<span class="w"> </span>entonces<span class="w"> </span>establece<span class="w"> </span>el
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="w">                         </span>contexto<span class="w"> </span>de<span class="w"> </span>seguridad<span class="w"> </span>SELinux<span class="w"> </span>o<span class="w"> </span>SMACK<span class="w"> </span>a<span class="w"> </span>CTX
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="w">      </span>--help<span class="w">     </span>muestra<span class="w"> </span>esta<span class="w"> </span>ayuda<span class="w"> </span>y<span class="w"> </span>finaliza
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="w">      </span>--version<span class="w">  </span>informa<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>versión<span class="w"> </span>y<span class="w"> </span>finaliza
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>ayuda<span class="w"> </span>en<span class="w"> </span>línea<span class="w"> </span>sobre<span class="w"> </span>GNU<span class="w"> </span>coreutils:<span class="w"> </span>&lt;https://www.gnu.org/software/coreutils/&gt;
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>Report<span class="w"> </span>any<span class="w"> </span>translation<span class="w"> </span>bugs<span class="w"> </span>to<span class="w"> </span>&lt;https://translationproject.org/team/&gt;
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>Full<span class="w"> </span>documentation<span class="w"> </span>&lt;https://www.gnu.org/software/coreutils/mkdir&gt;
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>or<span class="w"> </span>available<span class="w"> </span>locally<span class="w"> </span>via:<span class="w"> </span>info<span class="w"> </span><span class="s1">'(coreutils) mkdir invocation'</span>
+</code></pre></div>
+<p>Algunos programas no admiten la opción "<code>--help</code>", pero al intentar ejecutarlo, a menudo, da lugar a un mensaje de error que revelará información de uso similar.</p>
+<h3 id="comando-man">Comando '<strong>man</strong>'<a class="headerlink" href="#comando-man" title="Permanent link">¶</a></h3>
+<p>La mayoría de los programas ejecutables destinados a la línea de comandos incluyen una documentación formal denominada <strong>manual</strong> o <strong>página <em>man</em></strong>. Para verlas se utiliza un programa especial de paginación llamado <code>man</code>. Se utiliza así:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>$<span class="w"> </span>man<span class="w"> </span>ls
+</code></pre></div>
+<p>Mostrará la siguiente información:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>LS(1)                        Órdenes de usuario                       LS(1)
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>NOMBRE
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>       ls - lista el contenido de un directorio
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>SINOPSIS
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>       ls [OPCIÓN]... [ARCHIVO]...
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>DESCRIPCIÓN
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>       Por  defecto,  muestra  información de los ARCHIVO (pueden ser uno o
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>       varios) del directorio actual. Ordena alfabéticamente la  salida  si
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>       no se especifica ninguna de las opciones -cftuvSUX ni --sort.
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>       Los  argumentos  obligatorios  para  las opciones largas son también
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>       obligatorios para las opciones cortas.
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>       -a, --all
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>              no oculta las entradas que comienzan con .
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>       -A, --almost-all
+<a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a>              no muestra las entradas implícitas . ni ..
+<a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a>...
+</code></pre></div>
+<ul>
+<li><strong>NOMBRE</strong>: Muestra el comando seguido de una descripción de una breve de su función.</li>
+<li><strong>SINOPSIS</strong>. Visión general de la <strong>sintaxis</strong>, es decir, cómo se debe ejecutar el comando.</li>
+<li><strong>DESCRIPCIÓN</strong>: Descripción más detallada del comando.</li>
+</ul>
+<p>Debajo de la descripción siempre habrá una lista de todas las <strong>opciones</strong> de línea de comandos que están disponibles para el comando.</p>
+<p>En la mayoría de los sistemas <em>Linux</em>, <code>man</code> utiliza <code>less</code> para mostrar la página del manual, por lo que todos atajos de teclados de <code>less</code> funcionan en la página de manual.</p>
+<p>Es posible hacer una búsqueda por palabra clave en las páginas del manual. Esto puede ser útil si se tiene seguridad de qué comando se quiere utilizar pero se conoce lo que se quiere conseguir. No es infrecuente encontrar que una palabra concreta existe en muchas páginas del manual.</p>
+<h2 id="redireccion-de-entradas-y-salidas">Redirección de entradas y salidas<a class="headerlink" href="#redireccion-de-entradas-y-salidas" title="Permanent link">¶</a></h2>
+<p>La redirección de entradas y salidas es una potente característica utilizada por los programas de línea de comandos. Muchos comandos como ls imprimen su salida en la pantalla. Sin embargo, esto no tiene por qué ser así. Utilizando notaciones especiales podemos redirigir la salida de muchos comandos a archivos, dispositivos e incluso a la entrada de otros comandos.</p>
+<p>En todas las variantes de <em>Unix</em> tiene tres flujos estándar que, a modo de canales, conectan la entrada y salida (I/O) de un comando/aplicación con la terminal/consola cuando se ejecuta, son los siguientes:</p>
+<ul>
+<li><code>**STDIN (0)**</code> - Entrada estándar, datos introducidos en el programa, por defecto mediante parámetros introducidos como parámetros.</li>
+<li><code>**STDOUT (1)**</code> - Salida estándar, datos devueltos por el programa, por defecto en el terminal.</li>
+<li><code>**STDERR (2)**</code> - Error estándar, para mensajes de error, también por defecto en el terminal.</li>
+</ul>
+<p>A cada canal tiene asociado un número único para identificarlo. Es lo que se conoce como descriptor de fichero.</p>
+<h3 id="salida-estandar">Salida estándar '<strong>&gt;</strong>', '<strong>&gt; &gt;</strong>'<a class="headerlink" href="#salida-estandar" title="Permanent link">¶</a></h3>
+<p>Los programas de línea de comandos que muestran sus resultados a un dispositivo llamado <strong>salida estándar</strong> o <strong>STDOUT</strong> (<em>Standard Output</em>). Por defecto, la salida estándar dirige su contenido al mismo terminal. Para redirigir la salida estándar a un archivo, se utiliza el carácter "<strong><code>&gt;</code></strong>" de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;<span class="w"> </span>listado_archivos.txt
+</code></pre></div>
+<p>En este ejemplo, se ejecuta el comando <code>ls</code> y los resultados se escriben en un archivo llamado <code>listado_archivos.txt</code>. Como la salida de ls se redirigió al archivo, no aparecerá ningún resultado en la pantalla.</p>
+<p>Cada vez que se repite el comando anterior, <code>listado_archivos.txt</code> se sobrescribe desde el principio con la salida del comando <code>ls</code>. Para que los nuevos resultados se añadan al archivo, se utiliza "<strong><code>&gt;&gt;</code></strong>" de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;&gt;<span class="w"> </span>listado_archivos.txt
+</code></pre></div>
+<p>Se añaden los resultado al final del fichero, con lo que el fichero se hace más largo cada vez que se repite el comando. Si el fichero no existe cuando intentamos anexar la salida redirigida, se creará el fichero.</p>
+<h3 id="entrada-estandar">Entrada estándar '<strong>&lt;</strong>'<a class="headerlink" href="#entrada-estandar" title="Permanent link">¶</a></h3>
+<p>Muchos comandos pueden aceptar la entrada de un dispositivo llamado <strong>entrada estándar</strong> o <strong>STDIN</strong> (<em>Standard Input</em>). Por defecto, la entrada estándar obtiene su contenido del <strong>teclado</strong>, pero al igual que la salida estándar, puede redirigirse. Para redirigir la entrada estándar desde un archivo en lugar de desde el teclado, se utiliza el carácter "<strong><code>&lt;</code></strong>" de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>$<span class="w"> </span>sort<span class="w"> </span>&lt;<span class="w"> </span>listado_archivos.txt
+</code></pre></div>
+<p>En el ejemplo anterior, hemos utilizado el comando <code>sort</code> para procesar el contenido de <code>listado_archivos.txt</code>. Los resultados se muestran en la pantalla ya que la salida estándar no fue redirigida. Podríamos redirigir la salida estándar a otro archivo de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>$<span class="w"> </span>sort<span class="w"> </span>&lt;<span class="w"> </span>listado_archivos.txt<span class="w"> </span>&gt;<span class="w"> </span>listado_archivos_ordenado.txt
+</code></pre></div>
+<p>Como podemos ver, un comando puede tener tanto su entrada como su salida redirigidas. Tenga en cuenta que el orden de la redirección no importa. El único requisito es que los operadores de redirección (los "<code>&lt;</code>" y "<code>&gt;</code>") deben aparecer después de las demás opciones y argumentos del comando.</p>
+<h3 id="tuberias">Tuberías '<strong>|</strong>'<a class="headerlink" href="#tuberias" title="Permanent link">¶</a></h3>
+<p>La cosa más útil y poderosa que podemos hacer con la redirección de E/S es conectar múltiples comandos juntos para formar lo que se llama pipelines. Con los pipelines, la salida estándar de un comando se introduce en la entrada estándar de otro. He aquí un ejemplo muy útil:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<p>En este ejemplo, la salida del comando ls se introduce en <code>less</code>. Usando este truco "<code>| less</code>", podemos hacer que cualquier comando tenga salida interactiva donde podemos paginar y hacer búsquedas en la salida.</p>
+<p>Conectando comandos entre sí, podemos sacar el máximo partido a la línea de comandos. Aquí tienes algunos ejemplos:</p>
+<ul>
+<li><code>ls -lt | head</code> Muestra los 10 archivos más nuevos del directorio actual.</li>
+<li><code>du | sort -nr</code> Muestra una lista de directorios y cuánto espacio consumen, ordenados del mayor al menor.</li>
+<li><code>find . -type f -print | wc -l</code> Muestra el número total de ficheros en el directorio de trabajo actual incluyendo todos sus subdirectorios.</li>
+</ul>
+<h3 id="filtros">Filtros<a class="headerlink" href="#filtros" title="Permanent link">¶</a></h3>
+<p>Un tipo de programa que se utiliza con frecuencia con las tuberías se llama filtro. Los filtros toman la entrada estándar, realizan una operación sobre ella y envían los resultados a la salida estándar. De este modo, pueden combinarse para procesar la información de formas muy potentes. Estos son algunos de los programas más comunes que pueden actuar como filtros:</p>
+<ul>
+<li><code>sort</code> Ordena la entrada estándar y muestra el resultado ordenado en la salida estándar.</li>
+<li><code>uniq</code> Dado un flujo de datos ordenado de la entrada estándar, elimina las líneas de datos duplicadas, es decir, se asegura de que cada línea sea única.</li>
+<li><code>grep</code> Examina cada línea de datos que recibe de la entrada estándar y muestra todas las líneas que contienen un patrón específico de caracteres.</li>
+<li><code>fmt</code> Lee texto de la entrada estándar y, a continuación, muestra texto formateado en la salida estándar.</li>
+<li><code>pr</code> Toma el texto de la entrada estándar y divide los datos en páginas con saltos de página, encabezados y pies de página como preparación para la impresión.</li>
+<li><code>head</code> Da salida a las primeras líneas de su entrada. Útil para obtener la cabecera de un fichero.</li>
+<li><code>tail</code> Muestra las últimas líneas de la entrada. Útil para cosas como obtener las entradas más recientes de un archivo de registro.</li>
+<li><code>tr</code> Traduce caracteres. Puede utilizarse para realizar tareas como conversiones mayúsculas/minúsculas o cambiar los caracteres de terminación de línea de un tipo a otro (por ejemplo, convertir archivos de texto DOS en archivos de texto estilo Unix).</li>
+<li><code>sed</code> Editor de secuencias. Puede realizar traducciones de texto más sofisticadas que <code>tr</code>.</li>
+<li><code>awk</code> Lenguaje de programación completo diseñado para construir filtros. Extremadamente potente.</li>
+</ul>
+<p><strong>Realización de tareas con pipelines:</strong></p>
+<p><strong>Impresión desde la línea de comandos</strong>. Linux proporciona un programa llamado <code>lpr</code> que acepta la entrada estándar y la envía a la impresora. Se utiliza a menudo con tuberías y filtros. He aquí un par de ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>$<span class="w"> </span>cat<span class="w"> </span>informe_mal_formateado.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>fmt<span class="w"> </span><span class="p">|</span><span class="w"> </span>pr<span class="w"> </span><span class="p">|</span><span class="w"> </span>lpr
+</code></pre></div>
+<p>El ejemplo sigue los siguientes pasos:</p>
+<ul>
+<li><code>cat</code> lee el archivo y lo envía a la salida estándar, que se canaliza a la entrada estándar de <code>fmt</code>.</li>
+<li><code>fmt</code> formatea el texto en párrafos ordenados y lo envía a la salida estándar, que se canaliza a la entrada estándar de <code>pr</code>.</li>
+<li><code>pr</code> divide el texto ordenadamente en páginas y lo envía a la salida estándar, que se canaliza a la entrada estándar de <code>lpr</code>.</li>
+<li><code>lpr</code> toma su entrada estándar y la envía a la impresora.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>$<span class="w"> </span>cat<span class="w"> </span>lista_no_clasificada_con_duplicados.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span><span class="p">|</span><span class="w"> </span>pr<span class="w"> </span><span class="p">|</span><span class="w"> </span>lpr
+</code></pre></div>
+<p>El ejemplo comienza con una lista de datos sin ordenar con entradas duplicadas. En primer lugar, <code>cat</code> envía la lista a <code>sort</code>, que la ordena y la envía a <code>uniq</code>, que elimina los duplicados. A continuación se utilizan <code>pr</code> y <code>lpr</code> para paginar e imprimir la lista.</p>
+<p><strong>Ver el contenido de los archivos <code>tar</code></strong>. A menudo se obtendrán <code>tar</code> comprimidos con <code>gzip</code>. Se puede utilizar el siguiente comando para ver el contenido de un archivo de este tipo en un sistema <em>Linux</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>$<span class="w"> </span>tar<span class="w"> </span>tzvf<span class="w"> </span>nombre_del_archivo.tar.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<h3 id="salida-de-error-estandar-2">Salida de error estándar '<strong>2&gt;</strong>'<a class="headerlink" href="#salida-de-error-estandar-2" title="Permanent link">¶</a></h3>
+<p>La salida estándar de error es hacia donde el comando envía datos de error al momento de realizar su tarea. Este flujo de datos también se imprime en el terminal pero no se envía a la entrada estándar (<em>STDIN</em>) de un comando que lo consuma.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>valido.txt<span class="w"> </span>invalido.txt
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>ls:<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>acceder<span class="w"> </span>a<span class="w"> </span><span class="s1">'invalido.txt'</span>:<span class="w"> </span>No<span class="w"> </span>existe<span class="w"> </span>el<span class="w"> </span>archivo<span class="w"> </span>o<span class="w"> </span>el<span class="w"> </span>directorio
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>user<span class="w"> </span><span class="m">11</span><span class="w"> </span>mar<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:42<span class="w"> </span>valido.txt
+</code></pre></div>
+<p>En el ejemplo aparece un error en el terminal indicando que <code>invalido.txt</code> no existe y, a continuación, muestra los datos del segundo archivo <code>valido.txt</code> que sí se encuentra.</p>
+<p>Si redirigiimos la salida estándar del comando a un archivo obtendremos lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>valido.txt<span class="w"> </span>invalido.txt<span class="w"> </span>&gt;<span class="w"> </span>salida.txt
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>ls:<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>acceder<span class="w"> </span>a<span class="w"> </span><span class="s1">'invalido.txt'</span>:<span class="w"> </span>No<span class="w"> </span>existe<span class="w"> </span>el<span class="w"> </span>archivo<span class="w"> </span>o<span class="w"> </span>el<span class="w"> </span>directorio
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>$<span class="w"> </span>cat<span class="w"> </span>salida.txt
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>user<span class="w"> </span><span class="m">11</span><span class="w"> </span>mar<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:42<span class="w"> </span>valido.txt
+</code></pre></div>
+<p>Podemos observar que el error sigue apareciendo en el terminal y en el archivo se ha almacenado la salida del archivo que no ha producido un error.</p>
+<p>Podríamos almacenar la salida de error estándar redirigiendo la salida con "<code>2&gt;</code>":</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>valido.txt<span class="w"> </span>invalido.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>error.txt
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>user<span class="w"> </span><span class="m">11</span><span class="w"> </span>mar<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:42<span class="w"> </span>valido.txt
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>$<span class="w"> </span>cat<span class="w"> </span>error.txt
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>ls:<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>acceder<span class="w"> </span>a<span class="w"> </span><span class="s1">'invalido.txt'</span>:<span class="w"> </span>No<span class="w"> </span>existe<span class="w"> </span>el<span class="w"> </span>archivo<span class="w"> </span>o<span class="w"> </span>el<span class="w"> </span>directorio
+</code></pre></div>
+<p>A menudo se suele desechar la salida de error redirigiéndola al dispositivo <code>/dev/null</code>, simplemente no se muestra ni almacena en ningún sitio.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>valido.txt<span class="w"> </span>invalido.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>user<span class="w"> </span><span class="m">11</span><span class="w"> </span>mar<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:42<span class="w"> </span>valido.txt
+</code></pre></div>
+<p>Si queremos redirigir ambas salidas, cada una en un archivo, haremos lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>valido.txt<span class="w"> </span>invalido.txt<span class="w"> </span>&gt;<span class="w"> </span>salida.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>error.txt
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>$<span class="w"> </span>cat<span class="w"> </span>salida.txt
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>user<span class="w"> </span><span class="m">11</span><span class="w"> </span>mar<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:42<span class="w"> </span>valido.txt
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>$<span class="w"> </span>cat<span class="w"> </span>error.txt
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>ls:<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>acceder<span class="w"> </span>a<span class="w"> </span><span class="s1">'invalido.txt'</span>:<span class="w"> </span>No<span class="w"> </span>existe<span class="w"> </span>el<span class="w"> </span>archivo<span class="w"> </span>o<span class="w"> </span>el<span class="w"> </span>directorio
+</code></pre></div>
+<p>Por último, si queremos redirigir la salida de error a la salida estándar para poder almacenar ambas salidas en un mismo archivo, haremos lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>valido.txt<span class="w"> </span>invalido.txt<span class="w"> </span>&gt;<span class="w"> </span>salida.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>$<span class="w"> </span>cat<span class="w"> </span>salida.txt
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>user<span class="w"> </span><span class="m">11</span><span class="w"> </span>mar<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:42<span class="w"> </span>valido.txt
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>ls:<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>acceder<span class="w"> </span>a<span class="w"> </span><span class="s1">'invalido.txt'</span>:<span class="w"> </span>No<span class="w"> </span>existe<span class="w"> </span>el<span class="w"> </span>archivo<span class="w"> </span>o<span class="w"> </span>el<span class="w"> </span>directorio
+</code></pre></div>
+<h2 id="permisos">Permisos<a class="headerlink" href="#permisos" title="Permanent link">¶</a></h2>
+<p>Los permisos <em>Linux</em> indican tres cosas que puedes hacer con un archivo o directorio, <strong>leer</strong>, <strong>escribir</strong> y <strong>ejecutar</strong>. Cada permisos se representa con una letra.</p>
+<ul>
+<li><strong>r</strong> leer (<em>read</em>) - puedes ver el contenido del archivo.</li>
+<li><strong>w</strong> escribir (<em>write</em>) - puedes cambiar el contenido del archivo.</li>
+<li><strong>x</strong> ejecutar (<em>execute</em>) - puede ejecutar si se trata de un programa o script.</li>
+</ul>
+<p>La misma serie de permisos se puede utilizar para los directorios, pero tienen un comportamiento ligeramente diferente.</p>
+<ul>
+<li><strong>r</strong> - tiene la capacidad de leer el contenido del <strong>directorio</strong>, es decir, hacer un <code>ls</code></li>
+<li><strong>w</strong> - puede escribir en el directorio, es decir, crear archivos y directorios</li>
+<li><strong>x</strong> - tiene la capacidad de entrar en ese directorio, es decir, ejecutar <code>cd</code></li>
+</ul>
+<p>A su vez, los permisos se dividen en tres apartados:</p>
+<ul>
+<li><strong>propietario</strong> - usuario único propietario del fichero. (normalmente la persona que creó el fichero, pero la propiedad puede ser transferida a otro usuario)</li>
+<li><strong>grupo</strong> - cada archivo pertenece a un único grupo.</li>
+<li><strong>otros</strong> - cualquier otro usuario que no pertenezca al grupo ni sea el propietario.</li>
+</ul>
+<h3 id="consultar-los-permisos">Consultar los permisos<a class="headerlink" href="#consultar-los-permisos" title="Permanent link">¶</a></h3>
+<p>Con <code>ls -l</code> podemos ver los detalles de los archivos incluyendo sus permisos.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo.txt
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>-rwxr----x<span class="w"> </span><span class="m">1</span><span class="w"> </span>alumno1<span class="w"> </span>students<span class="w"> </span><span class="m">12</span><span class="w"> </span>mar<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">09</span>:23<span class="w"> </span>archivo.txt
+</code></pre></div>
+<p>En el ejemplo anterior, los 10 primeros caracteres de la salida son los que miramos para identificar los permisos <code>-rwxrw---x</code>.</p>
+<ul>
+<li>El primer carácter identifica el tipo de archivo. Si es un guión (<code>-</code>), se trata de un archivo normal. Si es una <code>d</code>, se trata de un directorio.</li>
+<li>Los tres caracteres siguientes representan los permisos del propietario. Una letra representa la presencia de un permiso y un guión (<code>-</code>) representa la ausencia de un permiso. En este ejemplo, el propietario tiene todos los permisos (lectura, escritura y ejecución).</li>
+<li>Los siguientes 3 caracteres representan los permisos para el grupo. En este ejemplo el grupo tiene permiso de lectura pero no de escritura ni de ejecución. Se debe tener en cuenta que el orden de los permisos es siempre leer, luego escribir y luego ejecutar.</li>
+<li>Finalmente los últimos 3 caracteres representan los permisos para otros (o todos los demás). En este ejemplo tienen el permiso de ejecución y nada más.</li>
+<li>A parte, podemos observar que el archivo pertenece al usuario <code>alumno1</code> y al grupo <code>students</code>.</li>
+</ul>
+<p>A continuación se muestra una tabla resumen con la representación simbólica de los permisos así como su equivalente en binario y decimal.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Simbólico</th>
+<th style="text-align: center;">Binario</th>
+<th style="text-align: center;">Decimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>– – –</code></td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>– – x</code></td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;"><strong>1</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>– w –</code></td>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;"><strong>2</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>– w x</code></td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;"><strong>3</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r – –</code></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;"><strong>4</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r – x</code></td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;"><strong>5</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r w –</code></td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;"><strong>6</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r w x</code></td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;"><strong>7</strong></td>
+</tr>
+</tbody>
+</table>
+<table id="_table-1">
+<caption style="caption-side:bottom">Table 1: Relación entre representación simbólica y decimal de los permisos.</caption><thead>
+<tr>
+<th>Simbólico</th>
+<th style="text-align: center;">Decimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>– – –</code> <code>– – –</code> <code>– – –</code></td>
+<td style="text-align: center;">000</td>
+</tr>
+<tr>
+<td><code>r – –</code> <code>– – –</code> <code>– – –</code></td>
+<td style="text-align: center;">400</td>
+</tr>
+<tr>
+<td><code>r – –</code> <code>r – –</code> <code>r – –</code></td>
+<td style="text-align: center;">444</td>
+</tr>
+<tr>
+<td><code>r w –</code> <code>– – –</code> <code>– – –</code></td>
+<td style="text-align: center;">600</td>
+</tr>
+<tr>
+<td><code>r w –</code> <code>r – –</code> <code>r – –</code></td>
+<td style="text-align: center;">644</td>
+</tr>
+<tr>
+<td><code>r w –</code> <code>r w –</code> <code>r w –</code></td>
+<td style="text-align: center;">666</td>
+</tr>
+<tr>
+<td><code>r w x</code> <code>– – –</code> <code>– – –</code></td>
+<td style="text-align: center;">700</td>
+</tr>
+<tr>
+<td><code>r w x</code> <code>r – x</code> <code>– – –</code></td>
+<td style="text-align: center;">750</td>
+</tr>
+<tr>
+<td><code>r w x</code> <code>r – x</code> <code>r – x</code></td>
+<td style="text-align: center;">755</td>
+</tr>
+<tr>
+<td><code>r w x</code> <code>r w x</code> <code>r w x</code></td>
+<td style="text-align: center;">777</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modificar-permisos-chmod">Modificar permisos '<strong>chmod</strong>'<a class="headerlink" href="#modificar-permisos-chmod" title="Permanent link">¶</a></h3>
+<p>Para cambiar los permisos de un archivo o directorio se utiliza un comando llamado <code>chmod</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>chmod [permisos] [ruta]
+</code></pre></div>
+<p>El parámetro de los permisos podemos pasarlo de dos formas distinta, en notación numérica y en notación simbólica.</p>
+<p>Ejemplo de cambio de permisos utilizando la notación numérica:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>archivo.txt
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo.txt
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>-rwxr-x---<span class="w"> </span><span class="m">1</span><span class="w"> </span>alumno1<span class="w"> </span>students<span class="w"> </span><span class="m">12</span><span class="w"> </span>mar<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">09</span>:23<span class="w"> </span>archivo.txt
+</code></pre></div>
+<p>Ejemplo de cambio de permisos utilizando la notación simbólica, en este caso eliminaría el permiso de ejecución:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>-x<span class="w"> </span>archivo.txt
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo.txt
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>-rw-r-----<span class="w"> </span><span class="m">1</span><span class="w"> </span>alumno1<span class="w"> </span>students<span class="w"> </span><span class="m">12</span><span class="w"> </span>mar<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">09</span>:23<span class="w"> </span>archivo.txt
+</code></pre></div>
+<p>La notación simbólica es más flexible, ya que permite añadir o quitar permisos sin modificar el resto.</p>
+<p>Podemos indicar a dónde se aplica el permiso mediante los siguientes argumentos:</p>
+<ul>
+<li><code>u</code> usuario propietario</li>
+<li><code>g</code> grupo</li>
+<li><code>o</code> otros</li>
+<li><code>a</code> todos (<em>all</em>)</li>
+</ul>
+<p>A parte podemos indicar la operación con los siguientes símbolos:</p>
+<ul>
+<li><code>+</code> añade el permiso</li>
+<li><code>-</code> quita el permiso</li>
+<li><code>=</code> configura el permiso con los valores indicados</li>
+</ul>
+<p>Algunos ejemplos serían:</p>
+<ul>
+<li><code>+x</code> añade permisos de ejecución a todos, sería equivalente a utilizar <code>a+x</code></li>
+<li><code>u+x</code> añade permiso de ejecución al usuario propietario</li>
+<li><code>g-x</code> elimina el permiso de ejecución para el grupo</li>
+<li><code>o-rw</code> elimina los permisos de lectura y escritura a otros</li>
+<li><code>go=rw</code> establece los permisos para el grupo y otros para que puedan leer y escribir pero no ejecutar</li>
+<li><code>u+x,go=rx</code> añade permiso de ejecución al propietario y establece los permisos para el grupo y otros para que puedan leer y ejecutar pero no escribir</li>
+</ul>
+<h2 id="gestion-de-procesos">Gestión de procesos<a class="headerlink" href="#gestion-de-procesos" title="Permanent link">¶</a></h2>
+<p><em>Linux</em> en general es un sistema bastante estable. Sin embargo, de vez en cuando, se puede se pierda rendimiento o se necesite ajustar el funcionamiento del sistema para que se adapte mejor a nuestras necesidades. En esta sección echaremos un breve vistazo a cómo podemos gestionar programas, o procesos en un sistema <em>Linux</em>.</p>
+<p>Un programa es una serie de instrucciones que indican al ordenador lo que debe hacer. Cuando ejecutamos un programa, esas instrucciones se copian en la memoria y se asigna espacio para variables y todo lo necesario para gestionar su ejecución. Esta instancia en ejecución de un programa se denomina <strong>proceso</strong> y podemos gestionarlo.</p>
+<h3 id="trabajos-en-primer-y-segundo-plano">Trabajos en primer y segundo plano.<a class="headerlink" href="#trabajos-en-primer-y-segundo-plano" title="Permanent link">¶</a></h3>
+<p>Cuando ejecutamos un programa o comando, normalmente se ejecutan en primer plano. La mayoría de ellos se ejecutan en una fracción de segundo. Puede que queramos iniciar un proceso que tarde un largo período de tiempo y que se ejecute sin nuestra intervención (procesar un archivo de texto muy grande o compilar un programa, por ejemplo). Lo que podemos hacer es ejecutar el programa en segundo plano y seguir trabajando. Demostraremos esto con un programa llamado <code>sleep</code>. Todo lo que hace <code>sleep</code> es esperar un número determinado de segundos y luego salir. También podemos usar un comando llamado <code>jobs</code> que nos lista los trabajos en segundo plano que se están ejecutando.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>$<span class="w"> </span>sleep<span class="w"> </span><span class="m">60</span>
+</code></pre></div>
+<p>Este comando bloquearía la línea de comandos durante 60 segundos.</p>
+<p>Si queremos cancelar la ejecución podemos pulsar la combinación de teclas <code>Ctrl + C</code>
+Si pulsamos <code>Ctrl + Z</code> el proceso se detiene y se envía a segundo plano.</p>
+<p>Para ejecutar un comando en segundo plano, añadiremos un ampersand <code>&amp;</code> al final del comando.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>$<span class="w"> </span>sleep<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+<p>Para consultar los procesos que están en segundo plano se utiliza el comando <code>jobs</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>$<span class="w"> </span>sleep<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">16656</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Ejecutando<span class="w">              </span>sleep<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+<p>Para enviar un proceso a primer plano y continuar su ejecución utilizaremos el comando <code>fg</code> (<em>foreground</em>) y el número de trabajo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>sleep<span class="w"> </span><span class="m">60</span>
+</code></pre></div>
+<p>Si hemos enviado un proceso a segundo plano con <code>Ctrl + Z</code> aparecerá detenido en <code>jobs</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>$<span class="w"> </span>sleep<span class="w"> </span><span class="m">60</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>^Z
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Detenido<span class="w">                </span>sleep<span class="w"> </span><span class="m">60</span>
+<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Detenido<span class="w">                </span>sleep<span class="w"> </span><span class="m">60</span>
+</code></pre></div>
+<p>Para reanudar la ejecución del proceso, pero que continúe en segundo plano utilizamos el comando <code>bg</code> (<em>background</em>) acompañado del número de trabajo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>$<span class="w"> </span><span class="nb">bg</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w"> </span>sleep<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Ejecutando<span class="w">              </span>sleep<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+<h3 id="comando-top">Comando '<strong>top</strong>'<a class="headerlink" href="#comando-top" title="Permanent link">¶</a></h3>
+<p><em>Linux</em>, como la mayoría de los sistemas operativos modernos, es un sistema operativo <strong>multitarea</strong>. Esto significa que muchos procesos pueden estar ejecutándose al mismo tiempo. Además de los procesos que estamos ejecutando, puede haber otros usuarios en el sistema que también estén ejecutando sus procesos y el propio sistema operativo normalmente también ejecuta varios procesos que utiliza para gestionar el sistema en general. Si queremos obtener una instantánea de lo que está ocurriendo actualmente en el sistema, podemos utilizar un programa llamado <code>top</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>$<span class="w"> </span>top
+</code></pre></div>
+<p>Abajo un ejemplo simplificado de la ejecución de top:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>$ top
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>top -  9:40:00 up 4 days, 5:21,  2 users,  load average: 0,89, 0,38, 0,14
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>Tasks: 184 total,   1 running, 183 sleeping,   0 stopped,   0 zombie
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>%Cpu(s): 1,0 us, 1,4 sy, 0,0 ni, 96,3 id, 1,4 wa, 0,0 hi, 0,0 si, 0,0 st
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>MiB Mem :    976,7 total,    213,1 free,    565,8 used,    197,7 buff/cache
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>MiB Swap:    975,0 total,    650,6 free,    324,4 used.    264,0 avail Mem 
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>
+<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a> PID USER    PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND  
+<a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a> 643 root    20   0  579800  37772  10288 S   1,0   3,8   0:03.13 Xorg     
+<a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a> 457 root    35  15   16560  12924   1904 S   0,7   1,3   0:00.26 preload  
+<a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a>  11 root    20   0       0      0      0 S   0,3   0,0   0:00.08 ksoftir+ 
+<a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a>1371 user    20   0  152744   1272   1144 S   0,3   0,1   0:00.13 VBoxCli+ 
+<a id="__codelineno-57-13" name="__codelineno-57-13" href="#__codelineno-57-13"></a>1544 user    20   0  504452  10236   9248 S   0,3   1,0   0:00.12 panel-8+ 
+</code></pre></div>
+<p>Detalle de cada línea:</p>
+<p><strong>Tiempo de actividad y carga del sistema</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>top - 9:40:00 up 4 days, 5:21,  2 users,  load average: 0,89, 0,38, 0,14
+</code></pre></div>
+<ul>
+<li>Hora actual.</li>
+<li>Tiempo que lleva encendido el sistema.</li>
+<li>Número de usuarios con sesión iniciada</li>
+<li>Carga media de CPU en intervalos de 5, 10 y 15 minutos.</li>
+</ul>
+<p><strong>Tareas</strong>. Los procesos también se les llama tareas (<em>tasks</em>)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>Tasks: 184 total,   1 running, 183 sleeping,   0 stopped,   0 zombie
+</code></pre></div>
+<p>Muestra el total de procesos en sus diferentes estados:</p>
+<ul>
+<li><em>Running</em>: en ejecución o preparados para ejecutarse.</li>
+<li><em>Sleeping</em>: en espera hasta que ocurra un evento en particular.</li>
+<li><em>Stopped</em>: ejecución detenida.</li>
+<li><em>Zombie</em>: no está siendo ejecutado. Algunos procesos quedan en este estado si el proceso que los invocó termina.</li>
+</ul>
+<p><strong>Estado de la CPU</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>%Cpu(s): 1,0 us, 1,4 sy, 0,0 ni, 96,3 id, 1,4 wa, 0,0 hi, 0,0 si, 0,0 st
+</code></pre></div>
+<p>Muestra porcentajes de uso del procesador:</p>
+<ul>
+<li><strong>us</strong> (<em>user</em>): Procesos de usuario.</li>
+<li><strong>sy</strong> (<em>system</em>): Procesos de sistema.</li>
+<li><strong>ni</strong> (<em>nice</em>): Procesos de usuario con prioridad cambiada.</li>
+<li><strong>id</strong> (<em>iddle</em>): Procesos inactivos.</li>
+<li><strong>wa</strong> (<em>waiting</em>): En espera a que termine un evento.</li>
+<li><strong>hi</strong> (<em>hw int</em>): Interrupciones hardware.</li>
+<li><strong>si</strong> (<em>sw int</em>): Interrupciones software.</li>
+<li><strong>st</strong> (<em>steal</em>): En entornos virtualizados, tiempo que espera la máquina virtual para que el sistema anfitrión le de uso de procesador.</li>
+</ul>
+<p><strong>Memoria física</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>MiB Mem :    976,7 total,    213,1 free,    565,8 used,    197,7 buff/cache
+</code></pre></div>
+<ul>
+<li>Memoria total</li>
+<li>Memoria en disponible</li>
+<li>Memoria en uso</li>
+<li>Memoria dedicada dedicada al buffers y cache. El sistema almacena los datos de uso frecuente para optimizar las lecturas de disco.</li>
+</ul>
+<p><strong>Memoria virtual</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>MiB Swap:    975,0 total,    650,6 free,    324,4 used.    264,0 avail Mem 
+</code></pre></div>
+<p>Cuando el sistema tiene más procesos en ejecución de los que la memoria principal puede almacenar, se hace uso de un dispositivo de almacenamiento secundario, normalmente el disco duro, para almacenar los procesos más antiguos que no se están ejecutando en este momento. Es una operación lenta y si el sistema está utilizando memoria <em>swap</em> se notará una bajada de rendimiento notable.</p>
+<ul>
+<li><strong>avail Mem</strong> es una estimación de cuánta memoria se puede usar antes de comenzar a utilizar memoria virtual.</li>
+</ul>
+<p><strong>Lista de procesos</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a> PID USER    PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND  
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a> 643 root    20   0  579800  37772  10288 S   1,0   3,8   0:03.13 Xorg    
+</code></pre></div>
+<ul>
+<li><strong>PID</strong>: es el identificador de proceso. Cada proceso tiene un identificador único.</li>
+<li><strong>USER</strong>: usuario propietario del proceso.</li>
+<li><strong>PR</strong>: prioridad del proceso. Si pone RT es que se está ejecutando en tiempo real.</li>
+<li><strong>NI</strong>: asigna la prioridad. Si tiene un valor bajo (hasta -20) quiere decir que tiene más prioridad que otro con valor alto (hasta 19).</li>
+<li><strong>VIRT</strong>: cantidad de memoria virtual utilizada por el proceso.</li>
+<li><strong>RES</strong>: cantidad de memoria RAM física que utiliza el proceso.</li>
+<li><strong>SHR</strong>: memoria compartida.</li>
+<li><strong>S</strong> (<em>status</em>): estado del proceso.</li>
+<li><strong>R</strong> <em>running</em></li>
+<li><strong>S</strong> <em>sleeping</em> </li>
+<li><strong>T</strong> <em>stopped</em></li>
+<li><strong>Z</strong> <em>zombie</em></li>
+<li><strong>%CPU</strong>: porcentaje de CPU utilizado desde la última actualización.</li>
+<li><strong>%MEM</strong>: porcentaje de memoria física utilizada por el proceso desde la última actualización.</li>
+<li><strong>TIME+</strong>: tiempo total de CPU que ha usado el proceso desde su inicio.</li>
+<li><strong>COMMAND</strong>: comando utilizado para iniciar el proceso.</li>
+</ul>
+<p>Algunos atajos de teclado más comunes:</p>
+<ul>
+<li><strong><code>q</code></strong> salir de <em>top</em></li>
+<li><strong><code>M</code></strong> ordena por uso de memoria</li>
+<li><strong><code>P</code></strong> ordena por uso de procesador</li>
+<li><strong><code>N</code></strong> ordena por ID de proceso</li>
+<li><strong><code>T</code></strong> ordena por tiempo de ejecución</li>
+<li><strong><code>V</code></strong> vista de árbol de procesos</li>
+<li><strong><code>k</code></strong> enviar señal de terminación de proceso</li>
+</ul>
+<p>Una alternativa a <code>top</code> es <strong><code>htop</code></strong> aunque puede que no venga instalado con el sistema y necesitemos instalarlo manualmente (<code>sudo apt install htop</code>). Según su descripción en la página de manual (<code>man htop</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>Es similar a top, pero permite desplazarse vertical y horizontalmente, e
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>interactuar utilizando un dispositivo apuntador (ratón). Puede observar
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>todos los procesos que se ejecutan en el sistema, junto con sus
+<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>argumentos de línea de comandos, así como verlos en un formato de árbol,
+<a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>seleccionar varios procesos y actuar sobre todos ellos a la vez.
+</code></pre></div>
+<h3 id="comando-ps">Comando '<strong>ps</strong>'<a class="headerlink" href="#comando-ps" title="Permanent link">¶</a></h3>
+<p>Otro programa para ver los procesos es <code>ps</code>. En su uso normal te mostrará sólo los procesos que se están ejecutando en el terminal actual (que no suelen ser muchos).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>$<span class="w"> </span>ps
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="w">    </span>PID<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="w">  </span><span class="m">46141</span><span class="w"> </span>pts/0<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>bash
+<a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="w">  </span><span class="m">46221</span><span class="w"> </span>pts/0<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>ps
+</code></pre></div>
+<p>Si añadimos el argumento <code>aux</code> entonces mostrará una vista completa de procesos del sistema.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>$ ps aux
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>USER   PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>root     1  0.0  0.9  98464  9516 ?        Ss   12:18   0:00 /sbin/init
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>root     2  0.0  0.0      0     0 ?        S    12:18   0:00 [kthreadd]
+<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a>root     3  0.0  0.0      0     0 ?        I&lt;   12:18   0:00 [rcu_gp]
+<a id="__codelineno-66-6" name="__codelineno-66-6" href="#__codelineno-66-6"></a>root     4  0.0  0.0      0     0 ?        I&lt;   12:18   0:00 [rcu_par_gp]
+<a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a>...
+</code></pre></div>
+<p>Tiene una salida mucho más extensa, así que la se suele pasar la salida a <code>grep</code> para filtrar los resultados.</p>
+<h3 id="comando-kill">Comando '<strong>kill</strong>'<a class="headerlink" href="#comando-kill" title="Permanent link">¶</a></h3>
+<p>El comando <code>kill</code> permite detener un proceso indicando su ID. En realidad, kill sirve para enviar una señal a un proceso, pero si no indicamos opciones envía la señal de terminación <code>-TERM</code>.</p>
+<p>Con <code>kill -l</code> podemos ver un listado de las señales disponibles, las más importantes son las siguientes:</p>
+<ul>
+<li><code>SIGTERM</code> (15) - Señal de terminación del software (envía kill por defecto).</li>
+<li><code>SIGKILL</code> ( 9) - Si un proceso recibe esta señal, debe salir inmediatamente y no realizará ninguna operación de limpieza.</li>
+<li><code>SIGSTOP</code> (19) - Se emite para detener un proceso.</li>
+<li><code>SIGCONT</code> (18) - Continuar la ejecución de un proceso detenido.</li>
+<li><code>SIGHUP</code>  ( 1) - Se emite al cerrar el terminal asociado.</li>
+<li><code>SIGINT</code>  ( 2) - Se emite si el usuario envía una señal de interrupción (Ctrl + C).</li>
+<li><code>SIGQUIT</code> ( 3) - Se emite si el usuario envía una señal de abandono (Ctrl + D).</li>
+</ul>
+<p>Las señales tienen asociado un código numérico estándar para las diferentes arquitecturas de procesadores.</p>
+<p>Ejemplo de uso de <code>kill</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>$<span class="w"> </span>sleep<span class="w"> </span><span class="m">5000</span><span class="p">&amp;</span>
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">18456</span>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>$<span class="w"> </span>ps<span class="w"> </span>-a
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="w">    </span>PID<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a><span class="w">  </span><span class="m">18456</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>sleep
+<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a><span class="w">  </span><span class="m">18457</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>ps
+<a id="__codelineno-67-7" name="__codelineno-67-7" href="#__codelineno-67-7"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="m">18456</span>
+<a id="__codelineno-67-8" name="__codelineno-67-8" href="#__codelineno-67-8"></a>$<span class="w"> </span>ps<span class="w"> </span>-a
+<a id="__codelineno-67-9" name="__codelineno-67-9" href="#__codelineno-67-9"></a><span class="w">    </span>PID<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+<a id="__codelineno-67-10" name="__codelineno-67-10" href="#__codelineno-67-10"></a><span class="w">  </span><span class="m">18457</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>ps
+</code></pre></div>
+<p>En el ejemplo se ejecuta <code>sleep</code> para que se ejecute durante 5000 segundos, pero se lanza en segundo plano con <code>&amp;</code>.
+Podemos observar que aparecen unos números, <code>[1] 18456</code>, entre corchetes indica el trabajo en segundo plano, y el otro número es el ID de proceso.
+Con <code>ps -a</code> vemos los procesos activos en el terminal actual junto con su <code>PID</code> (<em>Process ID</em>)
+Al ejecutar <code>kill</code> junto con el <code>PID</code> estamos enviando la señal <code>TERM</code> (15) donde se le pide al proceso que termine su ejecución de forma ordenada.</p>
+<p>Si una aplicación o comando se ha quedado bloqueado y queremos terminar su ejecución de manera forzosa, utilizaremos la señal <code>KILL</code> (9).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="m">18456</span>
+</code></pre></div>
+<p>también se puede indicar la señal como texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-KILL<span class="w"> </span><span class="m">18456</span>
+</code></pre></div>
+<p>Tiene el mismo efecto que el ejemplo anterior, pero fuerza el cierre de la aplicación. Por ejemplo, si tenemos abierto un editor de texto con cambios pendientes de guardar, por lo general, el editor de texto, al solicitar el cierre ordenado, señal <code>TERM</code> (15), mostrará un mensaje interactivo o diálogo preguntando al usuario si quiere guardar los cambios. Si utilizamos la señal <code>KILL</code> (9) este mensaje no aparece y se perderán los cambios.</p>
+<h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">¶</a></h2>
+<p>En <em>Linux</em> todo se trata como un archivo. Pero hay un tipo especial de archivo, llamado enlace (<em>link</em>), y hay dos tipos de enlaces:</p>
+<ul>
+<li>
+<p><strong>Enlaces simbólicos</strong> También llamados <strong>enlaces suaves</strong>, apuntan a la <strong>ruta</strong> de otro archivo. Si se borra el archivo al que apunta el enlace (llamado target), el enlace seguirá existiendo, pero el enlace dejará de funcionar.</p>
+</li>
+<li>
+<p><strong>Enlaces duros</strong> También llamado <strong>enlace físico</strong>, es como un segundo nombre para el archivo original. <strong>No son duplicados</strong>, sino que son una entrada adicional en el sistema de archivos que apunta al mismo lugar (<code>inodo</code>) en el disco.</p>
+</li>
+</ul>
+<p>Un <strong>inodo</strong> es una estructura de datos que almacena atributos para un objeto (como un archivo o directorio) en un sistema de archivos. Entre esos atributos están los permisos, la propiedad y en qué bloques del disco se almacenan los datos del objeto. Se puede entender como una entrada en un índice, de ahí el nombre, que proviene de "<em>index node</em>".</p>
+<h3 id="enlaces-duros">Enlaces duros<a class="headerlink" href="#enlaces-duros" title="Permanent link">¶</a></h3>
+<p>El comando para crear un enlace físico se utiliza el comando <code>ln</code>. Su sintaxis básica es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>ln OBJETIVO NOMBRE_DEL_ENLACE
+</code></pre></div>
+<p>El <code>OBJETIVO</code> debe existir, es el archivo al que apuntará el enlace, y si el objetivo no está en el directorio actual, o si se desea crear el enlace en otro lugar, se debe especificar la ruta completa. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>$ ln documento.txt /home/user/Documentos/enlaceDuro.txt
+</code></pre></div>
+<p>Creará un archivo llamado <code>enlaceDuro.txt</code> en el directorio <code>/home/user/Documentos/</code> vinculado al archivo <code>documento.txt</code> situado en el directorio actual.</p>
+<p>Si se omite el parámetro <code>NOMBRE_DEL_ENLACE</code>, se creará un vínculo con el mismo nombre que el objetivo en el directorio actual.</p>
+<p>Los enlaces duros son entradas en el sistema de archivos que tienen diferentes nombres pero apuntan a los mismos datos en el disco. Todos estos nombres pueden usarse para hacer referencia a un solo archivo. Si se cambia el contenido de uno de los enlaces duros, el contenido de todos los demás enlaces que apuntan a ese archivo cambia, ya que todos estos enlaces apuntan a los mismos datos de disco. Si se elimina uno de los enlaces, los otros enlaces seguirán funcionando.</p>
+<p>Esto sucede porque cuando se borra un archivo, los datos no se borran del disco. El sistema simplemente elimina la entrada en la tabla del sistema de archivos que apunta al <em>inodo</em> correspondiente a los datos en el disco. Pero si tiene una segunda entrada que apunta al mismo <em>inodo</em>, aún se puede acceder a los datos.</p>
+<p>Se puede verificar esto usando el parámetro <code>-i</code> de <code>ls</code>. Como ejemplo, vamos a considerar los siguientes contenidos de un directorio:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>$ ls -li
+<a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>total 224
+<a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a>4513695 -rw-r--r-- 2 user student 113402 Mar 24 11:31 enlaceDuro
+<a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>4513695 -rw-r--r-- 2 user student 113402 Mar 24 11:31 objetivo.pdf
+</code></pre></div>
+<p>El número que aparece antes de los permisos es el número de <strong><em>inodo</em></strong>. Los archivos <code>enlaceDuro</code> y <code>objetivo.pdf</code> tienen el mismo número (<em>4513695</em>), esto se debe a que uno es un vínculo duro del otro.</p>
+<p>Pero, ¿cuál es el original y cuál es el enlace? Realmente no se puede decir, ya que para en la práctica son el mismo archivo.</p>
+<p>Se debe tener en cuenta que cada enlace físico que apunta a un archivo aumenta el contador de enlaces del archivo. Este es el número que aparece después de los permisos en la salida de <code>ls -l</code>. De forma predeterminada, cada archivo tiene un recuento de enlaces de <code>1</code> (los directorios tienen un recuento de <code>2</code>), y cada enlace físico aumenta el recuento en uno. Esta es la razón del recuento de enlaces de <code>2</code> en los archivos del ejemplo anterior.</p>
+<p>A diferencia de los enlaces simbólicos, <strong>solo puede crear enlaces físicos a archivos</strong>, y tanto el enlace como el destino <strong>deben residir en el mismo sistema de archivos</strong>.</p>
+<p>Dado que los enlaces duros se tratan como archivos normales, se pueden eliminar con <code>rm</code> y renombrarlos o moverlos por el sistema de archivos con <code>mv</code>. Y dado que un enlace fijo apunta al mismo <em>inodo</em> del objetivo, se puede mover libremente, sin miedo a romper el enlace.</p>
+<h3 id="enlaces-simbolicos">Enlaces simbólicos<a class="headerlink" href="#enlaces-simbolicos" title="Permanent link">¶</a></h3>
+<p>El comando utilizado para crear un enlace simbólico también es <code>ln</code>, pero con el parámetro <code>-s</code> agregado. Su sintaxis básica es:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>ln -s OBJETIVO NOMBRE_DEL_ENLACE_SIMBOLICO
+</code></pre></div>
+<p>Dado el siguiente ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>$ ln -s objetivo.txt /home/user/Documentos/enlaceSimbolico
+</code></pre></div>
+<p>Esto creará un archivo llamado <code>enlaceSimbolico</code> en el directorio <code>/home/user/Documentos/</code>, apuntando al archivo <code>objetivo.txt</code> en el directorio actual.</p>
+<p>Al igual que con los enlaces físicos, se puede omitir el nombre del enlace para crear un enlace con el mismo nombre que el destino en el directorio actual.</p>
+<p>Los enlaces simbólicos apuntan a una ruta en el sistema de archivos. Se pueden crear enlaces simbólicos a archivos y directorios, incluso en diferentes particiones. Es bastante fácil detectar un enlace simbólico con la salida del comando <code>ls</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>$ ls -lh
+<a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>total 112K
+<a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>-rw-r--r-- 1 user student 110K Jun  7 10:13 objetivo.txt
+<a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a>lrwxrwxrwx 1 user student   12 Jun  7 10:14 enlaceSimbolico -&gt; objetivo.txt
+</code></pre></div>
+<p>En el ejemplo anterior, el primer carácter de los permisos para el archivo <code>enlaceSimbolico</code> es <strong><code>l</code></strong>, lo que indica un enlace simbólico. Además, justo después del nombre del archivo, aparece el nombre del destino al que apunta el enlace, el archivo <code>objetivo.txt</code>.</p>
+<p>Se debe tener en cuenta que en los listados de archivos y directorios, los enlaces suaves siempre muestran los permisos <code>rwx</code> para el usuario, el grupo y otros, pero en la práctica los permisos de acceso para ellos son los mismos que los del objetivo.</p>
+<p>Al igual que los enlaces físicos, los enlaces simbólicos pueden eliminarse usando <code>rm</code> y moverse o renombrarse usando <code>mv</code>. Sin embargo, se debe tener especial cuidado al crearlos, para evitar romper el enlace si se mueve de su ubicación original.</p>
+<p>Al crear enlaces simbólicos, a menos que se especifique la ruta absoluta, la ubicación del objetivo se interpreta como relativa a la ubicación del enlace. Esto puede crear problemas si se mueve el vínculo o el archivo al que apunta.</p>
+<p>Esto es más fácil de entender con un ejemplo. Supongamos un archivo llamado <code>original.txt</code> en el directorio actual y se quiere crear un enlace simbólico llamado <code>softlink</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>$ ln -s original.txt softlink
+</code></pre></div>
+<p>Aparentemente todo estaría bien. Comprobemos con <code>ls</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>$ ls -lh
+<a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a>total 112K
+<a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a>-r--r--r-- 1 user student 110K Jun  7 10:13 original.txt
+<a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a>lrwxrwxrwx 1 user student   12 Jun  7 19:23 softlink -&gt; original.txt
+</code></pre></div>
+<p>Se puede ver que <code>softlink</code> apunta a (<code>-&gt;</code>) <code>original.txt</code>. Sin embargo, veamos qué sucede si mueve el enlace al directorio anterior y se intenta mostrar su contenido:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>$ mv softlink ../
+<a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>$ less ../softlink
+<a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>../softlink: No such file or directory
+</code></pre></div>
+<p>Dado que no se especificó la ruta a <code>original.txt</code>, el sistema asume que está en el mismo directorio que el enlace. Cuando esto ya no es cierto, el enlace deja de funcionar.</p>
+<p>La forma de evitar esto es especificar siempre la ruta absoluta al objetivo cuando se crea el enlace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>$ ln -s /home/user/Documentos/original.txt softlink
+</code></pre></div>
+<p>De esta manera, no importa dónde se mueva el enlace, seguirá funcionando, porque apunta a la <strong>ruta absoluta</strong> del objetivo. Se verifica con <code>ls</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>$ ls -lh
+<a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>total 112K
+<a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>lrwxrwxrwx 1 user student   40 Jun  7 19:34 softlink -&gt; /home/user/Documentos/original.txt
+</code></pre></div>
+<h2 id="archivado-y-compresion-de-archivos">Archivado y compresión de archivos<a class="headerlink" href="#archivado-y-compresion-de-archivos" title="Permanent link">¶</a></h2>
+<h3 id="comando-tar">Comando '<strong>tar</strong>'<a class="headerlink" href="#comando-tar" title="Permanent link">¶</a></h3>
+<p>El comando <code>tar</code>, abreviatura de “<em>Tape ARchive</em>”, se utiliza para <strong>crear</strong> archivos <code>tar</code> que junta un grupo de archivos en un único archivo. La ventaja de crear un archivo único es que se pueden adjuntar, agrupar y mover fácilmente.</p>
+<p><code>tar</code> también tiene la capacidad de <strong>extraer</strong> archivos <code>tar</code>, <strong>mostrar</strong> una lista de los archivos incluidos en el archivo y <strong>agregar</strong> archivos adicionales a un archivo existente.</p>
+<p>La sintaxis del comando <code>tar</code> es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>tar [OPERACIÓN] [OPCIONES] -f ARCHIVO_TAR [ARCHIVOS...]
+</code></pre></div>
+<p>Las <strong>operaciones</strong> básicas que se pueden realizar son las siguientes:</p>
+<ul>
+<li><strong>Crear</strong> <code>-c</code> o <code>--create</code></li>
+<li><strong>Extraer</strong> <code>-x</code> o <code>--extract</code></li>
+<li><strong>Listar</strong> <code>-t</code> o <code>--list</code></li>
+</ul>
+<p>Las <strong>opciones</strong> más utilizadas son:</p>
+<ul>
+<li><code>-f ARCHIVO_TAR</code> o <code>--file=ARCHIVO_TAR</code> establece el nombre del archivo <code>tar</code>.</li>
+<li><code>-z</code> o <code>--gzip</code> utiliza compresión gzip.</li>
+<li><code>-j</code> o <code>--bzip2</code> utiliza compresión bzip2.</li>
+<li><code>-J</code> o <code>--xz</code> utiliza compresión xz.</li>
+<li><code>-v</code> o <code>--verbose</code> muestra los archivos mientras se procesan.</li>
+</ul>
+<p>A continuación algunos ejemplos.</p>
+<ul>
+<li><strong>Crear</strong> un archivo <code>tar</code> de un directorio:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>$ tar -cvf archivo.tar Escritorio/
+</code></pre></div>
+<p>En este caso, se crea un <code>archivo.tar</code>, sin comprimir, con todo el contenido del directorio <code>Escritorio</code></p>
+<ul>
+<li><strong>Extraer</strong> un archivo <code>tar</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>$ tar -xvf archivo.tar
+</code></pre></div>
+<p>Extraerá el contenido de <code>archivo.tar</code> en el directorio de trabajo actual.</p>
+<ul>
+<li><strong>Crear</strong> un archivo <code>tar</code> <strong>comprimido</strong> en <strong><em>gzip</em></strong> (<code>tar.gz</code>)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>$ tar -czvf documentos.tar.gz Documentos/*.txt Documentos/*.odt
+</code></pre></div>
+<p>En este ejemplo, se añade la opción <code>z</code> que comprime el resultado en <em>gzip</em>. Se puede observar que se ha pasado una lista de archivos indicando una ruta relativa y comodines.</p>
+<ul>
+<li><strong>Descomprimir</strong> <code>tar</code> comprimido en <strong><em>gzip</em></strong> (<code>tar.gz</code>)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>$ tar -xzvf documentos.tar.gz -C som/ud9
+</code></pre></div>
+<p>Se cambia la opción a <code>x</code> para extraer el contenido. Se añade como ejemplo la opción <code>-C</code> para especificar la ruta del directorio destino donde se descomprimirán los archivos. Si no se especificara <code>-C som/ud9</code> los archivos se descomprimirían en el directorio de trabajo actual.</p>
+<ul>
+<li><strong>Crear</strong> un archivo <code>tar</code> <strong>comprimido</strong> en <strong><em>bzip2</em></strong> (<code>tar.bz2</code>)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>$ tar -cjvf fotos.tar.bz2 *.jpg
+</code></pre></div>
+<p>La principal característica de <em>bzip2</em> es que se consigue un mayor ratio de compresión, aunque es algo más lento que <em>gzip</em>.</p>
+<ul>
+<li><strong>Listar</strong> el contenido de un archivo <code>tar</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>$ tar -tvf fotos.tar.bz2
+</code></pre></div>
+<p>Mostraría un listado de los contenidos del archivo <code>tar</code> sin extraer ni alterar el contenido.</p>
+<!-- BEGIN COMMENT -->
+
+<!-- END COMMENT -->
+
+<!-- NEWPAGE -->
+
+<h2 id="referencias-bibliograficas">Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permanent link">¶</a></h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../extra/js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

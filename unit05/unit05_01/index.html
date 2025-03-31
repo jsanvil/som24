@@ -1,0 +1,1546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../unit05_02/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+    
+    
+      
+        <title>5.1 MS Windows Administration - Sistemas Operativos Monopuesto</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra/fontawesome/css/all.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#51-ms-windows-administration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sistemas Operativos Monopuesto" class="md-header__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas Operativos Monopuesto
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5.1 MS Windows Administration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../unit01/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../unit02/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../unit03/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../unit04/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Unit5
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sistemas Operativos Monopuesto" class="md-nav__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistemas Operativos Monopuesto
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unit5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    5.1 MS Windows Administration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 MS Windows Administration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-user-profiles-and-local-groups-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. User Profiles and Local Groups Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. User Profiles and Local Groups Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Accounts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-user-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local User Accounts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-standard-user-account-in-windows-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Standard User Account in Windows 11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-groups-in-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Groups in Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-local-password-policies-and-account-lockout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Local Password Policies and Account Lockout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-file-system-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. File System Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. File System Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-permissions-in-ms-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory Permissions in MS Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-the-profile-with-another-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing the Profile with another user
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntfs-permissions-and-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      NTFS Permissions and Inheritance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-to-the-common-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access to the Common Folder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-processes-and-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Processes and Priorities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Processes and Priorities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execution-priority-in-ms-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Priority in MS Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-system-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. System Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. System Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-activity-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Activity Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-service-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Service Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-storage-device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Storage Device Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Storage Device Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disk-management-in-ms-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk Management in MS Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-raid-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic RAID Levels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-network-device-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Network Device Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-task-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Task Automation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Linux command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="51-ms-windows-administration">5.1 <em>MS Windows</em> Administration<a class="headerlink" href="#51-ms-windows-administration" title="Permanent link">¶</a></h1>
+<p>In this section, we will focus on basic common administration tasks in the <em>Microsoft Windows</em> operating system.</p>
+<ul>
+<li><a href="#1-user-profiles-and-local-groups-management">1. User Profiles and Local Groups Management</a></li>
+<li><a href="#2-file-system-management">2. File System Management</a></li>
+<li><a href="#3-processes-and-priorities">3. Processes and Priorities</a></li>
+<li><a href="#4-system-performance">4. System Performance</a></li>
+<li><a href="#5-service-management">5. Service Management</a></li>
+<li><a href="#6-storage-device-management">6. Storage Device Management</a></li>
+<li><a href="#7-network-device-configuration">7. Network Device Configuration</a></li>
+<li><a href="#8-task-automation">8. Task Automation</a></li>
+</ul>
+<hr>
+<h2 id="1-user-profiles-and-local-groups-management">1. User Profiles and Local Groups Management<a class="headerlink" href="#1-user-profiles-and-local-groups-management" title="Permanent link">¶</a></h2>
+<h3 id="user-accounts">User Accounts<a class="headerlink" href="#user-accounts" title="Permanent link">¶</a></h3>
+<p>For an operating system, a <strong>user account</strong> is identified as the <strong>combination</strong> of a <strong>name</strong> and certain <strong>authentication information</strong> by which the user demonstrates they are authorized to use it. This authentication information is usually a <strong>password</strong>, but it could be replaced by other methods, such as an electronic ID card or another type of smart card, or even more futuristic methods, such as fingerprint or iris recognition, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Two-Step Authentication</p>
+<p>Recently, two-step authentication has become essential for many of the services we use on the Internet. The idea is very simple: create a mechanism that increases security by verifying the user's identity through two different means:</p>
+<ol>
+<li>
+<p><em>Something we <strong>KNOW</strong></em></p>
+<p>For example, a username and a password.</p>
+</li>
+<li>
+<p><em>Something we <strong>HAVE</strong></em>: For example, a mobile phone, where we will receive a text message with an access code.</p>
+</li>
+</ol>
+<p>This way, even if an unauthorized person discovers our username and password, they will still need our phone to access the account, and it must be unlocked.</p>
+<p>As expected, the received access code will be for one-time use and will expire after a certain period, depending on the service provider.</p>
+</div>
+<p>Normally, a user account is associated with a person who authenticates to use the computer. However, in certain situations, it may be a program on a computer that needs to authenticate to a server to obtain a specific resource or service.</p>
+<p>When authentication uses a <em>password</em>, it must have sufficient complexity because it serves a dual purpose:</p>
+<ul>
+<li>Prevents access by unauthorized individuals.</li>
+<li>Associates that access with an individual who will be responsible for it.</li>
+</ul>
+<p>For this reason, the use of user accounts by multiple people indiscriminately should be avoided at all costs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Password complexity</p>
+<p>When necessary, a protocol will be established to ensure sufficient complexity in user passwords. For example, by using various types of characters (uppercase, lowercase, symbols, and/or digits) and setting a minimum length.</p>
+</div>
+<p>In general, operating systems usually have three different types of accounts, with which their respective users will have different levels of control over the system. These are:</p>
+<ul>
+<li>
+<p><strong>Standard accounts</strong>: Generally, they can <strong>perform user tasks</strong> that are <strong>not</strong> administrative in nature.</p>
+</li>
+<li>
+<p><strong>Administrator accounts</strong>: They offer control over all aspects of the operating system, so they <strong>should be used with caution</strong> and only for the activities they are intended for.</p>
+</li>
+<li>
+<p><strong>Guest accounts</strong>: They are usually used to allow <strong>occasional users</strong> to use the system. Their capabilities are very limited.</p>
+<div class="admonition note">
+<p class="admonition-title">Guest User Accounts</p>
+<p>Guest user accounts can be very useful when using the computer for demonstrations or when offering its use to different people over time (hotels, restaurants, etc).</p>
+<p>In other contexts, when they are not needed, it may be convenient to disable them for security reasons.</p>
+</div>
+</li>
+</ul>
+<p>On the other hand, the concept of a <strong>user account</strong> is associated with the concept of a <strong>session</strong>. We understand <strong>session</strong> as <strong>the consecutive time during which a user account is active</strong> in the operating system. Therefore, it extends from the moment the user authenticates, which is known as <strong>logging in</strong>, until they leave the system, which is known as <strong>logging out</strong>.</p>
+<p>Additionally, a <strong>user account</strong> is associated with a set of <strong>permissions</strong> and <strong>privileges</strong>.</p>
+<ul>
+<li><strong>Privileges</strong> define <em><strong>what the user can do</strong></em> in the system once the session is started, <em>for example, shutting down the system, making backups, change the system time, load a device driver, etc.</em>.</li>
+<li><strong>Permissions</strong> define <em><strong>where access is granted</strong></em> and under what conditions. A permission is linked to an object, such as a file, folder, or printer. <em>For example, reading, writing, or executing a specific file or folder</em></li>
+</ul>
+<p>When a privilege conflicts with a permission, the <strong>privilege always takes precedence</strong>. <em>For example, a user with backup privileges can copy all files, even if they do not have read permissions for them.</em></p>
+<p>Another aspect related to user accounts is <strong>user profiles</strong>. These define the <strong>appearance</strong> and <strong>configuration</strong> of each specific user, from the desktop background or the set of icons used to the documents they work with or the files they have downloaded.</p>
+<p>Therefore, when a user logs into an account for the first time, they will encounter a work environment with all <strong>default values</strong>, even if the system has been used by other accounts for an extended period and those accounts have been previously customized.</p>
+<p>In general, according to their <strong>scope</strong>, there are several <strong>types of accounts</strong>:</p>
+<ul>
+<li>
+<p><strong>Local accounts</strong>: Authentication is handled by the operating system of the computer where we authenticate, and it only provides access to its resources. To authenticate with the same credentials on different computers, identical accounts must be created on each of them. Even so, each account will only provide access to the resources of the computer where it is located.</p>
+</li>
+<li>
+<p><strong>Network user accounts</strong>: Typically, authentication is handled by <strong>a computer acting as a server</strong> on the network, and when successful, it allows access to resources offered by different computers on that network. Therefore, we can use the same account to access from different computers belonging to the same network.</p>
+</li>
+<li>
+<p><strong>Microsoft user accounts</strong>: This is a particular case for <em>MS Windows</em> operating systems, which associate a user account with an email address and a password, so that all account information is stored on <em>Microsoft</em>'s servers, allowing all configurations and preferences to be shared automatically across all devices using the same authentication credentials. In reality, we could consider this a particular case of a network user account.</p>
+</li>
+</ul>
+<p>Logically, user administration becomes more important as the number of users with diverse characteristics increases. In any case, in this document, we will refer exclusively to local user accounts.</p>
+<h3 id="local-user-accounts">Local User Accounts<a class="headerlink" href="#local-user-accounts" title="Permanent link">¶</a></h3>
+<p>We have indicated that most operating systems have three types of accounts: Administrator, User, and Guest. However, in the latest versions of the <em>Microsoft</em> operating system, there has been a reinterpretation of this concept, providing three types of accounts:</p>
+<ul>
+<li>Administrator accounts</li>
+<li>Standard accounts</li>
+<li>Child accounts</li>
+</ul>
+<p>If you are the one who installed the operating system, <em>MS Windows</em> assumes that you will be one of its administrators. We will be able to make any changes to its configuration, add new user accounts, install or remove programs, view or modify the content of any file on the computer, install or configure any hardware device, etc.</p>
+<p>As expected, any computer with <em>MS Windows</em> must have at least one administrative account, even if we do not plan to perform administrative tasks frequently.</p>
+<p>Standard accounts are designed for users who do not need to make any of the aforementioned changes to the system. From these accounts, any daily work can be carried out, but administrative tasks cannot be performed.</p>
+<p>These types of accounts are perfect for the daily use of any user, including the one who performs administrative tasks. Keep in mind that if you are an administrator user and run a program, it can use your privileges to alter the system. For example, a virus that has infected the program we are using will have a much harder time spreading to the rest of the system when we use a standard account than if we do so with an administrator account. Therefore, it is recommended that the user who performs administrative tasks has two user accounts: one to administer the computer and another for daily use.</p>
+<p>On the other hand, in <em>MS Windows</em>, to perform administrative tasks from a standard user account, you only need to know the password of an administrator account.</p>
+<p>Child accounts are simply standard user accounts with <strong>parental controls</strong> enabled. For this reason, these types of accounts do not appear individually in the <em>MS Windows</em> <em>Control Panel</em>.</p>
+<hr>
+<h3 id="creating-a-standard-user-account-in-windows-11">Creating a Standard User Account in Windows 11<a class="headerlink" href="#creating-a-standard-user-account-in-windows-11" title="Permanent link">¶</a></h3>
+<p>We can easily add standard accounts from the "<em><strong>Settings panel</strong></em>".</p>
+<figure>
+    <img alt='Open the "_**Settings panel**_", select "_**Accounts**_" and go to "_**Other users**_"' src="../u5_1/user1.png" width="70%">
+    <figcaption>Open the Settings panel, select "Accounts" and go to "Other users"</figcaption>
+</figure>
+<figure>
+    <img alt='Click on "Add account"' src="../u5_1/user2.png" width="70%">
+    <figcaption>Click on "Add account"</figcaption>
+</figure>
+<figure>
+    <img alt="Write the access credentials for the new user" src="../u5_1/user3.png" width="70%">
+    <figcaption>Write the access credentials for the new user</figcaption>
+</figure>
+<figure>
+    <img alt="Once the process is finished, it will appear in the list" src="../u5_1/user4.png" width="70%">
+    <figcaption>Once the process is finished, it will appear in the list</figcaption>
+</figure>
+<hr>
+<p>To manage users more comprehensively, we must use the "<em><strong>Local Users and Groups Manager</strong></em>". We can access the tool by running the command <strong><code>lusrmgr.msc</code></strong> or by right-clicking on the Start menu icon, opening "<em><strong>Computer Management</strong></em>" and selecting "<em><strong>Local Users and Groups</strong></em>"</p>
+<figure>
+    <img alt="Computer Management &gt; Local Users and Groups" src="../u5_1/user5.png" width="80%">
+    <figcaption>Computer Management &gt; Local Users and Groups</figcaption>
+</figure>
+<p>Right-clicking on a user brings up a context menu from which we can perform various actions. Generally, we will open the "<em><strong>Properties</strong></em>".</p>
+<p>By default, we will be on the "<em><strong>General</strong></em>" tab, which contains the same data we entered when we created it, although now there is an additional option that allows us to lock the account.</p>
+<p>We also have two new tabs that will allow us to adjust the profile characteristics of the user account and check the groups to which it belongs.</p>
+<figure>
+    <img alt="User properties" src="../u5_1/user6.png" width="85%">
+    <figcaption>User properties</figcaption>
+</figure>
+<hr>
+<h3 id="groups">Groups<a class="headerlink" href="#groups" title="Permanent link">¶</a></h3>
+<p>In a business environment, even a medium or small one, we might find ourselves needing to create different user accounts with the same permissions and privileges. In such cases, we could end up configuring the same characteristics repeatedly for different accounts.</p>
+<p>The solution in these situations is <strong>user groups</strong>. The idea is to create a group that holds the common permissions and privileges. Once the group is created, we only need to <strong>make the user accounts <em>members</em> of the group</strong> to <strong>inherit</strong> all the <strong>characteristics</strong> we established for it.</p>
+<p>When a new user needs to share the characteristics of the previous ones, it will be enough to make them a member of the group. Similarly, if a user should no longer have certain permissions, it will be enough to remove their account from the group members.</p>
+<p>Additionally, <strong>a user account can be a member of more than one group</strong>, making it very easy to group resources with common characteristics into groups and control which users access them.</p>
+<p>There are two types of group accounts according to their scope of influence:</p>
+<ul>
+<li>
+<p><strong>Local group accounts</strong>: Their scope will be the computer on which they were created, and their members will be local user accounts.</p>
+</li>
+<li>
+<p><strong>Network group accounts</strong>: Their use is oriented towards network installations, where resources are offered to all client computers on that network. Therefore, they will have permissions and privileges related to the shared resources on the network, and their members will be network user accounts.</p>
+</li>
+</ul>
+<p>In our case, we will focus exclusively on local group accounts.</p>
+<hr>
+<h3 id="local-groups-in-windows">Local Groups in Windows<a class="headerlink" href="#local-groups-in-windows" title="Permanent link">¶</a></h3>
+<p>When we install the system, a series of groups are automatically created with a default configuration that facilitates the assignment of privileges.</p>
+<figure>
+    <img alt="Built-in groups into the MS Windows 11 operating system" src="../u5_1/groups1.png" width="80%">
+    <figcaption>Built-in groups into the MS Windows 11 operating system</figcaption>
+</figure>
+<p>Some of the groups that exist by default in Windows are:</p>
+<ul>
+<li><strong>Administrators</strong>. Users in this group have full and unrestricted access to the computer.</li>
+<li><strong>Guests</strong>. Users in this group have more restricted access to the system than a standard user.</li>
+<li><strong>Network Configuration Operators</strong>. This group grants its members privileges to manage network settings.</li>
+<li><strong>Backup Operators</strong>. This group includes users with permissions to back up or restore files.</li>
+<li><strong>Users</strong>. All standard users belong to this group, which prevents users from making accidental changes that could affect the system.</li>
+<li><strong>Remote Desktop Users</strong>. Users in this group can log in remotely.</li>
+</ul>
+<hr>
+<p>To create a group account, we will use the <strong><code>lusrmgr.msc</code></strong> tool, or alternatively, the "<em><strong>Computer Management</strong></em>" panel.</p>
+<p>Within the "<em><strong>Groups</strong></em>" section, right-clicking opens a dialog where we select "<em><strong>New Group...</strong></em>"</p>
+<p>We can add users using the "<em><strong>Add...</strong></em>" button.</p>
+<figure>
+    <img alt="Create a new group" src="../u5_1/groups2.png" width="80%">
+    <figcaption>Create a new group</figcaption>
+</figure>
+<p>To search for users, click the "<em><strong>Advanced options...</strong></em>" button.</p>
+<figure>
+    <img alt="Dialog for selecting users" src="../u5_1/groups3.png" width="80%">
+    <figcaption>Dialog for selecting users</figcaption>
+</figure>
+<hr>
+<p>If we click the "<em><strong>Find Now</strong></em>" button, it will display the complete list of users and groups on the system.</p>
+<figure>
+    <img alt="Advanced dialog for selecting users" src="../u5_1/groups4.png" width="70%">
+    <figcaption>Advanced dialog for selecting users</figcaption>
+</figure>
+<p>Once added, it will appear in the list of members of the new group.</p>
+<figure>
+    <img alt="Dialog for creating a new group with a member added" src="../u5_1/groups5.png" width="80%">
+    <figcaption>Dialog for creating a new group with a member added</figcaption>
+</figure>
+<!-- ![Diálogo de creación de nuevo grupo con un miembro añadido](u5_1/groups5.png){width=50%} -->
+
+<p>We can go to the <strong>user's properties</strong> and in the "<em><strong>Member of</strong></em>" section, it will show which groups the user belongs to.</p>
+<figure>
+    <img alt="Groups to which a user belongs" src="../u5_1/groups6.png" width="80%">
+    <figcaption>Groups to which a user belongs</figcaption>
+</figure>
+<hr>
+<h3 id="managing-local-password-policies-and-account-lockout">Managing Local Password Policies and Account Lockout<a class="headerlink" href="#managing-local-password-policies-and-account-lockout" title="Permanent link">¶</a></h3>
+<p>We can manage the system's security level by modifying the password and account lockout policies.</p>
+<p>Password policies allow us to adjust the parameters for complexity and validity.</p>
+<figure>
+    <img alt="Local Computer Policy / Computer Configuration / Windows Settings / Security Settings / Account Policies / Password Policy" src="../u5_1/polices1.png" width="80%">
+    <figcaption>Local Computer Policy / Computer Configuration / Windows Settings / Security Settings / Account Policies / Password Policy</figcaption>
+</figure>
+<p>In the account lockout policies, we can define the number of incorrect attempts before the user account is locked, and for how long it will remain locked.</p>
+<figure>
+    <img alt="Local Computer Policy / Computer Configuration / Windows Settings / Security Settings / Account Policies / Account Lockout Policy" src="../u5_1/polices2.png" width="80%">
+    <figcaption>Local Computer Policy / Computer Configuration / Windows Settings / Security Settings / Account Policies / Account Lockout Policy</figcaption>
+</figure>
+<hr>
+<h2 id="2-file-system-management">2. File System Management<a class="headerlink" href="#2-file-system-management" title="Permanent link">¶</a></h2>
+<p>The operating system must control which users can access each of the resources it manages, such as files, directories, printers, network connections, etc.</p>
+<p>Typically, systems use <strong>Access Control Lists</strong> or <em>ACLs</em> to achieve this. These lists are associated with resources and specify the different users and groups who can access them and under what conditions (read, write, execute, etc.).</p>
+<p>Additionally, each file can have different attributes associated with it, which provide information about certain characteristics of the file or how the operating system should handle it. For example, a file can have attributes such as directory, hidden, system, encrypted, etc.</p>
+<p>Now that we know different aspects of users and groups, we are ready to learn how to modify restrictions on the use of files and directories.</p>
+<h3 id="directory-permissions-in-ms-windows">Directory Permissions in MS Windows<a class="headerlink" href="#directory-permissions-in-ms-windows" title="Permanent link">¶</a></h3>
+<p>One of the first things we need to know about the directory structure in <em>MS Windows</em> is that <strong>each user account</strong> that logs into the system will <strong>have a folder</strong> where all the configuration related to that user's work environment will be stored, including aspects such as screen settings, network connections, printer configurations, etc.</p>
+<p>This information, known as the <strong>user profile</strong>, is organized into different files that are created when the user logs in for the first time.</p>
+<p>In this way, the operating system ensures that multiple users can use the same computer and that each one finds, upon logging in, the same environment they left when they logged out previously. Additionally, changes made by one user in personalizing their workspace will not affect any other user on the computer.</p>
+<p>These folders are located within the volume where the operating system is installed, usually at <strong><code>C:\Users</code></strong>.</p>
+<p>When a user from the <em>Administrators</em> group tries to access another user's profile folder, they receive a <strong>warning</strong> informing them that they do not have permission to do so. However, since they have sufficient privileges, they can click the "<em>Continue</em>" button to access its contents.</p>
+<figure>
+    <img alt="Request for permission to access another user's profile" src="../u5_1/files1.png" width="80%">
+    <figcaption>Request for permission to access another user's profile</figcaption>
+</figure>
+<hr>
+<p>However, the change in permissions will only be completed if approved by a user with administrative privileges, as the system will display a window requesting their password.</p>
+<figure>
+    <img alt="Request for permission to access another user's profile" src="../u5_1/files2.png" width="45%">
+    <figcaption>Request for permission to access another user's profile</figcaption>
+</figure>
+<h3 id="sharing-the-profile-with-another-user">Sharing the Profile with another user<a class="headerlink" href="#sharing-the-profile-with-another-user" title="Permanent link">¶</a></h3>
+<p>As mentioned above, a user who does not belong to the administrators group can only access another user's data with the approval of an administrator user.</p>
+<p>It is always possible for a user to voluntarily share their profile with a different user. This can be done individually with a specific user or with all members of a group.</p>
+<p><em>Right-click</em> on the folder that matches your account name. In the context menu that appears, choose the "<em><strong>Grant access to</strong></em>" entry.</p>
+<p>A new menu will appear with several options, including the names of different users on the system. If you want to share the folder with a single user and only grant them read permission to your files, simply click on their name.</p>
+<p>Additionally, we have an option titled "<em><strong>Specific users...</strong></em>", which will allow us to add multiple users at once and change their permissions (the actions they can perform) on our files.</p>
+<figure>
+    <img alt="Context menu to grant access to specific users" src="../u5_1/files3.png" width="80%">
+    <figcaption>Context menu to grant access to specific users</figcaption>
+</figure>
+<p>In the dropdown, we can select <em>users</em>. Once added, we can modify the permissions.</p>
+<figure>
+    <img alt="Dialog to add users and permissions to a folder" src="../u5_1/files4.png" width="70%">
+    <figcaption>Dialog to add users and permissions to a folder</figcaption>
+</figure>
+<p>Lastly, if there are subdirectories, it will ask for confirmation to change the settings.</p>
+<figure>
+    <img alt="Confirmation of changing permissions in subdirectories" src="../u5_1/files5.png" width="70%">
+    <figcaption>Confirmation of changing permissions in subdirectories</figcaption>
+</figure>
+<p>On the other hand, we can specify specific permissions from the "<em><strong>Security</strong></em>" section of the directory properties by clicking the "<em><strong>Edit...</strong></em>" button.</p>
+<figure>
+    <img alt="Directory properties &gt; Security &gt; Edit..." src="../u5_1/files6.png" width="100%">
+    <figcaption>Directory properties &gt; Security &gt; Edit...</figcaption>
+</figure>
+<h3 id="ntfs-permissions-and-inheritance">NTFS Permissions and Inheritance<a class="headerlink" href="#ntfs-permissions-and-inheritance" title="Permanent link">¶</a></h3>
+<p>The standard <em><strong>NTFS</strong></em> permissions that can be assigned to a folder are:</p>
+<ul>
+<li><strong>Full control</strong>: to read, change, create, and execute programs or folders.</li>
+<li><strong>Read &amp; execute</strong>: to view the content and run programs in a folder.</li>
+<li><strong>Modify</strong>: to change files and folders, but not create or delete new files or folders.</li>
+<li><strong>Read</strong>: to view and open the content.</li>
+<li><strong>Write</strong>: to create and change existing files and folders.</li>
+<li><strong>List folder contents</strong>.</li>
+</ul>
+<p>These permissions can be assigned to users or groups, and could be <strong>granted</strong> or <strong>denied</strong>. When a permission is <strong>denied</strong>, it <strong>takes precedence over</strong> any permission that is <strong>granted</strong>.</p>
+<p>The <strong>inheritance</strong> describes <strong>how the permissions propagate</strong> through the resources a folder contains.</p>
+<p><strong>By default</strong>, when a folder is created, it <strong>inherits</strong> the permissions of its parent folder. This means that the permissions of the parent folder are copied to the new folder.</p>
+<p><strong>Explicit</strong> permissions, unlike inherited permissions, are those <strong>configured directly</strong> on a resource. That is, those established specifically for that particular resource.</p>
+<p>Sometimes, it may be necessary for permissions not to be inherited downwards, but to be maintained at the same level. In these cases, it is necessary to <strong>break inheritance</strong>. This can be done by selecting the "<em><strong>Disable inheritance</strong></em>" option. Once inheritance is disabled, the permissions of the parent folder will no longer be copied to the child folder.</p>
+<p>In these cases, one of the following paths should be taken:</p>
+<ul>
+<li>Redefine the permissions explicitly.</li>
+<li>Remove inheritance on the child object.</li>
+<li>Remove inheritance at the parent level, which will stop the downward extension (to the children).</li>
+</ul>
+<p>To control inheritance, we must access "<em><strong>Advanced options</strong></em>" within the "<em><strong>Security</strong></em>" section.</p>
+<figure>
+    <img alt="Directory properties &gt; Security &gt; Advanced" src="../u5_1/files7.png" width="100%">
+    <figcaption>Directory properties &gt; Security &gt; Advanced</figcaption>
+</figure>
+<h3 id="access-to-the-common-folder">Access to the Common Folder<a class="headerlink" href="#access-to-the-common-folder" title="Permanent link">¶</a></h3>
+<p>Within the <code>C:\Users</code> folder, there is a folder that can be used by all users of the computer to share information. This is the "<em><strong>Public</strong></em>" folder located at <strong><code>C:\Users\Public</code></strong>.</p>
+<p>By default, all users have read permissions for this folder. However, if we want to share files with other users, we can create a subfolder and grant them the necessary permissions.</p>
+<h2 id="3-processes-and-priorities">3. Processes and Priorities<a class="headerlink" href="#3-processes-and-priorities" title="Permanent link">¶</a></h2>
+<p>The main memory of the computer can host hundreds of tasks that take turns using the processor. One way the operating system improves performance is by assigning different <strong>priorities</strong> to these tasks.</p>
+<p>A good general approach is to give <strong>higher priority</strong> to processes that perform <strong>interactive tasks</strong>, meaning those that <strong>communicate directly with the user</strong>. These processes require a quick response from the system to provide a good <strong>user experience</strong>. On the other hand, processes that do not interact with the user can run at a <strong>lower priority</strong>.</p>
+<p>Interactive processes are said to run in the <strong>foreground</strong>, while those that are not are said to run in the <strong>background</strong>.</p>
+<p>As expected, a process running at a <strong>higher priority</strong> will have <strong>more processor time</strong> than one running at a <strong>lower priority</strong>. This is because the operating system will allocate processor time to the process with the <strong>highest priority first</strong>.</p>
+<p>An example of this can be the task responsible for printing a document. Printers are probably the slowest devices we use. Thus, the task responsible for printing only needs to obtain the processor's use occasionally to provide a sufficient data flow for the printing process. Therefore, this would be an ideal task to run at a low priority (in the background), and while it performs its job, interactive processes will continue to function almost as quickly as if we were not printing.</p>
+<h3 id="execution-priority-in-ms-windows">Execution Priority in MS Windows<a class="headerlink" href="#execution-priority-in-ms-windows" title="Permanent link">¶</a></h3>
+<p>In general, <em>MS Windows</em> only allows us to choose whether interactive programs or background programs should run with higher priority.</p>
+<figure>
+    <img alt="Adjust processor performance" src="../u5_1/process1.png" width="80%">
+    <figcaption>Adjust processor performance</figcaption>
+</figure>
+<p>However, if you want to modify the priority of a particular task, you can always use the <em>Task Manager</em>.</p>
+<figure>
+    <img alt="Modify process priority" src="../u5_1/process2.png" width="70%">
+    <figcaption>Modify process priority</figcaption>
+</figure>
+<hr>
+<h2 id="4-system-performance">4. System Performance<a class="headerlink" href="#4-system-performance" title="Permanent link">¶</a></h2>
+<p>In general, we can define the concept of <strong>performance</strong> as the <strong>speed with which a computer performs the tasks</strong> assigned to it (system-related, application and services). Initially, system performance will be limited by various aspects:</p>
+<ul>
+<li><strong>Processor</strong> speed.</li>
+<li>The amount and speed of <strong>main memory</strong>.</li>
+<li>The speed of <strong>storage devices</strong> (usually hard drives).</li>
+<li>The speed of <strong>network</strong> interfaces.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Sometimes, one of the programs we are running in <em>MS Windows</em> stops working and we have no way to close it. There is a simple solution: restart the system.</p>
+<p>However, this forces us to save the files we are working on in other applications, wait for the system to shut down and restart, and finally, reopen the applications and files.</p>
+</div>
+<p>In <em>MS Windows</em> operating systems, we have the <strong>Task Manager</strong>, a tool that allows us to examine system performance data and identify potential bottlenecks.</p>
+<p>To start the <strong>Task Manager</strong>, simply <em>right-click</em> on the "<em>Start</em>" icon <em>or</em> press the <code>Ctrl</code>+<code>Alt</code>+<code>Del</code> key combination.</p>
+<figure>
+    <img alt='Task Manager in the "Performance" section' src="../u5_1/process3.png" width="80%">
+    <figcaption>Task Manager in the "Performance" section</figcaption>
+</figure>
+<p>To get detailed information about the resources each process is consuming, there is a tool called <strong>Resource Monitor</strong>.</p>
+<figure>
+    <img alt="Resource Monitor" src="../u5_1/process4.png" width="80%">
+    <figcaption>Resource Monitor</figcaption>
+</figure>
+<hr>
+<h3 id="system-activity-monitoring">System Activity Monitoring<a class="headerlink" href="#system-activity-monitoring" title="Permanent link">¶</a></h3>
+<p>In a modern operating system, all important actions are recorded in an <strong>event log</strong>. These records include <strong>warning</strong> messages and <strong>errors</strong>, and it is important to monitor them periodically to ensure there are no significant issues. If there are, we have the opportunity to resolve them before they have serious repercussions.</p>
+<p>The <em>MS Windows</em> tool that allows us to view and manage events logged by both system services and various applications is called the <strong>Event Viewer</strong>. It provides a powerful and centralized way to understand what is happening in our operating system.</p>
+<p>The <strong>Event Viewer</strong> is essential for monitoring <strong>performance</strong> and resolving any <strong>issues</strong>. From it, we can perform the following tasks:</p>
+<ul>
+<li><strong>View the events</strong> that have occurred.</li>
+<li><strong>Create filters</strong> for the events that interest us most and save them as custom views that we can reuse at any time.</li>
+<li><strong>Schedule a task</strong> to run in response to a specific situation.</li>
+<li><strong>Set up subscriptions</strong> to certain events.</li>
+</ul>
+<p>Events are classified into different <strong>categories</strong>:</p>
+<ol>
+<li><em>Custom Views</em>: Allow us to restrict the events shown based on our preferences.</li>
+<li><em>Windows Logs</em>: Store events related to the entire <strong>system</strong> and legacy applications.</li>
+<li><em>Applications and Services Logs</em>: Contain events related to specific <strong>applications</strong> or components.</li>
+<li><em>Subscriptions</em>: Used to collect <strong>events</strong> from other networked computers and store them locally.</li>
+</ol>
+<p>The <em>MS Windows Logs</em> category acts as a container for several subcategories that will be familiar to advanced users of other <em>Microsoft</em> desktop systems. Specifically, we find the following:</p>
+<ul>
+<li><em>Application</em>: Here, applications and services that are not part of the system log their events.</li>
+<li><em>Security</em>: Includes information on events related to system security.</li>
+<li><em>Setup</em>: Where information on events related to the configuration of roles and features is logged.</li>
+<li><em>System</em>: Contains information on system events and its components.</li>
+<li><em>Forwarded Events</em>: Contains information forwarded by other systems on the network.</li>
+</ul>
+<figure>
+    <img alt="Event Viewer" src="../u5_1/events1.png" width="90%">
+    <figcaption>Event Viewer</figcaption>
+</figure>
+<hr>
+<h2 id="5-service-management">5. Service Management<a class="headerlink" href="#5-service-management" title="Permanent link">¶</a></h2>
+<p>Services are a <strong>particular type of process</strong> that usually <strong>runs in the background</strong>, meaning the user is not directly aware of their presence and typically waits for a specific event to provide a certain service to the user.</p>
+<p>During the operating system's startup, numerous services are initiated, occupying memory and processor time. <strong>Some of them may never be needed</strong>.</p>
+<p>If we want to maximize our computer's processing capacity, <strong>we might consider disabling services that are not necessary</strong> for our use of the computer. However, we must keep in mind that, in most cases, their operation is highly optimized (especially those of the operating system itself) and, if not used, they soon get paged to disk. Additionally, we should consider two main <strong>drawbacks</strong>:</p>
+<ul>
+<li>If we disable a service necessary for the operating system, <strong>it may stop functioning</strong> correctly.</li>
+<li>A service that is not needed at the moment and is disabled will need to be <strong>re-enabled in the future</strong> if it becomes necessary.</li>
+</ul>
+<p>In any case, as the number of installed programs increases, there may be less optimized services. Even in systems like <em>MS Windows</em>, services associated with a particular program <strong>may remain</strong> running <strong>even</strong> after <strong>the program has been uninstalled</strong>. There may even be services acting as <strong>spyware</strong>. For all these reasons, it is useful to know how to manage system services.</p>
+<p>If you are considering disabling some services on your system, the following table provides some suggestions:</p>
+<figure>
+    <img alt="Windows Services" src="../u5_1/services.png" width="80%">
+    <figcaption>Windows Services</figcaption>
+</figure>
+<p>A typical example would be <strong>restarting</strong> the "<em>Print Spooler</em>" service when there are pending jobs:</p>
+<figure>
+    <img alt='Restarting the "Print Spooler" service' src="../u5_1/services2.png" width="90%">
+    <figcaption>Restarting the "Print Spooler" service</figcaption>
+</figure>
+<hr>
+<h2 id="6-storage-device-management">6. Storage Device Management<a class="headerlink" href="#6-storage-device-management" title="Permanent link">¶</a></h2>
+<p>When we need more disk storage space, we can compress files, move them to an external storage device, or even delete those we no longer need. However, a good alternative is to add a new hard drive to our system. Hard drives have a great price-to-storage capacity ratio and are very easy to install.</p>
+<p>Moreover, in most cases, the computer will automatically detect them, and we will only need to configure the operating system to use them.</p>
+<p>In this section, we will assume that the hardware part is already resolved. That is, you have already opened the computer and correctly connected a new hard drive inside it. Here, we will focus on the adjustments we need to make in the operating system to get the most out of it.</p>
+<p>In most operating systems configuring a disk that has been added inside the computer or connected via a USB port is practically identical. The only difference is that the former will be permanently connected to the computer, while the latter can be removed at any time.</p>
+<p>In the context of storage devices, the terms <strong>volume</strong> and <strong>partition</strong> are often used interchangeably. However, they are not the same.</p>
+<ul>
+<li><strong>Disk</strong>: A disk is a <strong>physical storage device</strong> that can be divided into one or more partitions.</li>
+<li><strong>Partition</strong>: A partition is a <strong>section of a hard drive</strong> or other storage device that has been created using a partitioning tool. It is a <strong>physical division</strong> of the storage device.</li>
+<li><strong>Volume</strong>: A volume is a storage area that <strong>has been formatted</strong> with a <strong>file system</strong>. It can be a partition on a hard drive, a USB flash drive, or any other storage device.</li>
+</ul>
+<p>Other terms related to storage devices are:</p>
+<ul>
+<li><strong>Mirror</strong>: A mirror is a <strong>copy of a volume</strong> that is stored on a different disk. If the original volume fails, the mirror can be used to restore the data.</li>
+<li><strong>Stripe</strong>: A stripe is a <strong>volume that is spread across multiple disks</strong>. This can improve performance because the data can be read from or written to multiple disks simultaneously.</li>
+<li><strong>Fault tolerance</strong>: Fault tolerance is the ability of a system to continue operating even if one or more components fail. For example, a system with a mirrored volume can continue to operate if one of the disks fails.</li>
+<li><strong>Redundancy</strong>: Redundancy is the duplication of critical components or functions of a system with the intention of increasing reliability of the system. For example, a system with a mirrored volume has redundancy because the data is stored on two disks.</li>
+<li><strong>Parity</strong>: Parity is a method of error checking that uses a special bit called a parity bit. The parity bit is used to detect errors in data transmission. For example, a RAID 5 volume uses parity to provide fault tolerance.</li>
+</ul>
+<h3 id="disk-management-in-ms-windows">Disk Management in MS Windows<a class="headerlink" href="#disk-management-in-ms-windows" title="Permanent link">¶</a></h3>
+<p>In <em>MS Windows</em>, we can use two different ways to configure disks:</p>
+<ul>
+<li>
+<p><strong>Basic</strong>: This is used by most personal computers because it is the easiest to manage. In the basic configuration, each partition (or volume) is an independent entity, so it cannot share data with other partitions.</p>
+</li>
+<li>
+<p><strong>Dynamic</strong>: This configuration is used in servers and other systems where fault tolerance is important. In this case, the partitions are combined into a single entity, so data can be shared between them. In <em>MS Windows</em> we can create up to 1000 dynamic volumes per disk group, although boot time increases as the number of volumes increases. The recommended number of dynamic volumes is 32 or fewer per disk group.</p>
+<p><strong>Types of dynamic volumes:</strong></p>
+<ul>
+<li>
+<p><strong>Simple</strong>: The disks will behave in the usual way. This type of volume can be mirrored but is not fault-tolerant.</p>
+</li>
+<li>
+<p><strong>Mirrored</strong>: Two identical copies of a volume are created, appearing as a single entity. Each write is replicated on the mirror disks, and simultaneous reads of different data can be performed, increasing performance. The different disks can operate independently (with different controllers), so if one disk fails, the system can continue to function from the one that remains active. This increases fault tolerance.</p>
+<p>Logically, disks with the same characteristics should be used. Otherwise, the capacity of the smallest disk is taken as a reference.</p>
+<p>This configuration is equivalent to <strong>RAID-1</strong>.</p>
+</li>
+<li>
+<p><strong>Striped</strong>: Uses several disks to create a single logical unit, allowing the available space to be used very efficiently. It achieves a performance improvement in both reading and writing because operations are carried out on different disks simultaneously.</p>
+<p>In this configuration, volumes cannot be mirrored and are not fault-tolerant.</p>
+</li>
+<li>
+<p><strong>Spanned</strong>: A variant of striped. Although it improves performance, it is more vulnerable to write errors.</p>
+<p>Disks with the same characteristics should be used. Otherwise, the capacity of the smallest disk is taken as a reference.</p>
+<p>This configuration is equivalent to <strong>RAID-0</strong>.</p>
+</li>
+<li>
+<p><strong>RAID-5</strong>: Distributes data across three or more disks, using one of them (which alternates) to store parity information that allows data recovery when a disk fails. Therefore, it is fault-tolerant. It improves efficiency compared to the previous ones, although the parity calculation slightly penalizes write performance.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="basic-raid-levels">Basic RAID Levels<a class="headerlink" href="#basic-raid-levels" title="Permanent link">¶</a></h3>
+<p>Among all the storage devices present in the computer, hard drives offer the lowest performance.</p>
+<p>To mitigate this problem, the RAID standard (<em>Redundant Array of Independent Disks</em>) was developed. RAID is a system that stores data using different storage devices to create a single logical volume.</p>
+<p>With RAID, performance is improved in two ways:</p>
+<ul>
+<li>
+<p>If the data is <strong>duplicated</strong> on multiple disks, we can use the one that offers the best performance.</p>
+</li>
+<li>
+<p>If the data is <strong>distributed</strong> across multiple disks, we can perform <strong>parallel reading</strong>.</p>
+</li>
+</ul>
+<p>Additionally, redundancy can be included to <strong>improve the reliability</strong> of the storage medium and compensate for the increased probability of failure as the number of involved devices increases.</p>
+<p>The disk array can be managed by a hardware controller or specific software, but in any case, the system will see it as a single volume. Moreover, the volume capacity can grow gradually by increasing the number of involved devices.</p>
+<p>The basic definition of RAID consists of seven levels, numbered from 0 to 6, to which some complementary levels were later added.</p>
+<h4 id="raid-0-or-disk-striping">RAID 0 (or disk striping)<a class="headerlink" href="#raid-0-or-disk-striping" title="Permanent link">¶</a></h4>
+<p><strong>Distributes data</strong> across the disks in the array, allowing for <strong>parallel reading or writing</strong> of blocks, significantly <strong>increasing performance</strong>.</p>
+<p>Data is organized into strips, which can correspond to physical blocks or sectors. This way, the operating system handles them as if they were a single disk.</p>
+<p>The strips are assigned in a rotating manner among the disks in the array. Thus, when a read operation involves several consecutive strips, they can be read in parallel, greatly enhancing performance.</p>
+<figure>
+    <img alt="RAID-0 configuration diagram" src="../u5_1/Raid0.png" width="25%">
+    <figcaption>RAID-0 configuration diagram</figcaption>
+</figure>
+<p>Unlike other RAID levels, this one <strong>does not offer redundancy</strong>. This means that <strong>if a disk fails, all data would be lost</strong>, and we would only <strong>have to rely on backups</strong>. In return, it offers high performance, which increases with the number of disks, and the utilization of storage capacity is maximized.</p>
+<h4 id="raid-1-or-mirroring">RAID 1 (or mirroring)<a class="headerlink" href="#raid-1-or-mirroring" title="Permanent link">¶</a></h4>
+<p>Unlike the previous case, which did not consider redundancy, here it is complete, as it is achieved by <strong>duplicating all stored content</strong>. It would be like RAID 0, but assigning each strip to two different disks. In this way, we will have pairs of twin disks.</p>
+<p>Obviously, its <strong>main drawback is the cost</strong>.</p>
+<figure>
+    <img alt="RAID-1 configuration diagram" src="../u5_1/Raid1.png" width="25%">
+    <figcaption>RAID-1 configuration diagram</figcaption>
+</figure>
+<p>However, in RAID 1, parallel reads of two different strips can be performed, or a strip can be obtained from the disk that offers the highest speed at any given moment (shorter seek time and latency). However, <strong>writes will be duplicated</strong> and will be performed at the <strong>speed of the slowest device</strong> in the pair.</p>
+<p>Additionally, when a disk fails, the data remains available, and it is enough to replace the damaged disk for the data to be duplicated again and restore the functionality of the array. When accessing data with a failed disk, it is said to be operating in <strong>degraded mode</strong>.</p>
+<h4 id="raid-5">RAID 5<a class="headerlink" href="#raid-5" title="Permanent link">¶</a></h4>
+<p>A RAID 5 (also called distributed with parity) is a block-level data striping with distributed parity information among all the disks in the array. RAID 5 has gained popularity due to its low redundancy cost. Generally, RAID 5 is implemented with hardware support for parity calculation.</p>
+<p>RAID 5 <strong>requires a minimum of 3 disks</strong> to be implemented, and the theoretical maximum is unlimited.</p>
+<p>Its main advantage is that data can be recovered in the event of a single disk failure, but <strong>the failure of a second disk results in complete data loss</strong>.</p>
+<figure>
+    <img alt="RAID-5 configuration diagram" src="../u5_1/Raid5.png" width="45%">
+    <figcaption>RAID-5 configuration diagram</figcaption>
+</figure>
+<p><strong>Parity Calculation</strong></p>
+<p>In <strong>Boolean algebra</strong>, there is an operation called "<strong>exclusive or</strong>" (<strong>XOR</strong>), which means "<strong>either one or the other but not both</strong>", that is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>0 XOR 0 = 0
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>0 XOR 1 = 1
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1 XOR 0 = 1
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>1 XOR 1 = 0
+</code></pre></div>
+<p>The XOR operator is the central piece that defines how parity is created and used in RAID. It is used both for data protection and for recovering lost data.</p>
+<h4 id="raid-6">RAID 6<a class="headerlink" href="#raid-6" title="Permanent link">¶</a></h4>
+<p>Its structure is like RAID 5, but adding a <strong>complementary parity control</strong>, which is stored in the corresponding stripe of an independent disk. This means we will <strong>need one more disk</strong>.</p>
+<figure>
+    <img alt="RAID-6 configuration diagram" src="../u5_1/Raid6.png" width="45%">
+    <figcaption>RAID-6 configuration diagram</figcaption>
+</figure>
+<p>Its great advantage is that <strong>data can be recovered even if two disks fail</strong> simultaneously (i.e., during the time it takes to regenerate the array after a failure).</p>
+<p>Its main drawback is that each write have a higher penalty, as two parity blocks must be calculated.</p>
+<h4 id="raid-5e-and-raid-6e">RAID 5E and RAID 6E<a class="headerlink" href="#raid-5e-and-raid-6e" title="Permanent link">¶</a></h4>
+<p>These are RAID 5 and RAID 6 levels that include spare disks. When the disks are connected and ready to use, they are called <strong>hot spare</strong>. If they are in standby mode, they are called <em>standby spare</em>.</p>
+<p>The only contribution these configurations offer is the <strong>quick response in case of a failure</strong>.</p>
+<h4 id="raid-01">RAID 0+1<a class="headerlink" href="#raid-01" title="Permanent link">¶</a></h4>
+<p>This is a nesting of RAID 0 and RAID 1, where a set of disks is created to divide the information, and then a mirror of the obtained volume is created.</p>
+<p>It is also often called RAID 01, but it should not be confused with RAID 1.</p>
+<figure>
+    <img alt="RAID 0+1 configuration diagram" src="../u5_1/Raid0-1.png" width="45%">
+    <figcaption>RAID 0+1 configuration diagram</figcaption>
+</figure>
+<p>The main advantage is that it offers the performance of RAID 0 and the redundancy of RAID 1. However, it is more expensive than RAID 5. Additionally, it is not fault-tolerant if two disks fail in the same RAID 0 set, in this case, all data would be lost. It is more expensive than RAID 5. However, it is the most reliable and fastest RAID level. It is also the most expensive. It is the best choice for critical applications.</p>
+<h4 id="raid-10">RAID 1+0<a class="headerlink" href="#raid-10" title="Permanent link">¶</a></h4>
+<p>In this case, the nesting is reversed, creating two RAID 1 structures that are then combined to create a RAID 0 volume.</p>
+<p>It is often referred to as RAID 10.</p>
+<figure>
+    <img alt="RAID 1+0 configuration diagram" src="../u5_1/Raid10.png" width="45%">
+    <figcaption>RAID 1+0 configuration diagram</figcaption>
+</figure>
+<p>This configuration, like RAID 0+1, offers the performance of RAID 0 and the redundancy of RAID 1. Additionally, it is not fault-tolerant if two disks fail in the same RAID 1 set, in this case, all data would be lost. It is more expensive than RAID 5. However, it is the most reliable and fastest RAID level. It is also the most expensive. It is the best choice for critical applications.</p>
+<hr>
+<h2 id="7-network-device-configuration">7. Network Device Configuration<a class="headerlink" href="#7-network-device-configuration" title="Permanent link">¶</a></h2>
+<p>Computers usually obtain their <em>IP address</em> from a <em>DHCP server</em>.</p>
+<p>In large local networks, this server can be one of the computers connected to the network, but in smaller networks (including home networks), it is likely that the task is performed by the router that provides Internet access.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>DHCP</strong> stands for <em>Dynamic Host Configuration Protocol</em>.</p>
+<p>It is a client-server network protocol through which a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks.</p>
+</div>
+<p>In any case, either because we do not have a <em>DHCP server</em> on our network or because the computer we are using needs to be easily locatable (for example, when sharing storage space or a printer), it may be useful to assign a <em>static IP address</em> to the computer. This way, the <em>IP address</em> value will not change with each startup.</p>
+<p>We will set fixed values for the IP address, subnet mask, gateway, and even the primary DNS server that the computer should use to resolve Internet addresses.</p>
+<hr>
+<p>The easiest way to solve this task is to <em><strong><code>right-click</code></strong></em> on the <em><strong>network connection icon</strong></em> in the <em><strong>Taskbar</strong></em> and select "<em><strong>Network &amp; Internet settings</strong></em>"</p>
+<figure>
+    <img alt="Network and Internet settings" src="../u5_1/net1.png" width="80%">
+    <figcaption>Network and Internet settings</figcaption>
+</figure>
+<p>When you do this, the <em>Settings</em> window will open, showing the settings for the <em>Network &amp; Internet</em> category.</p>
+<p>To configure network devices, we must choose the first option "<em><strong>Ethernet</strong></em>"</p>
+<figure>
+    <img alt="Settings &gt; Network &amp; Internet" src="../u5_1/net2.png" width="80%">
+    <figcaption>Settings &gt; Network &amp; Internet</figcaption>
+</figure>
+<p>To configure the device, we must click the "<em><strong>Edit</strong></em>" button in the "<em><strong>IP Assignment</strong></em>" section.</p>
+<figure>
+    <img alt="Settings &gt; Network &amp; Internet &gt; Ethernet" src="../u5_1/net3.png" width="85%">
+    <figcaption>Settings &gt; Network &amp; Internet &gt; Ethernet</figcaption>
+</figure>
+<p>By changing to "<em><strong>Manual</strong></em>", we will be able to enter the parameters of the <strong>static IP</strong>.</p>
+<figure>
+    <img alt="IP Assignment" src="../u5_1/net4.png" width="70%">
+    <figcaption>IP Assignment</figcaption>
+</figure>
+<figure>
+    <img alt="Manual IP Assignment" src="../u5_1/net5.png" width="70%">
+    <figcaption>Manual IP Assignment</figcaption>
+</figure>
+<hr>
+<p>Alternatively, we can use the "<em><strong>Network Connections</strong></em>" tool in the "<em><strong>Control Panel</strong></em>" to access the properties of a network adapter.</p>
+<figure>
+    <img alt="Network Connections" src="../u5_1/net6.png" width="80%">
+    <figcaption>Network Connections</figcaption>
+</figure>
+<hr>
+<p>When we open the properties of a network adapter, a dialog will appear where we can configure all the elements of the adapter. To configure the IP address, we will select "<em><strong>Internet Protocol Version 4 (TCP/IPv4)</strong></em>" and click on "<em><strong>Properties</strong></em>", which will allow us to manually set the network configuration.</p>
+<figure>
+    <img alt="Properties of the network adapter" src="../u5_1/net7.png" width="80%">
+    <figcaption>Properties of the network adapter</figcaption>
+</figure>
+<hr>
+<p>To check the status of the network adapter through the command line, we can use the <strong><code>ipconfig</code></strong> command.</p>
+<figure>
+    <img alt="ipconfig" src="../u5_1/net8.png" width="80%">
+    <figcaption>ipconfig</figcaption>
+</figure>
+<p>To obtain detailed information, we can use <strong><code>ipconfig /all</code></strong></p>
+<figure>
+    <img alt="ipconfig /all" src="../u5_1/net9.png" width="80%">
+    <figcaption>ipconfig /all</figcaption>
+</figure>
+<hr>
+<p>Another commonly used command is <strong><code>ping</code></strong>, which checks communication with a remote network device.</p>
+<figure>
+    <img alt="ping" src="../u5_1/net10.png" width="80%">
+    <figcaption>ping</figcaption>
+</figure>
+<hr>
+<h2 id="8-task-automation">8. Task Automation<a class="headerlink" href="#8-task-automation" title="Permanent link">¶</a></h2>
+<p>Operating systems usually include tools that allow us to <strong>automate repetitive administrative tasks</strong> (<em>such as backups</em>) or tasks that are performed at specific times to avoid compromising the computer's performance during peak usage (such as downloading and installing updates).</p>
+<p>The automation of system tasks allows us to <strong>schedule the execution of programs</strong> or sequences of commands to occur at a specific time and, if necessary, with a particular frequency.</p>
+<p>In the case of <em>MS Windows</em>, this situation is covered by the <em><strong>Task Scheduler</strong></em>, which allows us to automate tasks based on different circumstances:</p>
+<ul>
+<li>When a <strong>particular moment</strong> in the future arrives.</li>
+<li>When a <strong>specific event</strong> occurs. <em>(For example, whe the computer starts up or a user logs in)</em></li>
+<li>With a <strong>frequency</strong> determined by the user. <em>(For example, every day at 3:00 a.m.)</em></li>
+</ul>
+<p>Therefore, we can use scheduled tasks to automate certain actions that repeat over time, thus avoiding inconveniences and occasional forgetfulness.</p>
+<blockquote>
+<p>Some examples:</p>
+<ul>
+<li>Set the computer to shut down automatically every weekday without having to physically go to its location.</li>
+<li>Run a backup program every day at a specific time.</li>
+<li>Schedule our antivirus software to perform a full system scan <em>every Sunday at 3 a.m.</em>, taking advantage of the server's low workload period.</li>
+<li>Automatically download and install updates for the operating system and other software.</li>
+</ul>
+</blockquote>
+<p>In <em>MS Windows</em>, the <strong>frequency</strong> with which the action is repeated can be:</p>
+<ul>
+<li>Daily</li>
+<li>Weekly</li>
+<li>Monthly</li>
+<li>One time</li>
+<li>At system startup (before any user logs in)</li>
+<li>At logon (only after the current user logs in)</li>
+<li>When a specific event is logged</li>
+</ul>
+<p>We can access the "<em>Task Scheduler</em>" tool through the "<em>Computer Management panel</em>".</p>
+<p>To create a new task, we can use the <strong>wizard</strong> with the "<em>Create Basic Task...</em>" option or the <strong>advanced mode</strong> with the "<em>Create Task...</em>" option.</p>
+<figure>
+    <img alt="Task Scheduler" src="../u5_1/task1.png" width="80%">
+    <figcaption>Task Scheduler</figcaption>
+</figure>
+<hr>
+<p>When we open the "<em>Task Scheduler</em>", we can see the tasks that have already been created. To create a new task, we must click on "<em>Create Basic Task...</em>". This will open a dialog with an assistant. The first step is to indicate the name and a description.</p>
+<figure>
+    <img alt="Basic Task Creation Wizard" src="../u5_1/task2.png" width="70%">
+    <figcaption>Basic Task Creation Wizard</figcaption>
+</figure>
+<hr>
+<p>Next, the wizard asks what event will trigger the task execution.</p>
+<figure>
+    <img alt="Basic Task Creation Wizard - Trigger" src="../u5_1/task3.png" width="70%">
+    <figcaption>Basic Task Creation Wizard - Trigger</figcaption>
+</figure>
+<hr>
+<p>For the example, by selecting "Daily" as the trigger, the next step asks for the start date, the time it will run, and how many days we want the task to repeat.</p>
+<figure>
+    <img alt="Basic Task Creation Wizard - Daily" src="../u5_1/task4.png" width="70%">
+    <figcaption>Basic Task Creation Wizard - Daily</figcaption>
+</figure>
+<hr>
+<p>In the next step, we are asked what type of action we want the task to perform. Generally, a program will be initialized.</p>
+<figure>
+    <img alt="Basic Task Creation Wizard - Action" src="../u5_1/task5.png" width="70%">
+    <figcaption>Basic Task Creation Wizard - Action</figcaption>
+</figure>
+<hr>
+<p>In the last step, we will indicate which application or script will be started. In our case, we will call the command <code>shutdown /s /t 0</code>. As can be seen, the command must be indicated on one side and the arguments in another separate field.</p>
+<figure>
+    <img alt="Basic Task Creation Wizard - Start a program" src="../u5_1/task6.png" width="70%">
+    <figcaption>Basic Task Creation Wizard - Start a program</figcaption>
+</figure>
+<hr>
+<p>Finally, as is usual in <em>Windows</em>, the system shows a summary for us to review all the parameters we have configured.</p>
+<figure>
+    <img alt="Basic Task Creation Wizard - Summary" src="../u5_1/task7.png" width="60%">
+    <figcaption>Basic Task Creation Wizard - Summary</figcaption>
+</figure>
+<hr>
+<p>When we return to the main window of the "<em>Task Scheduler</em>", we will see that the new task has been created. If we open its properties, we can check and adjust the parameters.</p>
+<figure>
+    <img alt="Task Scheduler - Properties" src="../u5_1/task8.png" width="65%">
+    <figcaption>Task Scheduler - Properties</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../extra/js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2760 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../unit02/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+    
+    
+      
+        <title>Unit1 - Sistemas Operativos Monopuesto</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra/fontawesome/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit-1-characterization-of-operating-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sistemas Operativos Monopuesto" class="md-header__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas Operativos Monopuesto
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unit1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit02/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit03/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit04/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../unit05/" class="md-tabs__link">
+          
+  
+  
+  Unit5
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sistemas Operativos Monopuesto" class="md-nav__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistemas Operativos Monopuesto
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Unit1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-computer-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Computer Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Computer Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computer-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Science
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computer-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Equipment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computer Equipment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computer-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#von-neumann-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Von Neumann Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-components-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Components. Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic-components-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic components. Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-base-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      The base software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification-of-computer-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification of computer systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#information-representation-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Information representation systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Information representation systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measurement-of-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement of information
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      The operating system
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The operating system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elements-of-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements of the operating system
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of operating systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-of-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions of the operating system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process states
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory paging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory segmentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File System Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-components-and-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components and Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System Compatibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of File Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data integrity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      User interfaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#origin-of-graphical-user-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origin of graphical user interfaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#current-graphical-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current graphical interfaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-interface-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command-line interface CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows command line interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-gnulinux-text-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      The GNU/Linux text interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operating System Licenses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating System Licenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proprietary-software-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proprietary Software Licenses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Operating Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Operating Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnulinux-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GNU/Linux Distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vocabulary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unit5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/unit05_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 MS Windows Administration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/unit05_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Linux command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unit-1-characterization-of-operating-systems">Unit 1: Characterization of Operating Systems<a class="headerlink" href="#unit-1-characterization-of-operating-systems" title="Permanent link">¶</a></h1>
+<ul>
+<li><a href="#introduction-to-computer-systems">Introduction to Computer Systems</a><ul>
+<li><a href="#computer-science">Computer Science</a></li>
+</ul>
+</li>
+<li><a href="#computer-equipment">Computer Equipment</a><ul>
+<li><a href="#computer-system">Computer System</a></li>
+<li><a href="#von-neumann-architecture">Von Neumann Architecture</a></li>
+<li><a href="#physical-components-hardware">Physical Components. <em>Hardware</em></a></li>
+<li><a href="#logic-components-software">Logic components. <em>Software</em></a></li>
+<li><a href="#the-base-software">The <em>base</em> software</a></li>
+<li><a href="#classification-of-computer-systems">Classification of computer systems</a></li>
+</ul>
+</li>
+<li><a href="#information-representation-systems">Information representation systems</a><ul>
+<li><a href="#measurement-of-information">Measurement of information</a></li>
+</ul>
+</li>
+<li><a href="#the-operating-system">The operating system</a><ul>
+<li><a href="#elements-of-the-operating-system">Elements of the operating system</a></li>
+<li><a href="#types-of-operating-systems">Types of operating systems</a></li>
+</ul>
+</li>
+<li><a href="#functions-of-the-operating-system">Functions of the operating system</a></li>
+<li><a href="#process-management">Process management</a><ul>
+<li><a href="#process-states">Process states</a></li>
+<li><a href="#process-scheduling">Process scheduling</a><ul>
+<li><a href="#first-come-first-served-fcfs">First-come, first-served (FCFS)</a></li>
+<li><a href="#shortest-job-first-sjf">Shortest job first (SJF)</a></li>
+<li><a href="#shortest-remaining-time-first-srtf">Shortest remaining time first (SRTF)</a></li>
+<li><a href="#round-robin-rr">Round-robin (RR)</a></li>
+</ul>
+</li>
+<li><a href="#process-communication">Process communication</a></li>
+<li><a href="#services">Services</a></li>
+</ul>
+</li>
+<li><a href="#memory">Memory</a><ul>
+<li><a href="#memory-paging">Memory paging</a></li>
+<li><a href="#memory-segmentation">Memory segmentation</a></li>
+<li><a href="#virtual-memory">Virtual memory</a></li>
+</ul>
+</li>
+<li><a href="#file-system-management">File System Management</a><ul>
+<li><a href="#objectives">Objectives</a></li>
+<li><a href="#key-components-and-functions">Key Components and Functions</a></li>
+<li><a href="#file">File</a></li>
+<li><a href="#directory">Directory</a></li>
+<li><a href="#metadata">Metadata</a></li>
+<li><a href="#file-system-types">File System Types</a></li>
+<li><a href="#file-system-compatibility">File System Compatibility</a></li>
+<li><a href="#comparison-of-file-systems">Comparison of File Systems</a></li>
+<li><a href="#file-system-operations">File System Operations</a></li>
+<li><a href="#file-system-permissions">File System Permissions</a></li>
+<li><a href="#data-integrity">Data integrity</a></li>
+<li><a href="#hierarchical-structure">Hierarchical Structure</a></li>
+<li><a href="#path">Path</a><ul>
+<li><a href="#absolute-path">Absolute path</a></li>
+<li><a href="#relative-path">Relative path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#user-interfaces">User interfaces</a><ul>
+<li><a href="#origin-of-graphical-user-interfaces">Origin of graphical user interfaces</a></li>
+<li><a href="#current-graphical-interfaces">Current graphical interfaces</a></li>
+<li><a href="#material-console-command-line-interface-cli"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"></path></svg></span> Command-line interface CLI</a></li>
+<li><a href="#windows-command-line-interface">Windows command line interface</a></li>
+<li><a href="#the-gnulinux-text-interface">The GNU/Linux text interface</a></li>
+</ul>
+</li>
+<li><a href="#operating-system-licenses">Operating System Licenses</a><ul>
+<li><a href="#proprietary-software-licenses">Proprietary Software Licenses</a></li>
+</ul>
+</li>
+<li><a href="#current-operating-systems">Current Operating Systems</a><ul>
+<li><a href="#microsoft-windows-material-microsoft-windows">Microsoft Windows <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48zm17-9v8.75l-10 .15V5.21zM3 13l6 .09v6.81l-6-1.15zm17 .25V22l-10-1.91V13.1z"></path></svg></span></a></li>
+<li><a href="#gnulinux-distributions-simple-linux">GNU/Linux Distributions <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"></path></svg></span></a></li>
+<li><a href="#ubuntu-material-ubuntu">Ubuntu <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-7.66-4.26c.58.33 1.31.13 1.66-.44.31-.57.12-1.3-.46-1.64-.57-.33-1.31-.16-1.64.44-.33.57-.13 1.31.44 1.64m-2.46 7.76c-.53 0-1.03-.11-1.47-.32l-.84 1.5c.7.32 1.48.54 2.31.54.49 0 .95-.07 1.4-.19.08-.49.36-.93.82-1.19.46-.27.98-.29 1.44-.12.89-.87 1.46-2.06 1.55-3.39l-1.71-.02a3.506 3.506 0 0 1-3.5 3.19m0-7c1.84 0 3.34 1.39 3.5 3.19l1.71-.03a5.2 5.2 0 0 0-1.55-3.38c-.46.17-.99.14-1.44-.12-.46-.26-.74-.71-.82-1.19-.45-.12-.91-.19-1.4-.19-.83 0-1.61.19-2.31.54l.84 1.5c.44-.21.94-.32 1.47-.32M8.37 12c0-1.19.59-2.24 1.49-2.87L9 7.65a5.22 5.22 0 0 0-2.17 3.04c.38.31.62.78.62 1.31s-.24 1-.62 1.31A5.2 5.2 0 0 0 9 16.34l.86-1.47c-.9-.63-1.49-1.68-1.49-2.87m5.97 4.26c-.57.33-.77 1.06-.44 1.64.33.57 1.07.77 1.64.44.58-.34.77-1.07.46-1.64-.35-.58-1.08-.77-1.66-.44M5.76 10.8c-.66 0-1.2.54-1.2 1.2s.54 1.2 1.2 1.2c.67 0 1.2-.54 1.2-1.2s-.53-1.2-1.2-1.2"></path></svg></span></a></li>
+</ul>
+</li>
+<li><a href="#vocabulary">Vocabulary</a></li>
+</ul>
+<h2 id="introduction-to-computer-systems">Introduction to Computer Systems<a class="headerlink" href="#introduction-to-computer-systems" title="Permanent link">¶</a></h2>
+<h3 id="computer-science">Computer Science<a class="headerlink" href="#computer-science" title="Permanent link">¶</a></h3>
+<p>It is the field of study related to the <strong>automatic processing of information</strong>, with the aim of <strong>storing</strong>, <strong>processing</strong>, and <strong>transmitting</strong> data and information through <strong>electronic devices</strong>.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[⌨️ 🖱️ Input data] --&gt; B((⚙️ 🧮 Process))
+    B --&gt; C[🖥️ 🎧 Output information]
+    S[( 💾 🗃️ Storage)] &lt;.-&gt; B</code></pre>
+<p>Data Processing Scheme:</p>
+<ul>
+<li>Data input. User interaction.</li>
+<li>Process. Data processing.</li>
+<li>Storage (save and/or load). Data could be stored or loaded.</li>
+<li>Information output. User feedback.</li>
+</ul>
+<p>The <strong>input</strong> data is <strong>processed</strong> and <strong>information</strong> is obtained as <strong>output</strong>. Also, the data could be loaded and saved in the storage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Computer science</strong> is the set of knowledge and techniques that make <strong>automatic information processing</strong> possible through computers.</p>
+<p>The Spanish word <strong><em>informática</em></strong> is an acronym of the words INFORmation autoMATIC.</p>
+</div>
+<h2 id="computer-equipment">Computer Equipment<a class="headerlink" href="#computer-equipment" title="Permanent link">¶</a></h2>
+<p>A computer, also known as PC, is a programmable digital electronic machine that executes a series of commands to process input data, obtaining information that is sent to output devices. They can perform various tasks with great speed.</p>
+<p>They are composed of a physical part or hardware (electronic circuits, cables, peripherals, etc.), and a logical part or software (programs, applications, data, information, files, etc.).</p>
+<h3 id="computer-system">Computer System<a class="headerlink" href="#computer-system" title="Permanent link">¶</a></h3>
+<p>A <strong>computer system</strong> allows for <strong>storing and processing</strong> information. It consists of <strong><em>hardware</em></strong>, <strong><em>software</em></strong>, and <strong>Users</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, computer systems play a crucial role in organizing production and leisure processes around the world. They enable users to exchange information over virtually any distance.</p>
+<p>A <strong>computer system</strong> is the <strong>set of elements</strong> that makes it possible to <strong>store and process</strong> information automatically.</p>
+</div>
+<p>All computer systems consist of three fundamental parts:</p>
+<ul>
+<li><strong><em>Hardware</em></strong>. <em>Hardware</em> refers to the collection of electronic devices that provide the function of storing and processing information. <em>For example, this category includes computer equipment, peripherals, and wiring</em>.</li>
+<li><strong><em>Software</em></strong>. <em>Software</em> is the set of programs and applications that computer systems use to perform tasks required by users. <em>For example, this includes the operating system, web browser, office applications, etc.</em></li>
+<li><strong><em>Users</em></strong>. This includes the people associated with the computer system, including both the users who operate it and the technical staff who create and maintain the computer system.</li>
+</ul>
+<hr>
+<figure>
+  <img alt="Operating system structure. @wikipedia" src="Operating_system_placement.png" width="60%">
+    <figcaption>Operating system structure. @wikipedia</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Therefore, an example of a computer system could be a personal computer with its peripherals, the person using it, and the programs it contains.</p>
+<p>The purpose of a computer system is to optimally manage information. The computer system allows for storing and processing information and can also perform functions ranging from facilitating work for businesses to providing entertainment for users.</p>
+</div>
+<h3 id="von-neumann-architecture">Von Neumann Architecture<a class="headerlink" href="#von-neumann-architecture" title="Permanent link">¶</a></h3>
+<p>The <strong><em>Von Neumann</em> architecture</strong> is a model for computer systems that was proposed by the mathematician and physicist <strong><em>John von Neumann</em></strong> in 1945. This model is based on the idea that the computer system should have a <strong>central processing unit (CPU)</strong> that can execute instructions, a <strong>memory</strong> that can store data and programs, and <strong>input/output devices</strong> that can communicate with the user and other devices.</p>
+<figure>
+    <img alt="Von Neumann architecture. @wikipedia" src="von_neumann.png" width="60%">
+    <figcaption>Von Neumann architecture. @wikipedia</figcaption>
+</figure>
+<p>The <em>Von Neumann</em> architecture consists of the following components:</p>
+<ul>
+<li><strong>Central Processing Unit (CPU)</strong>. This is the part of the computer system that executes instructions. It consists of an <strong>arithmetic logic unit (ALU)</strong> that performs arithmetic and logical operations, a <strong>control unit</strong> that manages the execution of instructions, and a <strong>register</strong> that stores data temporarily.</li>
+<li><strong>Memory</strong>. This is the part of the computer system that stores data and programs. It consists of <strong>main memory</strong>, which is used to store data and programs that are currently being executed, and <strong>secondary storage</strong>, which is used to store data and programs that are not currently being executed.</li>
+<li><strong>Input/Output Devices</strong>. These are the parts of the computer system that allow the user to interact with the computer system. Examples include storage drives, keyboards, mice, screens, printers, and speakers.</li>
+</ul>
+<h3 id="physical-components-hardware">Physical Components. <em>Hardware</em><a class="headerlink" href="#physical-components-hardware" title="Permanent link">¶</a></h3>
+<p><strong><em>Hardware</em></strong> refers to the set of components that make up the <strong>physical part</strong> of a computer system and enable its operation.</p>
+<p>We can categorize <em>hardware</em> components based on their location in the computer system. This results in a division between <strong><em>internal hardware</em></strong>, which is usually included within the main unit and typically constitutes the <em>primary hardware</em>, and <strong><em>external hardware</em></strong> or <strong>peripherals</strong> of the system.</p>
+<hr>
+<p><strong>Internal Components</strong>:</p>
+<ul>
+<li>
+<p><strong>Motherboard</strong>. This is the main board of the computer system where different printed circuits are located to connect other <em>hardware</em> elements.</p>
+<p>It's called the <em>main board</em> or <em>motherboard</em>.</p>
+</li>
+<li>
+<p><strong>Microprocessor</strong>. This component is responsible for executing computer programs.</p>
+<p>It performs instructions through simple arithmetic and logical operations.</p>
+<p>It is also known as the <strong>Processor</strong> or <strong>CPU</strong> (<em>Central Processing Unit</em>).</p>
+</li>
+<li>
+<p><strong>Main Memory</strong>. This is the memory where data and programs currently being executed by the processor are temporarily stored.</p>
+<p>It is a <strong>volatile memory</strong>, meaning that it loses its contents when the computer is turned off.</p>
+<p>Another term for main memory is <strong>RAM</strong> (<em>Random Access Memory</em>).</p>
+</li>
+<li>
+<p><strong>Power Supply</strong>. This component is used to transform the energy required by the other system components.</p>
+</li>
+<li>
+<p><strong>Internal Storage Devices</strong>. These allow for the permanent storage of data and programs. Examples include an internal hard drive or a DVD/Blu-ray drive.</p>
+</li>
+<li>
+<p><strong>Expansion Cards</strong>. These elements allow for the expansion of a computer system’s functions. Common types include graphics cards, network cards, and sound cards.</p>
+</li>
+<li>
+<p><strong>Cooling System</strong>. These components are responsible for dissipating the heat generated by various parts of the computer system.</p>
+</li>
+</ul>
+<hr>
+<p><strong>External elements</strong> or <strong>peripherals</strong>:</p>
+<ul>
+<li><strong>Screen</strong>. Main <strong>information output</strong> device that displays the data processed by the system to the user.</li>
+<li><strong>Keyboard</strong> and <strong>Mouse</strong>. Main devices that allow <strong>input of information</strong>.</li>
+<li><strong>Microphone</strong> and <strong>speakers</strong>. They convert electrical signals into sound waves and vice versa.</li>
+<li><strong>Printer</strong> and <strong>scanner</strong>. Items used for printing and scanning text or graphic data.</li>
+<li>External <strong>storage</strong> devices<em><em>. These store data permanently and can be easily moved from one system to another.
+Typical examples are USB external hard drives, </em>pendrives</em> or SD cards.</li>
+<li><strong>Other</strong> devices: game controllers, digitizing tablets, virtual reality glasses, barcode scanners, projectors, etc.</li>
+</ul>
+<hr>
+<figure>
+  <img alt="Main hardware of a computer" height="60%" src="Personal_computer_exploded.png" width="60%,">
+  <figcaption>Main hardware of a computer: 1. Screen. 2. motherboard 3. CPU. 4. Main memory. 5. Expansion cards. 6. Power supply. 7. Optical disk drive. 8. Internal disk drive. 9. Keyboard. 10. Mouse.</figcaption>
+</figure>
+<h3 id="logic-components-software">Logic components. <em>Software</em><a class="headerlink" href="#logic-components-software" title="Permanent link">¶</a></h3>
+<p>The <strong><em>software</em></strong> of a computer system is the set of necessary logical components that make it possible to carry out specific tasks.</p>
+<p>It is an indispensable part of a computer system, as it is necessary for the user to be able to perform the desired tasks comfortably.</p>
+<hr>
+<p>Generally, <em>software</em> can be classified into two broad groups:</p>
+<ul>
+<li><strong>Base or system software</strong>. This is basic to the system. It allows users and most of the <em>software</em> to communicate with the <em>hardware</em>. Without this type of <em>software</em> the computer system could not function. Examples of this type of <em>software</em> are the operating system or drivers for peripheral devices.</li>
+<li><strong>Application software</strong>. These are programs or applications that perform specific tasks. Examples are office packages, video games or antivirus software.
+In addition, application software can be classified into horizontal and vertical:<ul>
+<li><strong>Horizontal software</strong> is that which is available to the user with predetermined characteristics and is of a generic type, such as, for example, office packages or web browsers.</li>
+<li><strong>Vertical software</strong> is more specific and is created to solve a specific need of a user or company.</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-base-software">The <em>base</em> software<a class="headerlink" href="#the-base-software" title="Permanent link">¶</a></h3>
+<p>The <strong>base</strong> or <strong>system software</strong> allows users and applications to communicate with the <em>hardware</em>.</p>
+<p>There are different types of base <em>software</em> depending on the function they perform within the computer system: <strong>operating systems</strong>, <strong>peripheral drivers</strong>, and <strong>firmware</strong>.</p>
+<hr>
+<ul>
+<li>
+<p>The <strong>operating system</strong> allows the user and applications to interact with the computer system hardware. <strong>It is the most important <em>software</em></strong> of a computer system, since it allows <strong>communication between the user and the <em>hardware</em></strong>, and <strong>management of all system resources</strong>, such as processes or files and directories.</p>
+</li>
+<li>
+<p>The <strong>device driver</strong>, or <strong><em>driver</em></strong>, is the <em>software</em> that enables communication between the computer system's input/output devices and the other <em>software</em>.</p>
+</li>
+<li>
+<p>The <strong><em>firmware</em></strong>, such as BIOS or UEFI, runs before the rest of the computer system's <em>software</em>. One of its most important functions is to initialize the hardware during the boot process and to manage power and temperature control.</p>
+</li>
+</ul>
+<h3 id="classification-of-computer-systems">Classification of computer systems<a class="headerlink" href="#classification-of-computer-systems" title="Permanent link">¶</a></h3>
+<p>Because of the great variety of computer systems we can classify them according to various criteria, such as their architecture or their function. One of the most popular classifications is the one that organizes computer systems according to their size and the resources they offer.</p>
+<ul>
+<li>Supercomputer</li>
+<li>Mainframe</li>
+<li>Server</li>
+<li>Microcomputer</li>
+<li>Mobile device</li>
+<li>
+<p>Embedded systems</p>
+</li>
+<li>
+<p><strong>Supercomputer</strong>. These computer systems have a <strong>high computing power</strong>, can process a large amount of data per second, and are mainly used in the world of research and development. Supercomputers can handle billions of operations per second simultaneously, as they consist of a large number of very powerful processors working as one. These computer systems are located in special facilities, usually occupy more than one room and require special cooling.</p>
+</li>
+<li>
+<p><strong>Mainframe</strong>. These computer systems are typically used for companies that need to process and store a large amount of data, such as a bank's transactions or an airline's reservation management. They are computer systems with very powerful processors and a large number of storage devices. These systems can take up an entire room, but they no longer need special facilities as supercomputers do. Although their primary function is to store corporate transactions and data, in some cases they are also used, especially by large-scale e-commerce companies, as high-capacity web servers.</p>
+</li>
+<li>
+<p><strong>Server</strong>. These computer systems are larger than personal computer systems but smaller than mainframe computers. They are mainly used by businesses and their main function is to process information while allowing a large number of users to be connected simultaneously. These computer systems serve users through a network and allow the sharing of resources between them.</p>
+</li>
+<li>
+<p><strong>Microcomputer</strong>, <strong>Personal Computer</strong> or <strong>Laptop</strong>. They provide service to the user and are typically used for office tasks, Internet access, small business tasks and personal entertainment. These computer systems are small in size. Portable computing systems are easy to transport as they are small in size and weight and can be operated using batteries without the need to be plugged into the mains.</p>
+</li>
+<li>
+<p><strong>Mobile devices</strong>. Tablets, smartphones, smartwatches, etc. Small computers with touch screens, batteries and wireless connectivity. They can do the same tasks as a personal computer but with some limitations.</p>
+</li>
+<li>
+<p><strong>Embedded systems</strong> in some industrial equipment, household appliances, vehicles, home automation, etc. They are part of the systems known as ‘Internet of Things’ IoT (<em>Internet of Things</em>). This type of system is intended for personal use and allows access to the internet, receiving calls or e-mails and other more specific functions of the system in question. These computer systems allow applications to be installed and run in a similar way to other computer systems.</p>
+</li>
+</ul>
+<h2 id="information-representation-systems">Information representation systems<a class="headerlink" href="#information-representation-systems" title="Permanent link">¶</a></h2>
+<p>Computer systems are machines that automatically process information, but all the information managed by this equipment is represented by only two symbols, namely <code>0</code> and <code>1</code>, which correspond to two electrical states or two voltage levels. In electronic circuits, from a logical point of view, it is customary to represent the presence of voltage at a point in the circuit by means of the number 1, while 0 represents the absence of voltage. This terminology is known as positive logic. Negative logic can also be applied, where the meaning of these two digits is interchanged.</p>
+<p>Each of these symbols is referred to as a <strong>binary number</strong> or <strong>bit</strong>. A <em>bit</em> is the smallest unit of information representation in a computer system.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Bit</p>
+<p>The <strong>bit</strong> is the base unit of measurement of information, indicating the minimum amount that makes up the information. It can be represented by two symbols, <code>0</code> or <code>1</code>.</p>
+</div>
+<p>Information<strong> is the way of representing facts, objects, values or ideas that enables communication between people and the acquisition of knowledge about things. All </strong>information consists of data**. Data are all facts or objects that have not been manipulated and once processed form information.</p>
+<hr>
+<p>We can classify data according to the following types:</p>
+<ul>
+<li><strong>Numeric</strong>. This data consists solely of numbers (0, 1, ..., 9). All kinds of mathematical operations can be performed with this data.</li>
+<li><strong>Alphanumeric</strong>. These data are made up of a combination of letters and numbers. With this type of data, even if they are only made up of numbers, mathematical operations cannot be performed.</li>
+</ul>
+<hr>
+<p>In order for this information to be understood by the computer system, a correspondence must be established between the data and these two electrical states. This correspondence is known as <strong>information coding</strong>. All data used by computer systems are encoded. Different computer systems may use different codes; indeed, the same computer system may use different encodings for the different electronic devices that make it up.</p>
+<hr>
+<p>An <strong>encoding</strong> is a way of interpreting information. For example, the symbol <code>X</code>, using the alphabetic code, is a letter, but, if we apply the encoding of the Roman numeral system, it is the number 10.</p>
+<p>The encoding also depends on the use to which the data will be put. For this reason, standardized codes, such as the <em>Unicode</em>, are usually used for alphanumeric data input and output, while encodings based on the binary, octal or hexadecimal numbering system are used for numeric data because of the ease with which they can be transformed into decimal or binary to perform mathematical operations.</p>
+<h3 id="measurement-of-information">Measurement of information<a class="headerlink" href="#measurement-of-information" title="Permanent link">¶</a></h3>
+<p><strong><code>bit</code></strong> (<code>b</code>) - <strong>minimum unit of information</strong>. May represent <code>0</code> or <code>1</code>.</p>
+<p><strong><code>byte</code></strong> (<code>B</code>) - base information unit. It is a <strong>set of 8 bits</strong>. It can represent 256 values, from 0 to 255.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(2^8\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(2^7\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(2^6\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(2^5\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(2^4\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(2^3\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(2^2\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(2^1\)</span></th>
+<th style="text-align: right;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>128</strong></td>
+<td style="text-align: center;"><strong>64</strong></td>
+<td style="text-align: center;"><strong>32</strong></td>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: right;">Value</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: right;"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: right;"><strong>1</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: right;"><strong>2</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: right;"><strong>3</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: right;"><strong>4</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: right;"><strong>5</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: right;"><strong>85</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: right;"><strong>255</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>If we join 8 bits we get a byte (B), which is also a very small unit of storage. With one byte we can represent 256 different combinations, from <code>00000000</code> to <code>11111111</code>.</p>
+<p>For large volumes of information we use <strong>multiples of the byte</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Base 10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">byte</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{0}\)</span> = 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Kilobyte" title="Kilobyte">kilobyte</a></td>
+<td style="text-align: center;">kB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{3}\)</span> = 1 000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Megabyte" title="Megabyte">megabyte</a></td>
+<td style="text-align: center;">MB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{6}\)</span> = 1 000 000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Gigabyte" title="Gigabyte">gigabyte</a></td>
+<td style="text-align: center;">GB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{9}\)</span> = 1 000 000 000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Terabyte" title="Terabyte">terabyte</a></td>
+<td style="text-align: center;">TB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{12}\)</span> = 1 000 000 000 000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Petabyte" title="Petabyte">petabyte</a></td>
+<td style="text-align: center;">PB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{15}\)</span> = 1 000 000 000 000 000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Exabyte" title="Exabyte">exabyte</a></td>
+<td style="text-align: center;">EB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{18}\)</span> = 1 000 000 000 000 000 000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Zettabyte" title="Zettabyte">zettabyte</a></td>
+<td style="text-align: center;">ZB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{21}\)</span> = 1 000 000 000 000 000 000 000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Yottabyte" title="Yottabyte">yottabyte</a></td>
+<td style="text-align: center;">YB</td>
+<td style="text-align: right;"><span class="arithmatex">\(10^{24}\)</span> = 1 000 000 000 000 000 000 000 000</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Traditionally, in the computer world, 1 kB (kilobyte) corresponded to 1024 bytes, but according to the international system of units, 1 kB (kilobyte) corresponded to 1000 bytes, as with all other units of measurement. This generated some controversy and it was easy to make mistakes. To solve this confusion, in 1998 the <em>International Electrotechnical Commission</em> published an appendix in the <strong>ISO/IEC 80000</strong> standard defining the binary prefixes, thus giving birth to the unit <strong>kibibyte</strong> (KiB) to designate the correspondence between 1 KiB and 1024 bytes; from this moment on, the kilobyte unit is considered valid only for the correspondence between 1 kB and 1000 bytes.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Factor <a href="https://es.wikipedia.org/wiki/ISO/IEC_80000" title="ISO/IEC 80000">ISO/IEC 80000</a>-13</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">byte</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{0}\)</span> = 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Kibibyte" title="Kibibyte">kibibyte</a></td>
+<td style="text-align: center;">KiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{10}\)</span> = 1024</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Mebibyte" title="Mebibyte">mebibyte</a></td>
+<td style="text-align: center;">MiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{20}\)</span> = 1 048 576</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Gibibyte" title="Gibibyte">gibibyte</a></td>
+<td style="text-align: center;">GiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{30}\)</span> = 1 073 741 824</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Tebibyte" title="Tebibyte">tebibyte</a></td>
+<td style="text-align: center;">TiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{40}\)</span> = 1 099 511 627 776</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Pebibyte" title="Pebibyte">pebibyte</a></td>
+<td style="text-align: center;">PiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{50}\)</span> = 1 125 899 906 842 624</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Exbibyte" title="Exbibyte">exbibyte</a></td>
+<td style="text-align: center;">EiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{60}\)</span> = 1 152 921 504 606 846 976</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Zebibyte" title="Zebibyte">zebibyte</a></td>
+<td style="text-align: center;">ZiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{70}\)</span> = 1 180 591 620 717 411 303 424</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://es.wikipedia.org/wiki/Yobibyte" title="Yobibyte">yobibyte</a></td>
+<td style="text-align: center;">YiB</td>
+<td style="text-align: right;"><span class="arithmatex">\(2^{80}\)</span> = 1 208 925 819 614 629 174 706 176</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="admonition note">
+<p class="admonition-title">Curiosity</p>
+<p>As a curiosity, most manufacturers of storage devices express the capacity in the International System. For example, a USB <em>pendrive</em> of <strong><em>64 GB</em></strong>, when connected to our computer will show <strong><em>59.6 GiB</em></strong>.</p>
+<p>A similar case occurs with Internet connection providers, who express transfer speeds in Mbps (Megabits per second). For example, a connection of <strong><em>100 Mbps</em></strong> in a speed test will show <strong><em>11.9 MiBps</em></strong> (Mebibytes per second).</p>
+</div>
+<h2 id="the-operating-system">The operating system<a class="headerlink" href="#the-operating-system" title="Permanent link">¶</a></h2>
+<p>The <strong>operating system</strong> is the most important <strong><em>software</em> of a computer system</strong>. This <em>software</em> gives the user the possibility to <strong>interact with the computer system in an easy way</strong>, giving the user the possibility to <strong>manage the information and resources</strong> available on the computer system.</p>
+<p>Operating systems has <strong>two basic functions</strong>.</p>
+<ul>
+<li><strong>Abstraction</strong>. Hide details of hardware configuration and provide a simple interface for users.</li>
+<li><strong>Arbitration</strong>. To manage access to shared resources.</li>
+</ul>
+<h3 id="elements-of-the-operating-system">Elements of the operating system<a class="headerlink" href="#elements-of-the-operating-system" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Kernel</strong>. The core of the operating system. It is responsible for managing the computer system's resources, such as the processor, memory, and input/output devices. It also provides the interface between the <em>hardware</em> and the rest of the <em>software</em>.</li>
+<li><strong>Services</strong>. These are the functions that the operating system provides to the user and other <em>software</em>. Examples include file management, printing, and network access.</li>
+<li><strong>File system</strong>. It is responsible for managing the computer system's files and directories. It allows the user to store, organize, and access information.</li>
+<li><strong>User interface</strong>. It is the part of the operating system that allows the user to interact with the computer system. It can be graphical, text-based, or voice-based.</li>
+</ul>
+<figure>
+  <img alt="GUI (Graphical User Interface)" src="Budgie_Desktop_Environment.png" width="70%">
+  <figcaption>GUI (Graphical User Interface)</figcaption>
+</figure>
+<hr>
+<figure>
+  <img alt="CLI (Command Line Interface)" src="Bash_demo.png" width="70%">
+  <figcaption>CLI (Command Line Interface)</figcaption>
+</figure>
+<hr>
+<h3 id="types-of-operating-systems">Types of operating systems<a class="headerlink" href="#types-of-operating-systems" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>By the number of simultaneous users</p>
+<ul>
+<li><strong>Single-user</strong>. These operating systems are designed to be used by a single user at a time. Examples include Windows, macOS, and Linux.</li>
+<li><strong>Multi-user</strong>. These operating systems are designed to be used by multiple users at the same time. Examples include Unix and Linux.</li>
+</ul>
+</li>
+<li>
+<p>By the number of tasks</p>
+<ul>
+<li><strong>Single-task</strong>. These operating systems can only run one task at a time. Examples include MS-DOS.</li>
+<li><strong>Multi-task</strong>. These operating systems can run multiple tasks at the same time. Examples include Windows, macOS, and Linux.</li>
+</ul>
+</li>
+<li>
+<p>By the purpose</p>
+<ul>
+<li><strong>General-purpose</strong>. These operating systems are designed to be used for a wide range of tasks. Examples include Windows, macOS, and Linux.</li>
+<li><strong>Special-purpose</strong>. These operating systems are designed for a specific task. Examples include real-time operating systems and embedded operating systems.</li>
+</ul>
+</li>
+<li>
+<p>By licensing</p>
+<ul>
+<li><strong>Proprietary</strong>. These operating systems are owned by a company and cannot be modified by the user. Examples include Windows and macOS.</li>
+<li><strong>Open-source</strong>. These operating systems are developed by a community of users and can be modified by the user. Examples include Linux.</li>
+</ul>
+</li>
+</ul>
+<h2 id="functions-of-the-operating-system">Functions of the operating system<a class="headerlink" href="#functions-of-the-operating-system" title="Permanent link">¶</a></h2>
+<p>The <strong>operating system</strong> manages the computer system's resources to ensure that the user and other <em>software</em> can use them efficiently. The main functions of the operating system are:</p>
+<ul>
+<li><strong>Process management</strong>. The operating system manages the computer system's processes, which are the programs that are running. It allocates resources to processes, schedules them to run on the processor, and provides mechanisms for processes to communicate with each other.</li>
+<li><strong>Memory management</strong>. The operating system manages the computer system's memory, which is used to store data and programs. It allocates memory to processes, swaps data between memory and storage, and provides mechanisms for processes to share memory.</li>
+<li><strong>File system management</strong>. The operating system manages the computer system's files and directories, which are used to store data. It provides mechanisms for creating, reading, writing, and deleting files, and for organizing files into directories.</li>
+<li><strong>Input/output management</strong>. The operating system manages the computer system's input/output devices, which are used to communicate with the user and other devices. It provides mechanisms for reading data from and writing data to devices, and for controlling the flow of data between devices.</li>
+<li><strong>Security management</strong>. The operating system manages the computer system's security, which is used to protect the system from unauthorized access and to ensure the privacy and integrity of data. It provides mechanisms for controlling access to the system, for encrypting data, and for detecting and preventing security threats.</li>
+<li><strong>Network management</strong>. The operating system manages the computer system's network connections, which are used to communicate with other systems. It provides mechanisms for connecting to networks, for sending and receiving data over networks, and for controlling the flow of data between systems.</li>
+</ul>
+<h2 id="process-management">Process management<a class="headerlink" href="#process-management" title="Permanent link">¶</a></h2>
+<p>A <strong>process</strong> is a program that is running on the computer system. The operating system manages processes to ensure that they can run efficiently and that they do not interfere with each other.</p>
+<p>Formally a <strong>process</strong> is ‘A unit of activity characterized by the execution of a <strong>sequence of instructions</strong>, with a <strong>current state</strong>, and a set of associated <strong>system resources</strong>’.</p>
+<hr>
+<p>In order to better understand what a process is and the difference between a program and a process, <em>A. S. Tanenbaum</em> proposes the following analogy.</p>
+<blockquote>
+<p>A cook bakes a birthday cake for his daughter; he has the recipe for a birthday cake and a well-equipped kitchen with all the necessary ingredients, flour, eggs, sugar, milk, etc.’.</p>
+</blockquote>
+<p>Situating each part of the analogy it can be said that the <em>recipe</em> represents the <strong>program</strong> (instructions), the <em>cook</em> is the <strong>processor</strong> and the <em>ingredients</em> are the <strong>data</strong> of the program. The <strong>process</strong> is the <em>activity</em> of the cook reading the recipe, obtaining the ingredients and baking the cake.</p>
+<hr>
+<p>To represent a process, the operating system uses the following information:</p>
+<ul>
+<li><strong>Process ID (identifier)</strong>. This is an integer number used to identify each process.</li>
+<li><strong>Process status</strong>. This is used to indicate the status in terms of its life cycle.</li>
+<li><strong>Resource usage</strong>. It allows to check the use of resources used by the process, the execution time, maximum time assigned, priority, etc. This information is useful for planning the next process to be executed by the processor.</li>
+<li><strong>Process context</strong>. For each process, the operating system stores the processor status, memory information and input/output requests.</li>
+</ul>
+<h3 id="process-states">Process states<a class="headerlink" href="#process-states" title="Permanent link">¶</a></h3>
+<p>A process can be in one of the following states:</p>
+<ul>
+<li>
+<p><strong>Created</strong>. The process has been created but has not yet started running.</p>
+</li>
+<li>
+<p><strong>Waiting</strong>. The process is ready to run but is waiting for the processor to become available. Reach this state when created or when it has been interrupted or the blocking condition is fulfilled.</p>
+</li>
+<li>
+<p><strong>Running</strong>. The process is currently running on the processor.</p>
+</li>
+<li>
+<p><strong>Blocked</strong>. The process is waiting for a resource to become available, such as a file or a network connection.</p>
+</li>
+<li>
+<p><strong>Terminated</strong>. The process has finished running and has been removed from the system.</p>
+</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    C((Created)) --&gt; W((Waiting))
+    W --&gt; R((Running))
+    R --&gt; W
+    R --&gt; T((Terminated))
+    R --&gt; B((Blocked))
+    B --&gt; W</code></pre>
+<!-- ```mermaid
+flowchart LR
+    C((Created)) --|Ready| W((Waiting))
+    W --|Selected by scheduler| R((Running))
+    R --|Paused| W
+    W --|By other process| T((Terminated))
+    R --|End| T
+    R --|I/O or event| B((Blocked))
+    B --|I/O or event finished| W
+    B --|By other process| T
+``` -->
+
+<h3 id="process-scheduling">Process scheduling<a class="headerlink" href="#process-scheduling" title="Permanent link">¶</a></h3>
+<p>The <strong>process scheduler</strong> is responsible for <strong>deciding which process to run on the processor</strong> at any given time. The process scheduler uses <strong>algorithms</strong> to determine the order in which processes are run, based on factors such as the <strong>priority</strong> of the process, the amount of <strong>time</strong> the process has been <strong>waiting</strong>, and the amount of time the process has been <strong>running</strong>.</p>
+<p>Main goals of the process scheduler:</p>
+<ul>
+<li>
+<p><strong>Maximize performance</strong>. Ensure that the processor is always running a process.</p>
+</li>
+<li>
+<p><strong>Minimize latency or response time</strong>. Ensure that processes are run <strong>as soon as possible</strong> after they are created and the waiting time is <strong>as short as possible</strong>. This is important for interactive applications, such as web browsers and video games.</p>
+</li>
+<li>
+<p><strong>Maximize fairness</strong>. Ensure that all processes are given an equal opportunity to run.</p>
+</li>
+</ul>
+<hr>
+<div class="admonition note">
+<p class="admonition-title">Analogy</p>
+<p>Process management could be similar to <strong>office work</strong>. </p>
+<p>You can have:</p>
+<ul>
+<li>a list of <strong>tasks</strong> to be done</li>
+<li>a set <strong>priorities</strong> for them: high, medium, low</li>
+</ul>
+<p>For example:</p>
+<p>You should start by doing the high priority tasks first, and when they are finished, move on to the medium priority tasks and then to the low priority tasks. Once the task is done, it is crossed out.</p>
+<p>This can lead to the <strong>problem</strong> that low priority tasks may never get done and remain on the list forever. To solve this, older tasks can be assigned high priority.</p>
+<p>Although process scheduling is rather more complex, to get an idea, we could compare process scheduling with the <strong>service in a restaurant</strong>. Service is considered <strong>optimal when waiting times</strong> for customers are as short as possible and no one <strong>starves</strong> to death.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Algorithm</p>
+<p>An <strong>algorithm</strong> is a <strong>set of instructions</strong> that are used to <strong>solve a problem</strong>.</p>
+<p>It can be compared to a cooking recipe, which is a set of instructions that are used to prepare a meal.</p>
+</div>
+<p>The scheduling algorithms can be classified into two <strong>types</strong>:</p>
+<ul>
+<li>
+<p><strong>Non-preemptive</strong>. The process scheduler <strong>cannot interrupt a process that is running</strong> to run another process. This is useful for ensuring that low-priority processes are run to completion.</p>
+</li>
+<li>
+<p><strong>Preemptive</strong>. The process scheduler <strong>can interrupt a process</strong> that is running to run another process. This is useful for ensuring that high-priority processes are run as soon as possible.</p>
+</li>
+</ul>
+<p>Let's study the following scheduling algorithms:</p>
+<ul>
+<li><strong>Non-preemptive</strong>:<ul>
+<li><strong>First-Come, First-Served (FCFS)</strong>. The process that arrives first is the first to be run.</li>
+<li><strong>Shortest Job First (SJF)</strong>. The process with the shortest execution time is run first.</li>
+</ul>
+</li>
+<li><strong>Preemptive</strong>:<ul>
+<li><strong>Shortest Remaining Time First (SRTF)</strong>. The process with the shortest remaining execution time is run first.</li>
+<li><strong>Round-Robin (RR)</strong>. Each process is run for a fixed amount of time, called a time slice or quantum, and then the next process is run.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="first-come-first-served-fcfs">First-come, first-served (FCFS)<a class="headerlink" href="#first-come-first-served-fcfs" title="Permanent link">¶</a></h4>
+<p>This is the simplest scheduling algorithm. The process that arrives first is the first to be run. This algorithm is non-preemptive, meaning that once a process starts running, it cannot be interrupted until it finishes.</p>
+<ul>
+<li>Non-preemptive.</li>
+<li>Simple and easy to implement.</li>
+<li>Large waiting times.</li>
+<li>Slow performance.</li>
+</ul>
+<h4 id="shortest-job-first-sjf">Shortest job first (SJF)<a class="headerlink" href="#shortest-job-first-sjf" title="Permanent link">¶</a></h4>
+<p>This algorithm runs the process with the shortest execution time first. This algorithm is non-preemptive, meaning that once a process starts running, it cannot be interrupted until it finishes.</p>
+<ul>
+<li>Non-preemptive.</li>
+<li>Waiting times are smaller than FCFS.</li>
+<li><strong>Starvation</strong>. Long processes can block the execution of short processes.</li>
+<li>Minimum performance.</li>
+</ul>
+<h4 id="shortest-remaining-time-first-srtf">Shortest remaining time first (SRTF)<a class="headerlink" href="#shortest-remaining-time-first-srtf" title="Permanent link">¶</a></h4>
+<p>This algorithm runs the process with the shortest remaining execution time first. This algorithm is preemptive, meaning that a process can be interrupted while it is running to run another process.</p>
+<ul>
+<li>Preemptive.</li>
+<li>Waiting times depend on arrival and duration.</li>
+<li><strong>Starvation</strong>. Short processes can block the execution of long ones.</li>
+<li>Preference for short processes.</li>
+</ul>
+<h4 id="round-robin-rr">Round-robin (RR)<a class="headerlink" href="#round-robin-rr" title="Permanent link">¶</a></h4>
+<p>This algorithm runs each process for a <strong>fixed amount of time</strong>, called a time slice or <strong>quantum</strong>, and then runs the next process. This algorithm is <strong>preemptive</strong>, meaning that a process can be interrupted while it is running to run another process.</p>
+<ul>
+<li>Preemptive.</li>
+<li>Larger waiting times than SJF.</li>
+<li>Fair performance.</li>
+</ul>
+<hr>
+<div class="admonition note">
+<p class="admonition-title">Other scheduling algorithms</p>
+<p>There are other scheduling algorithms that can be used to manage processes, such as:</p>
+<ul>
+<li><strong>Priority scheduling</strong>. The process with the highest priority is run first.</li>
+<li><strong>FSS</strong> (<em>Fair Share Scheduling</em>). The process is run based on the amount of resources it has used and users are given a fair share of resources.</li>
+<li><strong>MQS</strong> (<em>Multi-Queue Scheduling</em>). The process is run in different queues based on its priority.</li>
+</ul>
+<p>In general, operating systems use a combination of scheduling algorithms to ensure that processes are run efficiently and fairly.</p>
+</div>
+<h3 id="process-communication">Process communication<a class="headerlink" href="#process-communication" title="Permanent link">¶</a></h3>
+<p>Processes can communicate with each other in various ways. The operating system provides mechanisms for processes to communicate with each other, such as:</p>
+<ul>
+<li><strong>IPC</strong> (<em>Inter-process communication</em>). Processes can communicate with each other using system calls provided by the operating system.</li>
+<li><strong>RPC</strong> (<em>Remote Procedure Call</em>). Processes can communicate with each other over a network using remote procedure calls.</li>
+</ul>
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">¶</a></h3>
+<p>A service is a program that runs in the background and provides a specific function to the user or other programs. The operating system provides services to the user and other programs.</p>
+<p>By example, printing service manages the printing of documents from each application.</p>
+<p>In UNIX systems, services are called <strong>daemons</strong>.</p>
+<h2 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">¶</a></h2>
+<p><strong>Memory</strong> is one of the most important resources in a computer. Memory must be <strong>fast</strong>, <strong>high capacity</strong> and <strong>expensive</strong>. Currently, no technology meets all three objectives simultaneously. A solution has been adopted where <strong>the memory system is built hierarchically in layers</strong>, where the higher layers have higher speed and cost per bit, but lower capacity than the lower layers.</p>
+<figure>
+  <img alt="Memory hierarchy" src="ComputerMemoryHierarchy.png" width="70%">
+  <figcaption>Memory hierarchy</figcaption>
+</figure>
+<p>There are four major storage levels:</p>
+<ul>
+<li><strong>Internal</strong> – Processor registers and cache.</li>
+<li><strong>Main</strong> – the system main memory (RAM).</li>
+<li><strong>Secondary</strong>. Internal storage (or On-line storage). Hard drives, SSDs, etc.</li>
+<li><strong>Tertiary</strong>. External storage (or Off-line storage). Pen drives, DVDs, cloud storage, magnetic tapes, etc.</li>
+</ul>
+<p>In order for a program to run, its <strong>instructions</strong> and <strong>data</strong> must be present in the system's <strong>main memory</strong> (<em>RAM</em>). The <strong>processor</strong> can only access data that is in the main memory. The main memory is a <strong>volatile memory</strong>, meaning that it loses its contents when the computer is turned off.</p>
+<p><strong>Memory management</strong> refers to <strong>operations that are responsible for optimizing memory usage</strong> by organizing the processes running in such a way as to make the best possible use of the available space.</p>
+<p>Main functions:</p>
+<ul>
+<li><strong>Allocate space to processes</strong> that request it.</li>
+<li><strong>Virtual address space</strong>. Separates the memory addresses used by a process from the actual physical addresses, allowing the separation of processes and increasing <strong>security</strong> and the effective amount of main memory.</li>
+<li><strong>Virtual memory</strong>. When a process is too large to be loaded into memory, a part of the secondary memory (<em>hard disk</em>) is used as back-up memory. This often makes the system run much <strong>slower</strong>.</li>
+<li><strong>Garbage collector</strong>. It is responsible for the automatic <strong>release of memory</strong> resources for a process that has terminated its execution or enters an inconsistent state.</li>
+</ul>
+<figure>
+  <img alt="Virtual address space" src="Virtual_address_space_and_physical_address_space_relationship.png" width="70%">
+  <figcaption>Virtual address space</figcaption>
+</figure>
+<p>Multitasking OS requirements:</p>
+<ul>
+<li><strong>Protection</strong>. A process may not access the memory location of another process without permission.</li>
+<li><strong>Relocation</strong>. On systems with virtual memory, programs during execution may leave memory for a time and then return, so they cannot be placed in the location they previously occupied. It must therefore be possible for them to reside in different parts of memory at different times.</li>
+<li><strong>Sharing</strong>. It is possible for multiple processes to share information across a shared memory area.</li>
+</ul>
+<p>If the system were to reserve physical memory by contiguously hosting processes, there would come a point where <strong>external fragmentation</strong> would occur, i.e. gaps where new processes could not be contiguously hosted.</p>
+<div class="admonition note">
+<p class="admonition-title">Tetris</p>
+<p>We can compare this situation with the game of <em>Tetris</em>, where the objective is to fit the pieces together to form complete lines. In the case of memory, the pieces are the processes and the complete lines are the contiguous memory blocks. If the pieces are not placed correctly, gaps will appear that will prevent new pieces from being placed.</p>
+<p><figure markdown="span">
+<img alt="Memory fragmentation" src="tetris.png" width="70%">
+<figcaption>Tetris</figcaption>
+</figure></p>
+</div>
+<p>To solve this problem, the operating system uses <strong>paging</strong> and <strong>segmentation</strong> techniques.</p>
+<figure>
+  <img alt="Memory fragmentation" src="External_fragmentation.png" width="70%">
+  <figcaption>Memory fragmentation</figcaption>
+</figure>
+<h3 id="memory-paging">Memory paging<a class="headerlink" href="#memory-paging" title="Permanent link">¶</a></h3>
+<p>Physical memory is divided into parts of the same size called <strong>frames</strong>, in turn, processes are also divided into parts called <strong>pages</strong> of the same size as the <em>frames</em>.</p>
+<p>A <strong>page table</strong> is needed to translate the logical addresses to physical addresses.</p>
+<p>This way, processes do not need to be loaded contiguously in memory, as frames can be in different memory locations.</p>
+<ul>
+<li>Eliminates external fragmentation.</li>
+<li>Creates <strong>internal fragmentation</strong>.</li>
+</ul>
+<p><strong>Internal fragmentation</strong> occurs when a process page does not fill a frame of memory completely, so some memory is wasted.</p>
+<div class="admonition note">
+<p class="admonition-title">Hotel Analogy</p>
+<p>Imagine a hotel where all the rooms have 4 beds. If a group of 3 people arrives, they will have to pay for the 4 beds, so one bed will be wasted.</p>
+<p>This is the same as internal fragmentation, where a process page does not fill a frame of memory completely, so some memory is wasted.</p>
+</div>
+<figure>
+    <img alt="Memory paging" src="Memory_paging.png" width="70%">
+    <figcaption>Memory paging</figcaption>
+</figure>
+<h3 id="memory-segmentation">Memory segmentation<a class="headerlink" href="#memory-segmentation" title="Permanent link">¶</a></h3>
+<p>Memory is divided into segments of different sizes, each segment corresponds to a part of the process or a type of data.</p>
+<ul>
+<li>Eliminates internal fragmentation.</li>
+<li>Creates <strong>external fragmentation</strong>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Zoo Analogy</p>
+<p>Imagine a zoo where are areas for different animals, such as lions, elephants, monkeys, etc. Each area is a segment of memory, and each animal is a process, so the animals are not in the same area. This is the same as memory segmentation.</p>
+</div>
+<h3 id="virtual-memory">Virtual memory<a class="headerlink" href="#virtual-memory" title="Permanent link">¶</a></h3>
+<p>Also known as <strong>swap memory</strong>, <strong>swap space</strong>, <strong>paging file</strong> or <strong><em>swap</em></strong>, is a file or partition on disk (secondary storage or <em>hard disk</em>) that is used to temporarily store copies of processes that are removed from the main memory (RAM).</p>
+<p>This technique allows the creation of a larger capacity virtual memory, <code>RAM + swap</code>.</p>
+<p>Its main <strong>disadvantage</strong> is that it is a <strong>slow</strong> process (compared to using only main memory).</p>
+<h2 id="file-system-management">File System Management<a class="headerlink" href="#file-system-management" title="Permanent link">¶</a></h2>
+<p><strong>File system management</strong> is a crucial function of an operating system that handles the storage and retrieval of data on a computer's storage devices. It organizes data into logical units called files and directories, providing a structured way for users and applications to access and manipulate information.</p>
+<h3 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Data Integrity:</strong> Ensuring the <strong>accuracy</strong> and <strong>consistency</strong> of data stored in the file system.</li>
+<li><strong>Performance:</strong> Optimizing file system operations for <strong>efficient</strong> data access and retrieval.</li>
+<li><strong>Security:</strong> <strong>Protecting</strong> data from unauthorized access, modification, or deletion.</li>
+<li><strong>Reliability:</strong> Ensuring the <strong>availability</strong> of data and <strong>preventing data loss</strong> due to system failures.</li>
+</ul>
+<p>By effectively managing files and directories, the operating system provides a reliable and efficient way for users and applications to interact with data on a computer.</p>
+<h3 id="key-components-and-functions">Key Components and Functions<a class="headerlink" href="#key-components-and-functions" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>File:</strong> The <strong>basic unit of data storage</strong>. It contains a <strong>collection of related information</strong>, such as documents, images, or programs.</li>
+<li><strong>Directory:</strong> A <strong>container for files and other directories</strong>, creating a <strong>hierarchical structure</strong>. Directories are also known as <strong>folders</strong>.<ul>
+<li><strong>Subdirectories:</strong> Directories contained within other directories. </li>
+</ul>
+</li>
+<li><strong>Metadata:</strong> Information <strong>about files and directories</strong>, including their <strong>names</strong>, <strong>locations</strong>, <strong>size</strong>, creation <strong>date</strong>, and access <strong>permissions</strong>.</li>
+<li><strong>Storage Allocation:</strong> <strong>Assigning physical storage space</strong> to files and directories on the underlying storage device (e.g., hard drive, SSD).</li>
+<li><strong>File Access:</strong> Handling requests from applications to <strong>read, write or modify</strong> files.</li>
+<li><strong>File Deletion:</strong> <strong>Removing files</strong> from the file system, often marking the storage space as available for reuse.</li>
+<li><strong>File Recovery:</strong> Attempting to <strong>restore deleted</strong> or corrupted files, <strong>if possible</strong>.</li>
+<li><strong>File Sharing:</strong> Allowing <strong>multiple users or processes to access the same file</strong> simultaneously, potentially with different permissions.</li>
+</ol>
+<h3 id="file">File<a class="headerlink" href="#file" title="Permanent link">¶</a></h3>
+<p>A <strong>file</strong> is a <strong>collection of data</strong> stored on a computer system. Files can contain a wide variety of information, such as text, images, audio, video, or program code. Each file has a <strong>unique name</strong> that identifies it within the file system.</p>
+<h3 id="directory">Directory<a class="headerlink" href="#directory" title="Permanent link">¶</a></h3>
+<p>A <strong>directory</strong> is a <strong>container for files and other directories</strong>. It provides a way to <strong>organize and manage files</strong> in a hierarchical structure. Directories can be nested within each other, creating a tree-like organization of files and directories.</p>
+<h3 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">¶</a></h3>
+<p><strong>Metadata</strong> is <strong>data about data</strong>, providing information about files and directories in the file system. Common metadata includes:</p>
+<ul>
+<li><strong>File Name:</strong> The <strong>unique identifier</strong> for a file or directory.</li>
+<li><strong>File Size:</strong> The <strong>amount of storage space</strong> occupied by the file.</li>
+<li><strong>Owner:</strong> The <strong>user</strong> who created the file or directory.</li>
+<li><strong>Group:</strong> The <strong>group</strong> to which the file or directory belongs.</li>
+<li><strong>Permissions:</strong> The <strong>access rights</strong> granted to users or groups (e.g., read, write, execute).</li>
+<li><strong>Attributes:</strong> Such whether the file is <strong>read-only</strong>, <strong>executable</strong>, <strong>hidden</strong>, etc.</li>
+<li><strong>Timestamps:</strong> Indicating the <strong>creation</strong>, <strong>modification</strong>, and <strong>access times</strong> of the file.</li>
+<li><strong>Device type:</strong> For special files like <strong>devices</strong> or <strong>pipes</strong>.</li>
+</ul>
+<h3 id="file-system-types">File System Types<a class="headerlink" href="#file-system-types" title="Permanent link">¶</a></h3>
+<p>Some of most popular file systems are:</p>
+<ul>
+<li><strong>FAT (File Allocation Table):</strong> A simple and widely used file system, often found in older devices. It uses a table to track the location of file on the disk.</li>
+<li><strong>NTFS (New Technology File System):</strong> A more advanced file system developed by <em>Microsoft</em>, offering features like journaling, compression, and security.</li>
+<li><strong>ext2/3/4:</strong> Common file systems used in <em>Linux</em> and other <em>Unix</em>-like operating systems, known for their performance and reliability.</li>
+<li><strong>HFS+ (Hierarchical File System Plus):</strong> The default file system for <em>macOS</em>, designed for efficient storage and retrieval of files.</li>
+<li><strong>ZFS (Zettabyte File System):</strong> A modern file system with features like data integrity, RAID, and snapshots.</li>
+</ul>
+<h3 id="file-system-compatibility">File System Compatibility<a class="headerlink" href="#file-system-compatibility" title="Permanent link">¶</a></h3>
+<p>Different operating systems support different file systems, and not all file systems are compatible with each other. For example, a USB drive formatted with <em>NTFS</em> may not be readable on a <em>macOS</em> system, which typically uses <em>HFS+</em>. To ensure compatibility, it is essential to choose a file system that is supported by the operating systems you plan to use.</p>
+<p>Each operating system supports one or more file systems, depending on its design and requirements. For example:</p>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>File System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MS-DOS</td>
+<td><strong>FAT12</strong>, FAT16, FAT32...</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><strong>NTFS</strong>, FAT, exFAT, ReFS...</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><strong>HFS+</strong>, HFS, AFP...</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><strong>ext4</strong>, ext2, ext3, btrfs, ReiserFS, NFS...</td>
+</tr>
+<tr>
+<td>Android</td>
+<td><strong>ext4</strong>, F2FS, YAFFS, ReiserFS...</td>
+</tr>
+<tr>
+<td>Servers</td>
+<td><strong>ZFS</strong>, XFS, Btrfs, JFS, UFS...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparison-of-file-systems">Comparison of File Systems<a class="headerlink" href="#comparison-of-file-systems" title="Permanent link">¶</a></h3>
+<p>Each file system has its own characteristics and limitations, making it suitable for different use cases. Common factors to consider include <strong>file size limits</strong>, <strong>partition size</strong>, <strong>permissions</strong>, <strong>journaling</strong>, and <strong>encryption</strong>.</p>
+<p>Here's a comparison of some popular file systems:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">File system</th>
+<th style="text-align: center;">Filenames</th>
+<th style="text-align: center;">File size</th>
+<th style="text-align: center;">Partition</th>
+<th style="text-align: center;">Permissions</th>
+<th style="text-align: center;">Journaling</th>
+<th style="text-align: center;">Encrypt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">FAT32</td>
+<td style="text-align: center;">8.3</td>
+<td style="text-align: center;">4 GiB</td>
+<td style="text-align: center;">2 TiB</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td style="text-align: center;">exFAT</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">127 PiB</td>
+<td style="text-align: center;">512 TiB</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td style="text-align: center;">NTFS</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">18 EiB</td>
+<td style="text-align: center;">75 ZiB</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Partial</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">ReFS</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">16 EiB</td>
+<td style="text-align: center;">256 ZiB</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Partial</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">ext3</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">2 TiB</td>
+<td style="text-align: center;">32 TiB</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">ext4</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">16 TiB</td>
+<td style="text-align: center;">1 EiB</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">ReiserFS</td>
+<td style="text-align: center;">226</td>
+<td style="text-align: center;">8 TiB</td>
+<td style="text-align: center;">16 TiB</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td style="text-align: center;">HFS+</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">8 EiB</td>
+<td style="text-align: center;">8 EiB</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Partial</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="file-system-operations">File System Operations<a class="headerlink" href="#file-system-operations" title="Permanent link">¶</a></h3>
+<p>File systems support a variety of operations to manage files and directories. Some common operations include:</p>
+<ul>
+<li><strong>Create:</strong> Creates a new file or directory.</li>
+<li><strong>Delete:</strong> Removes a file or directory.</li>
+<li><strong>Read:</strong> Retrieves data from a file.</li>
+<li><strong>Write:</strong> Stores data in a file.</li>
+<li><strong>Rename:</strong> Changes the name of a file or directory.</li>
+<li><strong>Move:</strong> Relocates a file or directory to a different location.</li>
+<li><strong>Copy:</strong> Duplicates a file or directory.</li>
+<li><strong>Modify:</strong> Changes the content or attributes of a file, such as its name or permissions.</li>
+<li><strong>Check Integrity:</strong> Verifies the correctness and consistency of data.</li>
+<li><strong>Compress / Decompress:</strong> Reduces or expands the size of a file.</li>
+<li><strong>Encrypt / Decrypt:</strong> Secures data by encoding or decoding it.</li>
+</ul>
+<h3 id="file-system-permissions">File System Permissions<a class="headerlink" href="#file-system-permissions" title="Permanent link">¶</a></h3>
+<p>File systems use <strong>permissions</strong> to control access to files and directories. Permissions specify which users or groups can <strong>read</strong>, <strong>write</strong>, or <strong>execute</strong> files, and can be set for the <strong>users</strong> and/or <strong>groups</strong>.</p>
+<p>Common basic permission levels include:</p>
+<ul>
+<li><strong>Read:</strong> Allows users to view the contents of a file.</li>
+<li><strong>Write:</strong> Allows users to modify the contents of a file.</li>
+<li><strong>Execute:</strong> Allows users to run a file as a program.</li>
+</ul>
+<figure>
+    <img alt="File permissions" src="windows_permissions.png">
+    <figcaption>Example of file permissions in <em>Microsoft Windows</em></figcaption>
+</figure>
+<p>In most systems, the graphical representation for <strong>users</strong> and <strong>groups</strong> is as follows:</p>
+<ul>
+<li><strong>User</strong>: 👤 a person silhouette.</li>
+<li><strong>Group</strong>: 👥 two (or more) people silhouettes.</li>
+</ul>
+<h3 id="data-integrity">Data integrity<a class="headerlink" href="#data-integrity" title="Permanent link">¶</a></h3>
+<p>File systems use various techniques to ensure data integrity, such as:</p>
+<ul>
+<li><strong>Journaling:</strong> Recording changes to files and directories in a <strong>journal</strong> to recover from system crashes or power failures.</li>
+<li><strong>Checksums:</strong> Calculating a <strong>checksum</strong> for files to verify their integrity and detect data corruption.</li>
+<li><strong>Redundancy:</strong> Storing multiple copies of data to protect against data loss.</li>
+</ul>
+<h3 id="hierarchical-structure">Hierarchical Structure<a class="headerlink" href="#hierarchical-structure" title="Permanent link">¶</a></h3>
+<p>We need to consider a storage device must contain millions of files, so it is necessary to organize them in a hierarchical structure. This structure is similar to a tree, where the <strong>root</strong> is the main directory and the <strong>branches</strong> are the subdirectories.</p>
+<ul>
+<li><strong>Root directory:</strong> The main directory of the file system.</li>
+<li><strong>Subdirectory:</strong> A directory contained within another directory.</li>
+</ul>
+<p>In a graphical representation, the hierarchical structure looks like this:</p>
+<figure>
+    <img alt="Hierarchical structure" src="FilesAndFolders.png">
+    <figcaption>Hierarchical structure</figcaption>
+</figure>
+<p>An example of a hierarchical structure is shown below:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RootDirectory/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Directory1/
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── File1
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── File2
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── Directory2/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│       ├── File3
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│       └── File4
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── Directory3/
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    ├── File5
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    └── File6
+</code></pre></div>
+<h3 id="path">Path<a class="headerlink" href="#path" title="Permanent link">¶</a></h3>
+<p>A <strong>path</strong> is a string that specifies the location of a file or directory in the file system. Paths can be <strong>absolute</strong> or <strong>relative</strong>.</p>
+<ul>
+<li><strong>Absolute path:</strong> Specifies the location of a file or directory from the <strong>root directory</strong>.</li>
+<li><strong>Relative path:</strong> Specifies the location of a file or directory <strong>relative to the current directory</strong>.</li>
+</ul>
+<p>For example, in the hierarchical structure above, the absolute path to <code>File3</code> would be <code>/RootDirectory/Directory1/Directory2/File3</code>, while the relative path would be <code>Directory2/File3</code>.</p>
+<p>In Microsoft Windows, the <strong>backslash</strong> <strong><code>\</code></strong> is used as the directory separator, while in Unix-like systems, the <strong>forward slash</strong> <strong><code>/</code></strong> is used.</p>
+<p>An example of absolute path in <em>Microsoft Windows</em> is <code>C:\Users\John\Documents\file.txt</code>. Where <code>C:</code> is the drive letter and root directory, <code>Users</code> is the user directory, <code>John</code> is the user name, <code>Documents</code> is a directory, and <code>file.txt</code> is a file name.</p>
+<h4 id="absolute-path">Absolute path<a class="headerlink" href="#absolute-path" title="Permanent link">¶</a></h4>
+<p>An <strong>absolute path</strong> is a complete path that specifies the location of a file or directory from the <strong>root directory</strong>. It includes all the directories and subdirectories leading to the file or directory.</p>
+<p>Examples:</p>
+<ul>
+<li>In Microsoft Windows: <code>C:\Users\John\Documents\file.txt</code></li>
+<li>In Unix-like systems: <code>/home/john/documents/file.txt</code></li>
+</ul>
+<p>Note that the root directory is represented by a <strong>forward slash</strong> <code>/</code> in Unix-like systems and a <strong>backslash</strong> <code>\</code> in <em>Microsoft Windows</em>.</p>
+<h4 id="relative-path">Relative path<a class="headerlink" href="#relative-path" title="Permanent link">¶</a></h4>
+<p>A <strong>relative path</strong> specifies the location of a file or directory <strong>relative to the current directory</strong>. It does not include the root directory and starts from the current working directory.</p>
+<ul>
+<li><strong><code>.</code></strong> represents the current directory.</li>
+<li><strong><code>..</code></strong> represents the parent directory.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>.\Documents\file.txt</code></li>
+<li><code>..\images\picture.jpg</code></li>
+<li><code>..\..\data\data.csv</code></li>
+</ul>
+<p>Relative paths are often used when referring to files or directories within the same directory or in a nearby directory.</p>
+<h2 id="user-interfaces">User interfaces<a class="headerlink" href="#user-interfaces" title="Permanent link">¶</a></h2>
+<p>The user can communicate with the operating system mainly through three non-exclusive interfaces:</p>
+<ul>
+<li><strong>Command line interface</strong> (<strong>CLI</strong> - <em>Command Line Interface</em>). Users use commands, which are nothing more than orders written in a language that the operating system understands. They consist of an order and, optionally, some parameters.</li>
+<li><strong>Graphical user interface</strong> (<strong>GUI</strong> - <em>Graphical User Interface</em>). Most current operating systems provide a graphical user interface that presents a visual environment with elements such as desktops, windows, menus, icons or buttons with which the user interacts, thus sending orders to the operating system.</li>
+<li><strong>Natural language interface</strong> (<strong>NUI</strong> - <em>Natural User Interface</em>). Interaction with computer equipment is carried out by recognizing the user's natural movements or actions, which it interprets as orders. <em>For example, Siri (macOS), Cortana (Microsoft Windows) or Google Now (Android)</em>.</li>
+</ul>
+<p>There is no better interface than another, and their advantages and disadvantages depend on the purpose for which they are going to be used:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"></path></svg></span> <strong>CLI</strong></td>
+<td>Access to all the system's functionalities.</td>
+<td>Knowledge of the commands</td>
+</tr>
+<tr>
+<td></td>
+<td>Ease of automation</td>
+<td>Complexity</td>
+</tr>
+<tr>
+<td></td>
+<td>Reduced resource consumption</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4 1.7 3.6c.2.4 0 .8-.4 1l-2.8 1.3c-.1.1-.2.1-.3.1-.3 0-.6-.2-.7-.4L11.2 18l-1.9 1.5c-.1.1-.3.2-.5.2-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8.2 0 .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1 1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z"></path></svg></span> <strong>GUI</strong></td>
+<td>Ease of use</td>
+<td>Actions limited to the interface</td>
+</tr>
+<tr>
+<td></td>
+<td>Standardized</td>
+<td>Consumes more resources</td>
+</tr>
+<tr>
+<td></td>
+<td>Used in most programs</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M9 5a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c2.67 0 8 1.34 8 4v2H1v-2c0-2.66 5.33-4 8-4m7.76-9.64c2.02 2.2 2.02 5.25 0 7.27l-1.68-1.69c.84-1.18.84-2.71 0-3.89zM20.07 2c3.93 4.05 3.9 10.11 0 14l-1.63-1.63c2.77-3.18 2.77-7.72 0-10.74z"></path></svg></span> <strong>NUI</strong></td>
+<td>Ease of use</td>
+<td>Inaccurate</td>
+</tr>
+<tr>
+<td></td>
+<td>Intuitive</td>
+<td>Simple actions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The most common way of interacting with operating systems is through their graphical interface</strong>, also called <strong>GUI</strong> (<em>Graphical User Interface</em>). In reality, it is nothing more than a program that <strong>facilitates communication between the computer and the user</strong> by manipulating graphic elements <strong>using a series of predefined actions</strong> carried out with the mouse and and the keyboard.</p>
+<blockquote>
+<p>Nowadays, the use of touch screens is growing, which can complement, or even replace, the use of the mouse and the keyboard.</p>
+</blockquote>
+<p>Before the arrival of graphical interfaces, computer systems were used through a <strong>text interface</strong> that basically consisted of a screen that offered only one color (on a black background) and where <strong>only characters were displayed</strong>. At that time, the only way for users to interact with the computer system was to know the syntax of a considerably large <strong>set of written commands</strong>.</p>
+<p>As you can imagine, the visual environment offered by GUIs is a much simpler, and more intuitive, way of learning how to use a computer.</p>
+<p>For security reasons, server systems do not usually use a graphical interface.</p>
+<h3 id="origin-of-graphical-user-interfaces">Origin of graphical user interfaces<a class="headerlink" href="#origin-of-graphical-user-interfaces" title="Permanent link">¶</a></h3>
+<figure>
+    <img alt="IBM PC AT with MS-DOS Operating System (1981)" src="ibm_pc_at.jpg" width="50%">
+    <figcaption><em>IBM PC AT</em> with <em>MS-DOS</em> Operating System (1981)</figcaption>
+</figure>
+<p>First home computers used a text interface, where the user had to type commands to interact with the computer.</p>
+<p>The first graphical user interface was developed by researchers at <em>Xerox PARC</em> and included in the <em>Xerox Star 8010</em> computer in 1981. However, the design was based on the studies of scientist <em>Douglas Engelbart</em> and on the first mouse, also designed by him.</p>
+<figure>
+    <img alt="Prototype of the first computer mouse (1967)" src="first-computer-mouse.jpg" width="50%">
+    <figcaption>Prototype of the first computer mouse (1967)</figcaption>
+</figure>
+<figure>
+    <img alt="Xerox Star 8010 (1981)" src="xerox-star-8010.jpg" width="40%">
+    <figcaption><em>Xerox Star 8010</em> (1981)</figcaption>
+</figure>
+<p>On this computer, text characters were replaced by bitmaps, icons, windows, etc.</p>
+<p>The next step was taken by Apple, which, after a visit by some of its executives to Xerox in 1979, began the development of its Apple Lisa, the first desktop computer that included a graphical interface and which began to be sold in 1983. However, it was the Apple Macintosh of 1984 that marked a before and after.</p>
+<figure>
+    <img alt="Apple Macintosh (1984)" src="apple-lisa.jpg" width="50%">
+    <figcaption><em>Apple Lisa</em> (1983)</figcaption>
+</figure>
+<p>The following year, in 1985, Microsoft began marketing <em>MS Windows 1.0</em>, a graphical interface that ran on <em>MS-DOS</em>, the operating system that, until then, only worked with a text-based interface.</p>
+<figure>
+    <img alt="Microsoft Windows 1.0 (1985)" src="windows1.png" width="70%">
+    <figcaption><em>Microsoft Windows 1.0</em> (1985)</figcaption>
+</figure>
+<h3 id="current-graphical-interfaces">Current graphical interfaces<a class="headerlink" href="#current-graphical-interfaces" title="Permanent link">¶</a></h3>
+<p>Today, all desktop operating systems have a graphical interface:</p>
+<p>In <strong>MS Windows 10</strong>, after the paradigm shift that MS Windows 8 and 8.1 represented, with a clear orientation towards touch environments, there has been a reconciliation with environments oriented towards the use of the mouse.</p>
+<p>The <em>Fluent Design</em> interface has been developed, which makes a transition between both types of interface (touch / mouse) in a dynamic way and adapts to different types of devices (computers, tablets, video game consoles, smartphones, embedded systems, augmented reality, etc.).</p>
+<p>In addition, the <em>Start menu</em> has been updated, which now combines functionality equivalent to MS Windows XP and the MS Windows 8.1 Start screen in addition to other complementary functions.</p>
+<figure>
+    <img alt="MS Windows 10 (2014)" src="windows-10.jpg" width="60%">
+    <figcaption><em>MS Windows 10</em> (2014)</figcaption>
+</figure>
+<p><strong>MS Windows 11</strong> features a user interface based on <em>Fluent Design</em> including translucency, shadows, a new color palette, new icons, and rounded edges throughout the system interface. Other system changes include new system icons, animations, and sounds. MS Windows 11 updates several system dialog boxes, such as the "battery is running out" alert, among others.</p>
+<p>The <em>Start menu</em> undergoes a significant redesign, eliminating the use of the <em>live tiles</em> used by MS Windows 8.x and 10 with a grid of "pinned" applications and a list of recent applications and documents.</p>
+<p>Microsoft has also introduced a new feature called <strong>Snap Layouts</strong>, which allows users to quickly arrange multiple windows on the screen in predefined layouts.</p>
+<p>The <strong>Taskbar</strong> has been centered by default, with the Start button and the search box in the center, and the system tray on the right.</p>
+<figure>
+    <img alt="MS Windows 11 (2021)" src="windows-11.jpg" width="60%">
+    <figcaption><em>MS Windows 11</em> (2021)</figcaption>
+</figure>
+<blockquote>
+<p>Unlike GNU/Linux, in Windows the graphical interface is integrated into the operating system.</p>
+</blockquote>
+<p>In <strong>GNU/Linux</strong> there are a multitude of graphical environments that offer a wide range of possibilities for users. The reason is that in Unix family operating systems, the graphical interface runs as a layer above the text interface.</p>
+<p>In Linux, the structure of the graphical interface is as follows:</p>
+<pre class="mermaid"><code>flowchart LR
+    O(Operating System) &lt;-.-&gt; X
+    subgraph GUI
+        direction TB
+            X[Graphical Server] &lt;--&gt; W[Window Manager]
+            W &lt;--&gt; D[Desktop Environment]
+    end
+    D &lt;-.-&gt; U[User]</code></pre>
+<ul>
+<li>
+<p><strong>Graphical Server</strong> is the program that manages the graphical interface and is responsible for drawing windows, buttons, text boxes, etc., as well as managing the events that affect them (mouse clicks, key combinations, etc.).</p>
+<p>The most used are:</p>
+<ul>
+<li><strong>X Windows System</strong>. The most used graphical server in Unix-like systems.</li>
+<li><strong>Wayland</strong>. A new graphical server that is gradually replacing X Windows System.</li>
+</ul>
+</li>
+<li>
+<p><strong>Window managers</strong> run on the graphical server, which are responsible for specifying how each element should be drawn. The appearance, the ability to customize, etc. depend on the window manager.
+Some examples are: Kwin, Fluxbox, Openbox, Metacity or Icewm among others. To facilitate the use of window managers, libraries called toolkits have been created. The most used are:</p>
+<ul>
+<li>GTK (Gimp toolkit)</li>
+<li>QT (Cute)</li>
+</ul>
+</li>
+<li>
+<p><strong>Desktop environments</strong>, which rely on the toolkits to offer the final appearance that the user gets. The integration between applications and the general behavior of the interface depend on them. In addition, they include a series of applications that are usually integrated into the environment, such as file managers, text editors, image viewers, etc.</p>
+<p>Most common desktop environments are:</p>
+<ul>
+<li><strong>Gnome</strong>. Used by default in many distributions.</li>
+<li><strong>KDE Plasma</strong>. The most complete and configurable. It's more similar to MS Windows.</li>
+<li><strong>Xfce</strong>. A lightweight desktop environment.</li>
+<li><strong>LXDE</strong>. Another lightweight desktop environment.</li>
+<li><strong>E17</strong>. A desktop environment with a futuristic appearance.</li>
+<li><strong>Cinnamon</strong>. Tries to emulate the appearance of MS Windows.</li>
+</ul>
+</li>
+</ul>
+<figure>
+    <img alt="Ubuntu 22.04 LTS Jammy Jellyfish with Gnome 42 environment" src="Ubuntu_2204_LTS_Jammy_Jellyfish.png" width="60%">
+    <figcaption><em>Ubuntu 22.04 LTS Jammy Jellyfish with Gnome 42 environment</em></figcaption>
+</figure>
+<figure>
+    <img alt="KDE Plasma 5.24" src="KDE_Plasma_524.png" width="60%">
+    <figcaption><em>KDE Plasma 5.24</em></figcaption>
+</figure>
+<h3 id="command-line-interface-cli"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"></path></svg></span> Command-line interface CLI<a class="headerlink" href="#command-line-interface-cli" title="Permanent link">¶</a></h3>
+<p>The text interface was the method used by early computers to communicate with the user. It allowed users to type commands that the computer executed when the <code>Enter</code> key was pressed.</p>
+<p>The text interface is often referred to as <strong>Console</strong>, <strong>Terminal</strong>, <strong><em>Shell</em></strong>, <strong>Command interpreter</strong> or <strong>Command-line interface</strong> (even <strong>CLI</strong>).</p>
+<p>Nowadays, operating systems facilitate the use of the text interface through a window, although in some cases, such as the server versions of Ubuntu and MS Windows, can operate without a graphical interface. However, it is often used in professional environments and for advanced users.</p>
+<p>One of the <strong>advantages</strong> of the text interface is that it allows you to <strong>automate the execution of several commands</strong> by grouping them in a text file called a <strong>script</strong> (sometimes they are also called batch files or batch processes).</p>
+<p>In addition, it is common for the <strong>user to have more options</strong> when using the text interface than when using the graphical interface.</p>
+<p>The main drawback of the text interface is the <strong>difficulty of learning</strong> it for novice users.</p>
+<p>On the other hand, <strong>graphical interfaces</strong> also have some <strong>drawbacks</strong>, especially when they are installed on computers that act as servers:</p>
+<ul>
+<li>When the computer is not serving a local user, the graphical interface <strong>consumes resources</strong> even if it is not used.</li>
+<li><strong>Updates</strong> will <strong>take longer</strong>, because more programs need to be updated.</li>
+<li>The system is <strong>more complex</strong>, so there is a greater chance that it will offer <strong>vulnerabilities</strong> against possible security attacks.</li>
+</ul>
+<p>The character, or set of characters, that is displayed in the text interface to indicate that it is waiting for a new command is called <strong><em>prompt</em></strong> and its content will depend on the operating system and the configuration made by the user.</p>
+<p>By default, the MS Windows command line displays the current disk path.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">username</span><span class="p">&gt;</span> <span class="n">_</span>
+</code></pre></div>
+<p>In Linux, although it is easily modifiable and depends on the distribution, the user name, computer name and current path are normally displayed. In addition, if it ends in a dollar sign (<strong><code>$</code></strong>), it indicates that we are acting as a normal user and if it ends in a hash sign (<strong><code>#</code></strong>), we are working as a privileged user (an administrator).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>user@pc01:~$<span class="w"> </span>_
+</code></pre></div>
+<p>Finally, note that the tilde character <strong><code>~</code></strong> is an abbreviation used by Linux to represent the <strong>user's default folder</strong>.</p>
+<h3 id="windows-command-line-interface">Windows command line interface<a class="headerlink" href="#windows-command-line-interface" title="Permanent link">¶</a></h3>
+<p>In Microsoft systems, the command line interface has been changing and evolving.</p>
+<ul>
+<li><strong><code>COMMAND.COM</code></strong> was the first text interface used in MS-DOS.</li>
+<li><strong><code>CMD.EXE</code></strong> was incorporated in MS Windows NT-based systems</li>
+<li><strong><code>PowerShell</code></strong>, advanced text interface for MS Windows.</li>
+<li><strong><code>Windows Subsystem for Linux</code></strong> or <strong><code>WSL</code></strong>, is a compatibility layer developed by Microsoft to run Linux executables natively starting with MS Windows 10.</li>
+</ul>
+<h3 id="the-gnulinux-text-interface">The GNU/Linux text interface<a class="headerlink" href="#the-gnulinux-text-interface" title="Permanent link">¶</a></h3>
+<p>Although there are many command interpreters for GNU/Linux systems, the most widely used is <strong><em>Bash</em></strong> (<em>Bourne again shell</em>). It was written by <em>Brian Fox</em> for the GNU project in 1987. It was based on <em>Bourne</em>, the most common text interface for <em>Unix</em> systems. Hence its name, which comes from a play on words, since born-again means rebirth.</p>
+<p>As we already mentioned, this was the shell chosen by Linus Torvalds to include with his kernel, which has led to it being found in practically all distributions. In addition, it is included in many other systems, such as Apple macOS, Solaris, IBM AIX, HP UX, FreeBSD, etc.</p>
+<blockquote>
+<p>Other command interpreters for GNU/Linux are: Korn shell (ksh), zsh and C shell (csh).</p>
+</blockquote>
+<p>To access the command interpreter in Ubuntu 24.04 LTS, simply click on the <em>Show applications</em> icon on the desktop and start typing the word <code>Terminal</code>. It is usually accessible with the key combination <code>Ctrl</code> + <code>Alt</code> + <code>T</code>. Each desktop environment uses a different terminal emulator, although we can install others such as <em>GNOME Terminal, Konsole, xterm, aterm, eterm, Terminator, Guake, st, etc</em>.</p>
+<hr>
+<h2 id="operating-system-licenses">Operating System Licenses<a class="headerlink" href="#operating-system-licenses" title="Permanent link">¶</a></h2>
+<p>When a computer user installs a specific program, they are directly or indirectly accepting <strong>terms of use</strong> stated in a software license.</p>
+<p>A <strong>license</strong> is a <strong>contract</strong> between the <strong>provider</strong> of a software program and the <strong>user</strong> (or company) who uses it, establishing the conditions to which both parties commit during the period the software is in use.</p>
+<p>Some aspects regulated by a software license include:</p>
+<ul>
+<li>The <strong>binding</strong> of the software to specific <strong><em>hardware</em></strong>.</li>
+<li>The <strong>number of copies</strong> of the software that the user can use.</li>
+<li>The <strong>rights</strong> that the user has <strong>over the software</strong>.</li>
+<li>The <strong>period</strong> during which these rights are granted.</li>
+<li>The <strong>responsibility</strong> of the provider for the product's defects.</li>
+<li>The <strong>possibility of transferring</strong> the usage rights to others.</li>
+<li>Etc.</li>
+</ul>
+<p>Based on the rights retained by the provider over their product, we have the following types of software licenses:</p>
+<ul>
+<li><strong>Open Source Software Licenses</strong><ul>
+<li><strong>Permissive</strong></li>
+<li><strong>Non-permissive</strong></li>
+</ul>
+</li>
+<li><strong>Proprietary Software Licenses</strong></li>
+<li><strong>Freeware</strong></li>
+<li><strong>Shareware</strong></li>
+<li><strong>Public Domain</strong></li>
+</ul>
+<p>Descriptions of each type of license are provided below:</p>
+<ul>
+<li>
+<p><strong>Open Source Software Licenses</strong>: These licenses refer to software that makes its <strong>source code</strong> available to users. This type of license is usually associated with the concept of <strong><em>Free Software</em></strong>. Within this category, there are <strong>two subtypes</strong>:</p>
+<ul>
+<li>
+<p><strong><em>Permissive</em></strong>: Programs with this type of license <strong>can be modified</strong> or used to create new programs <strong>without</strong> the resulting software needing to maintain the <strong>conditions of the original license</strong>.
+    Examples of this type of license include:</p>
+<ul>
+<li>Apache Software License</li>
+<li>PHP License</li>
+<li>Perl License</li>
+<li>Python License</li>
+<li>W3C Software Notice and License</li>
+<li>BSD License</li>
+<li>MIT License</li>
+<li>Open LDAP License</li>
+<li>Etc.</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Non-permissive</em></strong>: Programs with this type of license <strong>can be modified</strong> or used to create new programs, but the resulting software must generally be published <strong>under the same terms as the original license</strong>.
+    Examples of this type of license include:</p>
+<ul>
+<li>GNU General Public License (GPL)</li>
+<li>Common Public License</li>
+<li>OpenSSL License</li>
+<li>Eclipse Public License</li>
+<li>Affero General Public License</li>
+<li>Etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Proprietary Software Licenses</strong>: This refers to software that <strong>does not distribute its source code</strong>. It is also commonly known as <strong>closed source</strong> or <strong>private</strong> software.</p>
+<p>These licenses <strong>limit the users' ability</strong> to use, copy, modify, redistribute, or transfer the software.</p>
+<p>An example is the <strong>EULA</strong> (<em>End User License Agreement</em>), (<strong>CLUF</strong> <em>Contrato de Licencia para Usuario Final</em> in Spanish).</p>
+</li>
+</ul>
+<p>In addition to the previous types of licenses, there are some other common variations:</p>
+<ul>
+<li><strong>Freeware</strong>: This type of license applies to software that is distributed <strong>free of charge</strong> and for an <strong>indefinite time</strong>. <strong>Redistribution</strong> is typically allowed, but modification and sometimes commercial use are not. Freeware usually does not include the source code.</li>
+<li><strong>Shareware</strong>: This type of license allows the software to be <strong>evaluated</strong>, although usage may be <strong>limited in time</strong> or in <strong>functionality</strong>. To fully use the product without limitations, a payment is required.</li>
+<li><strong>Public Domain</strong>: Software in this category is released <strong>without any license</strong>. This type of software can be used, modified, redistributed, or relicensed <strong>without restrictions</strong>.</li>
+</ul>
+<h3 id="proprietary-software-licenses">Proprietary Software Licenses<a class="headerlink" href="#proprietary-software-licenses" title="Permanent link">¶</a></h3>
+<p>Proprietary software licenses can be acquired through different methods:</p>
+<ul>
+<li><strong><em>Retail</em></strong></li>
+<li><strong><em>OEM</em></strong></li>
+<li><strong>Volume licenses</strong></li>
+</ul>
+<p>Let's describe each in more detail:</p>
+<ul>
+<li>
+<p><strong>Retail</strong> (Individual Sales)</p>
+<p>This is the typical way a user purchases software in a store. It is generally <strong>targeted at users who do not need more than five licenses</strong>, and it comes in two variants:</p>
+<ul>
+<li><em>Full Product</em>: Does not require a previous version of the product for installation.</li>
+<li><em>Upgrade</em>: Builds upon a previously licensed version. Typically, upgrade licenses are lower in cost.</li>
+</ul>
+</li>
+<li>
+<p><strong>OEM</strong> (Original Equipment Manufacturer)</p>
+<p>Software that comes <strong>pre-installed</strong> when purchasing a new computer includes an <em>OEM</em> license. This distribution method ensures proper installation and configuration.</p>
+<p>Usually, <strong>the license is bound to the hardware</strong> with which it is acquired, meaning it <strong>cannot be uninstalled and used on another computer</strong>. However, transferring the entire system (hardware and software) to a different user is often allowed.</p>
+</li>
+<li>
+<p><strong>Volume Licenses</strong></p>
+<p>Software manufacturers often have contracts tailored <strong>for organizations</strong> or <strong>companies needing more licenses</strong> than an average user. The contract may include specific rights, such as transfer rights to certain users meeting specific conditions.</p>
+<p>In this type of licensing, there are also options for full products or upgrades. It is common to have downgrade rights to support older systems as well.</p>
+</li>
+</ul>
+<h2 id="current-operating-systems">Current Operating Systems<a class="headerlink" href="#current-operating-systems" title="Permanent link">¶</a></h2>
+<h3 id="microsoft-windows">Microsoft Windows <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48zm17-9v8.75l-10 .15V5.21zM3 13l6 .09v6.81l-6-1.15zm17 .25V22l-10-1.91V13.1z"></path></svg></span><a class="headerlink" href="#microsoft-windows" title="Permanent link">¶</a></h3>
+<p><em>Microsoft</em> offers a full range of operating systems covering mobile devices, embedded systems, desktops, and servers.</p>
+<p>When the <strong>first version</strong> of <em>MS Windows</em> was released in 1985, it <strong>wasn't an operating system</strong>. <strong>It was just a graphical interface</strong> running on top of a text-based operating system called <strong>MS-DOS</strong> (<em>Microsoft Disk Operating System</em>).</p>
+<p>Despite its success as a graphical interface, Microsoft Windows continued to rely on MS-DOS until the release of <strong>MS Windows 95</strong> in 1995. Though <em>MS Windows 95</em> brought significant advancements, it still internally included the <em>MS-DOS kernel</em>.</p>
+<p>This situation persisted until <strong>MS Windows XP</strong>, which was the first version to include the kernel from Microsoft's professional line, specifically from Windows 2000, which featured the <strong>NT kernel</strong> (<em>New Technology</em>). This convergence has continued to the present day.</p>
+<p>The next significant change came with <strong>MS Windows 8</strong>, which saw a major overhaul of its graphical interface. It removed the <em>Start button</em> and added a <em>Start screen</em> intended to facilitate use on touch devices. The new interface was called <em>Metro UI</em>.</p>
+<p>This drastic change led to some user dissatisfaction, prompting Microsoft to reconsider and restore the <em>Start button</em>, initially partially with Windows 8.1 and then fully with <strong>MS Windows 10</strong>.</p>
+<p>Another change introduced by MS Windows 8 was support for a processor architecture other than x86 from Intel and AMD. From this version onwards, MS Windows has been available on phones and tablets equipped with <strong>ARM processors</strong>.</p>
+<p>Microsoft offers different editions for each Windows version. For Windows 11, they are:</p>
+<ul>
+<li>MS Windows 11 <strong>Home</strong> - For <strong>home</strong> PCs.</li>
+<li>MS Windows 11 <strong>Pro</strong> - Advanced features for <strong>businesses</strong>.</li>
+<li>MS Windows 11 <strong>Education</strong> - For <strong>educational</strong> environments, may include fewer features.</li>
+<li>MS Windows 11 <strong>Enterprise</strong> - Extra features for <strong>large organizations</strong>.</li>
+<li>MS Windows 11 <strong>Pro Education</strong> - Pro version with <strong>additional features for education</strong> and some restrictions.</li>
+<li>MS Windows 11 <strong>Pro for Workstations</strong> - For <strong>high-computational workloads</strong>.</li>
+<li>MS Windows 11 <strong>Mixed Reality</strong> - Designed for devices like Microsoft <strong>HoloLens</strong>.</li>
+</ul>
+<h3 id="gnulinux-distributions">GNU/Linux Distributions <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"></path></svg></span><a class="headerlink" href="#gnulinux-distributions" title="Permanent link">¶</a></h3>
+<p>Characteristics of Linux OS:</p>
+<ul>
+<li><strong>GPL License</strong> (GNU General Public License)</li>
+<li><strong>Free of charge</strong></li>
+<li><strong>Open source</strong> - Usage, modification, and distribution are allowed.</li>
+<li><strong>Stable</strong></li>
+<li><strong>Secure</strong></li>
+<li><strong>Multitasking</strong></li>
+<li><strong>Multiuser</strong></li>
+</ul>
+<p>A <strong>Linux distribution</strong>, commonly known as a <strong><em>distro</em></strong>, is a software distribution that includes the <strong>Linux kernel</strong> and a set of <strong>software packages</strong>, aimed at meeting the needs of a group of users.</p>
+<p>For a list of major distributions: <a href="https://distrowatch.com/">https://distrowatch.com/</a></p>
+<p>Components:</p>
+<ul>
+<li><strong>Kernel</strong></li>
+<li><strong>Tools and libraries</strong></li>
+<li><strong>Documentation</strong></li>
+<li><strong>Package manager</strong></li>
+<li><strong>Desktop environment</strong> (optional)</li>
+</ul>
+<p>History:</p>
+<ul>
+<li><strong>1970</strong>: Ken Thompson and Dennis Ritchie create <strong><em>Unix</em></strong>, a commercial operating system by <em>Bell Labs</em>.</li>
+<li><strong>1978</strong>: University of Berkeley creates <strong><em>BSD</em></strong>, a <em>Unix</em> derivative for teaching.</li>
+<li><strong>1983</strong>: <em>Richard Stallman</em> starts the <strong>GNU project</strong> with the intention of creating a free operating system.</li>
+<li><strong>1987</strong>: <em>Andrew S. Tanenbaum</em> creates <strong><em>Minix</em></strong>, based on <em>Unix</em> version 6, for teaching purposes.</li>
+<li><strong>1991</strong>: <em>Linus Torvalds</em> creates the <strong><em>Linux</em></strong> kernel, based on <em>Minix</em>.</li>
+<li><strong>1992</strong>: <em>Linux</em> adopts the <strong>GPL license</strong> from the <strong>GNU</strong> project.</li>
+<li><strong>1993</strong>: <em>Ian Murdock</em> founds the <strong>Debian project</strong>.</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li><strong>Economic</strong>: Spain spends over 1 billion euros annually on <em>Microsoft</em> licenses. With <em>Linux</em>, this cost could be reduced to maintenance costs creating more jobs.</li>
+<li><strong>Local support</strong>: Reduces dependency on a foreign company and boosts the local economy.</li>
+<li><strong>Open formats</strong>: Non-proprietary, they allow interoperability between systems, independent of hardware, applications, or OS.</li>
+<li><strong>Open source</strong>: The source code is available to everyone, allowing for improvements and customization.</li>
+<li><strong>No planned obsolescence</strong> or commercial interests.</li>
+<li><strong>Security</strong>: Does not include malicious software.</li>
+<li><strong>Repositories</strong>: Access to thousands applications for free.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li><strong>Aesthetic quality</strong> often lower than proprietary software.</li>
+<li><strong>Proprietary formats</strong>: Some applications are not available for <em>Linux</em> or are not compatible, like MS Office, AutoCAD, Photoshop, etc..</li>
+<li><strong>Proprietary applications and games</strong>: Today, with Proton, it is possible to run many <em>MS Windows</em> games on Linux, with minimal performance loss.</li>
+<li><strong>Lack of familiarity</strong>: Users are accustomed to <em>MS Windows</em> and need to learn new ways of doing things.</li>
+<li><strong>Compatible hardware</strong>: Some devices do not have drivers for <em>Linux</em> or are not supported.</li>
+</ul>
+<h3 id="ubuntu">Ubuntu <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-7.66-4.26c.58.33 1.31.13 1.66-.44.31-.57.12-1.3-.46-1.64-.57-.33-1.31-.16-1.64.44-.33.57-.13 1.31.44 1.64m-2.46 7.76c-.53 0-1.03-.11-1.47-.32l-.84 1.5c.7.32 1.48.54 2.31.54.49 0 .95-.07 1.4-.19.08-.49.36-.93.82-1.19.46-.27.98-.29 1.44-.12.89-.87 1.46-2.06 1.55-3.39l-1.71-.02a3.506 3.506 0 0 1-3.5 3.19m0-7c1.84 0 3.34 1.39 3.5 3.19l1.71-.03a5.2 5.2 0 0 0-1.55-3.38c-.46.17-.99.14-1.44-.12-.46-.26-.74-.71-.82-1.19-.45-.12-.91-.19-1.4-.19-.83 0-1.61.19-2.31.54l.84 1.5c.44-.21.94-.32 1.47-.32M8.37 12c0-1.19.59-2.24 1.49-2.87L9 7.65a5.22 5.22 0 0 0-2.17 3.04c.38.31.62.78.62 1.31s-.24 1-.62 1.31A5.2 5.2 0 0 0 9 16.34l.86-1.47c-.9-.63-1.49-1.68-1.49-2.87m5.97 4.26c-.57.33-.77 1.06-.44 1.64.33.57 1.07.77 1.64.44.58-.34.77-1.07.46-1.64-.35-.58-1.08-.77-1.66-.44M5.76 10.8c-.66 0-1.2.54-1.2 1.2s.54 1.2 1.2 1.2c.67 0 1.2-.54 1.2-1.2s-.53-1.2-1.2-1.2"></path></svg></span><a class="headerlink" href="#ubuntu" title="Permanent link">¶</a></h3>
+<p><strong>Ubuntu</strong> is a distribution <strong>based on Debian</strong>, one of the oldest distributions that has remained true to <em>Linux</em>'s original pillars.</p>
+<p>In this course, we will work with <em>Ubuntu</em> for three main reasons:</p>
+<ul>
+<li>It is <strong>user-oriented</strong>, making it easier to use.</li>
+<li>It is one of the <strong>most widely adopted</strong> distributions, with a <strong>large supportive community</strong>.</li>
+<li>It serves as a <strong>base for many distributions</strong>, such as <em>Linux Mint</em>, <em>Zorin OS</em>, <em>Pop!_OS</em>, <em>Elementary OS</em>, <em>Linux Lite</em>, <em>Lubuntu</em>, <em>Feren OS</em>, <em>KDE Neon</em>, and others.</li>
+</ul>
+<p><em>Ubuntu</em> is offered <strong>freely and at no cost</strong>, but have the option to obtain <strong>technical support</strong> via subscription payment.</p>
+<p>It is offered in a <strong>open source</strong> and relies on the collaboration of a large community of developers. In this regard, <em>Ubuntu</em> makes some exceptions:​</p>
+<ul>
+<li>It includes certain <strong>proprietary hardware drivers</strong>, as well as <strong>some parts</strong> of the kernel that <strong>are not free</strong>.​</li>
+<li>It also includes in its repositories some <strong>applications that are not free</strong>, although they are free.​</li>
+</ul>
+<p>In both cases, the objective is to <strong>facilitate the user experience</strong> for the end user.​</p>
+<ul>
+<li>The distribution is sponsored by a british company called <strong>Canonical</strong> which is owned by the South African <em>Mark Shuttleworth</em>.​</li>
+<li>Canonical's <strong>business model</strong> is based on <strong>technical support and user services</strong>.</li>
+<li>
+<p>To adapt to different contexts, it offers different versions for domestic and professional environments.</p>
+<div class="admonition note">
+<p class="admonition-title">Ubuntu flavors</p>
+<p><strong>Ubuntu</strong> is the main distribution, but there are other versions called <strong>flavors</strong> that use different desktop environments. Can be found at <a href="https://ubuntu.com/download/flavours">https://ubuntu.com/download/flavours</a></p>
+</div>
+</li>
+<li>
+<p><strong>Stable versions</strong> are released every <strong>six months</strong>, in the months of <strong>April</strong> and <strong>October</strong>.​</p>
+</li>
+<li>
+<p>In their <strong>version number</strong>, the first two digits refer to the <strong>year</strong> and the next two to the <strong>month</strong> of release.​</p>
+<blockquote>
+<ul>
+<li><strong>Ubuntu 24.04 LTS</strong> was released in <strong>April 2024</strong>.</li>
+<li><strong>Ubuntu 23.10</strong> was released in <strong>October 2023</strong>.</li>
+<li><strong>Ubuntu 23.04</strong> was released in <strong>April 2023</strong>.</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>The <strong>version name</strong> has two words: the first is an adjective and the second is the name of an animal.​</p>
+<blockquote>
+<ul>
+<li>Ubuntu 24.04 LTS (<strong>Noble Numbat</strong>).</li>
+<li>Ubuntu 22.04 LTS (<strong>Jammy Jellyfish</strong>).</li>
+<li>Ubuntu 20.04 LTS (<strong>Focal Fossa</strong>).</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Technical support</strong> and <strong>security updates</strong> of <strong>18 months</strong> for most versions.​</p>
+</li>
+<li>
+<p><strong>LTS</strong> (<em>Long Term Support</em>) versions are released every <strong>two years</strong> and currently offer <strong>5 years of technical support</strong> and later an extended <strong>security maintenance</strong> of <strong>5 more years</strong>.​</p>
+<blockquote>
+<p><strong>Ubuntu 24.04 LTS</strong> is the <strong>current LTS version</strong> and will be <strong>supported</strong> until <strong>2029</strong> and will have <strong>security updates</strong> until <strong>2034</strong>.</p>
+</blockquote>
+<p>It's recommended to use the <strong>LTS</strong> versions for <strong>production environments</strong>, like servers, educational centers, companies, etc., due to their <strong>longer support</strong> period.</p>
+</li>
+</ul>
+<hr>
+<h2 id="vocabulary">Vocabulary<a class="headerlink" href="#vocabulary" title="Permanent link">¶</a></h2>
+<ul>
+<li><em>Computer equipment</em> = Equipo informático</li>
+<li><em>Computer Science</em> = Informática</li>
+<li><em>Computer system</em> = Sistema informático</li>
+<li><em>Cooling system</em> = Sistema de refrigeración</li>
+<li><em>Device</em> = Dispositivo</li>
+<li><em>Embedded system</em> = Sistema embebido</li>
+<li><em>Expansion card</em> = Tarjeta de expansión</li>
+<li><em>Fairness</em> = Equidad</li>
+<li><em>Fairness</em> = Equidad</li>
+<li><em>File system</em> = Sistema de archivos</li>
+<li><em>General-purpose</em> = Propósito general</li>
+<li><em>Input</em> = Entrada</li>
+<li><em>Interface</em> = Interfaz</li>
+<li><em>Kernel</em>, <em>Core</em> = Núcleo</li>
+<li><em>Main memory</em> = Memoria principal</li>
+<li><em>Motherboard</em> = Placa base</li>
+<li><em>Multi-task</em> = Multitarea</li>
+<li><em>Multi-user</em> = Multiusuario</li>
+<li><em>Open-source</em> = Código abierto</li>
+<li><em>Operating system</em> = Sistema operativo</li>
+<li><em>Output</em> = Salida</li>
+<li><em>Performance</em> = Rendimiento</li>
+<li><em>Peripheral</em> = Periférico</li>
+<li><em>Power supply</em> = Fuente de alimentación</li>
+<li><em>Preemptive</em> = Apropiativo</li>
+<li><em>Process management</em> = Gestión de procesos</li>
+<li><em>Process scheduling</em> = Planificación de procesos</li>
+<li><em>Proprietary</em> = Propietario</li>
+<li><em>Scheduling algorithm</em> = Algoritmo de planificación</li>
+<li><em>Screen</em> = Pantalla</li>
+<li><em>Shared resources</em> = Recursos compartidos</li>
+<li><em>Single-task</em> = Monotarea</li>
+<li><em>Single-user</em> = Monousuario</li>
+<li><em>Special-purpose</em> = Propósito específico</li>
+<li><em>Storage</em> = Almacenamiento</li>
+<li><em>User interface</em> = Interfaz de usuario</li>
+<li><em>Swap</em> = Intercambio</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../extra/js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

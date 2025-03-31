@@ -1,0 +1,1702 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../unit02/">
+      
+      
+        <link rel="next" href="../unit04/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+    
+    
+      
+        <title>Unit3 - Sistemas Operativos Monopuesto</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra/fontawesome/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit-3-installation-of-operating-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sistemas Operativos Monopuesto" class="md-header__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas Operativos Monopuesto
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unit3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit01/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit02/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit04/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../unit05/" class="md-tabs__link">
+          
+  
+  
+  Unit5
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sistemas Operativos Monopuesto" class="md-nav__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistemas Operativos Monopuesto
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Unit3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit3
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-planning-and-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation planning and preparation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation planning and preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-medium" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation medium
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-and-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage and partitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boot loader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-installation-of-ms-windows-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typical installation of MS Windows 11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-of-gnulinux-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation of GNU/Linux distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-installation-of-debian-116-bullseye" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typical installation of *Debian 11.6 "bullseye"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-and-documentation-of-the-installation-process-and-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification and documentation of the installation process and incidents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualbox-guest-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualBox Guest Additions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unit5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/unit05_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 MS Windows Administration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/unit05_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Linux command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unit-3-installation-of-operating-systems">Unit 3: Installation of Operating Systems<a class="headerlink" href="#unit-3-installation-of-operating-systems" title="Permanent link">¶</a></h1>
+<p>The <strong>installation</strong> of an operating system is a <strong>process by which the operating system is transferred to the computer in order to be configured and prepared for use</strong>.</p>
+<p>The <strong>process</strong> of installing an operating system is divided into the following phases:</p>
+<pre class="mermaid"><code>graph LR
+    A[Planning] --&gt; B[Preparation]
+    B --&gt; C[Execute]
+    C --&gt; D[Configure]
+    A -.-&gt; E[Document]
+    B -.-&gt; E
+    C -.-&gt; E
+    D -.-&gt; E</code></pre>
+<ul>
+<li>
+<p><strong>Planning the installation</strong>.</p>
+<p>In this first phase we must consider some decisive factors for the installation, such as the <strong>selection of the operating system</strong>. It will also be necessary to check that the computer where the operating system will be installed meets the <strong>technical requirements</strong>.</p>
+</li>
+<li>
+<p><strong>Preparation for installation</strong>.</p>
+<p>After planning and checking the technical requirements of the operating system, it is necessary to determine a series of parameters that will affect the selected operating system, such as the <strong>partitions</strong> that we will make, the <strong>file system</strong> that we will use and the <strong>disk formatting</strong> process.</p>
+</li>
+<li>
+<p><strong>Executing the installation</strong>.</p>
+<p>In this phase we will follow all the steps of the installation wizard to install the operating system on the hard drive.</p>
+</li>
+<li>
+<p><strong>Installation configuration</strong>.</p>
+<p>Once the operating system is installed, we will configure some parameters, such as the location, time zone, users, etc. We will also take the opportunity to install and configure the basic applications that we want to have.</p>
+</li>
+<li>
+<p><strong>Installation documentation</strong>.</p>
+<p>Document the entire process. There is no need to wait until the last minute to write the documentation, it is better to do it on each phase.</p>
+</li>
+</ul>
+<h2 id="installation-planning-and-preparation">Installation planning and preparation<a class="headerlink" href="#installation-planning-and-preparation" title="Permanent link">¶</a></h2>
+<p>Before installing an operating system, it is necessary to plan the installation. This planning will help us to know the requirements of the operating system and the hardware where it will be installed.</p>
+<p>There are a series of factors that need to be taken into account and analyzed carefully. Among others:</p>
+<ul>
+<li><strong>OS Selection</strong><ul>
+<li>System Purpose</li>
+<li>Technical Requirements</li>
+<li>Application Compatibility</li>
+<li>Technical Support</li>
+<li>Security</li>
+<li>Price</li>
+<li>License</li>
+</ul>
+</li>
+<li><strong>Technical Requirements</strong><ul>
+<li>Processor</li>
+<li>RAM</li>
+<li>Hard Drive</li>
+<li>Graphical Card</li>
+</ul>
+</li>
+<li><strong>Backups</strong> of Old Data</li>
+<li><strong>Installation Medium</strong><ul>
+<li>ISO Image, CD/DVD</li>
+<li>USB External Storage</li>
+<li>Network. PXE</li>
+</ul>
+</li>
+<li><strong>Storage and Partitions</strong><ul>
+<li>Partition Table:<ul>
+<li>MBR. BIOS 32-bit</li>
+<li>GPT. UEFI 64-bit</li>
+</ul>
+</li>
+<li>Disk Partitioning and Formatting. NTFS, FAT, etc.</li>
+</ul>
+</li>
+<li><strong>Boot Loader</strong><ul>
+<li>Default</li>
+<li>Custom</li>
+</ul>
+</li>
+<li><strong>Installation Type</strong><ul>
+<li>Typical, with step-by-step wizard</li>
+<li>Unattended, without user intervention</li>
+<li>Advanced, for multiple systems on the same computer</li>
+<li>Image from a previous clone</li>
+<li>Via network, from a server to multiple computers</li>
+</ul>
+</li>
+</ul>
+<h3 id="os-selection">OS Selection<a class="headerlink" href="#os-selection" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>System purpose</strong>. This is the function that the system will perform, and it will depend on whether we want to use the computer as a server, a desktop computer, a laptop with a touch screen, etc.</li>
+<li><strong>Technical requirements</strong>. The operating system must be compatible with the hardware of the computer where it will be installed.</li>
+<li><strong>Application compatibility</strong>. The functionality of the computer can be very varied, from running applications that require few requirements to high-powered computers that run graphical applications.</li>
+<li><strong>Technical support</strong>. With the installation of a current operating system we receive support directly from the company and updates that keep the computer updated until the end of its useful life.</li>
+<li><strong>Security</strong>. Depending on the chosen operating system we will find different security measures. The most common are two-step authentication to protect user accounts or biometrics, secure storage of user credentials, inability to install applications that are not digitally signed, etc.</li>
+<li><strong>License</strong>. Operating systems have different types of licenses, such as proprietary, open source, etc. The license will determine the use that can be made of the operating system.</li>
+<li><strong>Price</strong>. The price of the operating system is a factor to consider when choosing an operating system. There are free operating systems and others that have a cost.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Proprietary Operating Systems</p>
+<p><em>Proprietary</em> operating systems are those in which users have limited possibilities of modification, adaptation and distribution and where their license of use normally has an associated cost. In many cases, these proprietary operating systems come pre-installed from the factory with the equipment we buy, and although it may seem that we do not pay for them, we do, since the price is included in the total price of the system.</p>
+</div>
+<h3 id="technical-requirements">Technical requirements<a class="headerlink" href="#technical-requirements" title="Permanent link">¶</a></h3>
+<p>All operating systems have <strong>technical requirements</strong> that must be met in order to install them on the computer. To find out what they are, we must consult the <strong>official website</strong>.</p>
+<p>These requirements usually refer to the <strong>processor</strong>, the <strong>RAM</strong>, the <strong>secondary storage</strong> capacity and the <strong>graphics card</strong> of the computer.</p>
+<p>Most operating systems establish <strong>minimum requirements</strong> that must be met in order to install them on the computer and <strong>recommended requirements</strong> that will allow the operating system to work optimally.</p>
+<p>Other operating system requirements in terms of functionality and features may include an Internet connection to take advantage of some of the features, microphones to activate voice recognition, touch screen equipment to activate touch mode or biometric equipment for authentication, among others.</p>
+<h3 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">¶</a></h3>
+<p>If the computer we are installing on contains data from a previous installation, it is important to back up any information we need to preserve. Problems may arise during the installation process that could delete or make them inaccessible.</p>
+<p>In order to backup important information, we can manually copy it to an external device or use a backup or cloning tool.</p>
+<h3 id="installation-medium">Installation medium<a class="headerlink" href="#installation-medium" title="Permanent link">¶</a></h3>
+<p>To install an operating system, we need an installation medium.</p>
+<p>There are different formats or mediums such as USB, CD/DVD or ISO image. Also, if we need to install on several computers at the same time, we can do a network installation of a cloned image from a server.</p>
+<ul>
+<li><strong>ISO Image</strong>. It is a file that contains the installation of the operating system. It can be burned to a CD/DVD or copied to a USB stick.</li>
+<li><strong>CD/DVD</strong>. It is a physical medium that contains the installation of the operating system. It is less common today.</li>
+<li><strong>USB External Storage</strong>. It's the most common way to install an operating system.</li>
+<li><strong>PXE</strong> (Preboot eXecution Environment). It is a standard that allows computers to boot from the network. It commonly used to install operating systems on several computers at the same time.<ul>
+<li><em>Clonezilla is a good tool for cloning, backup and network installation</em>.</li>
+</ul>
+</li>
+</ul>
+<p>On virtual machines, the installation medium is usually an ISO image that is mounted on the virtual machine as a CD/DVD.</p>
+<h3 id="storage-and-partitions">Storage and partitions<a class="headerlink" href="#storage-and-partitions" title="Permanent link">¶</a></h3>
+<p>Before starting the installation process of an operating system, it is necessary to decide how the hard drive will be organized. Depending on the operating system we decide to install, different partitions will be created and a specific file system will be used. The following factors must be taken into account:</p>
+<ul>
+<li>Partition schemes.</li>
+<li>File systems of proprietary operating systems.</li>
+<li>Formatting a disk.</li>
+<li>Cloning.</li>
+</ul>
+<h4 id="partition-schemes">Partition schemes<a class="headerlink" href="#partition-schemes" title="Permanent link">¶</a></h4>
+<p>In order to use an storage drive, we first need to create the necessary partitions and format them to prepare it for the operating system you want to install. This process will give the storage drive a structure that will allow to store the files and applications that are part of the selected operating system.</p>
+<p>An storage drive must have at least one partition.</p>
+<p><strong>Definitions:</strong></p>
+<ul>
+<li>
+<p><strong>Partition Table</strong>: A partition table is a <strong>data structure</strong> that <strong>stores information about the partitions</strong> on an storage drive. It is used by the operating system to <strong>identify and access the partitions</strong> on the storage drive.</p>
+</li>
+<li>
+<p><strong>Partition</strong>: A partition is a <strong>logical division</strong> of an storage drive that allows you to <strong>organize the information</strong> stored on it. <strong>Each partition can have its own file system</strong>.</p>
+</li>
+<li>
+<p><strong>Volume</strong>: A volume is a <strong>logical unit of storage</strong> that can be formatted with a file system. A volume <strong>can be a partition</strong>, but it can also be a <strong>combination of partitions</strong>.</p>
+</li>
+<li>
+<p><strong>File System</strong>: A file system is a <strong>method of organizing and storing files</strong> on a storage drive. It is a <strong>data structure</strong> that allows the operating system to <strong>access and manage files</strong> on the storage drive.</p>
+</li>
+<li>
+<p><strong>Formatting</strong>: Formatting is the process of <strong>preparing a storage drive</strong> to store information. It involves <strong>creating a file system</strong> on the storage drive so that the operating system can <strong>read and write data</strong> to it.</p>
+</li>
+</ul>
+<p>Before dividing it into different partitions and formatting an storage drive, we need to use a scheme known as a <strong>partition table</strong>.</p>
+<p><strong>Types of partition tables:</strong></p>
+<ul>
+<li><strong>MBR</strong> (<em>Master Boot Record</em>). This standard emerged in 1983 and is the most well-known style of tables, and it is still functional today. In this system you can only have <em>four primary partitions or three primary partitions and one extended partition</em>. We cannot create partitions larger than 2TB.</li>
+<li><strong>GPT</strong> (<em>GUID Partition Table</em>). This is the current standard that replaces <em>MBR</em> in 64-bit systems and that arrived in 2000 with the new systems with unified extensible firmware interface (<em>UEFI</em>), which replaces the old <em>BIOS</em> systems. In this system, each partition has a <strong>globally unique identifier</strong> (<em>GUID</em>) and there is <strong>no limit on the number of partitions</strong> that can be created beyond the limit established by the operating systems themselves.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Hard disk management tools</p>
+<p>We can find different applications that will allow us to manage the partitions on our hard disk, such as:</p>
+<ul>
+<li><em>GParted</em></li>
+<li><em>Partition Magic</em></li>
+<li><em>Paragon Hard Disk Manager</em></li>
+<li><em>Disk Director</em></li>
+<li><em>Acronis Disk Director</em></li>
+<li><em>AOMEI Partition Assistant</em></li>
+</ul>
+<p>With these applications we can <strong>create</strong> partitions, <strong>resize</strong>, <strong>format</strong> and even create <strong>images</strong> of the partitions.</p>
+</div>
+<p>In <strong>MBR</strong>, three types of partitions can be created:</p>
+<ul>
+<li>
+<p><strong>Primary partition</strong>. These are the primary divisions of the disk.</p>
+<p>There can only be four primary partitions or three primary and one extended. It is in this type of partition where operating systems are usually installed.</p>
+</li>
+<li>
+<p><strong>Extended or secondary partition</strong>.</p>
+<p>This is a type of partition that is used to contain different logical partitions within it.</p>
+<p>There can <strong>only be one extended partition per disk</strong>, and it is only <strong>used to contain logical partitions</strong>. It is not used to store data.</p>
+</li>
+<li>
+<p><strong>Logical partition</strong>.</p>
+<p>These types of partitions <strong>are found within the extended partitions</strong> and function as different units with their own file systems.</p>
+<p>We can occupy all the space of the extended partition or only part of it. Theoretically we can have an unlimited number of logical partitions, although in practice this number is limited by the operating system.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Partitions access in MS Windows</p>
+<p>In <em>MS Windows</em> operating systems there is not just one directory hierarchy, but one for each accessible partition, so it is common to identify each of these hierarchies with a <strong>drive letter</strong>, although a system folder can also be assigned to access this partition. Thus, <strong>partitions are represented by a letter</strong> of the alphabet followed by the character "<strong><code>:</code></strong>", so the identifier of the root directory of a drive is <code>&lt;drive letter&gt;:\</code>. Some letters are reserved for special storage devices such as <code>A:</code> and <code>B:</code> for floppy disk drives and <strong><code>C:</code></strong> for the first partition on the first hard disk, known as the <strong>system partition</strong>.</p>
+</div>
+<h4 id="file-systems">File systems<a class="headerlink" href="#file-systems" title="Permanent link">¶</a></h4>
+<p>An operating system's file systems are standards designed to indicate how files are stored, distributed, and organized on storage devices (ssd, hard drives, optical discs, USB drives, etc.).</p>
+<p>Each operating system uses its own file system, although there are file systems that are compatible between different systems. The file system that an operating system uses by default is called <strong>native file system</strong>.</p>
+<p>The <em>MS Windows</em> operating system supports different file systems, the most common of which are <strong>FAT32</strong> and <strong>NTFS</strong>.</p>
+<p><strong>FAT</strong> is the acronym for file allocation table. It was designed in 1977 by the Microsoft company. As disk sizes grew, this standard resulted in many variants: FAT12, FAT16, FAT32, and exFAT.</p>
+<p>The FAT32 file system allows partitions of up to 16 TiB in theory, although currently the limitation depends on the operating system. The exFAT file system is theoretically 64 ZiB.</p>
+<p>A disk with a FAT file system is divided into clusters, the size of which is determined by the size of the partition. When a file is created, an entry is generated in the allocation table and the first cluster number that contains data is set.</p>
+<p>A cluster is the minimum storage size of a hard disk.</p>
+<p>On the other hand, <strong>NTFS</strong> stands for <em>New Technology File System</em>. It was patented by Microsoft in 1993 and <strong>has now become the native file system for <em>MS Windows</em></strong>, while the FAT file system is used on smaller devices such as memory cards and USB drives. This file system allows maximum partitions of up to 16 EiB theoretically, although the limitation currently depends on the operating system.</p>
+<p><strong>NTFS</strong> improves on the FAT file system by including improved support for metadata, providing more robust security, and improving performance by not relying on underlying hardware, since there is no special location on the partition to store the allocation table, which in this system is called the master file table and contains information about the files and directories stored on the partition. There is at least one entry in the master file table for each file.</p>
+<p><strong>Metadata</strong> is information that describes the characteristics of the data, such as the file name, the date it was created, the date it was last modified, the size of the file, the permissions, etc.</p>
+<p>In the case of <strong>GNU/Linux</strong>, the most common file systems are <strong>ext4</strong>, <strong>XFS</strong>, <strong>JFS</strong>, <strong>ReiserFS</strong>, <strong>Btrfs</strong>, <strong>ZFS</strong>, etc.</p>
+<p><strong>ext4</strong> is the most used file system in GNU/Linux distributions. Allows partitions of up to 1 EiB and files of up to 16 TiB. It is a file system that has been optimized for performance and reliability.</p>
+<h4 id="formatting-a-partition">Formatting a partition<a class="headerlink" href="#formatting-a-partition" title="Permanent link">¶</a></h4>
+<p>Formatting a partition is the process of preparing it for use on our computer. When we format a partition we are creating a file system that can be read and written depending on the operating system we installed.</p>
+<p>Formatting a partition will result in the <strong>loss of all the information</strong> contained on it.</p>
+<h3 id="boot-loader">Boot loader<a class="headerlink" href="#boot-loader" title="Permanent link">¶</a></h3>
+<p>The boot loader is responsible for locating and loading operating system into main memory. If there are several operating systems installed, the user will select which one to start.</p>
+<p>We can choose choose to use the default boot loader or install and configure custom one.</p>
+<p>In <em>MS Windows</em> operating systems, the BCD (Boot Configuration Data) database is used for systems not managed with BIOS. It is encrypted and requires administrator permissions to manage it, using the <code>bcedit</code> command or other graphical tools.</p>
+<p>The <code>msconfig</code> tool allows you to manage the boot of different systems using a graphical interface.</p>
+<p>In <em>GNU/Linux</em> operating systems, the boot loader is usually <strong>GRUB</strong> (GRand Unified Bootloader). It is a boot loader that allows you to boot different operating systems installed on the computer. It is the most widely used boot loader in GNU/Linux distributions.</p>
+<h3 id="installation-type">Installation type<a class="headerlink" href="#installation-type" title="Permanent link">¶</a></h3>
+<p>The installation type will depend on the needs of the user and the computer where the operating system will be installed. The most common types of installation are:</p>
+<ul>
+<li><strong>Typical installation</strong>. This is the most common type of installation. It is a step-by-step installation wizard that guides the user through the installation process.</li>
+<li><strong>Unattended installation</strong>. This type of installation is used when you want to install an operating system without user intervention. It is useful when you need to install the same operating system on multiple computers.</li>
+<li><strong>Advanced installation</strong>. This type of installation is used when you want to install multiple operating systems on the same computer. It allows you to configure the partitions and file systems manually.</li>
+<li><strong>Image installation</strong>. This type of installation is used when you want to install an operating system from a previously cloned image. This is useful when you need to install the same operating system on multiple computers or when you need to restore the operating system to a previous state.</li>
+<li><strong>Network installation</strong>. This type of installation is used when you want to install an operating system from a server to multiple computers. It is useful when you need to install the same operating system on multiple computers at the same time.</li>
+</ul>
+<h3 id="cloning">Cloning<a class="headerlink" href="#cloning" title="Permanent link">¶</a></h3>
+<p>If many computer systems need to be installed, the cloning technique will make our work easier. Cloning replicates an operating system installed on a source computer on one or more destination computers.</p>
+<p>One of the most commonly used options by computer technicians who are dedicated to computer maintenance is cloning the information contained on hard drives. One way to automate the process of installing an operating system on a new machine, or moving the installation from one hard drive to another with a larger capacity on the same machine or on a different machine, is to clone an existing system.</p>
+<p>Computer cloning is the process of making an <strong>exact copy of the information</strong> from one disk to another or from one partition to another. The objective of this process is to safeguard the information or to use the cloned information to be able to access it quickly and easily on other computer equipment.</p>
+<p><strong>Applications:</strong></p>
+<ul>
+<li><strong>Deployment</strong>. Install the same operating system on multiple computers without having to install it manually on each one.</li>
+<li><strong>Backup</strong>. Create a backup copy of the operating system and all applications and documents on the hard drive in order to restore them in case of a failure.</li>
+<li><strong>Drive upgrade</strong>. Move the operating system and all applications and documents from a smaller hard drive to a larger one.</li>
+<li><strong>Forensic analysis</strong>. Create a copy of the hard drive to analyze it without altering the original data.</li>
+</ul>
+<p>The computer tools used to clone computer systems are classified, based on their ability to access the operating system, into:</p>
+<ul>
+<li><strong>Clone storage device</strong>. Exact copy of the hard drive. It's a bit-by-bit copy of the storage drive, including the partition table, the boot sector and all the partitions. It's agnostic to the file system.</li>
+<li><strong>Clone partition</strong>. If we only want to clone a partition, we can use this tool. It's a bit-by-bit copy of the partition, including the file system.</li>
+</ul>
+<p>It is also possible to clone virtual machines that contain operating systems inside. This type of cloning consists of making a copy of a virtual machine. The source machine of the copy is called the parent virtual machine, and the copy of the virtual machine is called the child virtual machine. Within virtual machine cloning we can talk about:</p>
+<ul>
+<li><strong>Complete virtual machine cloning</strong>. This is a type of cloning in which the copy of a virtual machine is completely independent of the virtual machine from which it has been copied.</li>
+<li><strong>Linked virtual machine cloning</strong>. This is a type of cloning in which the parent virtual machine and the child virtual machine share the same virtual disk.</li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h2>
+<p>The installation of an operating system is a process that consists of transferring the operating system to the computer and configuring it so that it is ready for use.</p>
+<p>The installation process is usually done through an installation wizard that guides the user through the installation process. The installation wizard will ask the user for information such as the language to be used, the time zone, the keyboard layout, the partitions to be created, the file system to be used, etc.</p>
+<p>The installation process is divided into steps, some of which are optional and others are mandatory. The steps of the installation process may vary depending on the operating system being installed:</p>
+<ol>
+<li><strong>Language selection</strong>. The user must select the language in which the installation process will be carried out.</li>
+<li><strong>Time zone selection</strong>. The user must select the time zone in which the computer is located.</li>
+<li><strong>Keyboard layout selection</strong>. The user must select the keyboard layout to be used.</li>
+<li><strong>License agreement</strong>. The user must accept the license agreement of the operating system.</li>
+<li><strong>Partitioning</strong>. The user must create the partitions on the hard drive where the operating system will be installed.</li>
+<li><strong>File system selection</strong>. The user must select the file system to be used on the partitions.</li>
+<li><strong>Installation</strong>. The operating system is installed on the hard drive.</li>
+<li><strong>Post-installation configuration</strong>. Configure parameters after the installation process is completed, such as the location, time zone, keyboard layout, users, etc.</li>
+<li><strong>Admin user creation</strong>. The user must create an administrator user who will have full control over the computer.</li>
+<li><strong>Installation completion</strong>. The installation process is completed and the computer is ready after the installation medium is removed and the computer is restarted.</li>
+</ol>
+<h3 id="typical-installation-of-ms-windows-11">Typical installation of <em>MS Windows 11</em><a class="headerlink" href="#typical-installation-of-ms-windows-11" title="Permanent link">¶</a></h3>
+<p>In this section we are going to present a typical installation guide for <em>MS Windows 11</em>, valid for computers without a TPM module or virtual machines.</p>
+<hr>
+<h4 id="language-regional-and-keyboard-settings">Language, regional and keyboard settings<a class="headerlink" href="#language-regional-and-keyboard-settings" title="Permanent link">¶</a></h4>
+<p>Once we have started the system with the corresponding installation media, the first step is the language configuration. Three parameters are established: Language, reginal formats, and keyboard layout.</p>
+<figure>
+    <img alt="Language, regional and keyboard settings" src="win11inst1.png" width="100%">
+    <figcaption>Language, regional and keyboard settings</figcaption>
+</figure>
+<hr>
+<h4 id="installation-or-repair">Installation or repair<a class="headerlink" href="#installation-or-repair" title="Permanent link">¶</a></h4>
+<p>On the next screen, an "<strong>Install now</strong>" button appears, and at the bottom left the "<strong><em>Repair your computer</em></strong>" option appears, which we can use when the operating system presents an error.</p>
+<figure>
+    <img alt="Install or repair" src="win11inst2.png" width="100%">
+    <figcaption>Install or repair</figcaption>
+</figure>
+<hr>
+<h4 id="product-key">Product key<a class="headerlink" href="#product-key" title="Permanent link">¶</a></h4>
+<p>The wizard asks for the <strong>product key</strong>. If we do not have it at the moment, the "<strong>I do not have a product key</strong>" option allows us to continue with the installation. Later, it can be purchased and added to the operating system.</p>
+<figure>
+    <img alt="Product key" src="win11inst3.png" width="100%">
+    <figcaption>Product key</figcaption>
+</figure>
+<hr>
+<h4 id="windows-version">Windows version<a class="headerlink" href="#windows-version" title="Permanent link">¶</a></h4>
+<p>Next, we must choose the version of Windows 11 that we want to install. The options may be different depending on the ISO image used. The chosen version must match the product key.</p>
+<figure>
+    <img alt="Windows version" src="win11inst4.png" width="100%">
+    <figcaption>Windows version</figcaption>
+</figure>
+<hr>
+<h4 id="hardware-compatibility">Hardware compatibility<a class="headerlink" href="#hardware-compatibility" title="Permanent link">¶</a></h4>
+<p>If your hardware does not meet the technical requirements, the following message will appear:</p>
+<figure>
+    <img alt="Hardware not supported" src="win11inst5.png" width="100%">
+    <figcaption>Hardware not supported</figcaption>
+</figure>
+<hr>
+<h4 id="bypass-tpm-secure-boot-and-ram-checks">Bypass TPM, Secure Boot and RAM checks<a class="headerlink" href="#bypass-tpm-secure-boot-and-ram-checks" title="Permanent link">¶</a></h4>
+<p>In a virtual machine, the installation wizard may not allow us to continue because it detects that the computer does not have a TPM module.</p>
+<blockquote>
+<p>The <strong>TPM module</strong> is a hardware component that is used to store cryptographic keys and protect sensitive information. It is used to encrypt the hard drive and protect the operating system from unauthorized access.</p>
+<p><strong>Secure Boot</strong> is a security feature that ensures that the operating system is not manipulated with during the boot process. It is a feature that is enabled by default on most computers that have a TPM module.</p>
+<p><strong>Ram Check</strong> is a feature that checks the amount of RAM installed on the computer and ensures that it meets the minimum requirements of the operating system.</p>
+</blockquote>
+<p>To bypass these checks, we must open the <strong>command line</strong> using the key combination <strong><code>Shift</code></strong>+<strong><code>F10</code></strong>, and execute the command <em><code>regedit</code></em>:</p>
+<figure>
+    <img alt="Command line Shift+F10" src="win11inst6.png" width="100%">
+    <figcaption>Command line <code>Shift</code>+<code>F10</code></figcaption>
+</figure>
+<hr>
+<p>A new window will open with the <strong>Registry Editor</strong>.</p>
+<figure>
+    <img alt="Registry Editor" src="win11inst7.png" width="100%">
+    <figcaption>Registry Editor</figcaption>
+</figure>
+<p>In the registry editor we will display different categories of the tree that we find in the left panel. First, we will expand the key <strong><code>HKEY_LOCAL_MACHINE</code></strong>, inside it the key <strong><code>SYSTEM</code></strong> and, finally, <strong><code>Setup</code></strong>.</p>
+<hr>
+<p>Next, we will <strong>create a new <code>key</code></strong>, inside <code>Setup</code>, called <strong><code>LabConfig</code></strong>. To do this, we must right-click and select <strong><code>new &gt;</code></strong> <strong><code>key</code></strong></p>
+<figure>
+    <img alt="Create new key" src="win11inst8.png" width="100%">
+    <figcaption>Create new key</figcaption>
+</figure>
+<hr>
+<p>A new item will appear with the title <strong><code>New key #1</code></strong>. Since the name is selected, just type <strong><code>LabConfig</code></strong> to change it. Be careful with the name, it is <strong>case sensitive</strong>.</p>
+<figure>
+    <img alt="Name the key, *LabConfig*" src="win11inst9.png" width="100%">
+    <figcaption>Name the key, <em>LabConfig</em></figcaption>
+</figure>
+<hr>
+<p>Next, we will create three new entries for that key. To do this, we start by right-clicking on any free space in the right panel of the window. In the context menu that appears, choose <strong><code>New &gt;</code></strong> and then <strong><em><code>DWORD (32-bit) Value</code></em></strong>.</p>
+<figure>
+    <img alt="New &gt; DWORD (32-bit) Value" src="win11inst10.png" width="100%">
+    <figcaption>New &gt; DWORD (32-bit) Value</figcaption>
+</figure>
+<hr>
+<p>A new entry will appear with the name <strong><code>New Value #1</code></strong>. Since the name is already selected, just start typing to change it.</p>
+<figure>
+    <img alt="Name New Value" src="win11inst11.png" width="100%">
+    <figcaption>Name New Value</figcaption>
+</figure>
+<hr>
+<p>Specifically, we will type <strong><code>BypassTPMCheck</code></strong>.</p>
+<figure>
+    <img alt="BypassTPMCheck Value" src="win11inst12.png" width="100%">
+    <figcaption><code>BypassTPMCheck</code> Value</figcaption>
+</figure>
+<hr>
+<p>By default, the value stored by the entry will be <strong><code>0</code></strong>. To change it, double-click on the name or, if it is still selected, press the <code>Enter</code> key again.</p>
+<p>When you do this, a new window titled <strong>Edit DWORD (32-bit) Value</strong> will appear. In it, type the value <strong><code>1</code></strong> in the Value data field.</p>
+<figure>
+    <img alt="Change value to 1" src="win11inst13.png" width="100%">
+    <figcaption>Change value to 1</figcaption>
+</figure>
+<hr>
+<p>Next, repeat the same steps to create two new values: <strong><code>BypassSecureBootCheck</code></strong> and <strong><code>BypassRAMCheck</code></strong>. Both should also have the value 1.</p>
+<figure>
+    <img alt="BypassSecureBootCheck and BypassRAMCheck" src="win11inst14.png" width="100%">
+    <figcaption>BypassSecureBootCheck and BypassRAMCheck</figcaption>
+</figure>
+<hr>
+<p>After this, we can now close the Registry Editor window and the Command Prompt window.</p>
+<p>This leaves us in the same window we had at the beginning of this section.</p>
+<p>Click on the back button in the upper left corner.</p>
+<figure>
+    <img alt="Go back to the previous step" src="win11inst15.png" width="100%">
+    <figcaption>Go back to the previous step</figcaption>
+</figure>
+<p>This will take us one step back in the installation process. Once again, we make sure to choose the correct version of the operating system.</p>
+<hr>
+<h4 id="license-terms-and-applicable-notices">License Terms and Applicable Notices<a class="headerlink" href="#license-terms-and-applicable-notices" title="Permanent link">¶</a></h4>
+<p>If all goes well, this time we will pass the compatibility check of the installation wizard.</p>
+<p>This will take us to the <strong><em>License Terms and Applicable Notices</em></strong> window. It is advisable to read the conditions carefully. If we agree with the license terms, we choose <strong><code>I accept</code></strong> the Microsoft software license terms.</p>
+<figure>
+    <img alt="Acceptance of License Terms" src="win11inst16.png" width="100%">
+    <figcaption>Acceptance of License Terms</figcaption>
+</figure>
+<hr>
+<h4 id="installation-type_1">Installation type<a class="headerlink" href="#installation-type_1" title="Permanent link">¶</a></h4>
+<p>In the next step, we must indicate the type of installation we will perform, although, if we have started the installation from the installation DVD or USB stick (as is the case), we can only choose the option <strong><em>Custom: install Windows only (advanced)</em></strong>, since, if what we intend is to update an existing installation, we should start the installation by inserting the installation media with the old system running. In this way, all the files, programs and settings that we already had will be preserved, saving us a good amount of work.</p>
+<p>If we are going to update, we should make a backup of all important data before starting the process, since, if there is a problem during the update, we could lose all previous data.</p>
+<figure>
+    <img alt="Installation type" src="win11inst17.png" width="100%">
+    <figcaption>Installation type</figcaption>
+</figure>
+<hr>
+<h4 id="disk-selection-and-partition-configuration">Disk selection and partition configuration<a class="headerlink" href="#disk-selection-and-partition-configuration" title="Permanent link">¶</a></h4>
+<p>Next, we can choose to allocate all the hard drive space for the installation of Windows 11. To do this, we would only have to click on the <code>Next</code> button. However, we also have different options to configure, to our liking, the disk (or disks) that we have installed.</p>
+<figure>
+    <img alt="Partition configuration and selection" src="win11inst18.png" width="100%">
+    <figcaption>Partition configuration and selection</figcaption>
+</figure>
+<hr>
+<p>In the next step, the process of copying a series of files from the installation media to the computer's hard drive will begin, unzipping them and installing different components automatically. In addition, during the process, the system will restart several times.</p>
+<figure>
+    <img alt="Installation" src="win11inst19.png" width="100%">
+    <figcaption>Installation</figcaption>
+</figure>
+<hr>
+<h4 id="installation-progress">Installation progress<a class="headerlink" href="#installation-progress" title="Permanent link">¶</a></h4>
+<p>When the steps in the previous window are completed, the first reboot will occur.</p>
+<figure>
+    <img alt="Reboot" src="win11inst20.png" width="100%">
+    <figcaption>Reboot</figcaption>
+</figure>
+<hr>
+<p>A black screen will appear again with the circle of moving dots indicating that there is activity.</p>
+<figure>
+    <img alt="Preparing..." src="win11inst21.png" width="80%">
+    <figcaption>Preparing...</figcaption>
+</figure>
+<hr>
+<p>And finally, the system is prepared for its first boot.</p>
+<figure>
+    <img alt="First boot" src="win11inst22.png" width="80%">
+    <figcaption>First boot</figcaption>
+</figure>
+<hr>
+<h4 id="system-configuration">System configuration<a class="headerlink" href="#system-configuration" title="Permanent link">¶</a></h4>
+<p>Shortly after, the installation wizard shows us, for the first time, its new appearance. It starts by checking our location. If it is not correct we choose the appropriate value.</p>
+<figure>
+    <img alt="Region" src="win11config1.png" width="100%">
+    <figcaption>Region</figcaption>
+</figure>
+<hr>
+<p>The wizard then makes sure that the keyboard configuration is correct. If not, we choose the appropriate value.</p>
+<figure>
+    <img alt="Keyboard" src="win11config2.png" width="100%">
+    <figcaption>Keyboard Layout</figcaption>
+</figure>
+<hr>
+<p>Next, the wizard asks us if we want to add a new keyboard layout. This allows us to have multiple devices, with different layouts.</p>
+<figure>
+    <img alt="Add second keyboard layout" src="win11config3.png" width="100%">
+    <figcaption>Add second keyboard layout</figcaption>
+</figure>
+<hr>
+<h4 id="internet-connection">Internet connection<a class="headerlink" href="#internet-connection" title="Permanent link">¶</a></h4>
+<p>At this point, the installation wizard checks if it can get an Internet connection for possible system updates.</p>
+<figure>
+    <img alt="Internet connection" src="win11config4pro.png" width="80%">
+    <figcaption>Internet connection</figcaption>
+</figure>
+<blockquote>
+<p><strong>Optional: Bypass the Internet connection requirement</strong></p>
+<p>Typical installation of <em>MS Windows 11</em> requires an Internet connection to continue. If we do not have it (or we don't want to send your personal information to <em>Microsoft</em>), to bypass this step we need to open the command line with the key combination <strong><code>Shift</code></strong>+<strong><code>F10</code></strong> and execute the command <strong><code>oobe\bypassnro</code></strong>. A new option will appear <code>I don't have Internet</code> that will allow us to continue the installation by selecting <strong><code>Continue with limited setup</code></strong>.</p>
+</blockquote>
+<hr>
+<h4 id="computer-name">Computer name<a class="headerlink" href="#computer-name" title="Permanent link">¶</a></h4>
+<p>After this, the wizard asks us for a <strong>name for the computer</strong>. We must choose something descriptive, because this will be the <strong>name by which the computer will be known on the network</strong>.</p>
+<p>We can write up to 15 characters, cannot be only numbers, or contain spaces, or any of the characters that are indicated on the screen.</p>
+<figure>
+    <img alt="Computer name" src="win11config5pro.png" width="80%">
+    <figcaption>Computer name</figcaption>
+</figure>
+<p>A new reboot will then occur, to set the values ​​entered so far.</p>
+<hr>
+<h4 id="account-type">Account type<a class="headerlink" href="#account-type" title="Permanent link">¶</a></h4>
+<p>Once we are back in the installation wizard, we will have the opportunity to choose the type of account with which we will start the computer:</p>
+<ul>
+<li>
+<p><strong>Configure for personal use</strong>: A <em>Microsoft</em> account is used to authenticate us in their cloud. This account must already exist and may need our phone number or other data. We can use it on different devices and synchronize both its settings and its files.</p>
+</li>
+<li>
+<p><strong>Configure for professional or educational use</strong>: we can create a local account or join the computer to a company domain or other network resources.</p>
+</li>
+</ul>
+<p>In our case, we will choose this second option.</p>
+<figure>
+    <img alt="Account Type" src="win11config6pro.png" width="85%">
+    <figcaption>Account Type</figcaption>
+</figure>
+<hr>
+<p>The following steps will be aimed at completing the configuration we have chosen in the previous step. If "Personal Settings" has been chosen, these may vary slightly.</p>
+<p>However, in the next step, <em>Microsoft</em> tries again, offering us the possibility of logging in with a Microsoft account. We also have the opportunity to log in with a security key.</p>
+<figure>
+    <img alt="Login Options" src="win11config7pro.png" width="85%">
+    <figcaption>Login Options</figcaption>
+</figure>
+<hr>
+<p>Next, the wizard gives us the opportunity to log in with a <em>security key</em> or <em>join a domain</em>.</p>
+<figure>
+    <img alt="Login Options" src="win11config8pro.png" width="85%">
+    <figcaption>Login Options</figcaption>
+</figure>
+<p>When we click on the option, we see that it actually refers to creating a local account, but the wizard insists again that we use an online account.</p>
+<hr>
+<p>If we create a local account, it will act on the system with administrative privileges.</p>
+<p>The first thing to do is to choose a user name.</p>
+<figure>
+    <img alt="User name" src="win11config9pro.png" width="85%">
+    <figcaption>User name</figcaption>
+</figure>
+<hr>
+<p>Next, we must enter a password. It is requested twice to make sure that we do not make any typos. Bear in mind that if we are not able to enter it again later, we will not be able to log on to the computer and we will find ourselves in a bind.</p>
+<p>We enter it the first time.</p>
+<figure>
+    <img alt="Password" src="win11config10pro.png" width="85%">
+    <figcaption>Password</figcaption>
+</figure>
+<p>After entering the password, we must enter it again to confirm it. We enter it a second time.</p>
+<hr>
+<p>Next, we'll fill in three security questions. These are used when you've forgotten your password. You should choose questions (and especially answers) that only make sense to you. Otherwise, you'll be making it really easy for anyone trying to use your computer without permission.</p>
+<figure>
+    <img alt="Security Questions" src="win11config12pro.png" width="85%">
+    <figcaption>Security Questions</figcaption>
+</figure>
+<hr>
+<h4 id="privacy-settings">Privacy settings<a class="headerlink" href="#privacy-settings" title="Permanent link">¶</a></h4>
+<p>The next step will ask us for permission for <em>Microsoft</em> and other installed applications to use our location. If we give our permission, we'll be able to get services based on our location (like weather forecasts).</p>
+<figure>
+    <img alt="Location access permission" src="win11config_final1.png" width="100%">
+    <figcaption>Location access permission</figcaption>
+</figure>
+<hr>
+<p>Next, the wizard offers us the opportunity to locate our device in case we lose it. To do this, we will again authorize access to our location data. In addition, we will be required to log in with a Microsoft account.</p>
+<figure>
+    <img alt="Find the device" src="win11config_final2.png" width="100%">
+    <figcaption>Find the device</figcaption>
+</figure>
+<hr>
+<p>In the next step, the wizard asks us if we want to "<em><strong>Send diagnostic data to Microsoft</strong></em>". We can choose two options:</p>
+<ul>
+<li>
+<p><strong>Include optional</strong>: which will send information to Microsoft about the websites we visit, applications and features we use, the status and use we make of the device, etc.</p>
+</li>
+<li>
+<p><strong>Required only</strong>: Which only sends information about the device itself, its configuration and functionality.</p>
+</li>
+</ul>
+<figure>
+    <img alt="Diagnostic data" src="win11config_final3.png" width="100%">
+    <figcaption>Diagnostic data</figcaption>
+</figure>
+<hr>
+<p>Next, you can decide whether to send data about your handwriting. If you do, you'll make it easier for Microsoft to improve our speech recognition capabilities.</p>
+<figure>
+    <img alt="Improving handwriting" src="win11config_final4.png" width="100%">
+    <figcaption>Improving handwriting</figcaption>
+</figure>
+<hr>
+<p>Next, the wizard asks you if you want Microsoft to use your diagnostic data to provide you with personalized suggestions, ads, or recommendations.</p>
+<figure>
+    <img alt="Id. advertising" src="win11config_final5.png" width="100%">
+    <figcaption>Id. advertising</figcaption>
+</figure>
+<p>And since all hope dies, in the last step of the wizard, you're asked again if you want third-party apps to use your information to provide you with personalized ads.</p>
+<figure>
+    <img alt="Id. advertising" src="win11config_final6.png" width="100%">
+    <figcaption>Id. advertising</figcaption>
+</figure>
+<p>Finally, the wizard will have finished asking us for information about the configuration. Now check if there are any pending updates to install.</p>
+<hr>
+<p>We will soon see a series of messages on the screen, which will take us to the end of the installation.</p>
+<figure>
+    <img alt="Applying the selected configuration" src="win11config_final7.png" width="100%">
+    <figcaption>Applying the selected configuration</figcaption>
+</figure>
+<hr>
+<p>Shortly after, we will be, for the first time, in front of the <em>MS Windows 11</em> desktop.</p>
+<figure>
+    <img alt="Windows 11 Desktop" src="win11config_final8.png" width="85%">
+    <figcaption>Windows 11 Desktop</figcaption>
+</figure>
+<h3 id="installation-of-gnulinux-distributions">Installation of GNU/Linux distributions<a class="headerlink" href="#installation-of-gnulinux-distributions" title="Permanent link">¶</a></h3>
+<p><em>GNU/Linux</em> operating systems are usually distributed in packages known as <strong>distributions</strong> or <em><strong>distros</strong></em>. Each distribution has its own selection of applications installed on the operating system to meet the needs of specific users.</p>
+<p>A <strong>distribution</strong> of an operating system is software that includes the <strong>operating system and certain applications to meet the needs of a specific group of users</strong>. Given a source distribution, there may be different editions, such as for home, business, or server use.</p>
+<p>Currently, one of the most popular distributions is <em>Ubuntu</em>, a <em>GNU/Linux</em> distribution maintained by the company <em>Canonical</em> and aimed at both desktop users and server and cloud computing environments, but we can find many more. Among the most popular are:</p>
+<ul>
+<li>
+<p><strong>Free operating systems based on GNU/Linux</strong>. Family of operating systems made up of the <em><strong>Linux kernel</strong></em> together with the <em><strong>GNU utilities</strong></em>. The Linux operating system kernel was created in 1991 in Helsinki by <em>Linus Torvalds</em>. The <em>GNU</em> utilities, necessary for a complete operating system, have their origin in <em>Richard Stallman</em>'s project to create a free operating system, which began in 1985 at the <em>Free Software Foundation</em> (FSF). Linux grew thanks to the collaborative work of programmers from all over the world. Today, there are many software distributions based on this operating system, the main distributions:</p>
+<ul>
+<li>
+<p><strong>Debian</strong>. It is a <em>GNU/Linux</em> distribution created by a community of developers and users in 1993. This association of people united by the cause of creating a 100% free operating system, and called it the <em>Debian Project</em>. It is also considered a mother distribution, since countless distributions such as <em>Ubuntu</em>, <em>Linux Mint</em>, <em>SteamOS</em>, <em>Kali Linux</em>, <em>PureOs</em>, <em>Deepin</em>, among many others, were born from <em>Debian</em>.</p>
+<div class="admonition info">
+<p class="admonition-title">Debian codenames</p>
+<p>Debian distribution codenames are based on the names of characters from the <em>Toy Story</em> films. Debian's unstable trunk is named after <em>Sid</em>, a character who regularly destroyed his toys. <a href="https://en.wikipedia.org/wiki/Debian_version_history">Wikipedia - Debian version history</a></p>
+</div>
+</li>
+<li>
+<p><strong>Ubuntu</strong>. Distribution based on <em>Debian</em>, developed and maintained by the company <em>Canonical</em>, being one of the most used. It is oriented to general uses and is characterized by its software compatibility and ease of use comparable to <em>Mac OS X</em> or <em>Windows</em>. It has several versions, among which the following stand out: <em>Ubuntu Desktop</em>, <em>Kubuntu</em>, <em>Xubuntu</em>, <em>Lubuntu</em> and <em>Ubuntu Server</em>.</p>
+<p>A new version of <em>Ubuntu</em> is published every six months. It receives support from <em>Canonical</em> for nine months through security updates, patches for critical bugs and minor program updates. The <strong>LTS</strong> (Long Term Support) versions, which are released every two years, receive support for five years on desktop and server systems.</p>
+</li>
+<li>
+<p><strong>Fedora</strong>. General purpose distribution, which makes use of the <em>RPM</em> package. It is characterized by being stable and secure, which is developed and maintained by the company <em>Red Hat</em> and an international community of engineers, graphic designers and users who report errors and test new technologies. Its uses are more oriented towards software and server development. The project does not only seek to include free and open source software, but to be the leader in this technological field.</p>
+</li>
+<li>
+<p><strong>Slackware</strong>. It is a <em>GNU/Linux</em> distribution created in 1993 and aimed at advanced users. This distribution derived from <em>SLS Linux</em> and is the oldest distribution still in maintenance.</p>
+</li>
+<li>
+<p><strong>Open SUSE</strong>. <em>SUSE</em> is an operating system with paid versions for both servers and desktops called <em>SUSE Linux Enterprise Server</em> and <em>SUSE Linux Enterprise Desktop</em>. It was originally based on <em>Slackware</em>. <em>SUSE</em> also offers a completely free version called <em>Open SUSE</em>.</p>
+</li>
+<li>
+<p><strong>Arch Linux</strong>. It is a distribution aimed at advanced users. It is mostly made up of free and open source software and supports community participation. It has few automatic configuration tools, sharing the same philosophy of distributions like <em>Slackware​</em>. It's development model is of the type <em><strong>Rolling Release</strong></em> and the design approach follows the <em>KISS</em> principle to keep the system simple and light.</p>
+</li>
+<li>
+<p><strong>Manjaro</strong>. <em>Manjaro Linux</em> is based on <em>Arch Linux</em>, but has its own set of repositories. The distribution aims to be user-friendly while maintaining the features of <em>Arch</em>, such as the <em>Pacman</em> package manager and compatibility with <em>AUR</em> (<em>Arch User's Repository</em>).</p>
+</li>
+<li>
+<p><strong>Other distributions</strong>. There are many more distributions derived from the above, such as <em>MX Linux</em>, <em>Pop!_OS</em>, <em>Mint</em>, <em>Kali</em>, <em>Garuda</em>, <em>Zorin</em>, <em>antiX</em>, <em>Alpine</em>, etc.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Free operating systems based on <em>BSD</em></strong>: These are operating systems derived from the <em>BSD</em> (<em>Berkeley Software Distribution</em>) operating system, which originally derived from the <em>UNIX</em> operating system from <em>AT&amp;T Research</em>. The best known are:</p>
+<ul>
+<li>
+<p><strong>FreeBSD</strong>. The most popular <em>BSD</em> distribution that aims to provide high performance and ease of use. It is a distribution very oriented towards desktop use that includes basic applications for the user such as browser, word processor, games, email, etc.</p>
+</li>
+<li>
+<p><strong>OpenBSD</strong>. This distribution is oriented towards security and code integrity. It integrates a large number of cryptographic tools to maximize security.</p>
+</li>
+<li>
+<p><strong>NetBSD</strong>. This distribution aims to make the operating system as portable as possible.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Other free operating systems</strong>:</p>
+<ul>
+<li>
+<p><strong>Chromium OS</strong>. <em>Chromiun OS</em> is the free operating system of the <em>Chrome OS</em> version. <em>Chrome OS</em> is an operating system developed by <em>Google</em> that is based on the <em>Linux</em> kernel and uses the <em>Google Chrome</em> browser as a user interface. This operating system is designed to work with web applications. <em>Chrome OS</em> is the proprietary commercial version that comes installed on specific hardware created by some of <em>Google</em>'s partners, such as the <em>Chromebook</em>.</p>
+</li>
+<li>
+<p><strong>Android</strong>. It is a mobile operating system based on the <em>Linux</em> kernel. It was designed for mobile devices with touch screens, such as <em>smartphones</em>, tablets, televisions, etc.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="linux-distributions-technical-support">Linux distributions technical support<a class="headerlink" href="#linux-distributions-technical-support" title="Permanent link">¶</a></h4>
+<p>With the installation of an operating system we receive technical support and updates that keep the equipment up to date until the end of its useful life. This support can be commercial if the user has paid for it or free support offered by the community of users of the installed distribution.</p>
+<p>Linux distributions offer several possibilities to <strong>keep the system up to date</strong>. </p>
+<ul>
+<li>
+<p><strong>Standard development</strong>. One option is to use a <strong>standard development model</strong> of updating that uses different <strong>versions</strong> that have to be reinstalled over the previous version.</p>
+<p>An example of this is <em>Debian</em>, which has different versions such as <em>Debian 10 "buster"</em> or <em>Debian 11 "bullseye"</em>.</p>
+</li>
+<li>
+<p><strong>Rolling release</strong>. The other option is a model of constant updating of the different software packages that is called <strong>continuous update</strong>, or <strong>rolling release</strong>.</p>
+<p>An example of this is <em>Arch Linux</em>, which is a distribution that is constantly updated and does not have versions. The user installs the system once and then updates it continuously.</p>
+</li>
+</ul>
+<p>In the case of systems that use the <strong>standard development model</strong>, the terms <em>STS</em> and <em>LTS</em> are widely used for free software and specify how long its technical support lasts:</p>
+<ul>
+<li>
+<p><strong>STS</strong>. Short-term support, <em>STS</em> for its acronym for <em><strong>Short Term Support</strong></em>. These operating systems have newer software with more recent features but that can be more unstable, since these programs are not sufficiently tested by the user community. In favor of these versions we find that they provide newer or more experimental applications and allow us to enjoy the latest news.</p>
+</li>
+<li>
+<p><strong>LTS</strong>. <em>LTS</em> versions, which stand for <em><strong>Long Term Support</strong></em>, are more stable because the software has been in use for a while. This is the term used to refer to software versions that are designed to be supported for a longer period than usual. For example, the <em>Ubuntu LTS</em> operating system provides support for five years while the <em>Ubuntu STS</em> version only provides support for nine months.</p>
+</li>
+</ul>
+<h4 id="storage-devices-and-file-systems-in-gnulinux">Storage devices and file systems in GNU/Linux<a class="headerlink" href="#storage-devices-and-file-systems-in-gnulinux" title="Permanent link">¶</a></h4>
+<p>In <em>GNU/Linux</em> systems, partitions have different names than those used by other operating systems such as <em>MS Windows</em>. For example, in <em>MS Windows</em>, hard drives and partitions are identified with the letters <code>C:</code>, <code>D:</code> and so on; while in <em>GNU/Linux</em> we find a nomenclature such as <code>/dev/sda1</code> or <code>/dev/sdb5</code>.</p>
+<p>In <em>GNU/Linux</em> the first hard drive is called <code>/dev/sda</code> and its partitions are numbered in an order where the primary and extended partitions are numbered first, and then the logical ones. For example, <code>/dev/sda1</code>, <code>/dev/sda2</code>, <code>/dev/sda3</code>, and <code>/dev/sda4</code> could be primary or extended partitions, and <code>/dev/sda5</code>, <code>/dev/sda6</code>, etc. could be logical partitions. If we had a second hard drive, it would be named the same but with the letter <code>b</code>, i.e. <code>/dev/sdb</code>. This last letter will always be assigned by the operating system based on the disk controller channel or USB port where the device is connected.</p>
+<div class="admonition note">
+<p class="admonition-title">Nomenclature of hard drives in GNU/Linux</p>
+<p>Traditionally, <em>IDE</em> hard drives were named <code>/dev/hda</code>, <code>/dev/hdb</code>, etc., and <em>SCSI</em> hard drives were named <code>/dev/sda</code>, <code>/dev/sdb</code>. Since 2007, the nomenclature has been standardized and, regardless of the technology used, the old nomenclature for <em>SCSI</em> disks is currently used.</p>
+</div>
+<p>In addition to this nomenclature, the different partitions that can be used by the operating system have an identifier called <strong>UUID</strong> (<em>Universally Unique Identifier</em>) that allows the partition to be referenced independently of the disk controller channel or USB port where the device has been connected.</p>
+<h4 id="partition-schemes_1">Partition schemes<a class="headerlink" href="#partition-schemes_1" title="Permanent link">¶</a></h4>
+<p>The standard partition scheme for most home <em>Linux</em> installations is as follows:</p>
+<ul>
+<li>
+<p>A partition of about <strong>20 GB</strong> for the operating system, which is mounted at <code>/</code></p>
+</li>
+<li>
+<p>A <strong>smaller</strong> partition used for swap memory, called <strong><em>swap</em></strong>. The size of this space will depend on the use of the system and the amount of RAM available to the system. For example, if you do a lot of multimedia editing and/or have a small amount of RAM, you should use a larger amount of swap. The general rule is that you create a swap partition that is 100% to 200% of the size of the physical RAM on the system.</p>
+</li>
+<li>
+<p>A <strong>larger</strong> partition for personal use by the system user(s), mounted at <code>/home</code>. This is where personal data is stored. It is the equivalent of the <code>C:\Users</code> directory in <em>MS Windows</em>, which stores application settings, music, downloads, documents, etc. Strictly speaking, it is not necessary to create a separate partition for <code>/home</code>. If you do not, it will reside on the root partition like everything else on the system. But it is useful to have <code>/home</code> on a separate partition because when you upgrade or reinstall the operating system, you do not need to back up this folder. In addition, most of the settings related to programs and the user interface are also saved.</p>
+</li>
+</ul>
+<p>On a computer intended to be a server for many users, system performance can be optimized by using more than one hard drive and by creating a partition layout specific to the server's activity. In addition to the partition for the operating system, the swap partition, and the <code>/home</code> partition, other partitions can be created, such as for the temporary directory (<code>/tmp</code>), for web server content (<code>/var/www</code>), for programs (<code>/usr</code>), or for log files (<code>/var/log</code>).</p>
+<h3 id="typical-installation-of-debian-116-bullseye">Typical installation of <em>*Debian 11.6 "bullseye"</em><a class="headerlink" href="#typical-installation-of-debian-116-bullseye" title="Permanent link">¶</a></h3>
+<p>The first step of the installation will be to download the Debian 11.6 ISO image and save it to a boot device. In the case of a virtual machine, it will be enough to select the ISO file in the virtual optical drive.</p>
+<figure>
+    <img alt="debian.org/download" src="deb_00.png" width="75%">
+    <figcaption>https://www.debian.org/download</figcaption>
+</figure>
+<p>Once we start the installation, the operating system installation wizard will start.</p>
+<figure>
+    <img alt="Installation Image Boot Menu" src="deb_01.png" width="80%">
+    <figcaption>Installation Image Boot Menu</figcaption>
+</figure>
+<p>The first step is to select the language for the installation process.</p>
+<figure>
+    <img alt="Language Selection for Installation Process" src="deb_02.png" width="80%">
+    <figcaption>Language Selection for Installation Process</figcaption>
+</figure>
+<hr>
+<p>Next, we must select the location for the time zone and the locale settings.</p>
+<figure>
+    <img alt="Location Selection for Timezone and Locale Settings" src="deb_03.png" width="80%">
+    <figcaption>Location Selection for Timezone and Locale Settings</figcaption>
+</figure>
+<hr>
+<p>The next step is to select the keyboard layout.</p>
+<figure>
+    <img alt="Keyboard Layout Selection" src="deb_04.png" width="80%">
+    <figcaption>Keyboard Layout Selection</figcaption>
+</figure>
+<hr>
+<p>The wizard will now load the basic installation tools.</p>
+<figure>
+    <img alt="Loading Basic Installation Tools" src="deb_05.png" width="80%">
+    <figcaption>Loading Basic Installation Tools</figcaption>
+</figure>
+<hr>
+<p>Next, we must enter the hostname for the computer.</p>
+<figure>
+    <img alt="Hostname" src="deb_06.png" width="80%">
+    <figcaption>Hostname</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to enter the domain name, which is optional if we do not have one, we can leave it blank.</p>
+<figure>
+    <img alt="Domain Name" src="deb_07.png" width="80%">
+    <figcaption>Domain Name</figcaption>
+</figure>
+<hr>
+<p>Next, we must enter the password for the <em><strong>root user</strong></em>. In <em>GNU/Linux</em> systems, the <em><strong>root</strong></em> user is the system administrator.</p>
+<p>If we leave the password blank, the <em><strong>root</strong></em> user will be disabled and the user created in the next step will have administrative privileges, with the ability to use the <code>sudo</code> command to execute commands as the <em><strong>root</strong></em> user.</p>
+<figure>
+    <img alt="Password for Root User (administrator)" src="deb_08.png" width="80%">
+    <figcaption>Password for Root User (administrator)</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to enter the <strong>real name</strong> of the <em><strong>standard user</strong></em>.</p>
+<figure>
+    <img alt="Real name of standard user" src="deb_09.png" width="80%">
+    <figcaption>Real name of standard user</figcaption>
+</figure>
+<hr>
+<p>Next, we must enter the <strong>username</strong> for the <em><strong>standard user account</strong></em>. This is the user account that will be used to log in to the system.</p>
+<figure>
+    <img alt="Username for standard user account" src="deb_10.png" width="80%">
+    <figcaption>Username for standard user account</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to enter the <strong>password</strong> for the <em><strong>standard user account</strong></em>.</p>
+<figure>
+    <img alt="Password for standard user" src="deb_11.png" width="80%">
+    <figcaption>Password for standard user</figcaption>
+</figure>
+<hr>
+<p>Next, will ask for time zone configuration, with will affect the system clock.</p>
+<figure>
+    <img alt="Time zone" src="deb_12.png" width="80%">
+    <figcaption>Time zone</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to select the disk partitioning method. We can choose guided or manual partitioning. For a standard installation, we will choose "Guided - use entire disk".</p>
+<figure>
+    <img alt="Disk partitioning guide" src="deb_13.png" width="80%">
+    <figcaption>Disk partitioning guide</figcaption>
+</figure>
+<hr>
+<p>Next, we must select the disk on which to install the operating system.</p>
+<figure>
+    <img alt="Disk selection" src="deb_14.png" width="80%">
+    <figcaption>Disk selection</figcaption>
+</figure>
+<hr>
+<p>Then, we need to select a default partitioning scheme, the installer will create the partitions automatically.</p>
+<figure>
+    <img alt="Guided partitioning" src="deb_15.png" width="80%">
+    <figcaption>Guided partitioning</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to confirm the partitions that will be created.</p>
+<figure>
+    <img alt="Confirming created partitions" src="deb_16.png" width="80%">
+    <figcaption>Confirming created partitions</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to confirm the changes to the disk. This is the last step before the changes are written to disk.</p>
+<figure>
+    <img alt="Writing changes to disk" src="deb_17.png" width="80%">
+    <figcaption>Writing changes to disk</figcaption>
+</figure>
+<hr>
+<p>The wizard will start copying the files to the disk.</p>
+<figure>
+    <img alt="Copying files to disk" src="deb_18.png" width="80%">
+    <figcaption>Copying files to disk</figcaption>
+</figure>
+<hr>
+<p>Additional installation medium can be added to the system. This is optional. We can add a CD-ROM, DVD, or network repository.</p>
+<figure>
+    <img alt="Additional installation mediums" src="deb_19.png" width="80%">
+    <figcaption>Additional installation mediums</figcaption>
+</figure>
+<hr>
+<p>Locating the repository server for the package manager. It is recommended to use a location close to the systems location.</p>
+<figure>
+    <img alt="Location of package repository server" src="deb_20.png" width="80%">
+    <figcaption>Location of package repository server</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to select the repository for the package manager.</p>
+<figure>
+    <img alt="Selecting the repository" src="deb_21.png" width="80%">
+    <figcaption>Selecting the repository</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us to configure the HTTP proxy settings. If we do not use a proxy, we can leave this field blank.</p>
+<figure>
+    <img alt="HTTP proxy settings" src="deb_22.png" width="80%">
+    <figcaption>HTTP proxy settings</figcaption>
+</figure>
+<hr>
+<p>Wait for the update of the package manager from the selected repository.</p>
+<figure>
+    <img alt="Software selection" src="deb_23.png" width="80%">
+    <figcaption>Software selection</figcaption>
+</figure>
+<hr>
+<p>The wizard will ask us if we want to send package usage statistics to the Debian project. This is optional.</p>
+<figure>
+    <img alt="Sending package usage statistics" src="deb_24.png" width="80%">
+    <figcaption>Sending package usage statistics</figcaption>
+</figure>
+<hr>
+<p>Select the desktop environment and other predefined programs to install.</p>
+<figure>
+    <img alt="Desktop environment and other predefined programs selection" src="deb_25.png" width="80%">
+    <figcaption>Desktop environment and other predefined programs selection</figcaption>
+</figure>
+<hr>
+<p>Installation of the selected software will begin, downloading the necessary packages from the repository.</p>
+<figure>
+    <img alt="Software installation" src="deb_26.png" width="80%">
+    <figcaption>Software installation</figcaption>
+</figure>
+<hr>
+<p>If we have a BIOS firmware, wizard will ask us to install the GRUB bootloader.</p>
+<figure>
+    <img alt="GRUB bootloader installation" src="deb_27.png" width="80%">
+    <figcaption>GRUB bootloader installation</figcaption>
+</figure>
+<hr>
+<p>Select the disk where the bootloader will be installed. This is usually the same disk where the operating system is installed, but it can be different.</p>
+<figure>
+    <img alt="Disk selection for bootloader" src="deb_28.png" width="80%">
+    <figcaption>Disk selection for bootloader</figcaption>
+</figure>
+<hr>
+<p>When the installation is complete, will ask us to remove the installation medium and restart the system.</p>
+<figure>
+    <img alt="Installation finished" src="deb_29.png" width="80%">
+    <figcaption>Installation finished</figcaption>
+</figure>
+<hr>
+<p>After the system restarts, the GRUB bootloader will appear, allowing us to choose the operating system to boot.</p>
+<figure>
+    <img alt="GRUB2 bootloader" src="deb_30.png" width="80%">
+    <figcaption>GRUB2 bootloader</figcaption>
+</figure>
+<hr>
+<p>After selecting the operating system, the system will boot into the login screen.</p>
+<figure>
+    <img alt="Login screen" src="deb_31.png" width="80%">
+    <figcaption>Login screen</figcaption>
+</figure>
+<hr>
+<p>After logging in, the desktop environment will appear.</p>
+<figure>
+    <img alt="Desktop environment" src="deb_32.png" width="80%">
+    <figcaption>Desktop environment</figcaption>
+</figure>
+<h2 id="verification-and-documentation-of-the-installation-process-and-incidents">Verification and documentation of the installation process and incidents<a class="headerlink" href="#verification-and-documentation-of-the-installation-process-and-incidents" title="Permanent link">¶</a></h2>
+<p>Once we have installed and configured the operating systems, we must check that they are working correctly. Then we must prepare the documentation corresponding to the installation process and the incidents that have appeared. This documentation refers to the set of documents that are issued accompanying the installation process. The most important document in this set is the installation manual.</p>
+<p>The purpose of the installation manual is to serve as a guide during the installation of the system. Therefore, first of all we must specify the technical requirements and the software necessary for the correct operation of the system, and then describe each of the steps necessary for its installation and configuration.</p>
+<p>The documentation is usually in computer support, and we can find it in different types, such as text, graphics or multimedia (if it includes images, videos, etc.). We can find it in physical format if the documentation is printed or in online format if it is consulted on the Internet.</p>
+<p>The documentation is mainly classified into help documentation, which usually explains the installation; support documentation, which tries to resolve the most common incidents; Technical documentation, which includes the operating system's technical specifications; general documentation, which presents the operating system and its functions; and legal documentation, which usually contains the legal conditions for using the operating system. We can also find other more specific documents, such as documents on frequently asked questions (FAQs), glossaries, etc.</p>
+<h2 id="virtualbox-guest-additions"><em>VirtualBox Guest Additions</em><a class="headerlink" href="#virtualbox-guest-additions" title="Permanent link">¶</a></h2>
+<p><em>VirtualBox Guest Additions</em> is a software that can be installed on guest operating systems that provides some enhanced accessibility features and improves guest system performance. After installing an operating system on <em>VirtualBox</em>, it is highly recommended to install <em>VirtualBox Guest Additions</em>.</p>
+<p>Specifically, the benefits we get are the following:</p>
+<ul>
+<li><strong>Mouse pointer integration</strong>: Allows you to move the mouse freely between the host and guest operating systems.</li>
+<li><strong>Shared folders</strong>: Provides the ability to access one or more folders on the host operating system from the guest operating system, simplifying the exchange of information between the two.</li>
+<li><strong>Improved video support</strong>: Allows the guest system to benefit from the advanced video modes and graphics acceleration of the host (both 2D and 3D). In addition, if the guest system is MS Windows, GNU/Linux or Solaris, we can choose any video resolution, whether standard or not.</li>
+<li><strong>Integrated Windows</strong>: Allows you to display the virtual machine's desktop windows integrated into the host desktop, as if they were your own windows.</li>
+<li><strong>Generic Guest-Host Communication Channel</strong>: Allows you to control and monitor the guest system. This allows, for example, launching applications on the guest from the host.</li>
+<li>System Clock Synchronization: Improved system clock synchronization between the host and the guest.</li>
+<li><strong>Shared Clipboard</strong>: Allows you to share the contents of the guest system's clipboard with the host's and vice versa.</li>
+<li><strong>Drag and Drop</strong>: Allows you to drag files from the host computer to the guest computer or vice versa.</li>
+<li><strong>Automatic Authentication</strong>: Provides the ability to log in with a guest system user account from the host system.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../extra/js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

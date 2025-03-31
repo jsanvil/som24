@@ -1,0 +1,1107 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+    
+    
+      
+        <title>UD6 Administración SO Windows - Sistemas Operativos Monopuesto</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra/fontawesome/css/all.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#51-windows-os-administration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sistemas Operativos Monopuesto" class="md-header__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas Operativos Monopuesto
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD6 Administración SO Windows
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit01/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit02/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit03/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../unit04/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Unit5
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sistemas Operativos Monopuesto" class="md-nav__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistemas Operativos Monopuesto
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unit5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit05_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 MS Windows Administration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit05_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Linux command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="51-windows-os-administration">5.1 Windows OS Administration<a class="headerlink" href="#51-windows-os-administration" title="Permanent link">¶</a></h1>
+<p>In this unit, we will focus on basic administration tasks in the <em>Microsoft Windows</em> operating system.</p>
+<ul>
+<li>Managing user profiles and local groups. Passwords</li>
+<li>File system management</li>
+<li>Processes and priorities</li>
+<li>System performance. System activity monitoring</li>
+<li>Service management</li>
+<li>Storage device management</li>
+<li>Network device configuration</li>
+<li>Task automation</li>
+</ul>
+<h1 id="administracion-so-windows">Administración SO Windows<a class="headerlink" href="#administracion-so-windows" title="Permanent link">¶</a></h1>
+<p>En esta unidad, nos centraremos en las tareas básicas de administración en el sistema operativo <em>Microsoft Windows</em>.</p>
+<ul>
+<li>Gestión de perfiles de usuarios y grupos locales. Contraseñas</li>
+<li>Gestión del sistema de archivos</li>
+<li>Procesos y prioridades</li>
+<li>Rendimiento del sistema. Seguimiento de la actividad del sistema</li>
+<li>Gestión de servicios</li>
+<li>Gestión de dispositivos de almacenamiento</li>
+<li>Configuración de dispositivos de red</li>
+<li>Automatización de tareas</li>
+</ul>
+<!-- NEWPAGE -->
+<h2 id="gestion-de-perfiles-de-usuarios-y-grupos-locales-contrasenas">Gestión de perfiles de usuarios y grupos locales. Contraseñas<a class="headerlink" href="#gestion-de-perfiles-de-usuarios-y-grupos-locales-contrasenas" title="Permanent link">¶</a></h2>
+<h3 id="cuentas-de-usuario">Cuentas de usuario<a class="headerlink" href="#cuentas-de-usuario" title="Permanent link">¶</a></h3>
+<p>Para un sistema operativo, una cuenta de usuario se identifica como la unión entre un nombre y una determinada información de autenticación por la que, quien la utiliza, demuestra que está autorizado para hacerlo. Esta información de autenticación suele ser una contraseña, pero podría sustituirse por otros métodos, como el DNI electrónico u otra tarjeta inteligente de este tipo, o incluso algunos más futuristas, como el uso de la huella dactilar, el iris, etc.</p>
+<p>::: tip
+<strong>Autenticación en dos pasos</strong></p>
+<p>De un tiempo a esta parte, en muchos de los servicios que usamos a través de Internet, se ha hecho imprescindible la autenticación en dos pasos. La idea es muy sencilla: crear un mecanismo que aumente la seguridad comprobando la identidad del usuario por dos medios diferentes:</p>
+<ol>
+<li>
+<p><em>Algo que sepamos</em>: Por ejemplo, un nombre de usuario y una contraseña.</p>
+</li>
+<li>
+<p><em>Algo que tengamos</em>: Por ejemplo, un teléfono móvil, donde recibiremos un mensaje de texto con un código de acceso.</p>
+</li>
+</ol>
+<p>De esa forma, aunque una persona no autorizada averigüe nuestro nombre de usuario y contraseña, aún necesitará nuestro teléfono para acceder a la cuenta y que éste se encuentre desbloqueado.</p>
+<p>Como cabe esperar, el código de acceso recibido será de un solo uso y caducará pasado un tiempo, que dependerá del proveedor del servicio.
+:::</p>
+<p>Normalmente, una cuenta de usuario está relacionada con una persona, que es quien se acredita para utilizar el ordenador, pero en ciertas situaciones, puede ser un programa en un ordenador, quien necesite autenticarse frente a un servidor para obtener un determinado recurso o servicio.</p>
+<p>Cuando en la autenticación se utiliza una <em>contraseña</em>, ésta debe tener el grado de complejidad suficiente, debido a que cumple una doble misión: por un lado, impide el acceso a quien carece de la autorización necesaria y, por otro, relaciona dicho acceso con un individuo que, por lo tanto, será responsable del mismo. Por este motivo debe evitarse a toda costa el uso de cuentas de usuario que sean utilizadas por varias personas de manera indistinta.</p>
+<p>::: warning
+Cuando sea necesario, se establecerá un protocolo que asegure una complejidad suficiente en las contraseñas de cada usuario. Por ejemplo, usando diversos tipos de caracteres (mayúsculas, minúsculas, signos y/o dígitos) y estableciendo una longitud mínima.
+:::</p>
+<p>En general, los sistemas operativos suelen disponer de tres tipos diferentes de cuentas, con las que sus respectivos usuarios dispondrán de distintos niveles de control sobre el sistema. Son estas:</p>
+<ul>
+<li>
+<p><strong>Cuentas estándar</strong>: En general, con ellas pueden desarrollarse tareas cotidianas que no sean de carácter administrativo.</p>
+</li>
+<li>
+<p><strong>Cuentas de administrador</strong>: Ofrecen control sobre todos los aspectos del sistema operativo, por lo que deben usarse con la cautela necesaria y sólo en las actividades para las que están pensadas.</p>
+</li>
+<li>
+<p><strong>Cuentas de invitado</strong>: Suelen utilizarse para permitir el uso a usuarios ocasionales. Sus capacidades están muy limitadas.</p>
+</li>
+</ul>
+<p>::: note
+Las cuentas de usuario invitado pueden resultar muy útiles cuando utilizamos el ordenador en demostraciones o cuando se ofrece su uso a diferentes personas a lo largo del tiempo (hoteles, cafeterías, etc).</p>
+<p>En otros contextos, cuando no sean necesarias, puede resultar conveniente inhabilitarlas por cuestiones de seguridad.
+:::</p>
+<p>Por otro lado, el concepto de cuenta de usuario está asociado al concepto de sesión. Entendemos por <strong>sesión</strong> el tiempo consecutivo en el que una cuenta de usuario se encuentra activa en el sistema operativo. Por lo tanto, se prolonga desde que el usuario se autentica, momento en el que se dice que ha iniciado sesión, hasta que abandona el sistema, que se conoce como cierre de sesión.</p>
+<p>Además, una cuenta de usuario tiene asociada una relación de permisos y privilegios.</p>
+<p>Los privilegios definen lo que el usuario podrá hacer en el sistema una vez iniciada la sesión (por ejemplo, apagar el sistema o hacer copias de seguridad) mientras que los permisos definen dónde se puede acceder y bajo qué condiciones (por ejemplo, leer, escribir o ejecutar un determinado archivo o carpeta). Por lo tanto, un permiso está vinculado a un objeto, como un archivo, una carpeta o una impresora.</p>
+<p>::: tip
+Es frecuente que los privilegios reciban también el nombre de <em>derechos</em>.
+:::</p>
+<p>Cuando un privilegio entra en contradicción con un permiso, siempre prevalece el privilegio. Por ejemplo, un usuario con privilegios para hacer copias de seguridad, podrá copiar todos los archivos, aunque no tenga permisos de lectura sobre ellos.</p>
+<p>Otro aspecto relacionado con las cuentas de usuario son los perfiles de usuario. En ellos se definen el aspecto y la configuración de cada usuario específico, desde el fondo de escritorio o el juego de iconos que utiliza, hasta los documentos con los que trabaja o los archivos que ha descargado.</p>
+<p>Por lo tanto, cuando un usuario inicia sesión en una cuenta por primera vez, se encontrará un entorno de trabajo con todos los valores predeterminados, aunque el sistema haya estado usándose, por medio de otras cuentas, durante un tiempo prolongado y dichas cuentas sí hayan sido previamente personalizadas.</p>
+<p>En general, según su ámbito, existen varios tipos de cuentas:</p>
+<ul>
+<li>
+<p><strong>Cuentas locales</strong>: La autenticación corre a cargo del sistema operativo del ordenador en el que nos autenticamos y sólo nos facilita el acceso a recursos de éste. Para autenticarnos con los mismos datos en diferentes ordenadores, necesitaremos que en ellos se hayan creado previamente cuentas idénticas. Aun así, cada una de ellas facilitará el acceso a los recursos del ordenador en el que se encuentre.</p>
+</li>
+<li>
+<p><strong>Cuentas de usuario de red</strong>: Normalmente, la autenticación corre a cargo de un ordenador que actúa como servidor en la red y, cuando es satisfactoria, permite el acceso a recursos que pueden ofrecen desde diferentes ordenadores de dicha red. Por lo tanto, podremos utilizar la misma cuenta para acceder desde diferentes ordenadores que pertenezcan a la misma red.</p>
+</li>
+<li>
+<p><strong>Cuentas de usuario <em>Microsoft</em></strong>: Es un caso particular de los sistemas operativos Windows, que asocian una cuenta de usuario con una dirección de e-mail y una contraseña, de forma que toda la información de la cuenta se almacena en los servidores de Microsoft, pudiendo compartir, de forma totalmente automática todas las configuraciones y preferencias en todos los equipos donde usemos esos mismos datos de autenticación. En realidad, podríamos pensar que es un caso particular de una cuenta de usuario de red.</p>
+</li>
+</ul>
+<p>Lógicamente, la administración de usuarios adquirirá más importancia cuantos más usuarios, con características diversas, usen el ordenador. En cualquier caso, en este documento nos referiremos, exclusivamente, a las cuentas de usuario locales.</p>
+<h3 id="cuentas-de-usuario-locales">Cuentas de usuario locales<a class="headerlink" href="#cuentas-de-usuario-locales" title="Permanent link">¶</a></h3>
+<p>hemos indicado que la mayoría de los sistemas operativos disponen de tres tipos de cuentas: Administrador, usuario e invitado. Sin embargo, en las versiones más recientes del sistema operativo de <em>Microsoft</em>, se ha producido una reinterpretación de este concepto, disponiendo de tres tipos de cuentas:</p>
+<ul>
+<li>Cuentas de administrador</li>
+<li>Cuentas estándar</li>
+<li>Cuentas infantiles</li>
+</ul>
+<p>Si eres tú quien ha instalado el sistema operativo, <em>Windows</em> asume que tu vas a ser uno de sus administradores. Por lo tanto, podrás realizar cualquier cambio en su configuración, añadir nuevas cuentas de usuario, instalar o eliminar programas, consultar o modificar el contenido de cualquier archivo del equipo, instalar o configurar cualquier dispositivo hardware, etc.</p>
+<p>::: tip
+Para instalar las aplicaciones que se ejecutan en la pantalla Inicio para ofrecer información al usuario, no necesitamos tener una cuenta de administrador.
+:::</p>
+<p>Como es lógico, cualquier ordenador con <em>Windows</em> deberá disponer, como mínimo, de una cuenta de administración, aunque no pensemos realizar tareas administrativas frecuentemente.</p>
+<p>Las cuentas estándar están pensadas para usuarios que no necesitan hacer ninguno de los cambios anteriores en el sistema. Desde ellas se puede llevar a cabo cualquier trabajo cotidiano, pero no podrán hacerse tareas administrativas.</p>
+<p>Este tipo de cuentas son perfectas para el uso cotidiano de cualquier usuario, incluido el que realiza las tareas administrativas. Piensa que, si eres usuario administrador y ejecutas un programa, este puede hacer uso de tus privilegios para alterar el sistema. Por ejemplo, un virus que haya infectado al programa que estamos utilizando lo tendrá mucho más difícil para contagiar al resto del sistema cuando usamos una cuenta estándar que si lo hacemos con una cuenta de administrador. Así pues, es recomendable que el usuario que realiza tareas administrativas disponga de dos cuentas de usuario: una para administrar el equipo y otra para su uso cotidiano.</p>
+<p>Por otro lado, en <em>Windows</em>, para realizar tareas administrativas desde una cuenta de usuario estándar, sólo tenemos que conocer la contraseña de una cuenta de administrador.</p>
+<p>Por su parte, las cuentas infantiles no son más que cuentas de usuario estándar a las que se les ha habilitado el control parental. Por ese motivo, este tipo de cuentas no aparecen representadas de forma individual en el <em>Panel de control</em> de <em>Windows</em>.</p>
+<!-- NEWPAGE -->
+
+<h3 id="crear-una-cuenta-de-usuario-estandar-en-windows-11">Crear una cuenta de usuario estándar en Windows 11<a class="headerlink" href="#crear-una-cuenta-de-usuario-estandar-en-windows-11" title="Permanent link">¶</a></h3>
+<p>Podemos agregar cuentas estándar de forma sencilla desde el panel de configuración.</p>
+<p><figure id="_figure-1"><img alt='Abrir el panel de Configuración, seleccionar "Cuentas" y entrar en "Otros usuarios"' src="ud6/user1.png" width="70%"><figcaption>Figure 1: Abrir el panel de Configuración, seleccionar "Cuentas" y entrar en "Otros usuarios"</figcaption></figure></p>
+<p><figure id="_figure-2"><img alt='Pulsar el botón "Agregar cuenta"' src="ud6/user2.png" width="60%"><figcaption>Figure 2: Pulsar el botón "Agregar cuenta"</figcaption></figure></p>
+<p><figure id="_figure-3"><img alt="Escribir las credenciales de acceso del nuevo usuario" src="ud6/user3.png" width="50%"><figcaption>Figure 3: Escribir las credenciales de acceso del nuevo usuario</figcaption></figure></p>
+<p><figure id="_figure-4"><img alt="Una vez terminado el proceso, aparecerá en el listado" src="ud6/user4.png" width="70%"><figcaption>Figure 4: Una vez terminado el proceso, aparecerá en el listado</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<p>Para gestionar usuarios de una forma más completa, debemos utilizar el gestor de usuarios y grupos locales. Podemos acceder a la herramienta ejecutando el comando <code>lusrmgr.msc</code> o haciendo clic derecho sobre el botón de inicio, abrir "Administración de equipos" y seleccionar "Usuarios y grupos locales"</p>
+<p><figure id="_figure-5"><img alt="Administración de equipos &gt; Usuarios y grupos locales" src="ud6/user5.png"><figcaption>Figure 5: Administración de equipos &gt; Usuarios y grupos locales</figcaption></figure></p>
+<p>Haciendo clic derecho sobre un usuario aparece un menú contextual desde el que podemos realizar varias acciones. Por lo general abriremos las Propiedades.</p>
+<p>De forma predeterminada, estaremos situados sobre la solapa "General", que contiene los mismos datos que introdujimos cuando la creamos, aunque ahora aparece una opción más que nos permite bloquear la cuenta.</p>
+<p>También tenemos dos nuevas solapas que nos permitirán ajustar las características de perfil de la cuenta de usuario y consultar los grupos a los que pertenece.</p>
+<p><figure id="_figure-6"><img alt="Propiedades de un usuario" src="ud6/user5.png"><figcaption>Figure 6: Propiedades de un usuario</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h3 id="grupos">Grupos<a class="headerlink" href="#grupos" title="Permanent link">¶</a></h3>
+<p>En el ámbito doméstico, es poco frecuente que necesitemos crear grupos de usuarios. Sin embargo, cuando nos encontramos en el ámbito de una empresa (aunque esta sea mediana, o incluso pequeña), podemos encontrarnos en situaciones donde necesitemos crear diferentes cuentas de usuario que tengan los mismos permisos y privilegios. En estos casos, podríamos encontrarnos en la situación de configurar una y otra vez las mismas características en las distintas cuentas.</p>
+<p>En estas situaciones, la solución son los grupos de usuarios. La idea consiste en crear un grupo que sea el que dispone de las características comunes a distintas cuentas. Una vez creado el grupo, sólo tenemos que convertir a las cuentas de usuarios en miembros del grupo para que hereden todas las características que establecimos en éste.</p>
+<p>Cuando un nuevo usuario deba compartir las características de los anteriores, bastará con hacerlo miembro del grupo. De igual forma, si un usuario debe dejar de disfrutar de una serie de permisos, bastará con eliminar su cuenta del conjunto de miembros del grupo.</p>
+<p>Además, una cuenta de usuario puede ser miembro de más de un grupo, lo que hace muy sencillo agrupar los recursos con características comunes en grupos y controlar qué usuarios acceden a ellos.</p>
+<p>Es fácil comprender que, a medida que crezca la complejidad de la instalación informática a la que nos estemos refiriendo, los grupos se mostrarán más útiles. En este sentido, como en el caso de las cuentas de usuario, disponemos de dos tipos de cuentas de grupo según su ámbito de influencia:</p>
+<ul>
+<li>
+<p><strong>Cuentas de grupo locales</strong>: Como puedes suponer, su ámbito será el del equipo en el que se hayan creado y sus miembros serán cuentas de usuario locales.</p>
+</li>
+<li>
+<p><strong>Cuentas de grupo de red</strong>: Su uso se orienta a las instalaciones de red, donde se ofrecen recursos a todos los equipos clientes de dicha red. Por lo tanto, dispondrán de permisos y privilegios relacionados con los recursos de compartidos en la red y sus miembros serán cuentas de usuario de red</p>
+</li>
+</ul>
+<p>En nuestro caso, nos centraremos, únicamente, en las cuentas de grupo locales.</p>
+<!-- NEWPAGE -->
+
+<h3 id="grupos-locales-en-windows">Grupos locales en Windows<a class="headerlink" href="#grupos-locales-en-windows" title="Permanent link">¶</a></h3>
+<p>Cuando instalamos el sistema, se crean de forma automática una serie de grupos con una configuración predeterminada que facilita la asignación de privilegios.</p>
+<p><figure id="_figure-7"><img alt="Grupos integrados en el sistema Windows 11" src="ud6/groups1.png"><figcaption>Figure 7: Grupos integrados en el sistema Windows 11</figcaption></figure></p>
+<p>Algunos de los grupos que existen de forma predeterminada en Windows son:</p>
+<ul>
+<li><strong>Administradores</strong>. Los usuarios de este grupo tienen acceso completo y sin restricciones al equipo.</li>
+<li><strong>Invitados</strong>. Los usuarios de este grupo tienen acceso al sistema con más restricciones que un usuario estándar.</li>
+<li><strong>Operadores de configuración de red</strong>. Este grupo concede a sus miembros privilegios para administrar la configuración de la red.</li>
+<li><strong>Operadores de copia de seguridad</strong>. En este grupo se encuentran los usuarios con permisos para hacer copias de seguridad o restauración de archivos.</li>
+<li><strong>Usuarios</strong>. Todos los usuarios estándares pertenecen a este grupo, que no permite que los usuarios hagan cambios accidentales que puedan afectar el sistema.</li>
+<li><strong>Usuarios avanzados</strong>. Este grupo mujer a los usuarios más derechos administrativos de los que permite el grupo usuarios.</li>
+<li><strong>Usuarios de escritorio remoto</strong>. Los usuarios que pertenecen a este grupo pueden iniciar sesión en modo remoto.</li>
+</ul>
+<!-- NEWPAGE -->
+
+<p>Para crear una cuenta de grupo utilizaremos la herramienta <code>lusrmgr.msc</code> (o alternativamente el panel de Administración de equipos).</p>
+<p>Dentro de la seccion "Grupos" al hacer clic derecho se abre un diálogo donde seleccionamos "Grupo nuevo..."</p>
+<p>Podemos agregar usuarios mediante el botón "Agregar..."</p>
+<p><figure id="_figure-8"><img alt='Escribir el nombre del nuevo grupo"' src="ud6/groups2.png"><figcaption>Figure 8: Escribir el nombre del nuevo grupo"</figcaption></figure></p>
+<p>Para buscar usuarios, pulsaremos el botón "Opciones avanzadas..."</p>
+<p><figure id="_figure-9"><img alt="Diálogo para la selección de usuarios" src="ud6/groups3.png"><figcaption>Figure 9: Diálogo para la selección de usuarios</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<p>Si pulsamos el botón "Buscar ahora" mostrará el listado completo de usuarios y grupos del sistema.</p>
+<p><figure id="_figure-10"><img alt="Diálogo avanzado de selección de usuarios" src="ud6/groups4.png" width="50%"><figcaption>Figure 10: Diálogo avanzado de selección de usuarios</figcaption></figure></p>
+<p>Una vez añadido aparecerá en el listado de miembros del nuevo grupo.</p>
+<p><figure id="_figure-11"><img alt="Diálogo de creación de nuevo grupo con un miembro añadido" src="ud6/groups5.png" width="50%"><figcaption>Figure 11: Diálogo de creación de nuevo grupo con un miembro añadido</figcaption></figure></p>
+<p>Podemos ir a las propiedades el usuario y en el apartado "Miembro de" aparecerá a que grupos pertenece.</p>
+<p><figure id="_figure-12"><img alt="Grupos a los que pertenece un usuario" src="ud6/groups6.png" width="80%"><figcaption>Figure 12: Grupos a los que pertenece un usuario</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h3 id="gestion-de-directivas-locales-de-contrasenas-y-bloqueo-de-cuentas">Gestión de directivas locales de contraseñas y bloqueo de cuentas<a class="headerlink" href="#gestion-de-directivas-locales-de-contrasenas-y-bloqueo-de-cuentas" title="Permanent link">¶</a></h3>
+<p>Podemos gestionar el nivel de seguridad del sistema modificando las directivas de contraseñas y bloqueo de cuenta.</p>
+<p>Las directivas de contraseñas nos permite justar los parámetros de complejidad y vigencia de las mismas.</p>
+<p><figure id="_figure-13"><img alt="Directiva de equipo local / Configuración del equipo / Configuración de seguridad / Directivas de contraseñas" src="ud6/polices1.png"><figcaption>Figure 13: Directiva de equipo local / Configuración del equipo / Configuración de seguridad / Directivas de contraseñas</figcaption></figure></p>
+<p>En las directivas de bloqueo de cuenta, podemos definir el número de intentos incorrectos antes que se bloquee la cuenta de usuario, y durante cuanto tiempo se bloqueará.</p>
+<p><figure id="_figure-14"><img alt="Directiva de equipo local / Configuración del equipo / Configuración de seguridad / Directivas de bloqueo de cuenta" src="ud6/polices2.png"><figcaption>Figure 14: Directiva de equipo local / Configuración del equipo / Configuración de seguridad / Directivas de bloqueo de cuenta</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h2 id="gestion-del-sistema-de-archivos">Gestión del sistema de archivos<a class="headerlink" href="#gestion-del-sistema-de-archivos" title="Permanent link">¶</a></h2>
+<p>El sistema operativo debe controlar los usuarios que pueden acceder a cada uno de los recursos que administra. Por ejemplo, directorios, impresoras, conexiones de red, etc.</p>
+<p>Normalmente, para lograrlo, los sistemas utilizan <strong>Listas de Control de Acceso</strong> o <em>ACLs</em> (<em>Access Control Lists</em>), asociadas a los recursos. En ellas se relacionan los diferentes usuarios que pueden acceder y bajo qué condiciones (lectura, escritura, ejecución, etc.)</p>
+<p>Además, cada archivo puede tener asociados diferentes atributos, que informan sobre ciertas características del archivo o del modo en el que el sistema operativo debe tratarlo. Así, un archivo puede tener atributos como: directorio, oculto, de sistema, cifrado, etc.</p>
+<p>Ahora que ya conocemos diferentes aspectos de los usuarios y los grupos, estamos en disposición de aprender a modificar restricciones sobre el uso de los archivos y directorios.</p>
+<h3 id="permisos-de-directorios-en-windows">Permisos de directorios en Windows<a class="headerlink" href="#permisos-de-directorios-en-windows" title="Permanent link">¶</a></h3>
+<p>Una de las primeras cosas que debemos saber sobre la estructura de directorios en <em>Windows</em> es que cada cuenta de usuario que inicia sesión en el sistema dispondrá de una carpeta donde se almacenará toda la configuración relativa al entorno de trabajo de dicho usuario, incluidos aspectos como la configuración de la pantalla, las conexiones de red, la configuración de impresoras, etc.</p>
+<p>Esta información, que recibe el nombre de <strong>perfil de usuario</strong>, se organiza en diferentes archivos que se crean en el momento que el usuario inicia sesión por primera vez.</p>
+<p>De esta forma, el sistema operativo consigue que varios usuarios puedan utilizar el mismo ordenador y que cada uno encuentre, al iniciar la sesión, el mismo entorno que dejó cuando cerró la sesión anterior. Además, los cambios efectuados por un usuario en la personalización de su espacio de trabajo no afectará a ningún otro usuario del equipo.</p>
+<p>Estas carpetas se encuentran dentro del volumen donde se haya instalado el sistema operativo (normalmente la unidad <code>C:</code>), en una carpeta llamada <code>Usuarios</code>.</p>
+<p>Cuando un usuario del grupo <em>Administradores</em> trata de acceder a la carpeta del perfil de otro usuario, recibe un aviso que le informa de que carece de permiso para hacerlo. Aún así, como se trata de un usuario con los privilegios suficientes, podrá hacer clic sobre el botón "Continuar" para acceder a su contenido.</p>
+<p><figure id="_figure-15"><img alt="Solicitud de permiso para acceder a perfil de otro usuario" src="ud6/files1.png" width="80%"><figcaption>Figure 15: Solicitud de permiso para acceder a perfil de otro usuario</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<p>Sin embargo, el cambio de permisos sólo se completará si el usuario con privilegios administrativos la aprueba, ya que el sistema muestra una ventana pidiendo su contraseña.</p>
+<p><figure id="_figure-16"><img alt="Solicitud de permiso para acceder a perfil de otro usuario" src="ud6/files2.png" width="45%"><figcaption>Figure 16: Solicitud de permiso para acceder a perfil de otro usuario</figcaption></figure></p>
+<h3 id="compartir-el-perfil-con-otro-usuario">Compartir el perfil con otro usuario<a class="headerlink" href="#compartir-el-perfil-con-otro-usuario" title="Permanent link">¶</a></h3>
+<p>Según lo que hemos visto más arriba, un usuario que no pertenezca al grupo de administradores sólo podrá acceder a los datos de otro usuario cuando tenga la aprobación de un usuario administrador.</p>
+<p>No obstante, siempre es posible que un usuario comparta voluntariamente su perfil con un usuario diferente. Algo que podemos hacer, de forma individual, con un usuario concreto, o con todos los miembros de un grupo.</p>
+<p>Si hacemos clic derecho, sobre la carpeta que coincide con el nombre de nuestra cuenta. En el menú de contexto que aparece, elegiremos la entrada "<em>Conceder acceso a</em>".</p>
+<p>Al hacerlo, veremos aparecer un nuevo menú con varias opciones, entre ellas, los nombre de los diferentes usuarios del sistema. Si queremos compartir la carpeta con un solo usuario y otorgándole sólo permiso de lectura sobre nuestros archivos, bastará con hacer clic sobre su nombre.</p>
+<p>Además, disponemos de una opción titulada "<em>Usuarios específicos...</em>", que nos permitirá añadir varios usuarios de una sola vez, y cambiar sus permisos (las cosas que puede hacer) sobre nuestros archivos.</p>
+<p><figure id="_figure-17"><img alt="Menú de contexto para conceder acceso a usuarios específicos" src="ud6/files3.png"><figcaption>Figure 17: Menú de contexto para conceder acceso a usuarios específicos</figcaption></figure></p>
+<p>En el desplegable podemos seleccionar usuarios. Una vez añadido podemos modificar los permisos.</p>
+<p><figure id="_figure-18"><img alt="Diálogo para agregar usuarios y permisos a una carpeta" src="ud6/files4.png" width="70%"><figcaption>Figure 18: Diálogo para agregar usuarios y permisos a una carpeta</figcaption></figure></p>
+<p>Por último, si existen subdirectorios, nos solicita confirmación para cambiar la configuración.</p>
+<p><figure id="_figure-19"><img alt="Confirmación de cambio de permisos en subdirectorios" src="ud6/files5.png" width="70%"><figcaption>Figure 19: Confirmación de cambio de permisos en subdirectorios</figcaption></figure></p>
+<p>Por otra parte podemos especificar permisos concretos desde el apartado "Seguridad" de las propiedades de un directorio pulsando el botón "Editar..."</p>
+<p><figure id="_figure-20"><img alt="Editar permisos" src="ud6/files6.png" width="100%"><figcaption>Figure 20: Editar permisos</figcaption></figure></p>
+<p>Los permisos estándar de <em>NTFS</em> que se pueden asignar a una carpeta son:</p>
+<ul>
+<li><strong>Control total</strong>: para leer, cambiar, crear y ejecutar bien sean programas o carpetas.</li>
+<li><strong>Lectura y ejecución</strong>: para ver el contenido y ejecutar programas de una carpeta.</li>
+<li><strong>Modificar</strong>: para poder cambiar los ficheros y las carpetas, pero sin crear y eliminar ficheros ni carpetas nuevas.</li>
+<li><strong>Lectura</strong>: para poder ver y abrir el contenido.</li>
+<li><strong>Escritura</strong>: para poder crear y cambiar los ficheros y carpetas existentes.</li>
+<li><strong>Mostrar el contenido de la carpeta</strong>.</li>
+</ul>
+<p>Cuando hablamos de los permisos en carpetas y archivos, debemos tener en cuenta el concepto de <strong>herencia</strong>. El concepto de herencia describe cómo se propagan los permisos que otorgamos a una carpeta a través de los archivos y carpetas que ésta contiene.</p>
+<p>Por defecto, cuando se proporcionan unos permisos a una carpeta que es padre de otras (es decir, que contiene a otras), todos los archivos y carpetas contenidos dentro de esta carpeta heredarán los mismos permisos.</p>
+<p>Los permisos <strong>explícitos</strong>, a diferencia de los permisos heredados, son aquellos que se configuran de propio en un recurso. Es decir, aquellos que se establecen ex profeso para ese particular.</p>
+<p>No es necesario romper la herencia si queremos mantener esos permisos hacia abajo, sino que tenemos que declarar permisos explícitos para proporcionar nuevos permisos de denegación o concesión de nuevos privilegios. Teniendo todo esto en cuenta, solo deberemos modificar esa herencia cuando queramos modificar algo, dejando sin modificación cuando queramos mantener la misma configuración.</p>
+<p>En ocasiones, puede ser necesario que estos permisos no sean heredados hacia el interior, sino que se desea que la concesión de permisos quede “reseteada” añadiendo a mano los permisos que se deseen desde este punto.</p>
+<p>Para estos casos, se deberá tomar uno de los siguientes caminos que comentamos a continuación:</p>
+<ul>
+<li>Redefinir los permisos de manera explícita.</li>
+<li>Eliminar la herencia en el objeto hijo.</li>
+<li>Eliminar la herencia al nivel del padre, lo que hará que se interrumpa la extensión hacia abajo (hacia los hijos).</li>
+</ul>
+<p>Para controlar la herencia, debemos acceder a "Opciones avanzadas" dentro del apartado "Seguridad"</p>
+<p><figure id="_figure-21"><img alt="Deshabilitar herencia" src="ud6/files7.png" width="100%"><figcaption>Figure 21: Deshabilitar herencia</figcaption></figure></p>
+<h3 id="acceso-a-la-carpeta-comun">Acceso a la carpeta común<a class="headerlink" href="#acceso-a-la-carpeta-comun" title="Permanent link">¶</a></h3>
+<p>Además de lo anterior, dentro de la carpeta Usuarios, existen una carpeta que puede ser utilizada por todos los usuarios del equipo para compartir información. Se trata de la carpeta "<em>Acceso público</em>" situada en <code>C:\Users\Public</code>.</p>
+<!-- NEWPAGE -->
+
+<h2 id="procesos-y-prioridades">Procesos y prioridades<a class="headerlink" href="#procesos-y-prioridades" title="Permanent link">¶</a></h2>
+<p>La memoria principal del ordenador puede albergar cientos de tareas que se turnan en el uso del procesador. Una forma que tiene el sistema operativo para mejorar el rendimiento consiste en asignar diferentes prioridades a dichas tareas.</p>
+<p>Un buen planteamiento general consiste en que los procesos que realicen <strong>tareas interactivas</strong>, es decir, los que <strong>se comunican directamente con el usuario</strong>, dispongan de una prioridad mayor. Por el contrario, aquellos que no necesitan la intervención directa del usuario, pueden ejecutarse con una prioridad más baja. De esta forma se garantiza, en general, una mejor experiencia para los usuarios del sistema operativo.</p>
+<p>Se dice que los <strong>procesos interactivos</strong> se ejecutan en <strong>primer plano</strong> (en inglés, <em>foreground</em>), mientras que aquellos que no lo son se <strong>ejecutan en segundo</strong> plano (en inglés, <em>background</em>).</p>
+<p>Como cabe esperar, un proceso que se ejecuta con una prioridad baja, cederá el uso del procesador, siempre que un proceso con una prioridad mayor lo reclame.</p>
+<p>Un ejemplo de esto puede ser la tarea encargada de imprimir un documento. Las impresoras son, probablemente, los dispositivos más lentos que utilizamos. De este modo, basta con que, la tarea que se encarga de imprimir, obtenga el uso del procesador de vez en cuando, para que pueda alimentar el proceso de impresión con un flujo suficiente de datos. Así pues, esta sería una tarea ideal para funcionar con una prioridad baja (en segundo plano) y, mientras lleva a cabo su labor, los procesos interactivos seguirán funcionando casi a la misma velocidad que si no estuviésemos imprimiendo.</p>
+<!-- NEWPAGE -->
+
+<h3 id="prioridad-de-ejecucion-en-windows">Prioridad de ejecución en Windows<a class="headerlink" href="#prioridad-de-ejecucion-en-windows" title="Permanent link">¶</a></h3>
+<p>De forma general, <em>Windows</em> solo nos permite elegir si deben ejecutarse con una mayor prioridad los programas interactivos o los que se ejecutan en segundo plano.</p>
+<p><figure id="_figure-22"><img alt="Ajustar el rendimiento del procesador" src="ud6/process1.png" width="80%"><figcaption>Figure 22: Ajustar el rendimiento del procesador</figcaption></figure></p>
+<p>No obstante, si quieres modificar la prioridad de una tarea particular, siempre puedes recurrir al Administrador de tareas.</p>
+<p><figure id="_figure-23"><img alt="Modificar prioridad de un proceso" src="ud6/process2.png" width="70%"><figcaption>Figure 23: Modificar prioridad de un proceso</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h2 id="rendimiento-del-sistema">Rendimiento del sistema.<a class="headerlink" href="#rendimiento-del-sistema" title="Permanent link">¶</a></h2>
+<p>En general, podemos definir el concepto de rendimiento como la rapidez con la que un equipo realiza las tareas que se le encomiendan (tanto las relacionadas con el propio sistema, como las relacionadas con las aplicaciones y servicios). En principio, el rendimiento del sistema estará limitado por diferentes aspectos:</p>
+<ul>
+<li>La velocidad del procesador.</li>
+<li>La cantidad y velocidad de la memoria principal.</li>
+<li>La velocidad de los dispositivos de almacenamiento externo (normalmente discos duros).</li>
+<li>La velocidad de las interfaces de red.</li>
+</ul>
+<p>::: tip
+En ocasiones, alguno de los programas que estamos ejecutando en <em>Windows</em> deja de funcionar y no tenemos forma de cerrarlo. Hay una solución sencilla: reiniciar el sistema.</p>
+<p>No obstante, esto nos obliga a guardar los archivos con los que estemos trabajando en el resto de aplicaciones, esperar a que el sistema se apague y vuelva a arrancar, y, por último, volver a ejecutar las aplicaciones y abrir los archivos.
+:::</p>
+<p>En los sistemas operativos <em>Windows</em> disponemos del <strong>Administrador de tareas</strong>, una herramienta que nos permitirá examinar datos de rendimiento del sistema e identificar posibles cuellos de botella.</p>
+<p>Para iniciar el <strong>Administrador de tareas</strong>, sólo tenemos que hacer clic, con el botón derecho del ratón, sobre el icono de inicio o presionar la combinación de teclas <code>Ctrl</code>+<code>Alt</code>+<code>Supr</code>.</p>
+<p><figure id="_figure-24"><img alt='Administrador de tareas en el apartado "Rendimiento"' src="ud6/process3.png" width="80%"><figcaption>Figure 24: Administrador de tareas en el apartado "Rendimiento"</figcaption></figure></p>
+<p>Para obtener información detallada qué recursos está consumiendo cada proceso existe una herramienta llamada <strong>Monitor de recursos</strong>.</p>
+<p><figure id="_figure-25"><img alt="Monitor de recursos" src="ud6/process4.png" width="80%"><figcaption>Figure 25: Monitor de recursos</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h2 id="seguimiento-de-la-actividad-del-sistema">Seguimiento de la actividad del sistema<a class="headerlink" href="#seguimiento-de-la-actividad-del-sistema" title="Permanent link">¶</a></h2>
+<p>En un sistema operativo moderno todas las acciones importantes son anotadas en un <strong>registro de eventos</strong> (también llamado <strong><em>log</em></strong>). Dichas anotaciones incluyen mensajes de aviso y errores, y es importante supervisarlas periódicamente para asegurarnos de que no existen incidencias destacables. Y si las hay, tener la oportunidad de resolverlas antes de que tengan repercusiones graves.</p>
+<p>El complemento de Windows que permite consultar y administrar los eventos anotados, tanto por los servicios del propio sistema, como por las diferentes aplicaciones, se llama <strong>Visor de eventos</strong>, y nos ofrece una forma potente y centralizada de conocer lo que está pasando en nuestro sistema operativo.</p>
+<p>El <strong>Visor de eventos</strong> resulta imprescindible para supervisar el funcionamiento del servidor y resolver cualquier incidencia. Desde él podremos realizar las siguientes tareas:</p>
+<ul>
+<li>Consultar los eventos que se hayan producido.</li>
+<li>Crear filtros para los eventos que más nos interesen y almacenarlos como vistas personalizadas que podemos volver a utilizar en cualquier momento.</li>
+<li>Programar una tarea para que se ejecute en respuesta a una situación específica.</li>
+<li>Establecer suscripciones a determinados eventos.</li>
+</ul>
+<p>Los eventos se clasifican en diferentes <strong>categorías</strong>:</p>
+<ol>
+<li><em>Vistas personalizadas</em>: Permiten restringir los eventos mostrados en función de nuestras preferencias.</li>
+<li><em>Registros de Windows</em>: Almacenan eventos relacionados con todo el sistema y los relativos a aplicaciones heredadas.</li>
+<li><em>Registros de aplicaciones y servicios</em>: Contienen eventos relacionados con aplicaciones o componentes particulares.</li>
+<li><em>Suscripciones</em>: Se utiliza para recopilar los eventos de otros equipos de la red y almacenarlos localmente.</li>
+</ol>
+<p>La categoría <em>Registros de Windows</em> actúa como un contenedor de varias subcategorías que, en su mayoría, resultarán familiares para los usuarios avanzados de otros sistemas de escritorio de <em>Microsoft</em>. En concreto, encontramos las siguientes:</p>
+<ul>
+<li><em>Aplicación</em>: Aquí anotan sus eventos las aplicaciones y los servicios que no forman parte del sistema.</li>
+<li><em>Seguridad</em>: Incluye la información de los eventos relacionados con la seguridad del sistema.</li>
+<li><em>Instalación</em>: Donde se anotan la información de los eventos relativos a la configuración de roles y características.</li>
+<li><em>Sistema</em>: Contiene información relativa a los eventos del sistema y de sus componentes.</li>
+<li><em>Eventos reenviados</em>: Contiene información reenviada por otros sistemas de la red.</li>
+</ul>
+<p><figure id="_figure-26"><img alt="Visor de eventos" src="ud6/events1.png" width="90%"><figcaption>Figure 26: Visor de eventos</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h2 id="gestion-de-servicios">Gestión de servicios<a class="headerlink" href="#gestion-de-servicios" title="Permanent link">¶</a></h2>
+<p>Los servicios son un tipo particular de procesos que suele ejecutarse en segundo plano, es decir, sin que el usuario tenga constancia directa de su presencia y, normalmente, esperan un tipo de suceso para ofrecer una determinada prestación al usuario.</p>
+<p>Durante la carga del sistema operativo, se inician multitud de servicios que están ocupando memoria y tiempo de procesador. Algunos de ellos, nunca llegan a ser necesarios.</p>
+<p>Si queremos aprovechar al máximo la capacidad de cálculo de nuestro equipo, podemos pensar en desactivar aquellos servicios que no son necesarios para el uso que hacemos del ordenador. Aún así, debemos tener en cuenta que, en la mayoría de los casos, su funcionamiento está muy optimizado (sobre todo los del propio sistema operativo) y que, si no se usan, pronto acaban paginados a disco. Además, debemos tener en cuenta dos inconvenientes fundamentales:</p>
+<ul>
+<li>Si deshabilitamos un servicio necesario para el sistema operativo, éste puede dejar de funcionar de forma correcta.</li>
+<li>Un servicio que no es necesario en este momento y lo deshabilitamos, deberemos recordar habilitarlo en el futuro si llegara a serlo.</li>
+</ul>
+<p>En cualquier caso, a medida que aumenta la cantidad de programas que tenemos instalados, pueden existir servicios menos optimizados. Incluso, en sistemas como Windows, pueden quedar en funcionamiento servicios asociados a un determinado programa aún cuando éste haya sido desinstalado. Incluso pueden existir servicios actuando como spyware. Por todos estos motivos, resulta interesante saber cómo actuar sobre los servicios del sistema.</p>
+<p>Si estás pensando en deshabilitar algunos servicios de tu sistema, en la siguiente tabla tienes algunas sugerencias:</p>
+<p><figure id="_figure-27"><img alt="Servicios de Windows" src="ud6/services.png" width="90%"><figcaption>Figure 27: Servicios de Windows</figcaption></figure></p>
+<p>Un ejemplo típico sería el reinicio del servicio de "Cola de impresión" cuando hayan quedado trabajos en espera:</p>
+<p><figure id="_figure-28"><img alt='Reinicio del servicio de "Cola de impresión"' src="ud6/services2.png" width="90%"><figcaption>Figure 28: Reinicio del servicio de "Cola de impresión"</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h2 id="gestion-de-dispositivos-de-almacenamiento">Gestión de dispositivos de almacenamiento<a class="headerlink" href="#gestion-de-dispositivos-de-almacenamiento" title="Permanent link">¶</a></h2>
+<p>Cuando necesitamos más espacio de almacenamiento en disco, podemos recurrir a comprimir archivos, a moverlos a un dispositivo de almacenamiento externo o incluso a eliminar los que ya no necesitemos. Sin embargo, una buena alternativa consiste en añadir un nuevo disco duro a nuestro sistema. Los discos duros tienen una gran relación entre el precio y la capacidad de almacenamiento y son muy fáciles de instalar.</p>
+<p>Además, en la mayoría de los casos, el ordenador los detectará de forma automática y sólo habrá que configurar el sistema operativo para utilizarlos.</p>
+<p>De hecho, en este apartado supondremos que la parte hardware ya está resuelta. Es decir, que ya has abierto el ordenador y has conectado correctamente un nuevo disco duro en su interior. Aquí nos centraremos en los ajustes que deberemos realizar en el sistema operativo para sacarle todo el rendimiento.</p>
+<p>En Windows, configurar un disco que ha sido añadido en el interior del ordenador, o que se conecta a través de un puerto USB es prácticamente idéntico, salvo que los discos externos ya suelen venir particionados y formateados de fábrica (aunque siempre podremos borrar la estructura previa y comenzar de cero).</p>
+<p>::: note
+Cuando se hace referencia a <em>volumen</em> o <em>partición</em>, estamos hablando de lo mismo, una división lógica en una unidad de almacenamiento.
+:::</p>
+<p>En cualquier caso, en Windows, podemos utilizar dos formas diferentes de configurar discos:</p>
+<ul>
+<li>
+<p><strong>Básica</strong>: Es la que utilizan la mayoría de los ordenadores personales, por ser los más sencillos de administrar. En la configuración básica, cada partición (o volumen) es una entidad independiente, de modo que no puede compartir datos con otras particiones.</p>
+</li>
+<li>
+<p><strong>Dinámica</strong>: Fue una configuración incorporada en los sistemas operativos de <em>Micorsoft</em> a partir de <em>Windows 2000</em>, que puede compartir un gran número de volúmenes (unos 2000), que pueden ser de distintos tipos:</p>
+</li>
+<li>
+<p><strong>Simples</strong>: Los discos se comportarán del modo habitual. Este tipo de volumen puede ser reflejado, pero no es tolerante a fallos.</p>
+</li>
+<li>
+<p><strong>Reflejados</strong>: Se crean dos copias idénticas de un volumen, apareciendo como una sola entidad. Cada escritura se replica en los discos espejo y pueden hacerse lecturas simultáneas de diferentes datos, lo que aumenta el rendimiento. Los diferentes discos pueden actuar de forma independiente (con diferentes controladoras), de modo que, si un disco falla, el sistema puede seguir funcionando a partir del que sigue activo. Esto aumenta la tolerancia a fallos.</p>
+<p>Como es lógico, deben utilizarse discos de las mismas características. De lo contrario, se toma como referencia la capacidad del disco más pequeño.</p>
+<p>Esta configuración equivale a <strong>RAID-1</strong>.</p>
+</li>
+<li>
+<p><strong>Distribuidos</strong>: Utiliza varios discos para crear una sola unidad lógica, permitiendo usar el espacio disponible de una forma muy eficiente. Consigue una mejora de rendimiento, tanto en la lectura como en la escritura, debido a que las operaciones se llevan a cabo en discos diferentes de forma simultánea.</p>
+<p>En esta configuración, los volúmenes no pueden ser reflejados y no es tolerante a fallos.</p>
+</li>
+<li>
+<p><strong>Seccionados</strong>: Es una variante de la anterior. Aunque mejora su rendimiento, es más vulnerable a los errores de escritura.</p>
+<p>Deben utilizarse discos de las mismas características. De lo contrario, se toma como referencia la capacidad del disco más pequeño.</p>
+<p>Esta configuración equivale a <strong>RAID-0</strong>.</p>
+</li>
+<li>
+<p><strong>RAID-5</strong>: Distribuye los datos en tres o más discos, usando uno de ellos (que se va alternando) para almacenar información de paridad que permite la recuperación de datos cuando falla un disco. Por lo tanto, es tolerante a fallos. Mejora la eficiencia respecto a los anteriores, aunque el cálculo de la paridad penaliza ligeramente el rendimiento en la escritura.</p>
+</li>
+</ul>
+<h3 id="niveles-raid-basicos">Niveles RAID básicos<a class="headerlink" href="#niveles-raid-basicos" title="Permanent link">¶</a></h3>
+<p>Entre todos los dispositivos de almacenamiento presentes en el ordenador, los que ofrecen un menor rendimiento son los discos duros.</p>
+<p>Como una forma de paliar este problema se desarrolló el estándar RAID (del inglés, <em>Redundant Array of Independent Disks</em>), que podríamos traducir al español como conjunto redundante de discos independientes. Se trata de un sistema que almacena los datos utilizando diferentes dispositivos de almacenamiento (discos duros o unidades SSD) para crear un único volumen lógico.</p>
+<p>Con RAID, el rendimiento se mejora de dos modos:</p>
+<ul>
+<li>
+<p>Si los datos buscados están <strong>duplicados</strong> en varios discos, podemos recurrir al que ofrezca mayor rendimiento.</p>
+</li>
+<li>
+<p>Si los datos buscados se encuentran <strong>repartidos</strong> entre varios discos, podemos realizar la lectura en paralelo.</p>
+</li>
+</ul>
+<p>Además, se puede incluir redundancia para <strong>mejorar la fiabilidad</strong> del soporte utilizado y compensar el aumento de la probabilidad de fallo, a medida que aumenta el número de dispositivos implicados.</p>
+<p>El conjunto de discos podrá administrarse mediante un controlador hardware o mediante un software específico, pero de cualquier forma, el sistema lo verá como un solo volumen. Además, la capacidad del volumen podrá crecer de forma gradual, aumentando el número de dispositivos implicados.</p>
+<p>La definición básica de RAID consta de siete niveles, numerados de 0 a 6, a los que más tarde se fueron añadiendo algunos complementarios.</p>
+<h4 id="raid-0-o-disk-striping">RAID 0 (o disk striping)<a class="headerlink" href="#raid-0-o-disk-striping" title="Permanent link">¶</a></h4>
+<p>Distribuye los datos sobre los discos del conjunto de forma que permite la lectura o escritura de bloques en paralelo, aumentando considerablemente el rendimiento.</p>
+<p>Los datos se organizan en bandas (strips, en inglés), que pueden corresponder, por ejemplo con bloques físicos o sectores. De este modo, el sistema operativo los maneja como si se tratara de un solo disco.</p>
+<p>Las bandas se asignan de forma rotativa entre los discos que forman el conjunto. De este modo, cuando una lectura comprende varias bandas consecutivas, podrán leerse de forma paralela, aumentando considerablemente el rendimiento.</p>
+<p><figure id="_figure-29"><img alt="Diagrama de configuración de RAID-0" src="ud6/Raid0.png" width="25%"><figcaption>Figure 29: Diagrama de configuración de RAID-0</figcaption></figure></p>
+<p>A diferencia de otros niveles RAID, en este caso no se ofrece redundancia. Esto implica que, si falla un disco, se perderían todos los datos y sólo nos quedaría recurrir a las copias de seguridad. A cambio, ofrece un rendimiento elevado, que aumenta al incrementar el número de discos, y el aprovechamiento de la capacidad de almacenamiento es máxima.</p>
+<h4 id="raid-1-o-mirroring">RAID 1 (o mirroring)<a class="headerlink" href="#raid-1-o-mirroring" title="Permanent link">¶</a></h4>
+<p>A diferencia del caso anterior, que no contemplaba la redundancia, aquí, ésta es completa, ya que se obtiene duplicando todo el contenido almacenado. Sería como RAID 0, pero asignando cada banda a dos discos diferentes. De este modo, dispondremos de parejas de discos gemelos.</p>
+<p>Evidentemente, su principal inconveniente es el coste.</p>
+<p><figure id="_figure-30"><img alt="Diagrama de configuración de RAID-1" src="ud6/Raid1.png" width="25%"><figcaption>Figure 30: Diagrama de configuración de RAID-1</figcaption></figure></p>
+<p>Sin embargo, en RAID 1, se pueden realizar lecturas en paralelo de dos bandas diferentes u obtener una banda del disco que ofrezca la mayor velocidad en cada momento (menor tiempo de búsqueda y latencia). Sin embargo, las escrituras serán duplicadas y se realizarán a la velocidad del dispositivo más lento de la pareja.</p>
+<p>Además, cuando falla un disco, los datos siguen disponibles y basta con sustituir el disco dañado para que los datos puedan volver a duplicarse y recuperar la funcionalidad del conjunto. Cuando accedemos a los datos con un disco averiado, decimos que funciona en modo reducido.</p>
+<h4 id="raid-5">RAID 5<a class="headerlink" href="#raid-5" title="Permanent link">¶</a></h4>
+<p>Un RAID 5 (también llamado distribuido con paridad) es una división de datos a nivel de bloques que distribuye la información de paridad entre todos los discos miembros del conjunto. El RAID 5 ha logrado popularidad gracias a su bajo coste de redundancia. Generalmente, el RAID 5 se implementa con soporte hardware para el cálculo de la paridad.</p>
+<p>RAID 5 necesitará un mínimo de 3 discos para ser implementado y el máximo teórico es ilimitado.</p>
+<p>Su principal ventaja es que se pueden recuperar los datos en caso del fallo de uno de los discos pero el fallo de un segundo disco provoca la pérdida completa de los datos.</p>
+<p><figure id="_figure-31"><img alt="Diagrama de configuración de RAID-5" src="ud6/Raid5.png" width="45%"><figcaption>Figure 31: Diagrama de configuración de RAID-5</figcaption></figure></p>
+<p><strong>Cálculo de paridad</strong></p>
+<p>En el álgebra de Boole, existe una operación llamada “<em>or exclusivo</em>” (XOR), que significa “<em>o uno, o el otro pero no ambos</em>”, esto es:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>0 XOR 0 = 0
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>0 XOR 1 = 1
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1 XOR 0 = 1
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>1 XOR 1 = 0
+</code></pre></div>
+<p>El operador XOR es la pieza central que define como se crea la paridad y como se usa en el RAID. Se usa tanto para la protección de los datos, como para recuperar datos que se han perdido.</p>
+<h4 id="raid-6">RAID 6<a class="headerlink" href="#raid-6" title="Permanent link">¶</a></h4>
+<p>Su estructura es como la de RAID 5, pero añadiendo un control de paridad complementario, que se almacena en la banda correspondiente de un disco independiente. Esto significa que necesitaremos un disco más.</p>
+<p><figure id="_figure-32"><img alt="Diagrama de configuración de RAID-6" src="ud6/Raid6.png" width="45%"><figcaption>Figure 32: Diagrama de configuración de RAID-6</figcaption></figure></p>
+<p>Su gran ventaja es que se podrán recuperar los datos aunque fallen dos discos al mismo tiempo (es decir, durante el periodo que tardaría en regenerarse el conjunto tras un fallo).</p>
+<p>Su mayor inconveniente es que cada escritura conlleva una mayor penalización, ya que deberán calcularse dos bloques de paridad.</p>
+<h4 id="raid-5e-y-raid-6e">RAID 5E y RAID 6E<a class="headerlink" href="#raid-5e-y-raid-6e" title="Permanent link">¶</a></h4>
+<p>Se trata de los niveles RAID 5 y RAID 6, donde se incluyen discos de reserva. cuando los discos se encuentran conectados y listos para usar se denominan <em>hot spare</em>. Si están en modo espera reciben el nombre de <em>standby spare</em>.</p>
+<p>La única aportación que ofrecen estas configuraciones es la rapidez de respuesta en el caso de que se produzca un fallo.</p>
+<h4 id="raid-01">RAID 0+1<a class="headerlink" href="#raid-01" title="Permanent link">¶</a></h4>
+<p>Es una anidación de RAID 0 y RAID 1 donde se crea un conjunto de discos entre los que se divide la información y a continuación se crea un espejo del volumen obtenido.</p>
+<p>También suele llamarse RAID 01, pero no debe confundirse con RAID 1.</p>
+<p><figure id="_figure-33"><img alt="Diagrama de configuración de RAID 0+1" src="ud6/Raid0-1.png" width="45%"><figcaption>Figure 33: Diagrama de configuración de RAID 0+1</figcaption></figure></p>
+<h4 id="raid-10">RAID 1+0<a class="headerlink" href="#raid-10" title="Permanent link">¶</a></h4>
+<p>En este caso, la anidación se invierte, creando dos estructuras RAID 1 que, a continuación se unen entre sí creando un volumen RAID 0.</p>
+<p>Muchas veces se encuentra como RAID 10.</p>
+<p><figure id="_figure-34"><img alt="Diagrama de configuración de RAID 1+0" src="ud6/Raid10.png" width="45%"><figcaption>Figure 34: Diagrama de configuración de RAID 1+0</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h2 id="configuracion-de-dispositivos-de-red">Configuración de dispositivos de red<a class="headerlink" href="#configuracion-de-dispositivos-de-red" title="Permanent link">¶</a></h2>
+<p>Actualmente ordenadores suelen obtener su <em>dirección IP</em> desde un servidor <em>DHCP</em>.</p>
+<p>En redes locales de grandes proporciones, este servidor puede ser uno de los equipos conectados a la red, pero en redes más pequeñas (incluidas las domésticas), es fácil que la tarea la realice el propio router que nos proporciona el acceso a <em>Internet</em>.</p>
+<p>::: note
+DHCP son las siglas de Dynamic Host Configuration Protocol (en español, Protocolo de Configuración Dinámica de Host).
+Es un protocolo de red de tipo cliente/servidor1​ mediante el cual un servidor DHCP asigna dinámicamente una dirección IP y otros parámetros de configuración de red a cada dispositivo en una red para que puedan comunicarse con otras redes IP.
+:::</p>
+<p>En cualquier caso, bien porque no disponemos de <em>servidor DHCP</em> en nuestra red o bien porque el ordenador en el que nos encontramos debe ser fácilmente localizable (por ejemplo, cuando comparta espacio de almacenamiento o una impresora), puede ser interesante asignar una <em>dirección IP fija</em>, también llamada estàtica, para el equipo. Así, el valor de la <em>dirección IP</em> no podrá cambiar con cada arranque.</p>
+<p>Vamos a establecer valores fijos para la dirección IP, la máscara de subred, la puerta de enlace e incluso el servidor DNS principal al que debe recurrir el equipo para resolver las direcciones de Internet.</p>
+<!-- NEWPAGE -->
+
+<p>La forma más sencilla de resolver esta tarea consiste en hacer clic con el botón derecho del ratón sobre el icono que representa la conexión de red en la <em>Barra de tareas</em> y seleccionando "<em>Configuración de red e Internet</em>"</p>
+<p><figure id="_figure-35"><img alt="Configuración de red e internet" src="ud6/net1.png"><figcaption>Figure 35: Configuración de red e internet</figcaption></figure></p>
+<p>Al hacerlo, se abrirá la ventana de <em>Configuración</em> mostrando los ajustes de la categoría <em>Red e Internet</em>.</p>
+<p><figure id="_figure-36"><img alt="Configuración &gt; Red e Internet" src="ud6/net2.png"><figcaption>Figure 36: Configuración &gt; Red e Internet</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<p>Para configurar los dispositivos de red, debemos elegir la primera opción "<em>Ethernet</em>"</p>
+<p><figure id="_figure-37"><img alt="Configuración &gt; Red e Internet &gt; Ethernet" src="ud6/net3.png" width="85%"><figcaption>Figure 37: Configuración &gt; Red e Internet &gt; Ethernet</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<p>Para configurar el dispositivo, debemos pulsar el botón "Editar" del apartado "Asignación de IP"</p>
+<p><figure id="_figure-38"><img alt="Asignación de IP DHCP" src="ud6/net4.png"><figcaption>Figure 38: Asignación de IP DHCP</figcaption></figure></p>
+<p>Al cambiar a "Manual" nos permitirá introducir los parámetros de la IP fija.</p>
+<p><figure id="_figure-39"><img alt="Asignación de IP Manual" src="ud6/net5.png" width="30%"><figcaption>Figure 39: Asignación de IP Manual</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<p>De manera alternativa, podemos la herramienta de "<em>Conexiones de red</em>" del "<em>Panel de control</em>"</p>
+<p><figure id="_figure-40"><img alt="Conexiones de red" src="ud6/net6.png"><figcaption>Figure 40: Conexiones de red</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<p>Al abrir las Propiedades de un adaptador de red aparece un diálogo donde podremos configurar todos los elementos del adaptador. Para configurar la dirección IP seleccionaremos "<em>Protocolo de Internet versión 4(TCP/IPv4)</em>" y haremos clic en "Propiedades", lo que nos permitirá establecer la configuración de red de forma manual.</p>
+<p><figure id="_figure-41"><img alt="Propiedades del adaptador de red" src="ud6/net7.png"><figcaption>Figure 41: Propiedades del adaptador de red</figcaption></figure></p>
+<p>Para comprobar el estado del adaptador de red a través de la línea de comandos podemos utilizar el comando <code>ipconfig</code></p>
+<p><figure id="_figure-42"><img alt="ipconfig" src="ud6/net8.png"><figcaption>Figure 42: ipconfig</figcaption></figure></p>
+<p>Para obtener información detallada podemos utilizar <code>ipconfig /all</code></p>
+<p><figure id="_figure-43"><img alt="ipconfig /all" src="ud6/net9.png"><figcaption>Figure 43: ipconfig /all</figcaption></figure></p>
+<p>Otro comando muy utilizado es <code>ping</code> que comprueba la comunicación con un equipo remoto de la red.</p>
+<p><figure id="_figure-44"><img alt="ping" src="ud6/net10.png"><figcaption>Figure 44: ping</figcaption></figure></p>
+<!-- NEWPAGE -->
+
+<h2 id="automatizacion-de-tareas">Automatización de tareas<a class="headerlink" href="#automatizacion-de-tareas" title="Permanent link">¶</a></h2>
+<p>Los sistemas operativos suelen incluir herramientas que nos permiten evitar la realización manual de tareas administrativas que se repiten de forma sistemática a lo largo del tiempo (como las copias de seguridad) o que se realizan a horas intempestivas para evitar comprometer el rendimiento del equipo en los momentos en los que más falta haga (como la descarga e instalación de actualizaciones).</p>
+<p>La automatización de tareas del sistema nos permite programar la ejecución de programas o secuencias de comandos, para que se produzca a una hora determinada y, en su caso, con una frecuencia en particular.</p>
+<p>En el caso de <em>Windows</em>, esta situación la cubre el <em>Programador de tareas</em>, que nos permite automatizar tareas en función de que se produzcan diferentes circunstancias:</p>
+<ul>
+<li>Cuando llegue un momento particular del futuro.</li>
+<li>Cuando se produzca un determinado evento.</li>
+<li>Con una frecuencia determinada, indicada por el usuario.</li>
+</ul>
+<p>Por lo tanto, podemos utilizar las tareas programadas para automatizar ciertas acciones que se repiten a lo largo del tiempo, evitando así molestias y olvidos ocasionales. Por ejemplo, podríamos conseguir que el ordenador se apagara de forma automática, todos los días laborales, sin que tengamos que desplazarnos físicamente hasta donde se encuentra.</p>
+<p>También podríamos, por ejemplo, conseguir que el antivirus que tengamos instalado realice un análisis completo del sistema todos los domingos a las 3 de la madrugada, aprovechando el momento de menor carga de trabajo del servidor.</p>
+<p>Una de las ventajas del Programador de tareas de <em>Windows</em> es que incorpora una biblioteca de tareas programadas y las mantiene organizadas y accesibles, de modo que resulta fácil administrarlas (deshabilitarlas, modificarlas, eliminarlas o ejecutarlas).</p>
+<p>En <em>Windows</em>, la frecuencia con la que se repita la acción puede ser:</p>
+<ul>
+<li>Diariamente</li>
+<li>Semanalmente</li>
+<li>Mensualmente</li>
+<li>Una vez</li>
+<li>Al iniciarse el equipo (antes de que un usuario inicie sesión)</li>
+<li>Al iniciar la sesión (sólo después de que el usuario actual inicie sesión)</li>
+<li>Cuando se registre un evento específico</li>
+</ul>
+<p>Podemos acceder a la herramienta "Programador de tareas" mediante el panel de Administración de equipos.</p>
+<p>Para crear una nueva tarea, podemos utilizar el asistente con la opción "Crear tarea básica..." o el modo avanzado con la opción "Crear tarea..."</p>
+<p><figure id="_figure-45"><img alt="Programador de tareas" src="ud6/task1.png" width="80%"><figcaption>Figure 45: Programador de tareas</figcaption></figure></p>
+<p>Al abrir seleccionar "Crear tarea básica..." aparece un diálogo con un asistente. El primer paso es indicar el nombre y una descripción:</p>
+<p><figure id="_figure-46"><img alt="Asistente para crear tarea básica" src="ud6/task2.png" width="70%"><figcaption>Figure 46: Asistente para crear tarea básica</figcaption></figure></p>
+<p>A continuación pregunta cuál será el evento que desencadenará la ejecución de la tarea.</p>
+<p><figure id="_figure-47"><img alt="Asistente para crear tarea básica - Desencadenante" src="ud6/task3.png" width="70%"><figcaption>Figure 47: Asistente para crear tarea básica - Desencadenante</figcaption></figure></p>
+<p>Para el ejemplo, al seleccionar "Diariamente" como desencadenante, en el siguiente paso solicita la fecha de inicio, la hora a la que se ejecutará y cada cuántos días queremos que se repita la tarea.</p>
+<p><figure id="_figure-48"><img alt="Asistente para crear tarea básica - Diariamente" src="ud6/task4.png" width="70%"><figcaption>Figure 48: Asistente para crear tarea básica - Diariamente</figcaption></figure></p>
+<p>En el siguiente paso solicita qué tipo de acción queremos que realice la tarea. Por lo general, se inicializará un programa.</p>
+<p><figure id="_figure-49"><img alt="Asistente para crear tarea básica - Acción" src="ud6/task5.png" width="70%"><figcaption>Figure 49: Asistente para crear tarea básica - Acción</figcaption></figure></p>
+<p>En el último paso, indicaremos qué aplicación o script se iniciará. En nuestro caso, llamaremos al comando <code>shutdown /s /t 0</code>. Como puede verse, hay que indicar el comando por un lado y los argumentos en otro campo separado.</p>
+<p><figure id="_figure-50"><img alt="Asistente para crear tarea básica - Iniciar un programa" src="ud6/task6.png" width="70%"><figcaption>Figure 50: Asistente para crear tarea básica - Iniciar un programa</figcaption></figure></p>
+<p>Finalmente, como suele acostumbrar <em>Windows</em>, el sistema muestra un resumen para que revisemos todos los parámetros que hemos configurado.</p>
+<p><figure id="_figure-51"><img alt="Asistente para crear tarea básica - Resumen" src="ud6/task7.png" width="60%"><figcaption>Figure 51: Asistente para crear tarea básica - Resumen</figcaption></figure></p>
+<p>Al volver a la ventana principal del <em>Programador de tareas</em> veremos que se ha creado la nueva tarea. Si abrimos sus propiedades podemos consultar y ajustar los parámetros.</p>
+<p><figure id="_figure-52"><img alt="Propiedades de una tarea programada" src="ud6/task8.png" width="65%"><figcaption>Figure 52: Propiedades de una tarea programada</figcaption></figure></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../extra/js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

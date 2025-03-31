@@ -1,0 +1,1353 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../unit01/">
+      
+      
+        <link rel="next" href="../unit03/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+    
+    
+      
+        <title>Unit2 - Sistemas Operativos Monopuesto</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra/fontawesome/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit-2-virtualization-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sistemas Operativos Monopuesto" class="md-header__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas Operativos Monopuesto
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unit2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit01/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit03/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../unit04/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Unit4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../unit05/" class="md-tabs__link">
+          
+  
+  
+  Unit5
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sistemas Operativos Monopuesto" class="md-nav__button md-logo" aria-label="Sistemas Operativos Monopuesto" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistemas Operativos Monopuesto
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Unit2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#virtualization-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtualization concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtualization concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of virtualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-and-disadvantages-of-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages and disadvantages of virtualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advantages and disadvantages of virtualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualization-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtualization software
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualBox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualBox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-virtualization-in-the-bios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable virtualization in the BIOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-hyper-v-on-microsoft-windows-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disabling Hyper-V on Microsoft Windows systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating virtual machines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-and-use-of-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration and use of virtual machines.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-and-stopping-a-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting and stopping a virtual machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-host-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Host Key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-management-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      State management. Snapshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-a-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exporting a virtual machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-a-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing a virtual machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloning-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloning virtual machines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouping virtual machines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete virtual machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-storage-media-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual storage media management.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machine-portability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual machine portability
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unit5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/unit05_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 MS Windows Administration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit05/unit05_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Linux command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unit-2-virtualization-systems">Unit 2: Virtualization systems<a class="headerlink" href="#unit-2-virtualization-systems" title="Permanent link">¶</a></h1>
+<p><strong>Virtualization</strong> is a technology that allows software to <strong>simulate resources</strong>. In a fully virtualized environment, each operating system has the illusion of residing on an individual machine with all hardware resources entirely available to it.</p>
+<p>To achieve <strong>hardware virtualization</strong>, a program called <strong>hypervisor</strong> or <strong>virtual machine monitor</strong> is needed to manage the use of the hardware, each <strong>virtual machine</strong> is called a <strong>guest</strong>. The hypervisor is responsible for <strong>creating</strong> and <strong>managing</strong> the virtual machines, ensuring that each one has the necessary resources to operate.</p>
+<p>Each of the <strong>virtual machines</strong> can be assigned hardware resources through different configurations. Among the resources that can be shared are: RAM, CPU, storage drives, network cards, etc. On each of these machines we can install an independent operating system and its applications. Thus, for example, when a virtualized operating system believes that it is writing to a real hard disk, it is actually writing to a file, managed by the virtual machine, that simulates said hard disk.</p>
+<p>Virtualization allows multiple guest operating systems to run simultaneously on a single computer by sharing available physical resources such as the processor, memory, storage drives, and other input/output devices.</p>
+<div class="admonition note">
+<p class="admonition-title">VPS in the cloud 🌐</p>
+<p>A real use case of virtualization is the use of <strong>virtual private servers</strong> (<em>VPS</em>) in the cloud.</p>
+<p>In this case, a physical server is divided into several virtual servers, each with its own operating system and applications. This allows the users to have a server with the necessary resources without having to buy and maintain a physical server.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Cloud gaming 🎮</p>
+<p>Another use case of virtualization is <strong>cloud gaming</strong>. In this case, the game is executed on a server in the cloud, and the user interacts with it through a client that sends the user's commands to the server and receives the images generated by the game. This allows the user to play games with high hardware requirements on a device with low hardware requirements.</p>
+<p>Some examples of cloud gaming services are:</p>
+<ul>
+<li><a href="https://www.nvidia.com/en-us/geforce-now/">NVIDIA GeForce Now</a></li>
+<li><a href="https://www.xbox.com/en-us/xbox-game-pass/ultimate">Xbox Game Pass Ultimate</a></li>
+<li><a href="https://www.playstation.com/en-us/ps-plus/">PlayStation Plus Premium</a></li>
+<li><a href="https://luna.amazon.com/">Amazon Luna</a></li>
+</ul>
+</div>
+<h2 id="virtualization-concepts">Virtualization concepts<a class="headerlink" href="#virtualization-concepts" title="Permanent link">¶</a></h2>
+<p>The most important concepts to understand what virtualization is are:</p>
+<ul>
+<li><strong>Host</strong> system.</li>
+<li><strong>Guest</strong> system.</li>
+<li><strong>Hypervisor</strong> or <em><strong>Virtual Machine Monitor</strong></em> (<em>VMM</em>).</li>
+<li><strong>Virtual Machine</strong> (<em>VM</em>).</li>
+<li><strong>Container</strong>.</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Host</strong> system, is the operating system of the computer in which we install our <em>virtualization software</em> and which will assign or lend certain hardware resources to the <em>virtual machine</em> that we create.</p>
+</li>
+<li>
+<p><strong>Guest</strong> system, is the operating system that we install in the <em>virtual machine</em> that we have created, using our <em>virtualization software</em> and to which we have assigned certain hardware resources to operate.</p>
+</li>
+<li>
+<p><strong>Hypervisor</strong> or <em><strong>Virtual Machine Monitor</strong></em> (<em>VMM</em>), is the software responsible for creating an <strong>abstraction layer</strong> to communicate the real machine with the <em>virtual machines</em>. Its mission is to assign computing resources to the virtual machines as they are needed.</p>
+</li>
+<li>
+<p><strong>Virtual Machine</strong> (<em>VM</em>), is an <strong>instance</strong> of virtualized hardware.</p>
+</li>
+<li>
+<p><strong>Container</strong>, is a <strong>lightweight</strong> and <strong>portable</strong> software package that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings. Containers are isolated from each other and from the host system, but they share the kernel of the host system.</p>
+</li>
+</ul>
+<figure>
+    <img alt="Logical diagram of full virtualization" src="Logical_diagram_Full_virtualization.png" width="100%">
+    <figcaption>Logical diagram of full virtualization. @wikipedia</figcaption>
+</figure>
+<h3 id="types-of-virtualization">Types of virtualization<a class="headerlink" href="#types-of-virtualization" title="Permanent link">¶</a></h3>
+<p>We will study <strong>three types</strong> of virtualization:</p>
+<ul>
+<li>
+<p>Virtualization with <strong>native</strong> hypervisor, <em><strong>type 1</strong></em> or <em><strong>bare metal</strong></em>.</p>
+<p>The hypervisor runs directly on the computer equipment. The hypervisor itself acts as a kind of operating system oriented to manage virtual machines, gaining greater control and obtaining better performance. Mainly used in professional environments and servers.</p>
+</li>
+<li>
+<p>Virtualization with <strong>hosted</strong> hypervisor, <em><strong>type 2</strong></em>.</p>
+<p>The hypervisor software is installed on a host operating system. It offers lower performance than native hypervisors because it is affected by the host system. They are aimed at test, teaching or home environments.</p>
+</li>
+<li>
+<p>Virtualization based on <strong>containers</strong>.</p>
+<p>Also known as <strong>operating system-level virtualization</strong> or <strong>application containerization</strong> or <strong>containerization</strong>.</p>
+<p>The containers <strong>share</strong> the <strong>host operating system's kernel</strong> and are therefore <strong>more lightweight</strong> than virtual machines. They are used to <strong>run applications</strong> in an <strong>isolated virtual environment</strong>.</p>
+<p>The most popular containerization software is <strong>Docker</strong>.</p>
+</li>
+</ul>
+<figure>
+    <img alt="Types of virtualization" src="virualization_types.png" width="90%">
+    <figcaption>Types of virtualization. @wikipedia</figcaption>
+</figure>
+<div class="admonition note">
+<p>In this course we will focus on hosted hypervisors <strong>type 2</strong>.</p>
+</div>
+<p>The hypervisor hosts the guest. A host can have multiple guests and the guests must not interfere with each other or the host. Guest operating systems run within a Virtual Machine.</p>
+<p>To build the virtual machine we need to allocate certain hardware resources, such as hard disk space, RAM, number of processors, etc. that the host will give up or share with the guest.</p>
+<p>The <strong>hardware requirements</strong> for a computer running virtual machines will vary depending on a number of factors, including:</p>
+<ul>
+<li>The virtualization software installed on the host computer.</li>
+<li>The number and type of guest operating systems.</li>
+<li>The applications you plan to run on the guest operating systems.</li>
+<li>The applications you plan to run, simultaneously with the guest systems, on the host computer.</li>
+</ul>
+<h2 id="advantages-and-disadvantages-of-virtualization">Advantages and disadvantages of virtualization<a class="headerlink" href="#advantages-and-disadvantages-of-virtualization" title="Permanent link">¶</a></h2>
+<h3 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>Utilization of existing resources</strong>, allowing for their shared use. Before virtualization, it is common for the resource usage rate to not exceed 50%, in fact, it is very common for it not to exceed 15%.</p>
+</li>
+<li>
+<p><strong>Reducing the costs</strong> of data centers by reducing their physical infrastructure. This results in a lower need for space and a reduction in energy consumption and cooling needs, which, in addition to saving money, contributes to improving the environment.</p>
+</li>
+<li>
+<p><strong>Streamlining administration</strong>, since more advanced tools are available. In addition, we can have all the processing capacity grouped into several physical servers, between which a <strong>dynamic balancing</strong> of the virtual machines takes place, <strong>centrally managing</strong> all the computing capacity, memory, storage, network, etc., and guaranteeing that each virtual machine runs on the most suitable <em>host</em> at all times.</p>
+</li>
+<li>
+<p><strong>Fragment services</strong>, instead of having a large server that centralizes all the company's services, we can define small virtual servers, each of them specialized in a specific service (<em>a web server, a print server, a telephone switchboard server, etc.</em>). In this way, the administration of each of them is simplified and possible unwanted interrelations are avoided.</p>
+</li>
+<li>
+<p><strong>Isolation</strong> between the different virtual machines, which will mean that a failure in one of them will not affect the rest.</p>
+</li>
+<li>
+<p><strong>Increase availability</strong>, since backup and cloning mechanisms for complete virtual machines can be used to migrate them to different hardware, eliminating downtime and immediately recovering from any problem. Sometimes, the migration from one system to another can even be done hot (without stopping the host and without stopping offering service).</p>
+</li>
+<li>
+<p>Increase the <strong>flexibility of the implementation</strong>, to respond more quickly to possible changes that need to be made. For example, we can add resources to virtualized servers quickly and easily.</p>
+</li>
+<li>
+<p><strong>Create test environments</strong> that allow new solutions to be tested before they can affect the rest of the infrastructure.</p>
+</li>
+<li>
+<p>Administer and manage secure desktop systems that are accessible to users locally or remotely from almost any client-side computer.</p>
+</li>
+</ul>
+<h3 id="disadvantages">Disadvantages<a class="headerlink" href="#disadvantages" title="Permanent link">¶</a></h3>
+<p><strong>Disadvantages</strong> include:</p>
+<ul>
+<li>Many virtual systems may <strong>depend on a single physical computer</strong>, requiring additional measures to ensure data integrity.</li>
+<li>The <strong>performance</strong> of systems is limited by sharing physical resources.</li>
+<li><strong>Compatibility</strong> problems may arise with virtualized hardware.</li>
+</ul>
+<h2 id="virtualization-software">Virtualization software<a class="headerlink" href="#virtualization-software" title="Permanent link">¶</a></h2>
+<p>When we talk about virtualization software, we have a wide range of possibilities among which we can find very different options, both in terms of the type of virtualization and the manufacturer.</p>
+<p>For this reason, below we will review the most common tools:</p>
+<ul>
+<li><strong>Native hypervisors</strong>, type 1 or <em>bare metal</em>:<ul>
+<li><strong>VMware ESXi</strong>. Produced by <em>WMware Inc</em>, it is one of the company's different virtualization solutions.</li>
+<li><strong>KVM</strong> (<strong><em>Kernel-based Virtual Machine</em></strong>). It is a virtualization module for the <em>Linux</em> kernel that allows the kernel to act as a hypervisor. It can be run on any architecture supported by <em>Linux</em> (<em>Intel</em>, <em>ARM</em>, <em>PowerPC</em>, )</li>
+<li><strong>Citrix Hypervisor</strong> (<strong><em>XenServer</em></strong>). Virtualization software from <em>Citrix Systems, Inc</em>. Optimized for desktop workloads and virtual applications based on the <em>Xen Project</em> hypervisor, an open source hypervisor developed by the University of Cambridge.</li>
+<li><strong>Microsoft Hyper-V</strong>. Developed by <em>Microsoft</em> for systems based on <em>Intel</em> type processors.</li>
+</ul>
+</li>
+<li><strong>Hosted hypervisors</strong>, type 2:<ul>
+<li><strong>VMware Workstation</strong>. It is a hypervisor for <em>Windows</em> and <em>Linux</em> systems that allows users to configure virtual machines. There is a paid version (<em>Pro</em>) and a free version (<em>Player</em>) aimed at personal use.</li>
+<li><strong>Parallels Desktop</strong>. For <em>Apple Mac OS X</em> operating systems.</li>
+<li><strong>Oracle VM VirtualBox</strong>. Easy-to-use and free software under a <em>PUEL</em> license for personal use and evaluation. It runs on <em>Intel</em> processors running Windows, Linux, macOS or Solaris operating systems.</li>
+</ul>
+</li>
+</ul>
+<h2 id="virtualbox">VirtualBox<a class="headerlink" href="#virtualbox" title="Permanent link">¶</a></h2>
+<p><strong>Oracle VM VirtualBox</strong> is a free and open-source hosted hypervisor for x86 virtualization, developed by <em>Oracle Corporation</em>. It is installed on an existing host operating system as an application; this host application allows additional guest operating systems, each known as a Guest OS, to be loaded and run, each with its own virtual environment.</p>
+<p>VirtualBox can be installed on a variety of host operating systems, including <em>Linux</em>, <em>macOS</em>, <em>Windows</em>, <em>Solaris</em>, and <em>OpenSolaris</em>. It supports the creation and management of guest virtual machines running versions and derivations of <em>Windows</em>, <em>Linux</em>, <em>BSD</em>, <em>OS/2</em>, <em>Solaris</em>, <em>Haiku</em>, and <em>OSx86</em>, as well as limited virtualization of macOS guests on Apple hardware.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h3>
+<p>On the official <em>Oracle VM VirtualBox</em> page <a href="https://www.virtualbox.org/"><strong>www.virtualbox.org</strong></a> we can consult the manual, technical requirements, installation guide and download the version appropriate to our operating system.</p>
+<h3 id="enable-virtualization-in-the-bios">Enable virtualization in the BIOS<a class="headerlink" href="#enable-virtualization-in-the-bios" title="Permanent link">¶</a></h3>
+<p>Intel and AMD processors provide technologies that optimize the virtualization process. To use them, you need to activate them in the system's BIOS or UEFI.</p>
+<p>The first thing to do is to check that the processor supports virtualization. You can find out by checking the processor's technical specifications in the manufacturer's manual.</p>
+<p>To activate it, you need to enter the computer's BIOS or UEFI configuration. To do this, you need to check the motherboard manufacturer's manual. When you start the computer, you need to press the key, usually the <code>DEL</code>, <code>F2</code>, <code>F12</code> or <code>ESC</code> key.</p>
+<p>Go to the section indicated in the manual, which could be "<em>System configuration</em>", "<em>Advanced</em>" or similar, and look for an option that says "<em>Intel VT</em>", "<em>VT-x</em>", "<em>Virtualization Technology</em>", "<em>AMD-v</em>", etc. (the name may vary depending on the manufacturer) and activate it.</p>
+<h3 id="disabling-hyper-v-on-microsoft-windows-systems">Disabling <em>Hyper-V</em> on <em>Microsoft Windows</em> systems<a class="headerlink" href="#disabling-hyper-v-on-microsoft-windows-systems" title="Permanent link">¶</a></h3>
+<p>If our host system is <em>Windows 8</em> or higher, we must check that the <em>Hyper-V</em> features are disabled.</p>
+<p>Open the "<strong>Enable or disable Windows features</strong>" panel, look for the <strong><em>Hyper-V</em></strong> option and uncheck it. Restart the computer.</p>
+<figure>
+    <img alt="Deshabilitar Hyper-V en Windows" src="disable_hyper-v.png">
+    <figcaption>Deshabilitar Hyper-V en Windows</figcaption>
+</figure>
+<h3 id="installation_1">Installation<a class="headerlink" href="#installation_1" title="Permanent link">¶</a></h3>
+<p>If we have a <strong><em>GNU/Linux</em></strong> operating system, it is very likely that <em>VirtualBox</em> is in the distribution's repositories. We must proceed to install it using the relevant package manager.</p>
+<p>Alternatively, we can download the package directly from the official website.</p>
+<p><a href="https://www.virtualbox.org/">Oracle VirtualBox Official Website</a></p>
+<p>On <strong><em>Microsoft Windows</em></strong> systems, we will have to access the official website and download the installer, then run it and proceed with the typical step-by-step installer.</p>
+<h2 id="creating-virtual-machines">Creating virtual machines<a class="headerlink" href="#creating-virtual-machines" title="Permanent link">¶</a></h2>
+<p>Once installed, we can access the hypervisor where we can manage the virtual machines.</p>
+<figure>
+    <img alt="VirtualBox main window" src="vb_wellcome.png" width="75%">
+    <figcaption>VirtualBox main window</figcaption>
+</figure>
+<p>To create a new virtual machine we must click on "<code>New</code>" or in the top menu "<code>Machine</code> &gt; <code>New...</code>"</p>
+<figure>
+    <img alt="VirtualBox toolbar" src="vb_tools_bar_empty.png" width="90%">
+    <figcaption>VirtualBox toolbar</figcaption>
+</figure>
+<p>A new window will open with a wizard to create the machine.</p>
+<ul>
+<li><strong><em>Step 1</em></strong>. The first step will be to <strong>give it an appropriate name</strong>, the location where the files will be stored, the type and the version.</li>
+</ul>
+<figure>
+    <img alt="Step 1: Name and operating system" src="vb_new_1_name.png" width="65%">
+    <figcaption>Step 1: Name and operating system</figcaption>
+</figure>
+<ul>
+<li><strong><em>Step 2</em></strong>. Next, we need to choose the amount of RAM that the virtual machine we are creating will use. The default value is usually sufficient, but we must adjust it to the requirements of the system we want to install. Keeping in mind that the memory we assign to the virtual machine will not be available to the host system.</li>
+</ul>
+<figure>
+    <img alt="Step 2: Memory size" src="vb_new_2_memory.png" width="65%">
+    <figcaption>Step 2: Memory size</figcaption>
+</figure>
+<ul>
+<li>
+<p><strong><em>Step 3</em></strong>. The next step will be to configure the virtual storage (HDD). Usually we will create a <strong>new</strong> virtual disk.</p>
+<p><figure markdown="span">
+    <img alt="Step 3: Virtual Storage" src="vb_new_3_1_disc_type.png" width="65%">
+    <figcaption>Step 3: Virtual Storage</figcaption>
+</figure></p>
+<ul>
+<li>
+<p><strong><em>Step 3.1</em></strong>. When creating a new virtual disk we must choose the type to use.</p>
+<ul>
+<li><strong>VDI</strong> is the native format of <em>VirtualBox</em></li>
+<li><strong>VDH</strong> format used by <em>Microsoft</em></li>
+<li><strong>VMDK</strong> is used by <em>VMWare</em></li>
+</ul>
+<p>We will select the <strong>VDI</strong> format, by default.</p>
+<p><figure markdown="span">
+    <img alt="Step 3.1: Hard disk file type" src="vb_new_3_1_disc_type.png" width="65%">
+    <figcaption>Step 3.1: Hard disk file type</figcaption>
+</figure></p>
+<p><strong><em>Step 3.2</em></strong>. In this section we must select how the file that stores the virtual hard disk will behave in physical storage.</p>
+<ul>
+<li><strong>Dynamically reserved</strong>. The file will grow as data is entered into the virtual hard disk. It is created faster but has lower performance.</li>
+<li><strong>Fixed size</strong>. A file of the same size as the virtual hard disk will be created. It takes longer to create but offers better performance.</li>
+</ul>
+</li>
+</ul>
+<p>Para ahorrar recursos seleccionaremos <strong><em>Reservado dinámicamente</em></strong>, por defecto.</p>
+<p><figure markdown="span">
+    <img alt="Step 3.2: Storage on physical hard disk drive" src="vb_new_3_2_disc_dynamic.png" width="65%">
+    <figcaption>Step 3.2: Storage on physical hard disk drive</figcaption>
+</figure></p>
+<ul>
+<li><strong><em>Step 3.3</em></strong>. Finally, we will name the virtual hard disk and choose the size. By default it suggests a recommended disk size but we must adjust it to the requirements of the system we want to install.</li>
+</ul>
+<p><figure markdown="span">
+    <img alt="Step 3.3: File location and size" src="vb_new_3_3_disc_size.png" width="65%">
+    <figcaption>Step 3.3: File location and size</figcaption>
+</figure></p>
+<p>After completing the steps, we will return to the main VirtualBox window with the newly installed virtual machine selected, where a summary of its configuration options will appear.</p>
+<p><figure markdown="span">
+    <img alt="New virtual machine created" src="vb_new_4_finish.png" width="65%">
+    <figcaption>New virtual machine created</figcaption>
+</figure></p>
+</li>
+</ul>
+<h2 id="configuration-and-use-of-virtual-machines">Configuration and use of virtual machines.<a class="headerlink" href="#configuration-and-use-of-virtual-machines" title="Permanent link">¶</a></h2>
+<p>Once we have created the virtual machine, we must <strong>check and configure its options</strong>.</p>
+<p>To do this, we must select the virtual machine and click on "<strong>Configuration</strong>"</p>
+<figure>
+    <img alt="Access to the configuration of a virtual machine" src="vb_vm_bar_setup.png" width="60%">
+    <figcaption>Access to the configuration of a virtual machine</figcaption>
+</figure>
+<p>The configuration window for the selected virtual machine will open.</p>
+<figure>
+    <img alt="Virtual machine configuration window" src="vb_setup_general.png" width="65%">
+    <figcaption>Virtual machine configuration window</figcaption>
+</figure>
+<p>Let's review some of these options:</p>
+<ul>
+<li>
+<p><strong>General</strong>. We can mainly change the name, type and version of the guest operating system.</p>
+</li>
+<li>
+<p><strong>System</strong>. We can adjust the size of the RAM and the number of processors (cores) that the virtual machine will use.</p>
+</li>
+<li>
+<p><strong>Storage</strong>. In this section we can manage the virtual storage devices associated with the machine.</p>
+</li>
+</ul>
+<p>A very commonly used feature is to <strong>insert ISO images</strong> into the <strong>virtual CD/DVD drive</strong> to boot the system for the first time.</p>
+<figure>
+    <img alt="Virtual Storage Setup" src="vb_setup_storage.png" width="60%">
+    <figcaption>Virtual Storage Setup</figcaption>
+</figure>
+<ul>
+<li>
+<p><strong>Network</strong>. We can enable up to four network adapters. Each adapter can be configured with different types of network connections. The most common are:</p>
+<ul>
+<li><strong>Not attached</strong>. Represents the absence of a network adapter.</li>
+<li><strong>NAT</strong> (<em>Network Address Translation</em>). Allows basic functionality from the guest system that shares the internet connection. It is basic but has quite a few limitations.</li>
+<li><strong>Bridge Adapter</strong>. Simulates a physical connection to the real network, assigning an IP address from the network to the virtual device.</li>
+<li><strong>Internal Network</strong>. Creates an internal network between the different virtual machines, without internet connection.</li>
+<li>
+<p><strong>Host-only Adapter</strong>. Simulates a logical network adapter, only allowing internal communication.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Network type</th>
+<th style="text-align: center;">Guest -&gt; other Guests</th>
+<th style="text-align: center;">Host -&gt; Guest</th>
+<th style="text-align: center;">Guest -&gt; external Network</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Not attached</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>NAT</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Bridged Adapter</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Internal Network</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Host-only Adapter</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><figure markdown="span">
+    <img alt="Network Device Configuration" src="vb_setup_network.png" width="60%">
+    <figcaption>Network Device Configuration</figcaption>
+</figure></p>
+<div class="admonition note">
+<p class="admonition-title">Internal Network</p>
+<p>In the course we will mainly use "<strong><em>Internal Network</em></strong>" to avoid downloading automatic updates that saturate the network. When we need to connect the virtual machine to the Internet we will add a second <em>NAT</em> type adapter.</p>
+</div>
+</li>
+</ul>
+<h2 id="starting-and-stopping-a-virtual-machine">Starting and stopping a virtual machine<a class="headerlink" href="#starting-and-stopping-a-virtual-machine" title="Permanent link">¶</a></h2>
+<p>To start a virtual machine we must select it and click on <strong>Start</strong></p>
+<figure>
+    <img alt="Start virtual machine" src="vb_start.png" width="70%">
+    <figcaption>Start virtual machine</figcaption>
+</figure>
+<p>If it is the first time we start it, we must insert a bootable media, typically an ISO image in the virtual CD/DVD drive.</p>
+<figure>
+    <img alt="Virtual machine starting Windows installation ISO image" src="vb_start_win_install.png" width="90%">
+    <figcaption>Virtual machine starting Windows installation ISO image</figcaption>
+</figure>
+<p>The virtual machine runs within a window that, by default, shows an options menu at the top and a status bar at the bottom.</p>
+<p>From this window we can configure different options.</p>
+<p>To stop the virtual machine we can <strong>use the option to shut down the guest operating system</strong> or directly close the window, where a dialog with several options will be displayed.</p>
+<figure>
+    <img alt="Virtual machine stop" src="vb_stop.png" width="100%">
+    <figcaption>Virtual machine stop</figcaption>
+</figure>
+<ul>
+<li><strong>Save the state of the machine</strong>. It would be similar to hibernating an operating system, it closes the virtual machine, saving the current state, and then continues working where we left off. If we close this way we will not be able to modify the virtual machine configuration.</li>
+<li>
+<p><strong>Send shutdown signal</strong>. It sends a shutdown signal (<em>ACPI shutdown</em>) so that the guest operating system starts the shutdown sequence. This is the recommended way to shut down the virtual machine.</p>
+</li>
+<li>
+<p><strong>Shut down the machine</strong>. It is the equivalent of disconnecting the power of a computer, popularly known as "<em>push button</em>". We should avoid this option unless the virtual machine has crashed and there is no other option, because, as with a real computer, we run the risk of data loss or corruption.</p>
+</li>
+</ul>
+<h2 id="the-host-key">The Host Key<a class="headerlink" href="#the-host-key" title="Permanent link">¶</a></h2>
+<p>VirtualBox defines a <strong>Host key</strong>, which is associated with the <strong><code>Right Ctrl</code></strong> key by default.</p>
+<p>The Host key has several functions. Its main function is to release the mouse and keyboard input from the guest and return it to the host. Therefore, if we see that we cannot exit the guest system window, pressing this key will give us control again.</p>
+<p>Another function is to simulate the <code>Ctrl</code> + <code>Alt</code> combination, which will allow us to send the sequence <code>Ctrl</code> + <code>Alt</code> + <code>Del</code> to the guest system by pressing <code>Host</code> + <code>Del</code>.</p>
+<p>We can change the Host key in the preferences of VirtualBox.</p>
+<h2 id="state-management-snapshots">State management. Snapshots<a class="headerlink" href="#state-management-snapshots" title="Permanent link">¶</a></h2>
+<p><em>VirtualBox</em> offers a method to save the state of a virtual machine called <strong>snapshots</strong>. It can be used as a backup system for disaster recovery. This can be useful when we are doing tests and at the end we want to recover the initial state.</p>
+<p>To access snapshot management, always with the virtual machine turned off, we will click on the "<em>hamburger</em>" type menu of the virtual machine we want to manage and select "<strong>Snapshots</strong>"</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We must be careful and limit the number of snapshots since they take up a lot of disk space. When we no longer need a snapshot, it is advisable to delete it.</p>
+</div>
+<figure>
+    <img alt="Access to snapshot configuration" src="vb_snapshot.png" width="100%">
+    <figcaption>Access to snapshot configuration</figcaption>
+</figure>
+<p>The view will change to the snapshot manager.</p>
+<figure>
+    <img alt="Snapshot Manager" src="vb_snapshot_window.png" width="65%">
+    <figcaption>Snapshot Manager</figcaption>
+</figure>
+<p>Snapshots will always be created from the current state of the virtual machine, by pressing the "Take" button.</p>
+<p>We will put a name and an appropriate description.</p>
+<figure>
+    <img alt="Take new snapshot" src="vb_snapshot_create.png" width="75%">
+    <figcaption>Take new snapshot</figcaption>
+</figure>
+<p>Once we have created snapshots we can delete or restore them.</p>
+<p>The snapshot restoration, by default, offers the possibility of making another snapshot of the current state, if we do not take this into account, we may end up with quite a few snapshots that we do not know which state they belong to.</p>
+<figure>
+    <img alt="Restore a snapshot" src="vb_snapshot_restore.png" width="100%">
+    <figcaption>Restore a snapshot</figcaption>
+</figure>
+<h2 id="exporting-a-virtual-machine">Exporting a virtual machine<a class="headerlink" href="#exporting-a-virtual-machine" title="Permanent link">¶</a></h2>
+<p>VirtualBox can export and import virtual machines using the <strong>OVA</strong> (<em>Open Virtual Appliance</em>) format. The OVA format is supported by different virtual machine software.</p>
+<p>To export a virtual machine, we must select it and, in the top menu, go to "<strong><code>File</code> &gt; <code>Export virtualized service...</code></strong>"</p>
+<figure>
+    <img alt="Exporting a virtual machine" src="vb_export.png" width="95%">
+    <figcaption>Exporting a virtual machine</figcaption>
+</figure>
+<h2 id="importing-a-virtual-machine">Importing a virtual machine<a class="headerlink" href="#importing-a-virtual-machine" title="Permanent link">¶</a></h2>
+<p>To export a virtual machine, we must select it and, in the top menu, go to "<strong><code>File</code> &gt; <code>Import virtualized service...</code></strong>"</p>
+<figure>
+    <img alt="Importing a virtual machine" src="vb_import.png" width="95%">
+    <figcaption>Importing a virtual machine</figcaption>
+</figure>
+<h2 id="cloning-virtual-machines">Cloning virtual machines<a class="headerlink" href="#cloning-virtual-machines" title="Permanent link">¶</a></h2>
+<p>We can create a complete copy or a link to an existing virtual machine.</p>
+<p>To make a clone, right-click on the virtual machine and choose the option <strong>Clone...</strong>.</p>
+<p>An options dialog will appear where you must indicate the name of the copy, the location and the type of clone, among others.</p>
+<ul>
+<li><strong>Full clone</strong>. Makes a copy of the virtual machine files to a new directory.</li>
+<li><strong>Linked clone</strong>. Creates a copy of the virtual machine but uses the same virtual storage files.</li>
+</ul>
+<figure>
+    <img alt="Clone a virtual machine" src="vb_clone.png" width="75%">
+    <figcaption>Clone a virtual machine</figcaption>
+</figure>
+<h2 id="grouping-virtual-machines">Grouping virtual machines<a class="headerlink" href="#grouping-virtual-machines" title="Permanent link">¶</a></h2>
+<p>When we have been using VirtualBox for a while, it is normal to find ourselves with different virtual machines created.</p>
+<p>For better organization we can create groups, like folders in the file system, where we can organize the machines.</p>
+<ul>
+<li><strong>Create new group</strong>. By right-clicking on a machine we can group it.</li>
+<li><strong>Rename group</strong>. By right-clicking on a group we can rename it.</li>
+<li><strong>Change group</strong>. We can drag and drop the machines to change their group.</li>
+<li>We can collapse and expand the groups.</li>
+</ul>
+<div class="admonition note">
+<p>In this course and in general in all the courses, quite a few virtual machines are usually used. For better organization, it is advisable to group them by module (<em>SOM, MME, AOF, RLO, etc.</em>).</p>
+</div>
+<figure>
+    <img alt="Example of grouped virtual machines" src="vb_groups.png" width="100%">
+    <figcaption>Example of grouped virtual machines</figcaption>
+</figure>
+<h2 id="delete-virtual-machine">Delete virtual machine<a class="headerlink" href="#delete-virtual-machine" title="Permanent link">¶</a></h2>
+<p>To delete a virtual machine, right-click on it and choose "<strong>Delete...</strong>". A dialog box will appear with the following options:</p>
+<figure>
+    <img alt="Delete virtual machine" src="vb_delete.png" width="90%">
+    <figcaption>Delete virtual machine</figcaption>
+</figure>
+<ul>
+<li><strong>Delete all files</strong>. Deletes the virtual machine and all associated files, including virtual disks.</li>
+<li><strong>Delete only</strong>. Does not delete the files, only the entry in the hypervisor.</li>
+</ul>
+<h2 id="virtual-storage-media-management">Virtual storage media management.<a class="headerlink" href="#virtual-storage-media-management" title="Permanent link">¶</a></h2>
+<p>If we do not manage virtual machines correctly, they may start to take up a lot of disk space.</p>
+<div class="admonition warning">
+<p>Sometimes, orphaned virtual hard disks remain without an associated virtual machine.</p>
+</div>
+<p>To manage virtual storage media, go to "<strong><code>File</code> &gt; <code>Virtual Media Manager</code></strong>"</p>
+<figure>
+    <img alt="Virtual Media Manager" src="vb_manage_virtual_storage.png" width="75%">
+    <figcaption>Virtual Media Manager</figcaption>
+</figure>
+<h2 id="virtual-machine-portability">Virtual machine portability<a class="headerlink" href="#virtual-machine-portability" title="Permanent link">¶</a></h2>
+<p>Another way to work with virtual machines is to store the files on an external storage medium.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will be very useful in the course, to be able to work in the classroom and at home with the same virtual machine. In addition, we will avoid consuming local storage space or have a backup copy in case of data loss on the classroom PC.</p>
+</div>
+<p>To do this, we must have the virtual machine files on an external storage medium (<em>preferably a USB3 SSD external storage</em>). We achieve this by directly creating the virtual machine on the external medium or by making a copy of the original files.</p>
+<p>To add a virtual machine to VirtualBox, in the top menu, we must go to "<em><code>Machine</code> &gt; <code>Add...</code></em>", it will link the files to the hypervisor and we will be able to work with the machine.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../extra/js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
